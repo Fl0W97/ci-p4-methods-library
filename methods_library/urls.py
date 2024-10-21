@@ -21,5 +21,5 @@ from app import views as app_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/', app_views.my_app, name='app'),
+    path("app/", app_views.my_app, name='app'),
 ]
