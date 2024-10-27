@@ -8,6 +8,7 @@ This document outlines a 30-day schedule for setting up a method library website
 - Define project scope and requirements. --> see scope in README2.md
 - Identify user roles: visitors, users, and admin. --> tbd 
 - Draft wireframes for the application layout. --> started with tool pencil (mobile, tablet and desktop view)
+- draw ERD for database --> done for methods, comments, user
 
 ### Day 2: Environment Setup
 - Create a Gitpod workspace. --> done
@@ -31,7 +32,7 @@ This document outlines a 30-day schedule for setting up a method library website
 
 ### Day 5: User Authentication
 - Implement user registration and login using Django's built-in authentication system. --> tbc
-- Create templates for login and registration pages.
+- Create templates for login and registration pages. --> tbc
 
 ### Day 6: User Profile Management
 - Allow users to create and update profiles. --> tbc
@@ -52,7 +53,7 @@ This document outlines a 30-day schedule for setting up a method library website
 - Create a form for method submission and a corresponding view.
 
 ### Day 10: Method Listing
-- Develop a view to list all methods.
+- Develop a view to list all methods. --> (ListView)
 - Implement pagination and search functionality. --> tbc
 
 ### Day 11: Method Detail View
@@ -65,7 +66,7 @@ This document outlines a 30-day schedule for setting up a method library website
 
 ### Day 13: Method Deletion Functionality
 - Implement deletion for methods. --> tbc
-- Create confirmation dialogs for deletions.
+- Create confirmation dialogs for deletions. --> tbc
 
 ### Day 14: Admin Functionality
 - Create an admin interface for managing all methods.
