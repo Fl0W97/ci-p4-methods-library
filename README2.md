@@ -1,17 +1,45 @@
 # Method library
 
 Welcome to my fourth project, 'method library'. It is a script that supports team coaches and scrum masters to plan trainings and especially finding new inspriation for methods and  energizer games to keep the workshop member motivated. The focus is on the method library since there are currently just basic functinallities deployed such as methods idea stored in a data base, comment function and a log in area to create and collect its own methods.
-The MVP contains very basic functionalities such as a overview list with all the methods. The users can get registered and add comments.
-In MVP2 Theu sers can create own methods.
-
-
- However, by adding more functions the tool can be a basic of a whole community open for exchanging new and old methods and ideas.
 
 <img src="README.images/AmIresponsive.PNG" alt="image shows responisveness by presenting preview on different devices">
 
 
-
 <img src="README.images/overview_features.PNG" alt="shows the start view">
+
+
+## User Stories, Project scope
+see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-methods-library/issues) 
+
+### Site Users (MVP1)
+
+- As a Site User I can *see directly the purpose of the website * so that get an orientation what I can do
+- As a Site User I can view all methods so that I can choose one, get motivated to share comments and use the methods in my workshops
+- As a Site User I can comment on a method so that I can interact with the community
+- As a Site User I can read the methods in an structured way so that *it's easy to go through them.
+- As an early Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods
+- As a Site User I can register an account so that I can comment on a method
+- As a Site User I want to get a notification once I change something so that I get feedback of my actions
+- As a Site User I can modify or delete my comment on a method so that * I can be involved in the conversation*
+
+### Site Admin (MVP1)
+
+- As a Site Admin I can create, read, update and delete methods so that I can manage my content
+- As a Site Admin I can approve comments so that I can manage and control the content on the website
+
+### Site Users (MVP2)
+
+- As a Site User I can view the different methods with images and teaser so that I get an idea what I can see on the detail site
+- As a Site User I can see images and a good color contrast so that I like to sty on the website form a visual perspective
+- As a Site User I can get a notification once I change something so that I receive feedback of my actions
+- As a Site User I can filter methods on the main page so that I can optimize my search
+- As a Site User I want to get a notification once I change something so that I get feedback of my actions
+- As a Site User I can create, update and delete my own methods so that *I can share my methods and adjust those with the community*
+
+### Site Admin (MVP2)
+
+- As a Site Admin I can approve methods from other Site Users so that I have control of the content
+- As *Site Admin* I can *approve new methods from Site Users* so that *I can have control of the content on the website*
 
 
 ## Remarks for handeling the program
@@ -34,20 +62,6 @@ In MVP2 Theu sers can create own methods.
 
 ## UX Design
 
-
-## User Stories
-
-### New Site Users
-
-- As a user, I would like to have a tool that ...
-see project overview in GitHub
-(insert screenshot)
-
-### Returning Site Users
-
-- As a returning user, I would like to have a tool that ...
-see project overview in GitHub
-(insert screenshot)
 
 ## Testing
 

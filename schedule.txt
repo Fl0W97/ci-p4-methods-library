@@ -13,22 +13,22 @@ This document outlines a 30-day schedule for setting up a method library website
 ### Day 2: Environment Setup
 - Create a Gitpod workspace. --> done
 - Set up a PostgreSQL database in your preferred environment (e.g., Heroku). --> successfully tested in Heroku
-- Initialize a Django project and configure settings for PostgreSQL. 
+- Initialize a Django project and configure settings for PostgreSQL. --> done
 
 ### Day 3: Version Control
 - Set up Git for version control. --> done
 - Create a repository on GitHub or another platform. --> done
-- Commit initial project setup files.
+- Commit initial project setup files. --> done
 
 ### Day 4: Basic Django Configuration
 - Set up Django apps (e.g., methods, users).
 - Configure URLs and basic views.
-- Test Django installation by running the server.
-- Create a Procfile for Heroku.
+- Test Django installation by running the server. --> done
+- Create a Procfile for Heroku. --> done
 - Ensure all dependencies are listed in `requirements.txt`.
-- Create a Heroku app and link to GitHub repository.
-- Set up PostgreSQL on Heroku.
-- Initial Deployment
+- Create a Heroku app and link to GitHub repository. --> done
+- Set up PostgreSQL on Heroku. --> done
+- Initial Deployment --> done
 
 ### Day 5: User Authentication
 - Implement user registration and login using Django's built-in authentication system. --> tbc
