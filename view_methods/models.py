@@ -15,8 +15,8 @@ class Method(models.Model):
     instructions = models.TextField()
     material = models.TextField()
     alt_atr = models.CharField(max_length=255, null=True)
-    prep_time = models.DurationField()
-    duration = models.DurationField(null=True)
+    prep_time = models.DurationField(null=True, help_text="Enter preparation time in minutes")
+    duration = models.DurationField(null=True, help_text="Enter excercise duration in minutes")
     group_size_min = models.IntegerField(default=1)  # Minimum group size
     group_size_max = models.IntegerField(default=1)  # Maximum group size
     location = models.CharField(choices=LOCATION_CHOICES, default='indoor')  # Restrict location to indoor/outdoor
@@ -26,3 +26,13 @@ class Method(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
