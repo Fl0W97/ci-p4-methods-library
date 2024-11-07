@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Method
+
 
 # Create your views here.
-def index(request):
-    return HttpResponse("Work in process. Here a library app is created right now.")
+class MethodList(generic.ListView):
+    queryset = Method.objects.all()
+    template_name = "view_methods/index.html"
