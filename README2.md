@@ -52,13 +52,13 @@ see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-
 | Feature | Description  |
 | ------------- |------------- |
 |Database | Django database for methods|
-|Authentification | User log in area to provide rights to create, update, comment and collect methods|
+|Authentification | User log in area to provide rights to create, update, comment and collect methods. Using allauth package|
 |Comments | |
 |Super user functionalities | |
 |different user roles | |
-|CRUD for Comments | |
+|CRUD for Comments | using CrispyForms |
 |CRUD for Methods | |
-
+| summernote admin panel customization | ...
 
 ## UX Design
 
@@ -78,6 +78,7 @@ see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
+| Error during migrate | django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | ... | 
 
 
 **Error message in terminal**
@@ -156,6 +157,10 @@ The main functions are generated with Python. However, to set up the whole proje
 - test JS
 - test Phython
 - Bootstrap
+- Crsipy Forms package
+- summernote package
+- allauth package
+
 
 
 ## Deployment
@@ -235,12 +240,16 @@ https://github.com/discord/heroku-sample-app/blob/main/README.md
 
 Ideas and documentation of The walkthrough Project4  were was reused and adjusted.
 
+https://www.sessionlab.com/
+
 
 ### Code
 
 | No | Description  | Source | URL |
 | -- | ------------ | ------ | --- |
 | 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ |
+
+using view, model and template code from Code Institute -- project "Therefore I Blog"
 
 
 ### Template
