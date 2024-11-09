@@ -10,6 +10,7 @@ class Method(models.Model):
     author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="methods_library_methods"
     )
+    slug = models.SlugField(max_length=200, unique=True)
     purpose = models.CharField(max_length=255)
     summary = models.CharField(max_length=255, help_text="This text is shown on the dashboard as short explanation of the methodology")
     instructions = models.TextField()
