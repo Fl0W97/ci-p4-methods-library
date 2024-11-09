@@ -7,11 +7,11 @@ LOCATION_CHOICES = (('indoor', "Indoor"), ('outdoor', "Outdoor"), ('indoor/outdo
 # Create your models here.
 class Method(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, null=True)
     author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="methods_library_methods"
     )
     purpose = models.CharField(max_length=255)
+    summary = models.CharField(max_length=255, help_text="This text is shown on the dashboard as short explanation of the methodology")
     instructions = models.TextField()
     material = models.TextField()
     alt_atr = models.CharField(max_length=255, null=True)
