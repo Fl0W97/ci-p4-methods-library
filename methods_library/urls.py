@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path("", include("view_methods.urls"), name="view_methods-urls"),
     # path('', index_views.index, name='index'),
-    path('admin/', admin.site.urls),
 ]
