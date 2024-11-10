@@ -8,8 +8,21 @@ from .forms import CommentForm
 
 # Create your views here.
 class MethodList(generic.ListView):
-    queryset = Method.objects.all()
+    """ queryset = Method.objects.all() """
     template_name = "view_methods/index.html"
+    paginate_by = 8  # Show 8 methods per page
+
+    def get_queryset(self):
+        queryset = Method.objects.all() # Start with all Method objects
+        
+        # Filter by purpose (if specified)
+        purpose = self.request.GET.get('purpose') # Get the 'purpose' parameter from the URL query string
+        if purpose:
+            queryset = queryset.filter(purpose=purpose) # Filter methods by purpose
+        
+        return queryset
+        
+
 
 def method_page(request, slug):
     """
