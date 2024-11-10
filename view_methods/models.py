@@ -4,7 +4,12 @@ from django.contrib.auth.models import User
 STATUS = ((0, "Draft"), (1, "Published"))
 LOCATION_CHOICES = (('indoor', "Indoor"), ('outdoor', "Outdoor"), ('indoor/outdoor', "Indoor/Outdoor"))
 PREPTIME_CHOICES = (('up to 5mins', "up to 5mins"), ('up to 10mins', "up to 10mins"), ('up to 20mins', "up to 20mins"), ('more than 20mins', "more than 20mins"))
-choices=DURATION_CHOICES = (('up to 10mins', "up to 10mins"), ('up to 20mins', "up to 20mins"), ('up to 30mins', "up to 30mins"), ('up to 60mins', "up to 60mins"), ('more than 60mins', "more than 60mins"))
+choices=DURATION_CHOICES = (('up to 10mins', "up to 10mins"), ('up to 20mins', "up to 20mins"), ('up to 30mins', "up to 30mins"), 
+('up to 60mins', "up to 60mins"), ('more than 60mins', "more than 60mins"))
+choices=PURPOSE_CHOICES = (('idea generation', "Idea Generation"), ('team forming, development', "Team Forming, Development"), 
+('task structuring, prioritization', "Task Structuring, Prioritization"), ('conflict resolution', "Conflict Resolution"), 
+('continuous improvement, retrospectives', "Continuous Improvement, Retrospectives"), ('alignment of vision and goals', "Alignment of Vision and Goals"), 
+('facilitating effective planning', "Facilitating Effective Planning"))
 
 # Create your models here.
 class Method(models.Model):
@@ -13,7 +18,7 @@ class Method(models.Model):
     User, on_delete=models.CASCADE, related_name="methods_library_methods"
     )
     slug = models.SlugField(max_length=200, unique=True)
-    purpose = models.CharField(max_length=255)
+    purpose = models.CharField(choices=PURPOSE_CHOICES)
     summary = models.CharField(max_length=255, help_text="This text is shown on the dashboard as short explanation of the methodology")
     instructions = models.TextField()
     material = models.TextField()
