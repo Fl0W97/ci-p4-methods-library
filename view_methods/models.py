@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
 LOCATION_CHOICES = (('indoor', "Indoor"), ('outdoor', "Outdoor"), ('indoor/outdoor', "Indoor/Outdoor"))
+PREPTIME_CHOICES = (('up to 5mins', "up to 5mins"), ('up to 10mins', "up to 10mins"), ('up to 20mins', "up to 20mins"), ('more than 20mins', "more than 20mins"))
+choices=DURATION_CHOICES = (('up to 10mins', "up to 10mins"), ('up to 20mins', "up to 20mins"), ('up to 30mins', "up to 30mins"), ('up to 60mins', "up to 60mins"), ('more than 60mins', "more than 60mins"))
 
 # Create your models here.
 class Method(models.Model):
@@ -15,9 +17,9 @@ class Method(models.Model):
     summary = models.CharField(max_length=255, help_text="This text is shown on the dashboard as short explanation of the methodology")
     instructions = models.TextField()
     material = models.TextField()
+    prep_time = models.CharField(choices=PREPTIME_CHOICES, help_text="Enter preparation time")
+    duration = models.CharField(choices=DURATION_CHOICES, help_text="Enter duration of the excercise")
     alt_atr = models.CharField(max_length=255, null=True)
-    prep_time = models.DurationField(null=True, help_text="Enter preparation time in minutes")
-    duration = models.DurationField(null=True, help_text="Enter excercise duration in minutes")
     group_size_min = models.IntegerField(default=1)  # Minimum group size
     group_size_max = models.IntegerField(default=1)  # Maximum group size
     location = models.CharField(choices=LOCATION_CHOICES, default='indoor')  # Restrict location to indoor/outdoor
