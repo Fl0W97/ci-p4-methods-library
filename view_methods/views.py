@@ -17,8 +17,20 @@ class MethodList(generic.ListView):
         
         # Filter by purpose (if specified)
         purpose = self.request.GET.get('purpose') # Get the 'purpose' parameter from the URL query string
+        duration = self.request.GET.get('duration') # Get the 'duration' parameter from the URL query string
+        location = self.request.GET.get('location') # Get the 'purpose' parameter from the URL query string
+
+        # Filter by purpose
         if purpose:
-            queryset = queryset.filter(purpose=purpose) # Filter methods by purpose
+            queryset = queryset.filter(purpose=purpose)
+
+        # Filter by duration
+        if duration:
+            queryset = queryset.filter(duration=duration)
+
+        # Filter by location
+        if location:
+            queryset = queryset.filter(location=location)
         
         return queryset
         

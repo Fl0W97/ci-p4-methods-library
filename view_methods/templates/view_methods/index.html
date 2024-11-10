@@ -21,7 +21,27 @@
                 <option value="team forming, development" {% if request.GET.purpose == 'team forming, development' %}selected{% endif %}>Team Forming, Development</option>
                 <option value="conflict resolution" {% if request.GET.purpose == 'conflict resolution' %}selected{% endif %}>Conflict Resolution</option>
             </select>
+
+            <label for="duration">Filter by Duration:</label>
+            <select name="duration" id="duration">
+                <option value="">-- Select a Duration --</option>
+                <option value="up to 10mins" {% if request.GET.duration == 'up to 10mins' %}selected{% endif %}>up to 10mins</option>
+                <option value="up to 20mins" {% if request.GET.duration == 'up to 20mins' %}selected{% endif %}>up to 20mins</option>
+                <option value="up to 30mins" {% if request.GET.duration == 'up to 30mins' %}selected{% endif %}>up to 30mins</option>
+                <option value="up to 60mins" {% if request.GET.duration == 'up to 60mins' %}selected{% endif %}>up to 60mins</option>
+                <option value="more than 60mins" {% if request.GET.duration == 'more than 60mins' %}selected{% endif %}>more than 60mins</option>
+            </select>
+
+            <label for="location">Filter by Location:</label>
+            <select name="location" id="location">
+                <option value="">-- Select a Location --</option>
+                <option value="indoor" {% if request.GET.location == 'indoor' %}selected{% endif %}>Indoor</option>
+                <option value="outdoor" {% if request.GET.location == 'outdoor' %}selected{% endif %}>Outdoor</option>
+                <option value="indoor/outdoor" {% if request.GET.location == 'indoor/outdoor' %}selected{% endif %}>Indoor/Outdoor</option>
+            </select>
+
             <button type="submit">Apply Filter</button>
+            <a href="{% url 'home' %}">Clear Filters</a> <!-- Link to clear all filters -->
         </form>
     <div class="row">
     </div>
