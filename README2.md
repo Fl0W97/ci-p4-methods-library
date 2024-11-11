@@ -73,6 +73,13 @@ see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-
 - Manual input tests were carried out to simulate real-world usage of the application. This involved entering data manually into the system to ensure that all inputs were handled correctly and that the user interface responded appropriately.
 
 
+In view_methods/test.py
+MethodListTest: Tests filtering by purpose, duration, and location for the MethodList view.
+MethodPageTest: Tests if the method page correctly displays a method and its comments.
+CommentCreateTest: Tests creating a new comment on the method page.
+CommentEditTest: Tests editing a comment and ensuring only the author can edit it.
+CommentDeleteTest: Tests deleting a comment and ensuring only the author can delete it.
+
 
 ### Bugs (not fixed)
 
@@ -91,7 +98,7 @@ see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
 | ... | ... | <img src="README.images/" alt="image shows Error message"> | ... |
-
+django.db.utils.OperationalError: near "None": syntax error | The error occured during testing. The local database db.sqlite had an inconsistency. The migration file "view_methods.0003_alter_method_alt_atr_alter_method_duration_and_more" had a failre related to NONE. After seveal tries to fix the issue I decided to focus on the rst of the project. I saved all migration files and removed them from the project. Then I did pyhton3 manage.py makemigrations and python3 manage.py migrate.
 
 
 ### Validator Testing
