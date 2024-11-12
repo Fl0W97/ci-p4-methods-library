@@ -55,3 +55,20 @@ class Comment(models.Model):
 
     def __str__(self):
         return f" written by {self.author} | Created on {self.created_on}"
+
+#new input for like button
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    method = models.ForeignKey(Method, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'method')  # Ensures that a user can like a method only once
+
+    def __str__(self):
+        return f"{self.user.username} liked {self.method.title}"
+
+    # Optionally, create a method to count likes for a method
+    @classmethod
+    def get_likes_for_method(cls, method):
+        return cls.objects.filter(method=method).count()

@@ -1,5 +1,6 @@
 from . import views
 from django.urls import path
+from .views import MethodList, method_page
 
 urlpatterns = [
     path('', views.MethodList.as_view(), name='home'),

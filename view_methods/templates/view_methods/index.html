@@ -60,6 +60,7 @@
                                 </div>
                                 <a href="{% url 'method_page' method.slug %}" class="post-link">
                                     <h2 class="card-title">{{ method.title }}</h2>
+                                    <strong>Total Likes:</strong> {{ method.like_set.count }}
                                     <p>{{ method.summary }}</p>
                                 </a>
                                 <p class="card-text text-muted h6">{{ method.created_on}}

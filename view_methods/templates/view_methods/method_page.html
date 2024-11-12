@@ -29,9 +29,6 @@
                     Purpose: {{ method.purpose | safe }}
                 </p>
                 <p class="card-text">
-                    Summary {{ method.summary | safe }}
-                </p>
-                <p class="card-text">
                     Material {{ method.material| safe }}
                 </p>
                 <p class="card-text">
@@ -39,8 +36,24 @@
                 </p>
                 <p class="card-text">
                     {{ method.instructions| safe }}
-                </p>
+                </p class="card-text">
+                <!-- start Like button code -->
+                    <strong>Total Likes:</strong> {{ method.like_set.count }}
 
+                    {% if user.is_authenticated %}
+                        <!-- Like button, only visible to logged-in users -->
+                        <form method="POST" action="{% url 'method_page' slug=method.slug %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-like">
+                                Like
+                            </button>
+                        </form>
+                    {% else %}
+                        <p>Log in to like this method.</p>
+                    {% endif %}
+                    <!-- endLike button code -->
+                <p>
+                </p>
             </div>
         </div>
     </div>

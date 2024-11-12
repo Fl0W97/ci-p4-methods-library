@@ -59,6 +59,8 @@ see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-
 |CRUD for Comments | using CrispyForms |
 |CRUD for Methods | |
 | summernote admin panel customization | ...
+| Filter function | purpose, duration, location ...
+| like function | ...
 
 ## UX Design
 
@@ -73,12 +75,42 @@ see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-
 - Manual input tests were carried out to simulate real-world usage of the application. This involved entering data manually into the system to ensure that all inputs were handled correctly and that the user interface responded appropriately.
 
 
-In view_methods/test.py
-MethodListTest: Tests filtering by purpose, duration, and location for the MethodList view.
-MethodPageTest: Tests if the method page correctly displays a method and its comments.
+
+
+####view_methods/test_views.py
+
+TestMethodViews: Tests if the method page correctly displays a method and its comments.
+
+class TestMethodViews(TestCase)
+    def setUp(self)
+    def test_render_method_detail_page_with_comment_form(self)
+
+TestMethodFilteringViews(TestCase): Tests filtering by purpose, duration, and location for the MethodList view.
+
+class TestMethodFilteringViews(TestCase)
+    def setUp(self)
+    def test_filter_methods_by_purpose(self)
+
+
+####view_methods/test_forms.py
+
+TestCommentForm(TestCase); Tests adding a new comment with valid and invalid input
+
+class TestCommentForm(TestCase)
+    def test_form_is_valid(self)
+    def test_form_is_invalid(self)
+
+
+
+/// IDEAS for testing ///
+Test_views.py
 CommentCreateTest: Tests creating a new comment on the method page.
 CommentEditTest: Tests editing a comment and ensuring only the author can edit it.
 CommentDeleteTest: Tests deleting a comment and ensuring only the author can delete it.
+Testing Like counter
+Testing new app "collection"
+/// IDEAS for testing ///
+
 
 
 ### Bugs (not fixed)
@@ -249,12 +281,29 @@ Ideas and documentation of The walkthrough Project4  were was reused and adjuste
 
 https://www.sessionlab.com/
 
+Insiration for functionalities
+
+
+filters:
+https://stackoverflow.com/questions/34739680/how-to-add-filters-to-a-query-dynamically-in-django
+https://www.youtube.com/watch?app=desktop&v=FTUxl5ZCMb8
+https://www.youtube.com/watch?v=T862gjtlFvs
+
+Like-button: 
+https://stackoverflow.com/questions/73683387/how-to-add-like-button-to-each-blog-post-in-the-same-page-with-django
+https://stackoverflow.com/questions/15407985/django-like-button?rq=3
+https://www.youtube.com/watch?v=ZUiTiUj-tZw
+https://www.youtube.com/watch?v=AZwc9hDBi04
+
 
 ### Code
 
 | No | Description  | Source | URL |
 | -- | ------------ | ------ | --- |
 | 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ |
+| like button | 
+
+
 
 using view, model and template code from Code Institute -- project "Therefore I Blog"
 

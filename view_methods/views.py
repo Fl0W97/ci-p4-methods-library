@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Method, Comment
+from .models import Method, Comment, Like
 from .forms import CommentForm
 
 
@@ -54,7 +54,21 @@ def method_page(request, slug):
     method = get_object_or_404(queryset, slug=slug)
     comments = method.comments.all().order_by("-created_on")
     comment_count = method.comments.filter(approved=True).count()
+
+    # Handle like functionality when the POST request is made (when the like button is clicked)
     if request.method == "POST":
+        # Handle liking a method
+        if request.user.is_authenticated:
+            # Check if the user has already liked this method
+            existing_like = Like.objects.filter(user=request.user, method=method)
+            if not existing_like.exists():
+                # Create a new Like object
+                Like.objects.create(user=request.user, method=method)
+                messages.add_message(request, messages.SUCCESS, 'You liked this method!')
+            else:
+                messages.add_message(request, messages.INFO, 'You have already liked this method.')
+
+        # Handle comment submission
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
