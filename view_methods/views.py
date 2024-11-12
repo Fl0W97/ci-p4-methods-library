@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Method, Comment, Like
-from .forms import CommentForm
+from .forms import CommentForm, MethodForm
 
 
 # Create your views here.
@@ -78,7 +78,7 @@ def method_page(request, slug):
             messages.add_message(
                 request, messages.SUCCESS,
                 'Your comment has been submitted and is pending approval'
-    )
+            )
 
     comment_form = CommentForm()
 
@@ -132,3 +132,64 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments.')
 
     return HttpResponseRedirect(reverse('method_page', args=[slug]))
+
+
+# Handle method creation and submission
+def method_create(request):
+
+    if not request.user.is_authenticated:
+        # If the user is not authenticated, redirect them to the login page
+        messages.add_message(request, messages.ERROR, 'You must be logged in to create a method.')
+        return HttpResponseRedirect(reverse('home'))
+
+    if request.method == "POST":
+        method_form = MethodForm(request.POST)
+        # Check authentification
+        if method_form.is_valid():
+            method = method_form.save(commit=False)
+            method.author = request.user    # Link method to the current user
+            method.save()
+
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Your method has been submitted and is pending approval')
+
+            # Redirect to the method list page or another page after successful submission
+            return HttpResponseRedirect(reverse('home'))
+
+    else:
+        method_form = MethodForm()     # Instantiate a blank form if it's a GET request
+
+    return render(
+        request,
+        'view_methods/method_creation.html',  # Template where the form will be rendered
+        {'method_form': method_form}
+    )
+
+
+"""
+def method_edit(request):
+    """
+    
+"""
+    view to edit methods
+
+    if request.method == "POST":
+
+        queryset = Method.objects.filter(status=1)
+        method = get_object_or_404(queryset, slug=slug)
+        method = get_object_or_404(Method, pk=method_id)
+        method_form = MethodForm(data=request.POST, instance=method)
+
+        if method_form.is_valid() and method.author == request.user:
+            method = method_form.save(commit=False)
+            method.method = method
+            method.approved = False
+            method.save()
+            messages.add_message(request, messages.SUCCESS, 'Method is updated')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating method!')
+
+    return HttpResponseRedirect(reverse('method_page', args=[slug])) """
+
+

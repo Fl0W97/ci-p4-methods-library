@@ -112,6 +112,18 @@ Testing new app "collection"
 /// IDEAS for testing ///
 
 
+### Decisions during development
+
+1) Dealling with generic ViewList also for filtering etc. (reusability)
+
+2) Since the current app (view_methods) already deals with displaying and interacting with methods, it seems logical to keep the method creation functionality in the same app. Advantages of Keeping it in the Same App:
+
+Simplicity: You can handle both displaying and creating methods in the same app, making it easier to manage relationships between views and models.
+Faster Development: If the creation of methods is relatively simple and closely tied to the same workflow as viewing them, you can keep things together and not worry about the overhead of a separate app.
+
+If in the future the requirements become more complex and the view_methods app growing too large, it's always possible to refactor it into multiple smaller apps.
+So, for now, keeping it within the same app (view_methods). It keeps things simpler and more maintainable.
+
 
 ### Bugs (not fixed)
 
