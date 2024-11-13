@@ -72,3 +72,14 @@ class Like(models.Model):
     @classmethod
     def get_likes_for_method(cls, method):
         return cls.objects.filter(method=method).count()
+
+
+from django.db import models
+
+# Content for about page
+class About(models.Model):
+    title = models.CharField(max_length=200, default="About Us") # title for the "About" page
+    body = models.TextField(help_text="Write the whole content of the About page. Only the first about entry in the admin panel list  is displayed on the website.")  # This will store the content for the "About" page
+
+    def __str__(self):
+        return self.title  # Show the title in the admin panel

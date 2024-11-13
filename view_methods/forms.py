@@ -1,5 +1,4 @@
-from .models import Comment
-from .models import Method
+from .models import Comment, Method, About
 from django import forms
 from django_summernote.widgets import SummernoteWidget
 
@@ -16,7 +15,6 @@ class MethodForm(forms.ModelForm):
     
     class Meta:
         model = Method
-        prepopulated_fields = {'slug': ('title',)}
         fields = (
             'title', 'slug', 'purpose', 'summary', 'instructions', 'material',
             'prep_time', 'duration', 'alt_atr', 'group_size_min', 'group_size_max',
@@ -42,3 +40,9 @@ class MethodForm(forms.ModelForm):
             method.status = 0  # Ensure that the status is always set to 'Draft' when a new method is created
             method.save()
         return method
+
+
+class AboutForm(forms.ModelForm):
+    class Meta:
+        model = About
+        fields = ['title', 'body']

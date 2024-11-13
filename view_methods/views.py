@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Method, Comment, Like
-from .forms import CommentForm, MethodForm
+from .models import Method, Comment, Like, About
+from .forms import CommentForm, MethodForm, AboutForm
 
 
 # Create your views here.
@@ -208,6 +208,20 @@ def user_collection(request):
     })
 """
 
-
+"""
 def about(request):
-    return render(request, 'view_methods/about.html')
+    return render(request, 'view_methods/about.html') """
+    
+
+
+class AboutPageView(generic.TemplateView):
+    template_name = 'view_methods/about.html'
+
+    def get_context_data(self, **kwargs):
+        # Call the parent method to get the default context
+        context = super().get_context_data(**kwargs)
+
+        # Fetch the 'About' object (assuming there's only one About instance)
+        about = About.objects.first()
+        context['about'] = about
+        return context
