@@ -207,3 +207,7 @@ def user_collection(request):
         'comment_list': comment_list
     })
 """
+
+
+def about(request):
+    return render(request, 'view_methods/about.html')

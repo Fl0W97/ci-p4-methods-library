@@ -314,7 +314,7 @@ https://www.youtube.com/watch?v=AZwc9hDBi04
 | -- | ------------ | ------ | --- |
 | 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ |
 | like button | 
-
+| Summernote adjustment in forms | https://summernote.org/deep-dive/
 
 
 using view, model and template code from Code Institute -- project "Therefore I Blog"
