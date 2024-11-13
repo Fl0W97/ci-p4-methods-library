@@ -158,6 +158,6 @@ class MethodPrivateCollection(generic.ListView):
     paginate_by = 8  # Show 8 methods per page
 
     def get_queryset(self):
-        queryset = Method.objects.all() # Start with all Method objects
+        queryset = Method.objects.filter(author=self.request.user) # only the user's method should be displayed
         
         return queryset
