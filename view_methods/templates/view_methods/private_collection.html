@@ -1,0 +1,60 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title"> Hello {{ user.username }}, find here your collection:</h1>
+                <p>You created x methods</p>
+                <p>You created x comments</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder"> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-12 mt-3 left">
+        <div class="row">
+            {% for method in method_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ method.author }}</p>
+                                </div>
+                            </div>
+                            <a href="{% url 'method_page' method.slug %}" class="post-link">
+                                <h2 class="card-title">{{ method.title }}</h2>
+                                <strong>Total Likes:</strong> {{ method.like_set.count }}
+                            </a>
+                            <p class="card-text text-muted h6">{{ method.created_on}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 %}
+                {% endif %}
+            {% empty %}
+                <div class="col-12">
+                    <p>No methods found.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+{% block comment_btn %}
+
+{% endblock %}

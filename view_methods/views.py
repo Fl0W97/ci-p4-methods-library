@@ -150,3 +150,14 @@ def method_create(request):
         'view_methods/method_creation.html',  # Template where the form will be rendered
         {'method_form': method_form}
     )
+
+
+class MethodPrivateCollection(generic.ListView):
+    """ queryset = Method.objects.all() """
+    template_name = "view_methods/private_collection.html"
+    paginate_by = 8  # Show 8 methods per page
+
+    def get_queryset(self):
+        queryset = Method.objects.all() # Start with all Method objects
+        
+        return queryset
