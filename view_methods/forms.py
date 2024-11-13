@@ -1,6 +1,7 @@
 from .models import Comment
 from .models import Method
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 
 
 class CommentForm(forms.ModelForm):
@@ -10,8 +11,12 @@ class CommentForm(forms.ModelForm):
 
 
 class MethodForm(forms.ModelForm):
+    instructions = forms.CharField(widget=SummernoteWidget())
+    summary = forms.CharField(widget=SummernoteWidget())
+    
     class Meta:
         model = Method
+        prepopulated_fields = {'slug': ('title',)}
         fields = (
             'title', 'slug', 'purpose', 'summary', 'instructions', 'material',
             'prep_time', 'duration', 'alt_atr', 'group_size_min', 'group_size_max',

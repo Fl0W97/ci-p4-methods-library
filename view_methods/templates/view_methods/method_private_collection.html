@@ -1,14 +1,15 @@
 {% extends 'base.html' %} 
 {% block content %}
 {% load static %}
-{% load crispy_forms_tags %}
 
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title"> Create your methode here</h1>
+                <h1 class="post-title"> Hello {{ user.username }}, find here your content:</h1>
+                <p>You created x methods</p>
+                <p>You created x comments</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                  <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder"> -->
@@ -23,18 +24,21 @@
       <div class="col-md-4 card mb-4 mt-3">
         <div class="card-body">
           {% if user.is_authenticated %}
-          <h3>Add here a new method:</h3>
-          <p>Posting as: {{ user.username }}</p>
-          <form id="methodForm" method="post"
-            style="margin-top: 1.3em;">
-            {{ method_form | crispy }}
-            {% csrf_token %}
-            <button id="submitButton" type="submit"
-              class="btn btn-signup btn-lg">Submit</button>
-          </form>
-          {% else %}
-          <p>Log in to create a method</p>
-          {% endif %}
+          <h3>Your Methods</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container"></div>
+    <div class="row">
+      <!-- Creating New Method-->
+      <div class="col-md-4 card mb-4 mt-3">
+        <div class="card-body">
+          {% if user.is_authenticated %}
+          <h3>Your Comments</h3>
+          <p></p>
         </div>
       </div>
     </div>

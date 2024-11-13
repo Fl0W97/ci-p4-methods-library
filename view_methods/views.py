@@ -35,20 +35,8 @@ class MethodList(generic.ListView):
         return queryset
         
 
-
+#Display an individual :model:view_methods.method; template:`view_methods/method_page.html`
 def method_page(request, slug):
-    """
-    Display an individual :model:`view_methods.method`.
-
-    **Context**
-
-    ``method``
-        An instance of :model:`view_methods.method`.
-
-    **Template:**
-
-    :template:`view_methods/method_page.html`
-    """
 
     queryset = Method.objects.filter(status=1)
     method = get_object_or_404(queryset, slug=slug)
@@ -94,10 +82,9 @@ def method_page(request, slug):
     )
 
 
+#view to edit comments
 def comment_edit(request, slug, comment_id):
-    """
-    view to edit comments
-    """
+
     if request.method == "POST":
 
         queryset = Method.objects.filter(status=1)
@@ -117,10 +104,9 @@ def comment_edit(request, slug, comment_id):
     return HttpResponseRedirect(reverse('method_page', args=[slug]))
 
 
+#view to delete comment
 def comment_delete(request, slug, comment_id):
-    """
-    view to delete comment
-    """
+
     queryset = Method.objects.filter(status=1)
     method = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -144,7 +130,6 @@ def method_create(request):
 
     if request.method == "POST":
         method_form = MethodForm(request.POST)
-        # Check authentification
         if method_form.is_valid():
             method = method_form.save(commit=False)
             method.author = request.user    # Link method to the current user
@@ -165,31 +150,3 @@ def method_create(request):
         'view_methods/method_creation.html',  # Template where the form will be rendered
         {'method_form': method_form}
     )
-
-
-"""
-def method_edit(request):
-    """
-    
-"""
-    view to edit methods
-
-    if request.method == "POST":
-
-        queryset = Method.objects.filter(status=1)
-        method = get_object_or_404(queryset, slug=slug)
-        method = get_object_or_404(Method, pk=method_id)
-        method_form = MethodForm(data=request.POST, instance=method)
-
-        if method_form.is_valid() and method.author == request.user:
-            method = method_form.save(commit=False)
-            method.method = method
-            method.approved = False
-            method.save()
-            messages.add_message(request, messages.SUCCESS, 'Method is updated')
-        else:
-            messages.add_message(request, messages.ERROR, 'Error updating method!')
-
-    return HttpResponseRedirect(reverse('method_page', args=[slug])) """
-
-

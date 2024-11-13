@@ -37,7 +37,7 @@
                 <p class="card-text">
                     {{ method.instructions| safe }}
                 </p class="card-text">
-                <!-- start Like button code -->
+                    <!-- start Like button code -->
                     <strong>Total Likes:</strong> {{ method.like_set.count }}
 
                     {% if user.is_authenticated %}
@@ -52,8 +52,6 @@
                         <p>Log in to like this method.</p>
                     {% endif %}
                     <!-- endLike button code -->
-                <p>
-                </p>
             </div>
         </div>
     </div>
@@ -125,7 +123,7 @@
     </div>
 </div>
 
-<!-- Delete confirmation modal -->
+<!-- Delete confirmation modal - comment -->
 <div class="modal fade" id="deleteModal" tabindex="-1"
   aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -150,8 +148,37 @@
   </div>
 </div>
 
+<!-- Delete confirmation modal - method -->
+<div class="modal fade" id="deleteModal" tabindex="-1"
+  aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"
+          id="deleteModalLabel">Delete method?</h5>
+        <button type="button" class="btn-close"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your method?
+        This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+          data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn
+          btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock content %}
 
 {% block comment_btn %}
 <script src="{% static 'js/comments.js' %}"></script>
+{% endblock %}
+
+{% block method_btn %}
+
 {% endblock %}
