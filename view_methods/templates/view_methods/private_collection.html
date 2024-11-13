@@ -8,8 +8,8 @@
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title"> Hello {{ user.username }}, find here your collection:</h1>
-                <p>You created x methods</p>
-                <p>You created x comments</p>
+                <p>You created {{ method_list.count }} methods</p>
+                <p>You created {{ comment_list.count }} comments</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                  <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder"> -->
@@ -52,6 +52,36 @@
     </div>
 </div>
 
+<div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-12 mt-3 left">
+        <div class="row">
+            {% for comment in comment_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <div class="image-flash">
+                                    <p class="created_on">Created on: {{ comment.created_on }}</p>
+                                </div>
+                                <div class="image-flash">
+                                    <p class="body">Content: {{ comment.body }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 %}
+                {% endif %}
+            {% empty %}
+                <div class="col-12">
+                    <p>No comments found.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
 

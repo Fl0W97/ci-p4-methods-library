@@ -152,12 +152,58 @@ def method_create(request):
     )
 
 
-class MethodPrivateCollection(generic.ListView):
-    """ queryset = Method.objects.all() """
+"""class MethodPrivateCollection(generic.ListView):
+    queryset = Method.objects.all()
     template_name = "view_methods/private_collection.html"
     paginate_by = 8  # Show 8 methods per page
 
     def get_queryset(self):
         queryset = Method.objects.filter(author=self.request.user) # only the user's method should be displayed
         
-        return queryset
+        return queryset"""
+
+
+"""class CommentPrivateCollection(generic.ListView):
+    queryset = Method.objects.all()
+    template_name = "view_methods/private_collection.html"
+    paginate_by = 8  # Show 8 methods per page
+
+    def get_queryset(self):
+        queryset = Comment.objects.filter(author=self.request.user) # only the user's comments should be displayed
+        
+        return queryset"""
+
+
+class PrivateCollectionView(generic.TemplateView):  # no List view, it has to be a TemplateView, since I am using twow different databases
+    template_name = "view_methods/private_collection.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Fetch methods created by the logged-in user
+        methods = Method.objects.filter(author=self.request.user)
+        context['method_list'] = methods
+
+        # Fetch comments created by the logged-in user
+        comments = Comment.objects.filter(author=self.request.user)
+        context['comment_list'] = comments
+
+        return context
+
+
+"""
+from django.shortcuts import render
+from .models import Method, Comment
+
+def user_collection(request):
+    # Get all methods created by the logged-in user
+    method_list = Method.objects.filter(author=request.user)
+    
+    # Get all comments created by the logged-in user
+    comment_list = Comment.objects.filter(author=request.user)
+    
+    return render(request, 'view_methods/private_collection.html', {
+        'method_list': method_list,
+        'comment_list': comment_list
+    })
+"""
