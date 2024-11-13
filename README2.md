@@ -59,8 +59,9 @@ see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-
 |CRUD for Comments | using CrispyForms |
 |CRUD for Methods | |
 | summernote admin panel customization | ...
-| Filter function | purpose, duration, location ...
+| Filter function | purpose, duration, location ... hwoever the filter options are hard coded, has to be added as asoon as a new purpose is implemented by the admin
 | like function | ...
+| Adbout me page is a table | Can be added easily by admin. Restriction is made by define queryset.filter.first() so taht only the first about page entry is shown. In addition, there is a hint in the admin panel, that just the first entry is displayed on the website by using fieldsets in class AboutAdmin (admin.py).
 
 ## UX Design
 
@@ -181,6 +182,16 @@ Here an example of index.js
 <img src="README.images/JS_validation.PNG" alt="image shows preview of validator results" width="500px">
 
 </details>
+
+
+### Validations in the code
+
+views.py
+    # validation
+    def clean(self):
+        cleaned_data = super().clean()
+        group_size_min = cleaned_data.get('group_size_min')
+        group_size_max = cleaned_data.get('group_size_max')
 
 
 #### Accessability
@@ -308,6 +319,14 @@ https://www.youtube.com/watch?v=ZUiTiUj-tZw
 https://www.youtube.com/watch?v=AZwc9hDBi04
 
 
+Hint for Admin panel
+fieldsets
+how to use filedsets https://docs.djangoproject.com/en/5.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets
+use help_text: https://docs.djangoproject.com/en/5.1/ref/models/fields/#help-text
+
+HInt for super() function and used in about and edit method views
+https://docs.djangoproject.com/en/5.1/topics/class-based-views/, https://docs.python.org/3/library/functions.html#super
+
 ### Code
 
 | No | Description  | Source | URL |
@@ -315,6 +334,7 @@ https://www.youtube.com/watch?v=AZwc9hDBi04
 | 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ |
 | like button | 
 | Summernote adjustment in forms | https://summernote.org/deep-dive/
+| Fieldsets | https://docs.djangoproject.com/en/5.1/ref/contrib/admin/
 
 
 using view, model and template code from Code Institute -- project "Therefore I Blog"

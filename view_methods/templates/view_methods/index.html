@@ -4,7 +4,7 @@
 
 <!-- index.html content starts here -->
 <div class="container-fluid">
-    <div class="row">
+    <div class="row pb-2">
         <h1>Welcome to TeamCrafted,</h1>
         <p>Welcome to TeamCrafted, where creativity, collaboration, and the right methodologies
            come together to build great teams. </p>
@@ -13,13 +13,18 @@
             or just passionate about team performance.</p>
     </div>
         <!-- Filter Form: Dropdown menu for selecting a purpose -->
+    <div class="row bg-secondary" >
         <form method="get">
             <label for="purpose">Filter by Purpose:</label>
             <select name="purpose" id="purpose">
                 <option value="">-- Select a Purpose --</option>
                 <option value="idea generation" {% if request.GET.purpose == 'idea generation' %}selected{% endif %}>Idea Generation</option>
                 <option value="team forming, development" {% if request.GET.purpose == 'team forming, development' %}selected{% endif %}>Team Forming, Development</option>
+                <option value="task structuring, prioritization" {% if request.GET.purpose == 'task structuring, prioritization' %}selected{% endif %}>Task Structuring, Prioritization</option>
                 <option value="conflict resolution" {% if request.GET.purpose == 'conflict resolution' %}selected{% endif %}>Conflict Resolution</option>
+                <option value="continuous improvement, retrospectives" {% if request.GET.purpose == 'continuous improvement, retrospectives' %}selected{% endif %}>Continuous Improvement, Retrospectives</option>
+                <option value="alignment of vision and goals" {% if request.GET.purpose == 'alignment of vision and goals' %}selected{% endif %}>Alignment of Vision and Goals</option>
+                <option value="facilitating effective planning" {% if request.GET.purpose == 'facilitating effective planning' %}selected{% endif %}>Facilitating Effective Planning</option>
             </select>
 
             <label for="duration">Filter by Duration:</label>
@@ -43,9 +48,8 @@
             <button type="submit">Apply Filter</button>
             <a href="{% url 'home' %}">Clear Filters</a> <!-- Link to clear all filters -->
         </form>
-    <div class="row">
     </div>
-    <div class="row">
+    <div class="row pt-4">
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">

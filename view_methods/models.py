@@ -39,8 +39,6 @@ class Method(models.Model):
         return f" title {self.title} | written by {self.author}"
 
 
-
-
 class Comment(models.Model):
     method = models.ForeignKey(
         Method, on_delete=models.CASCADE, related_name="comments")
