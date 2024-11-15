@@ -13,40 +13,54 @@
             or just passionate about team performance.</p>
     </div>
         <!-- Filter Form: Dropdown menu for selecting a purpose -->
-    <div class="row bg-secondary" >
-        <form method="get">
-            <label for="purpose">Filter by Purpose:</label>
-            <select name="purpose" id="purpose">
-                <option value="">-- Select a Purpose --</option>
-                <option value="idea generation" {% if request.GET.purpose == 'idea generation' %}selected{% endif %}>Idea Generation</option>
-                <option value="team forming, development" {% if request.GET.purpose == 'team forming, development' %}selected{% endif %}>Team Forming, Development</option>
-                <option value="task structuring, prioritization" {% if request.GET.purpose == 'task structuring, prioritization' %}selected{% endif %}>Task Structuring, Prioritization</option>
-                <option value="conflict resolution" {% if request.GET.purpose == 'conflict resolution' %}selected{% endif %}>Conflict Resolution</option>
-                <option value="continuous improvement, retrospectives" {% if request.GET.purpose == 'continuous improvement, retrospectives' %}selected{% endif %}>Continuous Improvement, Retrospectives</option>
-                <option value="alignment of vision and goals" {% if request.GET.purpose == 'alignment of vision and goals' %}selected{% endif %}>Alignment of Vision and Goals</option>
-                <option value="facilitating effective planning" {% if request.GET.purpose == 'facilitating effective planning' %}selected{% endif %}>Facilitating Effective Planning</option>
-            </select>
+    <div class="row bg-secondary p-3" >
+        <form method="get" class="border-bottom-2 pb-3">
+            <div class="row g-3">
+            <!-- Purpose Filter -->
+                <div class="col-12 col-md-4">
+                    <label for="purpose" class="form-label">Filter by Purpose:</label>
+                    <select name="purpose" id="purpose" class="form-select border-right-2">
+                        <option value="">-- Select a Purpose --</option>
+                        <option value="idea generation" {% if request.GET.purpose == 'idea generation' %}selected{% endif %}>Idea Generation</option>
+                        <option value="team forming, development" {% if request.GET.purpose == 'team forming, development' %}selected{% endif %}>Team Forming, Development</option>
+                        <option value="task structuring, prioritization" {% if request.GET.purpose == 'task structuring, prioritization' %}selected{% endif %}>Task Structuring, Prioritization</option>
+                        <option value="conflict resolution" {% if request.GET.purpose == 'conflict resolution' %}selected{% endif %}>Conflict Resolution</option>
+                        <option value="continuous improvement, retrospectives" {% if request.GET.purpose == 'continuous improvement, retrospectives' %}selected{% endif %}>Continuous Improvement, Retrospectives</option>
+                        <option value="alignment of vision and goals" {% if request.GET.purpose == 'alignment of vision and goals' %}selected{% endif %}>Alignment of Vision and Goals</option>
+                        <option value="facilitating effective planning" {% if request.GET.purpose == 'facilitating effective planning' %}selected{% endif %}>Facilitating Effective Planning</option>
+                    </select>
+                </div>
+                
+                <!-- Duration Filter -->
+                <div class="col-12 col-md-4">
+                    <label for="duration" class="form-label">Filter by Duration:</label>
+                    <select name="duration" id="duration" class="form-select border-right-2">
+                        <option value="">-- Select a Duration --</option>
+                        <option value="up to 10mins" {% if request.GET.duration == 'up to 10mins' %}selected{% endif %}>up to 10mins</option>
+                        <option value="up to 20mins" {% if request.GET.duration == 'up to 20mins' %}selected{% endif %}>up to 20mins</option>
+                        <option value="up to 30mins" {% if request.GET.duration == 'up to 30mins' %}selected{% endif %}>up to 30mins</option>
+                        <option value="up to 60mins" {% if request.GET.duration == 'up to 60mins' %}selected{% endif %}>up to 60mins</option>
+                        <option value="more than 60mins" {% if request.GET.duration == 'more than 60mins' %}selected{% endif %}>more than 60mins</option>
+                    </select>
+                </div>
 
-            <label for="duration">Filter by Duration:</label>
-            <select name="duration" id="duration">
-                <option value="">-- Select a Duration --</option>
-                <option value="up to 10mins" {% if request.GET.duration == 'up to 10mins' %}selected{% endif %}>up to 10mins</option>
-                <option value="up to 20mins" {% if request.GET.duration == 'up to 20mins' %}selected{% endif %}>up to 20mins</option>
-                <option value="up to 30mins" {% if request.GET.duration == 'up to 30mins' %}selected{% endif %}>up to 30mins</option>
-                <option value="up to 60mins" {% if request.GET.duration == 'up to 60mins' %}selected{% endif %}>up to 60mins</option>
-                <option value="more than 60mins" {% if request.GET.duration == 'more than 60mins' %}selected{% endif %}>more than 60mins</option>
-            </select>
+                <!-- Location Filter -->
+                <div class="col-12 col-md-4">
+                    <label for="location" class="form-label">Filter by Location:</label>
+                    <select name="location" id="location" class="form-select border-right-2">
+                        <option value="">-- Select a Location --</option>
+                        <option value="indoor" {% if request.GET.location == 'indoor' %}selected{% endif %}>Indoor</option>
+                        <option value="outdoor" {% if request.GET.location == 'outdoor' %}selected{% endif %}>Outdoor</option>
+                        <option value="indoor/outdoor" {% if request.GET.location == 'indoor/outdoor' %}selected{% endif %}>Indoor/Outdoor</option>
+                    </select>
+                </div>
+            </div>
 
-            <label for="location">Filter by Location:</label>
-            <select name="location" id="location">
-                <option value="">-- Select a Location --</option>
-                <option value="indoor" {% if request.GET.location == 'indoor' %}selected{% endif %}>Indoor</option>
-                <option value="outdoor" {% if request.GET.location == 'outdoor' %}selected{% endif %}>Outdoor</option>
-                <option value="indoor/outdoor" {% if request.GET.location == 'indoor/outdoor' %}selected{% endif %}>Indoor/Outdoor</option>
-            </select>
-
-            <button type="submit">Apply Filter</button>
-            <a href="{% url 'home' %}">Clear Filters</a> <!-- Link to clear all filters -->
+            <!-- Action Buttons -->
+            <div class="d-flex justify-content-between align-items-center pt-3">
+                <button type="submit" class="btn btn-primary">Apply Filter</button>
+                <a href="{% url 'home' %}" class="btn btn-primary">Clear Filters</a> <!-- Link to clear all filters -->
+            </div>
         </form>
     </div>
     <div class="row pt-4">
@@ -59,13 +73,13 @@
                             <div class="card-body">
                                 <div class="image-container">
                                     <div class="image-flash">
-                                        <p class="author">Author: {{ method.author }}</p>
+                                        <p class="author"> {{ method.like_set.count }} Likes</p>
                                     </div>
                                 </div>
                                 <a href="{% url 'method_page' method.slug %}" class="post-link">
                                     <h2 class="card-title">{{ method.title }}</h2>
-                                    <strong>Total Likes:</strong> {{ method.like_set.count }}
                                     <p>{{ method.summary }}</p>
+                                    <p><strong>Author: {{ method.author }}</strong></p>
                                 </a>
                                 <p class="card-text text-muted h6">{{ method.created_on}}
                                 </p>
