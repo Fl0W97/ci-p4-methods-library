@@ -36,7 +36,8 @@
                 </p>
                 <p class="card-text">
                     {{ method.instructions| safe }}
-                </p class="card-text">
+                </p>
+                <div>
                     <!-- start Like button code -->
                     <strong>Total Likes:</strong> {{ method.like_set.count }}
 
@@ -44,7 +45,7 @@
                         <!-- Like button, only visible to logged-in users -->
                         <form method="POST" action="{% url 'method_page' slug=method.slug %}">
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-like">
+                            <button type="submit" class="btn btn-primary">
                                 Like
                             </button>
                         </form>
@@ -52,6 +53,7 @@
                         <p>Log in to like this method.</p>
                     {% endif %}
                     <!-- endLike button code -->
+                </div>
             </div>
         </div>
     </div>

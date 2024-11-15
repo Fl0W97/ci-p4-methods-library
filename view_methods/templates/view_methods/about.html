@@ -5,10 +5,10 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-md-6 masthead-text p-2">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ about.title }}</h1>
-                <p>We just want to play...</p>
+                <h4>Sharing, learning, inspiring ...</h4>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                  <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder"> -->
@@ -17,11 +17,22 @@
     </div>
 </div>
 
+<div class="container"></div>
+    <div class="row justify-content-center">
+      <!-- Creating New Method-->
+      <div class="col-md-8 card mb-4 mt-3">
+        <div class="card-body fs-4">
+            <p>{{ about.body|safe }}</p>
+        </div>
+      </div>
+    </div>
+</div>
+
 <div class="row">
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3 left">
         <div class="row">
-            <p>{{ about.body|safe }}</p>
+            
         </div>
     </div>
 </div>
