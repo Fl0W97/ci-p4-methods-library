@@ -52,7 +52,7 @@ class Comment(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f" written by {self.author} | Created on {self.created_on}"
+        return f" written by {self.author} | {self.body} | Created on {self.created_on}"
 
 #new input for like button
 class Like(models.Model):
