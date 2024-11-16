@@ -7,9 +7,7 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title"> Hello {{ user.username }}, find here your collection:</h1>
-                <p>You created {{ method_list.count }} methods</p>
-                <p>You created {{ comment_list.count }} comments</p>
+                <h1 class="post-title"> Hello {{ user.username }}, find here your content you shared with the community</h1>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                  <img src="{% static 'images/default.jpg' %}" class="img-fluid" alt="placeholder">
@@ -18,8 +16,51 @@
     </div>
 </div>
 
+<div class="container">
+    <div class="row pb-5">
+        <div class="col-md-6 card mb-4 mt-3 left">
+            <h4 class="card-text">
+                You created {{ method_list.count }} methods
+            </h4>
+            {% for method in method_list %}
+                <div class="card-text pt-4">
+                    <a href="{% url 'method_page' method.slug %}" class="post-link">
+                        <h3 class="card-title">{{ method.title }}</h3>
+                        <p class="border-bottom">{{ method.summary }}</p>
+                    </a>
+                    <p class="text-muted h6">{{ method.created_on}} | total likes {{ method.like_set.count }}</p>
+                </div>
+                {% if forloop.counter|divisibleby:2 %}
+                {% endif %}
+            {% empty %}
+            <!-- This is displayed if method_list is empty -->
+            <p>No methods found.</p>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-6 card mb-4 mt-3 left">
+            <h4 class="card-text">
+                You created {{ comment_list.count }} comments
+            </h4>
+            {% for comment in comment_list %}
+                <div class="card-body">
+                    <a href="{% url 'method_page' comment.method.slug %}" class="post-link card-title"">
+                    </a>
+                    <p class="card-text rounded p-3 bg-white border">{{ comment.body }}</p>
+                    <p class="card-text text-muted">Created on: {{ comment.created_on }} | Posted on {{ comment.method.title }}</p>
+                </div>
+                {% if forloop.counter|divisibleby:2 %}
+                {% endif %}
+            {% empty %}
+            <!-- This is displayed if method_list is empty -->
+            <p>No comments found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--
 <div class="row">
-    <!-- Blog Entries Column -->
+     Blog Entries Column
     <div class="col-12 mt-3 left">
         <div class="row">
             {% for method in method_list %}
@@ -51,9 +92,10 @@
         </div>
     </div>
 </div>
-
+ -->
+<!--
 <div class="row">
-    <!-- Blog Entries Column -->
+     Blog Entries Column
     <div class="col-12 mt-3 left">
         <div class="row">
             {% for comment in comment_list %}
@@ -81,6 +123,8 @@
         </div>
     </div>
 </div>
+
+-->
 
 {% endblock content %}
 
