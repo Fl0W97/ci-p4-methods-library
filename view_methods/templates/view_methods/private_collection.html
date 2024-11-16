@@ -24,10 +24,17 @@
             </h4>
             {% for method in method_list %}
                 <div class="card-text pt-4">
+                    {% if method.status == 1 %}
+                    <!-- Display link if the method is approved (published) -->
                     <a href="{% url 'method_page' method.slug %}" class="post-link">
                         <h3 class="card-title">{{ method.title }}</h3>
                         <p class="border-bottom">{{ method.summary }}</p>
                     </a>
+                    {% else %}
+                        <!-- Show message if the method is not approved -->
+                        <div class="card-title">{{ method.title }} (Pending Approval)</div>
+                        <p class="text-muted h6">This method is awaiting approval.</p>
+                    {% endif %}
                     <p class="text-muted h6">{{ method.created_on}} | total likes {{ method.like_set.count }}</p>
                 </div>
                 {% if forloop.counter|divisibleby:2 %}
