@@ -20,26 +20,22 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
+    <div class="row pb-5">
+        <div class="col-md-8 card mb-4  mt-3 left">
+            <div class="card-body ">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
+                <h4 class="card-text"> Purpose</h4>
                 <p class="card-text">
-                    Purpose: {{ method.purpose | safe }}
+                    {{ method.purpose | safe }}
                 </p>
-                <p class="card-text">
-                    Material {{ method.material| safe }}
-                </p>
-                <p class="card-text">
-                    Preparation: {{ method.prep_time| safe }} | Duration: {{ method.duration| safe }}
-                </p>
-                <p class="card-text">
+                <h4 class="card-text">Instructions</h4>
+                <p class="card-text pb-2">
                     {{ method.instructions| safe }}
                 </p>
                 <div>
                     <!-- start Like button code -->
-                    <strong>Total Likes:</strong> {{ method.like_set.count }}
+                    <strong>total likes:</strong> {{ method.like_set.count }}
 
                     {% if user.is_authenticated %}
                         <!-- Like button, only visible to logged-in users -->
@@ -56,6 +52,20 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4 card mb-4  mt-3 left">
+          <h4 class="card-text">Preparation</h4>
+          <p class="card-text pb-2">
+              Preparation time: {{ method.prep_time| safe }}
+          </p>
+          <h4 class="card-text">Material</h4>
+          <p class="card-text pb-2">
+            Material: {{ method.material| safe }}
+          </p>
+          <h4 class="card-text"> Duration</h4>
+          <p class="card-text pb-2">
+             {{ method.duration| safe }}
+          </p>
+        </div>
     </div>
       <!-- Displaying count of comments -->
     <div class="row">
@@ -70,7 +80,7 @@
     </div>
     <!-- Displaying Comments -->
     <div class="row">
-      <div class="col-md-8 card mb-4  mt-3 ">
+      <div class="col-md-7 card mb-4 mt-3">
         <h3>Comments:</h3>
         <div class="card-body">
           <!-- We want a for loop inside the empty control tags
@@ -79,13 +89,13 @@
           <div class="p-2 comments
             {% if not comment.approved and comment.author == user %}
             faded{% elif not comment.approved %} d-none{% endif %}">
-            <p class="font-weight-bold">
+            <p class="font-weight-bold text-black-50">
               {{ comment.author }}
               <span class="font-weight-normal">
                 {{ comment.created_on }}
               </span> wrote:
             </p>
-            <div id="comment{{ comment.id }}">
+            <div id="comment{{ comment.id }}" class="border-bottom p-2">
               {{ comment.body | linebreaks }}
             </div>
             {% if not comment.approved and comment.author == user %}
@@ -105,7 +115,7 @@
         </div>
       </div>
       <!-- Creating New Comments -->
-      <div class="col-md-4 card mb-4 mt-3">
+      <div class="col-md-5 card mb-4 mt-3">
         <div class="card-body">
           {% if user.is_authenticated %}
           <h3>Leave a comment:</h3>
