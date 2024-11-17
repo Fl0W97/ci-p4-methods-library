@@ -22,7 +22,7 @@
 <div class="container">
     <div class="row pb-5">
         <div class="col-md-8 card mb-4  mt-3 left">
-            <div class="card-body ">
+            <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <h4 class="card-text"> Purpose</h4>
@@ -33,10 +33,9 @@
                 <p class="card-text pb-2">
                     {{ method.instructions| safe }}
                 </p>
-                <div>
-                    <!-- start Like button code -->
-                    <strong>total likes:</strong> {{ method.like_set.count }}
-
+                <div class="card-body text-end">
+                    <!-- Like button code -->
+                    <p>Total Likes: {{ method.like_count }}
                     {% if user.is_authenticated %}
                         <!-- Like button, only visible to logged-in users -->
                         <form method="POST" action="{% url 'method_page' slug=method.slug %}">
@@ -46,8 +45,9 @@
                             </button>
                         </form>
                     {% else %}
-                        <p>Log in to like this method.</p>
+                        Log in to like this method.
                     {% endif %}
+                  </p>
                     <!-- endLike button code -->
                 </div>
             </div>

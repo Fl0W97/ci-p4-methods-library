@@ -57,7 +57,7 @@ class Comment(models.Model):
 #new input for like button
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    method = models.ForeignKey(Method, on_delete=models.CASCADE)
+    method = models.ForeignKey(Method, on_delete=models.CASCADE, related_name='likes')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

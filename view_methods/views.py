@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Method, Comment, Like, About
 from .forms import CommentForm, MethodForm, AboutForm
+from django.db.models import Count
 
 
 # Create your views here.
@@ -31,15 +32,26 @@ class MethodList(generic.ListView):
         # Filter by location
         if location:
             queryset = queryset.filter(location=location)
+
+        # Annotate each method with the number of likes (using the related name 'likes')
+        queryset = queryset.annotate(like_count=Count('likes'))
+
+        # Order by the number of likes, descending
+        queryset = queryset.order_by('-like_count')
         
         return queryset
         
 
 #Display an individual :model:view_methods.method; template:`view_methods/method_page.html`
 def method_page(request, slug):
-
+    # Filter methods by status and get the method based on the slug
     queryset = Method.objects.filter(status=1)
     method = get_object_or_404(queryset, slug=slug)
+
+    # Annotate the method with the number of likes
+    method = Method.objects.annotate(like_count=Count('likes')).get(id=method.id)
+
+    # Get all comments for the method and count approved comments
     comments = method.comments.all().order_by("-created_on")
     comment_count = method.comments.filter(approved=True).count()
 
