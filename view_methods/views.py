@@ -42,7 +42,7 @@ class MethodList(generic.ListView):
         return queryset
         
 
-#Display an individual :model:view_methods.method; template:`view_methods/method_page.html`
+#Displays an individual :model:view_methods.method; template:`view_methods/method_page.html`
 def method_page(request, slug):
     # Filter methods by status and get the method based on the slug
     queryset = Method.objects.filter(status=1)
@@ -224,7 +224,6 @@ def user_collection(request):
 def about(request):
     return render(request, 'view_methods/about.html') """
     
-
 
 class AboutPageView(generic.TemplateView):
     template_name = 'view_methods/about.html'

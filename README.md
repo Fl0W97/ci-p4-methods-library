@@ -25,6 +25,7 @@ If the user is logged in he sees Home, About, Add a Mehtod, Your private Collect
 
 ### About page, about.html
 Shows what the webiste is about and introduces the creator of the website.
+
 <img src="README.images/README_about_page.PNG" alt="shows about page" width="700">
 
 
@@ -68,23 +69,25 @@ Sign-out
 
 ### Feature overview:
 
-| No. | Feature | Description  |
-| No. | ------------- |------------- |
+| No. | Feature | Description  | code |
+| --- | ------- |------------- | ---- |
+| 1 | Filter function | purpose, duration, location ... however, the filter options are hard coded, has to be added as asoon as a new purpose is implemented by the admin | |
+| 2 | View functions | various view function are used within the project generic ListView and TempalteView (class based) and further function-based ones. To see and sort the methods on the index.html, on private_collection.html, method_page.html (add examples)||
+| 3 | Authentification | User log in area to provide rights to create, update, comment and collect methods. Using allauth package ||
+| 4 | Add comments | CRUD for Comments | |
+| 5 | add Methods | Part of CRUD for Methods using using CrispyForms, adding summernote feature for a better editing||
+| 6 | admin panel customization | filtering, view adjustment (examples), adding summernote, adding info texts when entering values i.e. about, methods ||
+| 7 | From for about me content | Can be added easily by admin. Restriction is made by define queryset.filter.first() so taht only the first about page entry is shown. In addition, there is a hint in the admin panel, that just the first entry is displayed on the website by using fieldsets in class AboutAdmin (admin.py). |
+| 8 | Super user functionalities | ... |
+| 9 | like function | The logged-in User is able to like a method. Furthermore, there the like model is used to count the likes. The total number of likes is displayed and on the landing page it is sorted - the method with the highest number of likes is shown on the top. ||
+| 10 | Automatically slug transfer | By adding a ne method the user don't have to include content in the slug input filed (it might be deleted soon) ||
 
-| No. | Filter function | purpose, duration, location ... however, the filter options are hard coded, has to be added as asoon as a new purpose is implemented by the admin |
-| No. | View functions | various view function are used within the project generic ListView and TempalteView (class based) and further function-based ones. To see and sort the methods on the index.html, on private_collection.html, method_page.html (add examples)|
-| No. | Authentification | User log in area to provide rights to create, update, comment and collect methods. Using allauth package |
-| No. | Add comments | CRUD for Comments |
-| No. | add Methods | Part of CRUD for Methods using using CrispyForms, adding summernote feature for a better editing|
-| No. | admin panel customization | filtering, view adjustment (examples), adding summernote, adding info texts when entering values i.e. about, methods |
 
-| No. | From for about me content | Can be added easily by admin. Restriction is made by define queryset.filter.first() so taht only the first about page entry is shown. In addition, there is a hint in the admin panel, that just the first entry is displayed on the website by using fieldsets in class AboutAdmin (admin.py). |
-| No. | Super user functionalities | ... |
-| No. | like function | ... |
-| No. | ... | ... |
+
+
 
 ## User Stories, Project scope
-see in GItHub project [documented User Stories](https://github.com/Fl0W97/ci-p4-methods-library/issues) 
+see in GItHub project [Methods library](https://github.com/Fl0W97/ci-p4-methods-library/issues)
 
 ### Site Users (MVP)
 
@@ -151,11 +154,14 @@ body #F9FAFC
 
 
 
-### User feedback/ guidance
-notifications
+### User feedback/ guidance / CRUD
+There are various notifications which representing feedback for the user after CRUD activity. Besides log-in and sign-out, which is already shown in the above chapter, there are notifications for dealing with methods, comments and like buttons. The standard function message.add_message() is used and mostly combined with an if-clause. In the following a few examples are shared:
 
-
-(example)
+<img src="README.images/README_feedback_comment.PNG" alt="shows feedback comment">
+<img src="README.images/README_feedback_comment_edit.PNG" alt="shows feedback comment">
+<img src="README.images/README_feedback_comment_delete.PNG" alt="shows feedback comment">
+<img src="README.images/README_feedback_method.PNG" alt="shows feedback comment">
+<img src="README.images/README_feedback_like.PNG" alt="shows feedback comment">
 
 
 ## Databases
@@ -194,16 +200,15 @@ Database to store likes. Based on that the numbers of likes are displayed. Furth
 ## Testing
 
 - Testing was conducted regularly in small intervals throughout the development process as well as at the end of the project to ensure functionality and identify any potential issues early on.
-- Testing was conducted regularly in small intervals throughout the development process as well as at the end of the project to ensure functionality and identify any potential issues early on.
 - Bugs that were encountered during testing have been thoroughly documented in the Bug section, detailing the nature of the issue and the steps taken to resolve it.
 - Validators were used to ensure that the code meets all necessary standards and specifications. More details can be found in the Validators chapter.
 - Logic checks were performed to verify that the program's operations and algorithms were working as intended. This included testing different scenarios and edge cases to ensure robustness.
 - Manual input tests were carried out to simulate real-world usage of the application. This involved entering data manually into the system to ensure that all inputs were handled correctly and that the user interface responded appropriately.
 
 
+### Automated testing
 
-
-####view_methods/test_views.py
+#### view_methods/test_views.py
 
 TestMethodViews: Tests if the method page correctly displays a method and its comments.
 
@@ -211,14 +216,19 @@ class TestMethodViews(TestCase)
     def setUp(self)
     def test_render_method_detail_page_with_comment_form(self)
 
+<img src="README.images/README_testing_TestMethodView.PNG" alt="shows TestMethodView">
+    
+
 TestMethodFilteringViews(TestCase): Tests filtering by purpose, duration, and location for the MethodList view.
 
 class TestMethodFilteringViews(TestCase)
     def setUp(self)
     def test_filter_methods_by_purpose(self)
 
+<img src="README.images/README_testing_TestMethodFiltering.PNG" alt="shows TestMethodFiltering">
 
-####view_methods/test_forms.py
+
+#### view_methods/test_forms.py
 
 TestCommentForm(TestCase); Tests adding a new comment with valid and invalid input
 
@@ -226,9 +236,11 @@ class TestCommentForm(TestCase)
     def test_form_is_valid(self)
     def test_form_is_invalid(self)
 
+<img src="README.images/README_testing_TestCommentForm.PNG" alt="shows TestCommentForm">
 
 
-/// IDEAS for testing ///
+
+/// further IDEAS for automated tests ///
 Test_views.py
 CommentCreateTest: Tests creating a new comment on the method page.
 CommentEditTest: Tests editing a comment and ensuring only the author can edit it.
@@ -255,8 +267,9 @@ So, for now, keeping it within the same app (view_methods). It keeps things simp
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
-| Error during migrate | django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | ... | 
-
+| django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | Error during database migration. According to the error message the migration file 003 contains an error. However, after adjsuting the file the some error occured.| <img src="README.images/README_bug_error_message_syntax error_none.PNG" alt="shows error message"> | Old migration files has been saved outside the project and deleted in the project. New command "python3 manage.py migrate" has been done. A new migration file exists and is working. |
+| django.db.utils.OperationalError: near "None": syntax error | The error occured during testing. The local database db.sqlite had an inconsistency. The migration file "view_methods.0003_alter_method_alt_atr_alter_method_duration_and_more" had a failre related to NONE. After seveal tries to fix the issue I decided to focus on the rest of the project. | ...| I saved all migration files and removed them from the project. Then I run pyhton3 manage.py makemigrations and python3 manage.py migrate.|
+| Uncaught Type Error: this._element is undefined | Customization summernote for admin panel | <img src="README.images/README_bug_js_summernote_customization_code.PNG" alt="shows error message in console"> | function was deleted |
 
 **Error message in terminal**
 
@@ -267,8 +280,11 @@ So, for now, keeping it within the same app (view_methods). It keeps things simp
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
-| ... | ... | <img src="README.images/" alt="image shows Error message"> | ... |
-django.db.utils.OperationalError: near "None": syntax error | The error occured during testing. The local database db.sqlite had an inconsistency. The migration file "view_methods.0003_alter_method_alt_atr_alter_method_duration_and_more" had a failre related to NONE. After seveal tries to fix the issue I decided to focus on the rst of the project. I saved all migration files and removed them from the project. Then I did pyhton3 manage.py makemigrations and python3 manage.py migrate.
+| Wrong column order is displayed | Ater adjusting the mehtod_page.html the position of the div has been wrong and overlapping.| <img src="README.images/..." alt="image shows Error message"> | adding the correct Bootstrap utility class to the relevant divs (class="col-md-8" and class="col-md-4" so that column range 12/12 is valid) |
+| "File not existing" and old css code is displayed in production | There was no error message, however, the requested result was not displayed. After adding the new images, new code I missed to run "python manage.py collectstatic" | ... | run "python manage.py collectstatic" |
+| Couldn't find host |------------- | <img src="README.images/..." alt="image shows Error message"> | Add my host adress to settings.py allowed hosts.|
+| Server 505, ... | failrue in views.py ... | <img src="README.images/..." alt="image shows Error message"> | -----------|
+| indetation ... | failrue in views.py ... | <img src="README.images/..." alt="image shows Error message"> | -----------|
 
 
 ### Validator Testing
@@ -318,6 +334,9 @@ views.py
         group_size_min = cleaned_data.get('group_size_min')
         group_size_max = cleaned_data.get('group_size_max')
 
+...
+
+
 
 #### Accessability
 I confirm that the selected colors and fonts are easy to read and accessible by using Lighthouse in devtools (Chrome).
@@ -341,19 +360,36 @@ The main functions are generated with Python. However, to set up the whole proje
 - Html
 - CSS
 - Django
-- test JS
+- test JS 8MANDATORß
 - test Phython
-- Bootstrap
+- Bootstrap5
 - Crsipy Forms package
 - summernote package
 - allauth package
 
+requirements.txt:
+
+- asgiref==3.8.1
+- crispy-bootstrap5==0.7
+- dj-database-url==0.5.0
+- Django==4.2.7
+- django-allauth==0.57.2
+- django-crispy-forms==2.3
+- django-summernote==0.8.20.0
+- gunicorn==20.1.0
+- oauthlib==3.2.2
+- psycopg2==2.9.10
+- PyJWT==2.9.0
+- python3-openid==3.2.0
+- requests-oauthlib==2.0.0
+- sqlparse==0.5.1
+- whitenoise==6.5.0
 
 
 ## Deployment
 The site was deployed to a Heroku page using a GitHub repository for data storage.
 
-    Heroku page: ...
+    Heroku page: https://dashboard.heroku.com/apps/methods-library/deploy/github
 
     GitHub repository: https://github.com/Fl0W97/ci-p4-methods-library
 
@@ -379,6 +415,44 @@ The steps to set up your repository in GitHub are as follows:
 
 </details>
 
+### settings.py
+The settings.py file is already included in Djangp orject. However, to set up this project further adjustements has to be done:
+
+
+#### Secret Key
+To ensure that the secret.key is not provided to heroku or the git storage an env.py file is created to store the sensitive data.
+The keys will be passed via os.environ.setdefault() function. There are two keys, which both has to be provided to heroku. First, the postgreSQL key which is generated via Code Institute and the secret_key which also mentioned in settings.py.
+
+<img src="README.images/README_settings_secret_key.PNG" alt="image shows secret key documentation in settings.py"> 
+
+#### Allowed Hosts
+Make sure to document your own host name as well as the heroku host name. In addition you can add further hosts if needed in the same list.
+<img src="README.images/README_settings.py_allowed_hosts.PNG" alt="image shows allowed hosts documentation in settings.py"> 
+
+#### CRSF_TRUSTED_ORIGINS
+CSRF_TRUSTED_ORIGINS setting is used to specify a list of trusted domains or origins for Cross-Site Request Forgery (CSRF) protection. When you include CSRF_TRUSTED_ORIGINS in your settings.py file, you are telling Django which domains or URLs are trusted when submitting CSRF tokens, specifically for cross-origin requests (e.g., when your frontend and backend are served from different domains).
+
+<img src="README.images/README_settings.py_CSRF_TRUSTED.PNG" alt="image shows csrf trusted documentation in settings.py"> 
+
+#### Middleware
+In Django, middleware is a framework of hooks that allows you to process requests globally before they reach the view (request processing) and after they leave the view (response processing). Middleware components are processed in the order they are listed in the MIDDLEWARE setting in your settings.py file.
+
+Middleware is essentially a layer that sits between the request and the response, providing a way to process and modify requests before they reach the view, and modify responses before they are returned to the client.
+<img src="README.images/README_settings.py_middleware.PNG" alt="image shows middleware list documentation in settings.py">
+
+#### Templates
+In Django, templates are a framework used via Bootstrap to simplify the handling of multiple site wihtin one project. There is one base.html which defines the header and footer of the webiste. The main section is mostly empty and filled with various custom template input. The relevant Bootstrap tags which aer used for the combination of base.html and i.e. index.html are {% block content %}, {% endblock content %} and in index.html {% extends "base.html" %}, {% block content %}, {% endblock %}. To enale this functionality the following content has to be added to the settings.
+<img src="README.images/README_settings.py_templates.PNG" alt="image shows template documentation in settings.py">
+
+#### Databases
+In this project two databases are used.More information is shared in the subchapter databases. Here it is documented how both databases are added to the project in the settings.
+<img src="README.images/README_settings.py_databases.PNG" alt="image shows database documentation in settings.py">
+
+
+#### Forms (CrispyForms)
+'Crispy Forms' is a package provided by Django. It offers a range of edit possibilites in a from for the creator. See below how it is included in the settings.
+<img src="README.images/README_settings.py_crispyForms.PNG" alt="image shows crispyForm documentation in settings.py">
+
 
 ### Configure Heroku 
 The steps to configure Heroku are as follows:
@@ -386,53 +460,59 @@ The steps to configure Heroku are as follows:
 Log in to your account, or set up a new one
 Create a new app on Heroku
 
-<img src="README.images/heroku_create_new_app.PNG" alt="image shows infos about heroku set up"> 
+<img src="README.images/README_heroku_create_new_app.PNG" alt="image shows infos about heroku set up"> 
+
+There are two keys, which both has to be provided to heroku. First, the postgreSQL key which is generated via Code Institute and the secret_key
+
 
 #### Connect to GitHub
 Next, you can configure deploys with Github. If you prefer to deploy without using Github, you can read Heroku's deployment ([documentation](https://devcenter.heroku.com/categories/deployment)). 
 
 In the Deploy tab, select the option to Connect this app to GitHub
 
-<img src="README.images/heroku_connect_to_github1.PNG" alt="image shows infos about heroku set up" width="600px">
+<img src="README.images/README_heroku_connect_to_github1.PNG" alt="image shows infos about heroku set up" width="600px">
 
 Select the branch you want to deploy your app from
 
-<img src="README.images/heroku_manually_deployment.PNG" alt="image shows infos about heroku set up" width="600px">
+<img src="README.images/README_heroku_manually_deployment.PNG" alt="image shows infos about heroku set up" width="600px">
+
 
 #### Add Discord credentials
 Before your app can go online, you'll have to configure your Heroku environment with your Discord bot's credentials:
 Add your bot’s TOKEN, GUILD_ID, CLIENT_ID, and any other credentials your bot might need. More details on credentials for Baker bot can be found in the tutorial.
 
-<img src="README.images/heroku_credentials.PNG" alt="image shows infos about heroku set up" width="600px">
+<img src="README.images/README_heroku_credentials.PNG" alt="image shows infos about heroku set up" width="600px">
+
 
 #### Add a buildpack
 Next, add a Heroku buildpack to your app. Click add a buildpack to your app and configure it for NodeJS.
 
-<img src="README.images/heroku_add_builpack.PNG" alt="image shows infos about heroku set up" width="600px">
+<img src="README.images/README_heroku_add_builpack.PNG" alt="image shows infos about heroku set up" width="600px">
 
 
 ### Configure database
-see Code Institute documentation
+see Code Institute documentation for more details.
+/// Instruction coming ///
+
 
 
 ## Improvements and ideas for subsequent projects
 
-- adding a tool to provide a scheudle for a whwole workshop day incl. mehtods and games
+There are still open User Stories in the Backlog which can be added to the project for further improvments. There are ideas to provide more possibilites for the method managment for the Site Users. Not just creating, but editing. In addition, the Site User might have an additional area where he can storage methods he finds well to and reuse them for his workshops.
 
 ## Credits
 
 ### Content
-By going through the API documentation and further examples of Alpha Vantage I decided which options will be added. Series update and smybol search seems a good start for providing stock information.
-
 
 Description of Heroku deployment is resused from github project
 https://github.com/discord/heroku-sample-app/blob/main/README.md
 
-Ideas and documentation of The walkthrough Project4  were was reused and adjusted.
 
-https://www.sessionlab.com/
+Ideas and documentation of The walkthrough Project4 was reused and adjusted.
 
-Insiration for functionalities
+https://www.sessionlab.com/ - Insiration for functionalities and content for methods
+
+
 
 
 filters:
