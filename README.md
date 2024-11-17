@@ -136,12 +136,25 @@ Custom Templates, methods_library/view_methods/templates
 
  
 ### Stylesheed 
-style.css
 
-colr schema
+Within style.css standard Bootstrap utility classes are defined.
+
+The color schema should be light with dark accents. Encauraging to share and inspire.
+
+body #F9FAFC
+
+.light-bg background-color: #fff
+
+.dark-bg background-color: #445261
+
+.main-bg background-color: #F9FAFC
+
+
 
 ### User feedback/ guidance
 notifications
+
+
 (example)
 
 
