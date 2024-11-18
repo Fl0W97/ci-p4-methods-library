@@ -10,7 +10,13 @@
 
 <head>
     <title>TeamCrafted</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+
+    <!-- Meta tags for search engines -->
+    <meta name="description" content="Library about methodologies, tools and techniques to support and interact with teams. Platform for sharing and finding methodologies for Scrum Master and Team Coaches">
+    <meta name="keywords" content="methodologies, scrum, sAFe, agile, methods, tools, team, teams, coaching, moderation, energizer, team building, idea generation.">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -37,49 +43,55 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><span class="red-o">Team</span><span
-                        class="thin">|Crafted</span></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page" href="{% url 'about' %}">About</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == method_creation_url %}active{% endif %}" aria-current="page" href="{% url 'method_creation' %}">Add a Method</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == private_collection_url %}active{% endif %}" aria-current="page" href="{% url 'private_collection' %}">Your private Collection</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><span class="red-o">Team</span><span
+                            class="thin">|Crafted</span></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page" href="{% url 'about' %}">About</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == method_creation_url %}active{% endif %}" aria-current="page" href="{% url 'method_creation' %}">Add a Method</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == private_collection_url %}active{% endif %}" aria-current="page" href="{% url 'private_collection' %}">Your private Collection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
 
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- displaying Django messages -->
+        </nav>
+    </header>
+
+
+    <main class="flex-shrink-0 main-bg">
+
+        <!-- displaying Django messages -->
         <div class="container-fluid d-flex justify-content-center align-items-center" >
             <div class="text-center">
                 {% for message in messages %}
@@ -92,8 +104,6 @@
                 {% endfor %}
             </div>
         </div>
-
-    <main class="flex-shrink-0 main-bg">
 
         {% if user.is_authenticated %}
         <p class="text-end m-3"><strong>You are logged in as {{ user }}</strong></p>
