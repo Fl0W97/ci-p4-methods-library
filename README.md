@@ -163,11 +163,21 @@ There are various notifications which representing feedback for the user after C
 <img src="README.images/README_feedback_method.PNG" alt="shows feedback comment">
 <img src="README.images/README_feedback_like.PNG" alt="shows feedback comment">
 
+## Agile Metholodgy 
+GitHub Project Management was used to manage the project.
+
+<img src="README.images/README_.PNG" alt="shows GitHub kanban board">
+<img src="README.images/README_.PNG" alt="shows GitHub kanban board">
+
 
 ## Databases
 PostgreSQL is used for production and Sqlite3 is used for .
 
-#### ERD_method
+### ERD Entity Relationshop Diagram overview
+<img src="README.images/README_ERD_overview.PNG" alt="shows ERD_overview_">
+
+
+#### ERD_table_method
 Main database to store and manage methods. Can be created by Admin and logged-in users.
 Admin has to approve the new method before it is displayed on the website. Edit or delete functionality is only given to Admin.
 
@@ -175,21 +185,21 @@ Admin has to approve the new method before it is displayed on the website. Edit 
 <img src="README.images/README_ERD_method_code.PNG" alt="shows ERD method code">
 
 
-#### ERD_comments
+#### ERD_table_comments
 Database to store and manage comments. Can be created by Admin and logged-in users
 Admin has to approve the new comment before it is displayed on the website. Edit or delete functionality is only given to Admin and authorized users.
 
 <img src="README.images/README_ERD_comments.PNG" alt="shows ERD_comments">
 <img src="README.images/README_ERD_comments_code.PNG" alt="shows ERD comments code>
 
-#### ERD_about
+#### ERD_table_about
 Database to store and manage content for the about page. Can be adjsuted only by Admin.
 The form helps the Admin to adjsut the content without ajdusting the code so that the admin don't need coding skills to make adjustments.
 
 <img src="README.images/README_ERD_about.PNG" alt="shows ERD_about">
 <img src="README.images/README_ERD_about_code.PNG" alt="shows ERD about code">
 
-#### ERD_like
+#### ERD_table_like
 Database to store likes. Based on that the numbers of likes are displayed. Furthermore, the ListView on the landing page sorts the methods based on the number of likes. The more likes a method gets the more on top the method is displayed.
 
 <img src="README.images/README_ERD_like.PNG" alt="shows ERD_like">
@@ -197,57 +207,6 @@ Database to store likes. Based on that the numbers of likes are displayed. Furth
 
 
 
-## Testing
-
-- Testing was conducted regularly in small intervals throughout the development process as well as at the end of the project to ensure functionality and identify any potential issues early on.
-- Bugs that were encountered during testing have been thoroughly documented in the Bug section, detailing the nature of the issue and the steps taken to resolve it.
-- Validators were used to ensure that the code meets all necessary standards and specifications. More details can be found in the Validators chapter.
-- Logic checks were performed to verify that the program's operations and algorithms were working as intended. This included testing different scenarios and edge cases to ensure robustness.
-- Manual input tests were carried out to simulate real-world usage of the application. This involved entering data manually into the system to ensure that all inputs were handled correctly and that the user interface responded appropriately.
-
-
-### Automated testing
-
-#### view_methods/test_views.py
-
-TestMethodViews: Tests if the method page correctly displays a method and its comments.
-
-class TestMethodViews(TestCase)
-    def setUp(self)
-    def test_render_method_detail_page_with_comment_form(self)
-
-<img src="README.images/README_testing_TestMethodView.PNG" alt="shows TestMethodView">
-    
-
-TestMethodFilteringViews(TestCase): Tests filtering by purpose, duration, and location for the MethodList view.
-
-class TestMethodFilteringViews(TestCase)
-    def setUp(self)
-    def test_filter_methods_by_purpose(self)
-
-<img src="README.images/README_testing_TestMethodFiltering.PNG" alt="shows TestMethodFiltering">
-
-
-#### view_methods/test_forms.py
-
-TestCommentForm(TestCase); Tests adding a new comment with valid and invalid input
-
-class TestCommentForm(TestCase)
-    def test_form_is_valid(self)
-    def test_form_is_invalid(self)
-
-<img src="README.images/README_testing_TestCommentForm.PNG" alt="shows TestCommentForm">
-
-
-
-/// further IDEAS for automated tests ///
-Test_views.py
-CommentCreateTest: Tests creating a new comment on the method page.
-CommentEditTest: Tests editing a comment and ensuring only the author can edit it.
-CommentDeleteTest: Tests deleting a comment and ensuring only the author can delete it.
-Testing Like counter
-Testing new app "collection"
-/// IDEAS for testing ///
 
 
 ### Decisions during development
@@ -263,78 +222,6 @@ If in the future the requirements become more complex and the view_methods app g
 So, for now, keeping it within the same app (view_methods). It keeps things simpler and more maintainable.
 
 
-### Bugs (not fixed)
-
-| Bug | Description  | images (optional) | Correction |
-| --- |------------- | ----------------- | -----------|
-| django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | Error during database migration. According to the error message the migration file 003 contains an error. However, after adjsuting the file the some error occured.| <img src="README.images/README_bug_error_message_syntax error_none.PNG" alt="shows error message"> | Old migration files has been saved outside the project and deleted in the project. New command "python3 manage.py migrate" has been done. A new migration file exists and is working. |
-| django.db.utils.OperationalError: near "None": syntax error | The error occured during testing. The local database db.sqlite had an inconsistency. The migration file "view_methods.0003_alter_method_alt_atr_alter_method_duration_and_more" had a failre related to NONE. After seveal tries to fix the issue I decided to focus on the rest of the project. | ...| I saved all migration files and removed them from the project. Then I run pyhton3 manage.py makemigrations and python3 manage.py migrate.|
-| Uncaught Type Error: this._element is undefined | Customization summernote for admin panel | <img src="README.images/README_bug_js_summernote_customization_code.PNG" alt="shows error message in console"> | function was deleted |
-
-**Error message in terminal**
-
-**Suggestion for fixation. However, implementation was not successful**
-
-
-### Bugs (fixed)
-
-| Bug | Description  | images (optional) | Correction |
-| --- |------------- | ----------------- | -----------|
-| Wrong column order is displayed | Ater adjusting the mehtod_page.html the position of the div has been wrong and overlapping.| <img src="README.images/..." alt="image shows Error message"> | adding the correct Bootstrap utility class to the relevant divs (class="col-md-8" and class="col-md-4" so that column range 12/12 is valid) |
-| "File not existing" and old css code is displayed in production | There was no error message, however, the requested result was not displayed. After adding the new images, new code I missed to run "python manage.py collectstatic" | ... | run "python manage.py collectstatic" |
-| Couldn't find host |------------- | <img src="README.images/..." alt="image shows Error message"> | Add my host adress to settings.py allowed hosts.|
-| Server 505, ... | failrue in views.py ... | <img src="README.images/..." alt="image shows Error message"> | -----------|
-| indetation ... | failrue in views.py ... | <img src="README.images/..." alt="image shows Error message"> | -----------|
-
-
-### Validator Testing
-Validator testing has been done on:
-
-#### [CI Python validator](https://pep8ci.herokuapp.com/)
-No errors were returned for run.py
-
-<img src="README.images/PI_python_linter_validation.PNG" alt="image shows preview of validator results" width="800px">
-
-<details>
-    <summary>further results of HTML, CSS Validator</summary>
-
-<img src="" alt="image shows preview of validator results" width="500px">
-<img src=""_html_end.PNG alt="image shows preview of validator results" width="800px">
-
-
-#### [HTML validator](https://validator.w3.org/)
-No errors were returned
-
-<img src="README.images/HTML_validation.PNG" alt="image shows preview of validator results" width="500px">
-
-
-#### [CSS validator](https://jigsaw.w3.org/css-validator/)
-No errors were returned
-
-<img src="README.images/CSS_validation.PNG" alt="image shows preview of validator results" width="500px">
-
-
-#### [JS Validator] (https://jshint.com/)
-Errors occured. However, since I reused the suggested template from Code Institute and I haven't made any adjustments I keep the current status.
-
-Code from index.js and defaul.js checked. 
-
-Here an example of index.js
-<img src="README.images/JS_validation.PNG" alt="image shows preview of validator results" width="500px">
-
-</details>
-
-
-### Validations in the code
-
-views.py
-    # validation
-    def clean(self):
-        cleaned_data = super().clean()
-        group_size_min = cleaned_data.get('group_size_min')
-        group_size_max = cleaned_data.get('group_size_max')
-
-...
 
 
 
@@ -348,42 +235,75 @@ I confirm that the selected colors and fonts are easy to read and accessible by 
 
 The main functions are generated with Python. However, to set up the whole project a standard template consits of files of json, js, txt, html and css.
 
-- node.js
-- phython (import prettyTable, os, gspread, datetime, requests, json)
-- Git used for version control (git status, git add, git commit)
-- GitHub used for secure online code storage
-- GitHub Pages used for hosting the deployed front-end site
-- GitHub- template reused from love sandwiches
-- Gitpod used for local IDE for development
-- Heroku
-- JavaScript
-- Html
-- CSS
-- Django
-- test JS 8MANDATORß
-- test Phython
-- Bootstrap5
-- Crsipy Forms package
-- summernote package
-- allauth package
 
-requirements.txt:
+### Languages ###
 
-- asgiref==3.8.1
-- crispy-bootstrap5==0.7
-- dj-database-url==0.5.0
-- Django==4.2.7
-- django-allauth==0.57.2
-- django-crispy-forms==2.3
-- django-summernote==0.8.20.0
-- gunicorn==20.1.0
-- oauthlib==3.2.2
-- psycopg2==2.9.10
-- PyJWT==2.9.0
-- python3-openid==3.2.0
-- requests-oauthlib==2.0.0
-- sqlparse==0.5.1
-- whitenoise==6.5.0
+    Python 3.8.5: The primary programming language used for developing the backend of the website.
+    JavaScript (JS): The main language used for implementing dynamic and interactive features on the website.
+    HTML: The markup language employed to structure the content on the website.
+    CSS: The stylesheet language used to design and layout the visual appearance of the website.
+
+### Frameworks and libraries ###
+
+    Django: A Python framework that handles the backend logic and functionalities of the website.
+    jQuery: Utilized to manage click events and facilitate AJAX requests for smoother user interactions.
+    jQuery UI: Used to implement various interactive elements such as sliders, dialogs, and date pickers.
+    Bootstrap: A framework used to build responsive, mobile-first web pages quickly, ensuring a consistent design across devices.
+
+### Databases ###
+
+    SQLite: The lightweight database used during development and testing phases.
+    PostgreSQL: The production-grade relational database used to store all website data.
+
+### Other tools ###
+
+    Git: The version control system that tracks changes in the code and enables collaboration among developers.
+    Pip3: The Python package manager used to install and manage project dependencies.
+    Render: A platform used to render and display the project’s README file.
+    GitHub: A platform that hosts the website’s source code and facilitates project management through features like the Kanban board.
+    Chrome DevTools: The developer tools in Google Chrome used to debug and inspect the website’s frontend.
+    Font Awesome: A library used to incorporate scalable vector icons into the website.
+    Coolors: A tool used to generate a color palette for the website’s design.
+    W3C Validator: A tool used to validate the HTML5 code to ensure it follows best practices and standards.
+    W3C CSS Validator: A tool used to validate the CSS code, ensuring it conforms to web standards.
+    JSHint: A tool used to check JavaScript code for potential errors or problems.
+    PEP8: A tool used to check the Python code against the PEP8 coding standards for readability and consistency.
+    Miro: A tool used to create visual diagrams, such as the Entity-Relationship Diagram for the project.
+    Heroku: A cloud platform used to deploy and host the website in a production environment.
+    Gitpod: A cloud-based IDE used for local development and coding.
+
+
+### Installed packages requirements.txt ###
+
+asgiref==3.8.1: A utility library for Python that provides asynchronous server gateway interface (ASGI) support for Django and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.
+
+crispy-bootstrap5==0.7: A Django package that integrates the Bootstrap 5 framework with Django Crispy Forms, making it easier to render Bootstrap-styled forms with a clean and responsive layout.
+
+dj-database-url==0.5.0: A library that simplifies the database connection setup in Django by parsing the DATABASE_URL environment variable and configuring the database settings accordingly, commonly used for cloud deployment.
+
+Django==4.2.7: The web framework used for building the website's backend, offering a powerful, flexible, and secure platform for web application development, including routing, database management, and templating.
+
+django-allauth==0.57.2: A Django package for handling authentication, registration, and account management. It supports login via social accounts (e.g., Google, Facebook) and traditional email/password-based login.
+
+django-crispy-forms==2.3: A Django library that provides better control over the rendering of forms by allowing you to use a simpler, cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.
+
+django-summernote==0.8.20.0: A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text editing. It's used to enhance text areas for content creation by users.
+
+gunicorn==20.1.0: A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production environments. It's known for its speed and ability to handle multiple requests concurrently.
+
+oauthlib==3.2.2: A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for handling secure access to protected resources via third-party authentication services.
+
+psycopg2==2.9.10: A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for interacting with the relational database in the backend of the website.
+
+PyJWT==2.9.0: A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting information and managing user authentication in web applications.
+
+python3-openid==3.2.0: A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across multiple applications. It's integrated into django-allauth for user authentication via third-party providers.
+
+requests-oauthlib==2.0.0: An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API requests. It's used for handling authentication in API calls that require OAuth.
+
+sqlparse==0.5.1: A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging and optimizing database queries within Django projects.
+
+whitenoise==6.5.0: A static file management library for Django, used to serve static files in a production environment. It simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.
 
 
 ## Deployment

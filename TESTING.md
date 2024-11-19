@@ -7,48 +7,6 @@
 - Manual input tests were carried out to simulate real-world usage of the application. This involved entering data manually into the system to ensure that all inputs were handled correctly and that the user interface responded appropriately.
 
 
-## Automated testing
-
-### view_methods/test_views.py
-
-TestMethodViews: Tests if the method page correctly displays a method and its comments.
-
-class TestMethodViews(TestCase)
-    def setUp(self)
-    def test_render_method_detail_page_with_comment_form(self)
-
-<img src="README.images/README_testing_TestMethodView.PNG" alt="shows TestMethodView">
-    
-
-TestMethodFilteringViews(TestCase): Tests filtering by purpose, duration, and location for the MethodList view.
-
-class TestMethodFilteringViews(TestCase)
-    def setUp(self)
-    def test_filter_methods_by_purpose(self)
-
-<img src="README.images/README_testing_TestMethodFiltering.PNG" alt="shows TestMethodFiltering">
-
-
-### view_methods/test_forms.py
-
-TestCommentForm(TestCase); Tests adding a new comment with valid and invalid input
-
-class TestCommentForm(TestCase)
-    def test_form_is_valid(self)
-    def test_form_is_invalid(self)
-
-<img src="README.images/README_testing_TestCommentForm.PNG" alt="shows TestCommentForm">
-
-
-
-/// further IDEAS for automated tests ///
-Test_views.py
-CommentCreateTest: Tests creating a new comment on the method page.
-CommentEditTest: Tests editing a comment and ensuring only the author can edit it.
-CommentDeleteTest: Tests deleting a comment and ensuring only the author can delete it.
-Testing Like counter
-Testing new app "collection"
-/// IDEAS for testing ///
 
 ## Manual Testing Plan
 
@@ -78,11 +36,44 @@ These are additional tests to ensure the overall quality, performance, security,
 | **3. Performance Testing**   | Ensure the website performs optimally under various conditions, especially with large datasets.                  | 1. Load the website with a large number of methods and comments. <br> 2. Test the "Next" button, pagination, and filtering with large data sets. <br> 3. Measure page load time and response times for actions (e.g., adding comments). | - **Load Time**: Test how long it takes for the website to load and interact with large amounts of data. <br> - **Smooth Navigation**: Ensure pagination and filtering work smoothly without delays. <br> - **Stress Testing**: Test how the website behaves with large user actions (e.g., adding multiple comments, methods). <br> - **Page Load Time**: Ensure that each page loads in less than 3 seconds under normal conditions. |[ ]||
 | **4. Security Testing**      | Ensure that user data is securely handled and sensitive information is protected.                                | 1. Test the login and registration process for vulnerabilities (e.g., SQL injection, XSS). <br> 2. Test encrypted communication (HTTPS). <br> 3. Test password recovery and reset flow. <br> 4. Check if sensitive user data is securely stored (passwords, emails). | - **Login Security**: Ensure passwords are stored securely using encryption (e.g., bcrypt). <br> - **SSL Encryption**: Verify that SSL is enabled and the website uses HTTPS. <br> - **Session Management**: Ensure that user sessions are managed securely and session data is cleared upon logout. <br> - **Sensitive Data Protection**: Test that sensitive user information (e.g., passwords) is not exposed in logs, URLs, or front-end code. |[ ]||
 
----
+
+## Testing User Stories
+
+**User Stories for Site Admin**
+
+ **User Story** | **Requirement met (y/n)** |  **Image**|
+--------------- |---------------------------|-----------|
+| ... | y ||
+
+
+**User Stories for Site User**
+
+ **User Story** | **Requirement met (y/n)** |  **Image**|
+--------------- |---------------------------|-----------|
+| MVP: Providing first methods #11 | y ||
 
 
 
-### Bugs (not fixed)
+## Automated testing
+
+| **test file** | **Objective** | **Test Code (image)** | **Test Completed** | **Comments** |
+|---------------|-------------- |-------------|--------------------|--------------|
+| view_methods/test_views.py | Tests if the method page correctly displays a method and its comments. | <img src="README.images/README_testing_TestMethodView.PNG" alt="shows TestMethodView"> |[ ]||
+| view_methods/test_views.py | Tests filtering by purpose, duration, and location for the MethodList view. | <img src="README.images/README_testing_TestMethodFiltering.PNG" alt="shows TestMethodFiltering"> |[ ]||
+| view_methods/test_forms.py | Tests adding a new comment with valid and invalid input | <img src="README.images/README_testing_TestCommentForm.PNG" alt="shows TestCommentForm"> |[ ]||
+
+
+/// further IDEAS for automated tests ///
+Test_views.py
+CommentCreateTest: Tests creating a new comment on the method page.
+CommentEditTest: Tests editing a comment and ensuring only the author can edit it.
+CommentDeleteTest: Tests deleting a comment and ensuring only the author can delete it.
+Testing Like counter
+Testing new app "collection"
+/// IDEAS for testing ///
+
+
+## Bugs (not fixed)
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
@@ -95,7 +86,7 @@ These are additional tests to ensure the overall quality, performance, security,
 **Suggestion for fixation. However, implementation was not successful**
 
 
-### Bugs (fixed)
+## Bugs (fixed)
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
@@ -106,10 +97,10 @@ These are additional tests to ensure the overall quality, performance, security,
 | indetation ... | failrue in views.py ... | <img src="README.images/..." alt="image shows Error message"> | -----------|
 
 
-### Validator Testing
+## Validator Testing
 Validator testing has been done on:
 
-#### [CI Python validator](https://pep8ci.herokuapp.com/)
+### [CI Python validator](https://pep8ci.herokuapp.com/)
 No errors were returned for run.py
 
 <img src="README.images/PI_python_linter_validation.PNG" alt="image shows preview of validator results" width="800px">
@@ -121,19 +112,19 @@ No errors were returned for run.py
 <img src=""_html_end.PNG alt="image shows preview of validator results" width="800px">
 
 
-#### [HTML validator](https://validator.w3.org/)
+### [HTML validator](https://validator.w3.org/)
 No errors were returned
 
 <img src="README.images/HTML_validation.PNG" alt="image shows preview of validator results" width="500px">
 
 
-#### [CSS validator](https://jigsaw.w3.org/css-validator/)
+### [CSS validator](https://jigsaw.w3.org/css-validator/)
 No errors were returned
 
 <img src="README.images/CSS_validation.PNG" alt="image shows preview of validator results" width="500px">
 
 
-#### [JS Validator] (https://jshint.com/)
+### [JS Validator] (https://jshint.com/)
 Errors occured. However, since I reused the suggested template from Code Institute and I haven't made any adjustments I keep the current status.
 
 Code from index.js and defaul.js checked. 
@@ -153,5 +144,7 @@ views.py
         group_size_min = cleaned_data.get('group_size_min')
         group_size_max = cleaned_data.get('group_size_max')
 
-...
 
+## Lighthouse Reports
+
+## Responisvness
