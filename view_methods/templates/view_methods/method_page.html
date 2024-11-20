@@ -35,20 +35,26 @@
                 </p>
                 <div class="card-body text-end">
                     <!-- Like button code -->
-                    <p>Total Likes: {{ method.like_count }}
-                    {% if user.is_authenticated %}
-                        <!-- Like button, only visible to logged-in users -->
-                        <form method="POST" action="{% url 'method_page' slug=method.slug %}">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-primary">
-                                Like
-                            </button>
-                        </form>
+                    <p>Total Likes: {{ method.like_count }}</p>
+                    {% if user.is_authenticated %} 
+                        <!-- Check if the user has already liked the method -->
+                        {% if user_liked_method %}
+                            <!-- Show text if user has already liked -->
+                            <p>You liked this method.</p>
+                        {% else %}
+                            <!-- Like button, only visible to users who haven't liked -->
+                            <form method="POST" action="{% url 'method_page' slug=method.slug %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">
+                                    Like
+                                </button>
+                            </form>
+                        {% endif %}
                     {% else %}
                         Log in to like this method.
                     {% endif %}
                   </p>
-                    <!-- endLike button code -->
+                    <!-- end Like button code -->
                 </div>
             </div>
         </div>

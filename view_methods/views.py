@@ -55,18 +55,22 @@ def method_page(request, slug):
     comments = method.comments.all().order_by("-created_on")
     comment_count = method.comments.filter(approved=True).count()
 
+    # Check if the user has already liked the method
+    user_liked_method = False  # Default value in case the user is not authenticated
+
+    if request.user.is_authenticated:
+        # Check if the user has already liked this method
+        user_liked_method = Like.objects.filter(user=request.user, method=method).exists()
+
     # Handle like functionality when the POST request is made (when the like button is clicked)
     if request.method == "POST":
-        # Handle liking a method
-        if request.user.is_authenticated:
-            # Check if the user has already liked this method
-            existing_like = Like.objects.filter(user=request.user, method=method)
-            if not existing_like.exists():
-                # Create a new Like object
-                Like.objects.create(user=request.user, method=method)
-                messages.add_message(request, messages.SUCCESS, 'You liked this method!')
-            else:
-                messages.add_message(request, messages.INFO, 'You have already liked this method.')
+        if request.user.is_authenticated and not user_liked_method:
+            # Create a new Like object if not already liked
+            Like.objects.create(user=request.user, method=method)
+            messages.add_message(request, messages.SUCCESS, 'You liked this method!')
+
+            # Re-fetch to update the like count and liked status
+            user_liked_method = True  # Since the user just liked the method
 
         # Handle comment submission
         comment_form = CommentForm(data=request.POST)
@@ -82,6 +86,10 @@ def method_page(request, slug):
 
     comment_form = CommentForm()
 
+    # Refresh the method object to include the updated like_count
+    method = Method.objects.annotate(like_count=Count('likes')).get(id=method.id)
+
+
     return render(
         request,
         "view_methods/method_page.html",
@@ -90,6 +98,7 @@ def method_page(request, slug):
             "comments": comments,
             "comment_count": comment_count,
             "comment_form": comment_form,
+            "user_liked_method": user_liked_method,
         },
     )
 

@@ -13,11 +13,15 @@ class MethodAdmin(SummernoteModelAdmin):
     summernote_fields = ('summary','instructions','material')
 
 
+@admin.register(Comment)
+class CommentAdmin(SummernoteModelAdmin):
+
+    list_display = ('author', 'body',)
+    search_fields = ['author', 'body']
+    list_filter = ('author','approved', 'method')
+
+
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
     list_display = ('title',)
     summernote_fields = ('body',)
-
-
-# Register your models here.
-admin.site.register(Comment)
