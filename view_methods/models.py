@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 LOCATION_CHOICES = (('indoor', "Indoor"), ('outdoor', "Outdoor"), ('indoor/outdoor', "Indoor/Outdoor"))
@@ -21,6 +22,7 @@ class Method(models.Model):
     purpose = models.CharField(max_length=255, choices=PURPOSE_CHOICES)
     summary = models.CharField(max_length=255, help_text="This text is shown on the dashboard as short explanation of the methodology", default="No summary provided", )
     instructions = models.TextField()
+    featured_image = CloudinaryField('image', default='placeholder')
     material = models.TextField()
     prep_time = models.CharField(max_length=100, choices=PREPTIME_CHOICES, help_text="Enter preparation time")
     duration = models.CharField(max_length=100, choices=DURATION_CHOICES, help_text="Enter duration of the excercise")

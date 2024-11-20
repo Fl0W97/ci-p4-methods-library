@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <!-- index.html content starts here -->
@@ -72,6 +72,15 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="image-container">
+                                    <!-- add cloudinary images when a image is provided-->
+                                    {% if "placeholder" in method.featured_image.url %}
+                                    <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                      alt="placeholder image">
+                                    {% else %}
+                                    <img class="card-img-top" src=" {{ method.featured_image.url }}"
+                                      alt="{{ method.title }}">
+                                    {% endif %}
+                                    <!-- end cloudinary_CI snipped-->
                                     <div class="image-flash">
                                         <p class="author"> {{ method.like_count }} Likes</p>
                                     </div>
