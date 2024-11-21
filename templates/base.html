@@ -60,25 +60,25 @@
                                 href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page" href="{% url 'about' %}">About</a>
+                            <a class="nav-link {% if request.path|slice:':6' == '/about' %}active{% endif %}" href="{% url 'about' %}">About</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == method_creation_url %}active{% endif %}" aria-current="page" href="{% url 'method_creation' %}">Add a Method</a>
+                            <a class="nav-link {% if request.path|slice:':7' == '/create' %}active{% endif %}" aria-current="page" href="{% url 'method_creation' %}">Add a Method</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == private_collection_url %}active{% endif %}" aria-current="page" href="{% url 'private_collection' %}">Your private Collection</a>
+                            <a class="nav-link {% if request.path|slice:':19' == '/private-collection' %}active{% endif %}" aria-current="page" href="{% url 'private_collection' %}">Your private Collection</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link {% if request.path|slice:'17' == '/accounts/logout/' %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            <a class="nav-link {% if request.path|slice:':17' == '/accounts/signup/' %}active{% endif %}" aria-current="page"
                                 href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link {% if request.path|slice:':16' == '/accounts/login/' %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
 

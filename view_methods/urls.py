@@ -1,6 +1,7 @@
 from . import views
 from django.urls import path
 from .views import MethodList, method_page, method_create, PrivateCollectionView, AboutPageView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.MethodList.as_view(), name='home'),

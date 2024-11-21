@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from .models import Method, Comment, Like, About
 from .forms import CommentForm, MethodForm, AboutForm
 from django.db.models import Count
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -208,6 +209,10 @@ class PrivateCollectionView(generic.TemplateView):  # no List view, it has to be
         # Fetch comments created by the logged-in user
         comments = Comment.objects.filter(author=self.request.user)
         context['comment_list'] = comments
+
+        # Fetch comments created by the logged-in user
+        liked_methods = Method.objects.filter(likes__user=self.request.user)
+        context['liked_methods'] = liked_methods
 
         return context
 
