@@ -14,22 +14,27 @@ choices=PURPOSE_CHOICES = (('idea generation', "Idea Generation"), ('team formin
 
 # Create your models here.
 class Method(models.Model):
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, unique=True, blank=False)
     author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="methods_library_methods"
     )
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=False)
     purpose = models.CharField(max_length=255, choices=PURPOSE_CHOICES)
-    summary = models.CharField(max_length=255, help_text="This text is shown on the dashboard as short explanation of the methodology", default="No summary provided", )
-    instructions = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
-    material = models.TextField()
+    summary = models.CharField(
+        max_length=255,
+        help_text="This text is shown on the dashboard as short explanation of the methodology",
+        default="No summary provided",
+        blank=False
+    )
+    instructions = models.TextField(max_length=2000, blank=False)
+    featured_image = CloudinaryField('image', blank=True, null=True, default='placeholder')
+    material = models.TextField(max_length=255, blank=False)
     prep_time = models.CharField(max_length=100, choices=PREPTIME_CHOICES, help_text="Enter preparation time")
     duration = models.CharField(max_length=100, choices=DURATION_CHOICES, help_text="Enter duration of the excercise")
-    alt_atr = models.CharField(max_length=255, null=True)
-    group_size_min = models.IntegerField(default=1)  # Minimum group size
-    group_size_max = models.IntegerField(default=1)  # Maximum group size
-    location = models.CharField(max_length=100, choices=LOCATION_CHOICES, default='indoor')  # Restrict location to indoor/outdoor
+    alt_atr = models.CharField(max_length=255, blank=True, null=True)
+    group_size_min = models.IntegerField(default=2)  # Minimum group size
+    group_size_max = models.IntegerField(default=3)  # Maximum group size
+    location = models.CharField(choices=LOCATION_CHOICES, default='indoor')  # Restrict location to indoor/outdoor
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0) # Restrict status to draft/published

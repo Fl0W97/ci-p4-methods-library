@@ -150,7 +150,7 @@ def method_create(request):
         return HttpResponseRedirect(reverse('home'))
 
     if request.method == "POST":
-        method_form = MethodForm(request.POST)
+        method_form = MethodForm(request.POST, request.FILES)
         if method_form.is_valid():
             method = method_form.save(commit=False)
             method.author = request.user    # Link method to the current user
