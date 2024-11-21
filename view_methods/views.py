@@ -14,7 +14,7 @@ class MethodList(generic.ListView):
     paginate_by = 8  # Show 8 methods per page
 
     def get_queryset(self):
-        queryset = Method.objects.all() # Start with all Method objects
+        queryset = Method.objects.filter(status=1) # Start with all Method objects
         
         # Filter by purpose (if specified)
         purpose = self.request.GET.get('purpose') # Get the 'purpose' parameter from the URL query string

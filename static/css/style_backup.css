@@ -36,7 +36,18 @@ body {
 
 .image-container {
     position: relative;
+
 }
+
+/*
+ .image-container img {
+    width: 100%;  /* Makes the image responsive and scale with its container 
+    height: auto;  /* Keeps the aspect ratio intact
+    max-width: 200px;  /* Maximum width of 200px
+    max-height: 150px; /* Maximum height of 150px
+    object-fit: cover;  /* Ensures the image is cropped to fill the container, maintaining the aspect ratio
+} 
+*/
 
 .image-flash {
     position: absolute;
