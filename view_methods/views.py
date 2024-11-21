@@ -11,7 +11,7 @@ from django.db.models import Count
 class MethodList(generic.ListView):
     """ queryset = Method.objects.all() """
     template_name = "view_methods/index.html"
-    paginate_by = 8  # Show 8 methods per page
+    paginate_by = 9  # Show 9 methods per page
 
     def get_queryset(self):
         queryset = Method.objects.filter(status=1) # Start with all Method objects
@@ -200,7 +200,7 @@ class PrivateCollectionView(generic.TemplateView):  # no List view, it has to be
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
+        
         # Fetch methods created by the logged-in user
         methods = Method.objects.filter(author=self.request.user)
         context['method_list'] = methods
