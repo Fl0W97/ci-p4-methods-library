@@ -29,6 +29,11 @@ body {
     background-color: #F9FAFC;
 }
 
+.gradient-bg {
+    background: linear-gradient(135deg, #5BC0EB, #F7A1A1);
+    height: 100px;
+}
+
 .card {
     border: none;
     background-color: transparent;
@@ -36,7 +41,18 @@ body {
 
 .image-container {
     position: relative;
+
 }
+
+/*
+ .image-container img {
+    width: 100%;  /* Makes the image responsive and scale with its container 
+    height: auto;  /* Keeps the aspect ratio intact
+    max-width: 200px;  /* Maximum width of 200px
+    max-height: 150px; /* Maximum height of 150px
+    object-fit: cover;  /* Ensures the image is cropped to fill the container, maintaining the aspect ratio
+} 
+*/
 
 .image-flash {
     position: absolute;
@@ -64,7 +80,7 @@ body {
     display: inline-block;
     height: 20vh;
     width: 100%;
-    background: linear-gradient(135deg, #5BC0EB, #F7A1A1); /* Gradient background */
+    background: linear-gradient(135deg, #5BC0EB, #F7A1A1); /* Gradient background, if not needed jsut delete the whole line*/
 }
 
 .masthead-text {
@@ -85,7 +101,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    /* background: #445261; */
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);

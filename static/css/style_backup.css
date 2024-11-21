@@ -29,6 +29,11 @@ body {
     background-color: #F9FAFC;
 }
 
+.gradient-bg {
+    background: linear-gradient(135deg, #5BC0EB, #F7A1A1);
+    height: 100px;
+}
+
 .card {
     border: none;
     background-color: transparent;
@@ -96,7 +101,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    /* background: #445261; */
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);

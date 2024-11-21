@@ -5,15 +5,13 @@
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row pb-2">
-        <h1>Welcome to TeamCrafted,</h1>
-        <p>Welcome to TeamCrafted, where creativity, collaboration, and the right methodologies
-           come together to build great teams.</p>
-        <p>We focus on the social dynamics and roles that drive
-            team success—regardless of the business context. Whether you're a Scrum Master, Team Coach, Project Manager
-            or just passionate about team performance.</p>
+        <h2>Welcome to TeamCrafted,</h2>
+        <p>...where creativity, collaboration, and the right methodologies
+           come together to build great teams. <a href="{% url 'about' %}">Find here more about our mission</a>.</p>
+        <p>Below you find a constantly growing collection of methods to support you in working with teams.</p>
     </div>
         <!-- Filter Form: Dropdown menu for selecting a purpose -->
-    <div class="row bg-secondary p-3" >
+    <div class="row gradient-bg p-3">
         <form method="get" class="border-bottom-2 pb-3">
             <div class="row g-3">
             <!-- Purpose Filter -->
@@ -65,20 +63,22 @@
     </div>
     <div class="row pt-4">
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+        <div class="col-9 mt-3 mx-auto">
             <div class="row">
                 {% for method in method_list %}
                     <div class="col-md-4">
                         <div class="card mb-4">
-                            <div class="card-body">
+                            <div class="card-body light-bg border">
                                 <div class="image-container">
                                     <!-- add cloudinary images when a image is provided-->
+                                    <a href="{% url 'method_page' method.slug %}" class="post-link">
+                                        <h2 class="card-title">{{ method.title }}</h2>
                                     {% if "placeholder" in method.featured_image.url %}
                                     <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                       alt="placeholder image">
                                     {% else %}
                                     <img class="card-img-top" src=" {{ method.featured_image.url }}"
-                                      alt="{{ method.title }}">
+                                      alt="{{ method.title }}"></a>
                                     {% endif %}
                                     <!-- end cloudinary_CI snipped-->
                                     <div class="image-flash">
@@ -86,7 +86,6 @@
                                     </div>
                                 </div>
                                 <a href="{% url 'method_page' method.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ method.title }}</h2>
                                     <p>{{ method.summary }}</p>
                                     <p><strong>Author: {{ method.author }}</strong></p>
                                 </a>
