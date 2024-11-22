@@ -7,10 +7,10 @@ from django_summernote.admin import SummernoteModelAdmin
 class MethodAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status', 'purpose')
-    search_fields = ['title','author']
+    search_fields = ['title', 'author']
     list_filter = ('status',)
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('summary','instructions','material')
+    summernote_fields = ('summary', 'instructions', 'material')
 
 
 @admin.register(Comment)
@@ -18,7 +18,7 @@ class CommentAdmin(SummernoteModelAdmin):
 
     list_display = ('author', 'body',)
     search_fields = ['author', 'body']
-    list_filter = ('author','approved', 'method')
+    list_filter = ('author', 'approved', 'method')
 
 
 @admin.register(About)

@@ -103,6 +103,20 @@ Validator testing has been done on:
 ### [CI Python validator](https://pep8ci.herokuapp.com/)
 No errors were returned for run.py
 
+methods_library/
+    settings.py (check)
+    urls.py (check)
+
+/view_methods/
+    admin.py (check)
+    forms.py (check)
+    models.py (check)
+    test_forms.py (check)
+    test_views.py (check)
+    urls.py
+    views.py
+
+
 <img src="README.images/PI_python_linter_validation.PNG" alt="image shows preview of validator results" width="800px">
 
 <details>
@@ -114,6 +128,17 @@ No errors were returned for run.py
 
 ### [HTML validator](https://validator.w3.org/)
 No errors were returned
+
+methods_library/templates
+    base.hmtl
+
+methods_library/view_methods/templates
+    about.html
+    index.html
+    method_creation.html
+    method_page.html
+    private_collection.html
+
 
 <img src="README.images/HTML_validation.PNG" alt="image shows preview of validator results" width="500px">
 
