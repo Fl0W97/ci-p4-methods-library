@@ -72,12 +72,12 @@
                                 <div class="image-container">
                                     <!-- add cloudinary images when a image is provided-->
                                     <a href="{% url 'method_page' method.slug %}" class="post-link">
-                                        <h2 class="card-title">{{ method.title }}</h2>
+                                        <h2 class="card-title">{{ method.title }}</h2></a>
                                     {% if "placeholder" in method.featured_image.url %}
-                                    <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                      alt="placeholder image">
+                                    <a href="{% url 'method_page' method.slug %}" class="post-link"><img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                      alt="placeholder image"></a>
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ method.featured_image.url }}"
+                                    <a href="{% url 'method_page' method.slug %}" class="post-link"><img class="card-img-top" src=" {{ method.featured_image.url }}"
                                       alt="{{ method.title }}"></a>
                                     {% endif %}
                                     <!-- end cloudinary_CI snipped-->

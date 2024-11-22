@@ -7,23 +7,23 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ method.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ method.author }} | {{ method.created_on }}</p>
+                <!-- Method title goes in these h1 tags -->
+                <h1 class="method-title">{{ method.title }}</h1>
+                <!-- Method author goes before the | the method's created date goes after -->
+                <p class="method-subtitle fst-italic">{{ method.author }} | {{ method.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder"> -->
+                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
             </div>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row pb-5">
+    <div class="row m-0 light-bg">
         <div class="col-md-8 card mb-4  mt-3 left">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
+                <!-- The method content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <h4 class="card-text"> Purpose</h4>
                 <p class="card-text">
@@ -33,7 +33,7 @@
                 <p class="card-text pb-2">
                     {{ method.instructions| safe }}
                 </p>
-                <div class="card-body text-end">
+                <div class="card-body text-end border-top">
                     <!-- Like button code -->
                     <p>Total Likes: {{ method.like_count }}</p>
                     {% if user.is_authenticated %} 
@@ -54,24 +54,25 @@
                         
                         <p><a href="{% url 'account_login' %}">Log in</a> to like this method.</p>
                     {% endif %}
-                  </p>
                     <!-- end Like button code -->
                 </div>
             </div>
         </div>
         <div class="col-md-4 card mb-4  mt-3 left">
-          <h4 class="card-text">Preparation</h4>
-          <p class="card-text pb-2">
-              Preparation time: {{ method.prep_time| safe }}
-          </p>
-          <h4 class="card-text">Material</h4>
-          <p class="card-text pb-2">
-            Material: {{ method.material| safe }}
-          </p>
-          <h4 class="card-text"> Duration</h4>
-          <p class="card-text pb-2">
-             {{ method.duration| safe }}
-          </p>
+          <div class="card-body">
+            <h4 class="card-text">Preparation</h4>
+            <p class="card-text pb-2">
+                Preparation time: {{ method.prep_time| safe }}
+            </p>
+            <h4 class="card-text">Material</h4>
+            <p class="card-text pb-2">
+              Material: {{ method.material| safe }}
+            </p>
+            <h4 class="card-text"> Duration</h4>
+            <p class="card-text pb-2">
+              {{ method.duration| safe }}
+            </p>
+          </div>
         </div>
     </div>
       <!-- Displaying count of comments -->

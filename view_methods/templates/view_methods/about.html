@@ -11,20 +11,20 @@
                 <h4>Sharing, learning, inspiring ...</h4>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder"> -->
+                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
             </div>
         </div>
     </div>
 </div>
 
-<div class="container"></div>
+<div class="container">
     <div class="row justify-content-center">
       <!-- Creating New Method-->
-      <div class="col-md-8 card mb-4 mt-3">
-        <div class="card-body fs-4">
-            <p>{{ about.body|safe }}</p>
+        <div class="col-md-10 card mb-4 mt-3">
+            <div class="card-body">
+                {{ about.body|safe }}
+            </div>
         </div>
-      </div>
     </div>
 </div>
 
@@ -32,7 +32,6 @@
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3 left">
         <div class="row">
-            
         </div>
     </div>
 </div>

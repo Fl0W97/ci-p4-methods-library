@@ -66,7 +66,6 @@ class TestMethodFilteringViews(TestCase):
             location="outdoor", status=1
             )
 
-
     def test_filter_methods_by_purpose(self):
         # Perform a GET request with the 'purpose' filter
         response = self.client.get(

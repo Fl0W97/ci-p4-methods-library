@@ -31,7 +31,6 @@ body {
 
 .gradient-bg {
     background: linear-gradient(135deg, #5BC0EB, #F7A1A1);
-    height: 100px;
 }
 
 .card {
@@ -108,24 +107,25 @@ body {
     z-index: 100;
 }
 
-.post-link {
+.method-link {
     text-decoration: none;
     color: #445261;
 }
 
-.post-link:hover,
+.method-link:hover,
 .page-link {
     color: #E84610;
 }
 
-.post-title {
+.method-title {
     margin-top: 10%;
     margin-left: 5%;
 }
 
-.post-subtitle {
+.method-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: #fff;
+    font-style: italic;
 }
 
 .btn-signup,

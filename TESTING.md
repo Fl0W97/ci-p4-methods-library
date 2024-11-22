@@ -101,44 +101,70 @@ Testing new app "collection"
 Validator testing has been done on:
 
 ### [CI Python validator](https://pep8ci.herokuapp.com/)
-No errors were returned for run.py
-
-methods_library/
-    settings.py (check)
-    urls.py (check)
-
-/view_methods/
-    admin.py (check)
-    forms.py (check)
-    models.py (check)
-    test_forms.py (check)
-    test_views.py (check)
-    urls.py
-    views.py
-
-
-<img src="README.images/PI_python_linter_validation.PNG" alt="image shows preview of validator results" width="800px">
+No errors were returned.
 
 <details>
-    <summary>further results of HTML, CSS Validator</summary>
+    <summary>see details about CI Python validator</summary>
 
-<img src="" alt="image shows preview of validator results" width="500px">
-<img src=""_html_end.PNG alt="image shows preview of validator results" width="800px">
+#### methods_library/settings.py
+
+<img src="README.images/CI_python_validator_methods_library_settings.PNG" alt="shows result of validation of methods_library/settings.py" width="650">
+
+#### methods_library/urls.py
+
+<img src="README.images/CI_python_validator_methods_library_url.PNG" alt="shows result of validation of methods_library/url.py" width="650">
+
+
+#### view_methods/admin.py
+
+<img src="README.images/CI_python_validator_view_methods_admin.PNG" alt="shows result of validation of view_methods/admin.py" width="650">
+
+#### view_methods/forms.py
+<img src="README.images/CI_python_validator_view_forms.PNG" alt="shows result of validation of view_methods/forms.py" width="650">
+
+#### view_methods/models.py
+<img src="README.images/CI_python_validator_view_models.PNG" alt="shows result of validation of view_methods/models.py" width="650">
+
+#### view_methods/test_forms.py
+<img src="README.images/CI_python_validator_view_test_forms.PNG" alt="shows result of validation of view_methods/test_form.py" width="650">
+
+#### view_methods/test_views.py
+<img src="README.images/CI_python_validator_view_test_views.PNG" alt="shows result of validation of view_methods/test_views.py" width="650">
+
+#### view_methods/urls.py
+<img src="README.images/CI_python_validator_view_methods_urls.PNG" alt="shows result of validation of view_methods/urls.py" width="650">
+
+#### view_methods/views.py
+<img src="README.images/CI_python_validator_view_methods_views.PNG" alt="shows result of validation of view_methods/views.py" width="650">
+
+</details>
 
 
 ### [HTML validator](https://validator.w3.org/)
+No errors were returned.
+
+<details>
+    <summary>see details about HTML validator</summary>
+
+
 No errors were returned
 
-methods_library/templates
-    base.hmtl
+#### base.hmtl + index.html
+<img src="README.images/w3_html_validator_index.PNG" alt="shows result of HTML validation" width="650">
 
-methods_library/view_methods/templates
-    about.html
-    index.html
-    method_creation.html
-    method_page.html
-    private_collection.html
+#### base.hmtl + about.html
+<img src="README.images/w3_html_validator_about.PNG" alt="shows result of HTML validation" width="650">
 
+#### base.hmtl + method_creation.html
+<img src="README.images/w3_html_validator_method_creation.PNG" alt="shows result of HTML validation" width="650">
+
+#### base.hmtl + method_page.html
+<img src="view_methods/templates/view_methods/method_page.html" alt="shows result of HTML validation" width="650">
+
+#### base.hmtl + private_collection.html
+<img src="view_methods/templates/view_methods/private_collection.html" alt="shows result of HTML validation" width="650">
+
+</details>
 
 <img src="README.images/HTML_validation.PNG" alt="image shows preview of validator results" width="500px">
 
@@ -146,21 +172,23 @@ methods_library/view_methods/templates
 ### [CSS validator](https://jigsaw.w3.org/css-validator/)
 No errors were returned
 
-<img src="README.images/CSS_validation.PNG" alt="image shows preview of validator results" width="500px">
-
-
-### [JS Validator] (https://jshint.com/)
-Errors occured. However, since I reused the suggested template from Code Institute and I haven't made any adjustments I keep the current status.
-
-Code from index.js and defaul.js checked. 
-
-Here an example of index.js
-<img src="README.images/JS_validation.PNG" alt="image shows preview of validator results" width="500px">
+<details>
+    <summary>see details about CSS validator</summary>
 
 </details>
 
 
-### Validations in the code
+
+### [JS Validator] (https://jshint.com/)
+No errors were returned
+
+<details>
+    <summary>see details about JS validator</summary>
+
+</details>
+
+
+### Validations in the code to aviod errors and bad UX
 
 views.py
     # validation
