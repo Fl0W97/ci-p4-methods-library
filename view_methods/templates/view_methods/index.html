@@ -68,16 +68,16 @@
                 {% for method in method_list %}
                     <div class="col-md-4">
                         <div class="card mb-4">
-                            <div class="card-body light-bg border">
-                                <div class="image-container">
+                            <div class="card-body light-bg border ">
+                                <div class="image-container index_images">
                                     <!-- add cloudinary images when a image is provided-->
-                                    <a href="{% url 'method_page' method.slug %}" class="post-link">
+                                    <a href="{% url 'method_page' method.slug %}" class="method-link">
                                         <h2 class="card-title">{{ method.title }}</h2></a>
                                     {% if "placeholder" in method.featured_image.url %}
-                                    <a href="{% url 'method_page' method.slug %}" class="post-link"><img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    <a href="{% url 'method_page' method.slug %}" class="method-link"><img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                       alt="placeholder image"></a>
                                     {% else %}
-                                    <a href="{% url 'method_page' method.slug %}" class="post-link"><img class="card-img-top" src=" {{ method.featured_image.url }}"
+                                    <a href="{% url 'method_page' method.slug %}" class="method-link"><img class="card-img-top" src=" {{ method.featured_image.url }}"
                                       alt="{{ method.title }}"></a>
                                     {% endif %}
                                     <!-- end cloudinary_CI snipped-->
@@ -85,7 +85,7 @@
                                         <p class="author"> {{ method.like_count }} Likes</p>
                                     </div>
                                 </div>
-                                <a href="{% url 'method_page' method.slug %}" class="post-link">
+                                <a href="{% url 'method_page' method.slug %}" class="method-link">
                                     <p>{{ method.summary }}</p>
                                     <p><strong>Author: {{ method.author }}</strong></p>
                                 </a>
@@ -109,10 +109,10 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; BACK</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="method-link">&laquo; BACK</a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="method-link"> NEXT &raquo;</a></li>
             {% endif %}
         </ul>
     </nav>

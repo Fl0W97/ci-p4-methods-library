@@ -33,26 +33,26 @@ choices = PURPOSE_CHOICES = (
 # Create your models here.
 class Method(models.Model):
     title = models.CharField(
-        max_length=200, unique=True, blank=False
+        max_length=150, unique=True, blank=False
     )
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="methods_library_methods"
     )
     slug = models.SlugField(
-        max_length=200, unique=True, blank=False
+        max_length=150, unique=True, blank=False
     )
     purpose = models.CharField(
         max_length=255, choices=PURPOSE_CHOICES
     )
     summary = models.CharField(
-        max_length=255,
+        max_length=300,
         help_text="This text is shown on the landing page as short"
         " explanation of the methodology",
         default="No summary provided",
         blank=False
     )
     instructions = models.TextField(
-        max_length=2000, blank=False
+        max_length=4000, blank=False
     )
     featured_image = CloudinaryField(
         'image', blank=True, null=True, default='placeholder'
@@ -69,7 +69,7 @@ class Method(models.Model):
         help_text="Enter duration of the excercise"
     )
     alt_atr = models.CharField(
-        max_length=255, blank=True, null=True
+        max_length=150, blank=True, null=True
     )
     group_size_min = models.IntegerField(
         default=2  # Minimum group size

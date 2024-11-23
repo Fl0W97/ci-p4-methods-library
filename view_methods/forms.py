@@ -13,13 +13,12 @@ class CommentForm(forms.ModelForm):
 
 class MethodForm(forms.ModelForm):
     instructions = forms.CharField(widget=SummernoteWidget())
-    summary = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Method
         fields = (
             'title', 'purpose', 'summary', 'instructions', 'material',
-            'prep_time', 'duration', 'featured_image', 'alt_atr',
+            'prep_time', 'duration', 'featured_image',
             'group_size_min', 'group_size_max', 'location',
         )
 
@@ -52,9 +51,9 @@ class MethodForm(forms.ModelForm):
     # If an image is uploaded, validate it
         # Check if it's a valid file object
         if hasattr(featured_image, 'size'):
-            max_size = 2 * 1024 * 1024  # 2MB limit
+            max_size = 3 * 1024 * 1024  # 3MB limit
             if featured_image.size > max_size:
-                raise ValidationError("The image size must be less than 2MB.")
+                raise ValidationError("The image size must be less than 3MB.")
         else:
             raise ValidationError("The uploaded file is not a valid image.")
 

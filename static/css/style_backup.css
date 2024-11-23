@@ -10,7 +10,11 @@ body {
 }
 
 .red-o {
-    color: #E84610;
+    color: #f7a6a6;
+}
+
+.blue-o {
+    color: #79bfe2;
 }
 
 .thin {
@@ -36,6 +40,10 @@ body {
 .card {
     border: none;
     background-color: transparent;
+}
+
+.index_images {
+    max-height: 330px;
 }
 
 .image-container {

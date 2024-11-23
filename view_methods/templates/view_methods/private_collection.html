@@ -7,7 +7,7 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Method title goes in these h1 tags -->
-                <h1 class="method-title"> Hello {{ user.username }}, find here your content you shared with the community</h1>
+                <h2 class="method-title"> Hello {{ user.username }}, find here your content you shared with the community</h2>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                  <img src="{% static 'images/default.jpg' %}" class="img-fluid" alt="placeholder">
@@ -32,13 +32,13 @@
                 {% for method in method_list %}
                     <div class="accordion-item">
                         <h5 class="card-header" id="heading{{ forloop.counter }}">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                            <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
                                 {% if method.status == 1 %}
                                 <!-- Display link if the method is approved (published) -->
-                                    <p class="text-dark">{{ method.title }} </p><p class="text-muted"> | {{ method.created_on}}</p>
+                                    <p class="text-dark fs-5">{{ method.title }} <span class="text-muted mx-2">|</span></p><p class="text-muted">{{ method.created_on}}</p>
                                 {% else %}
                                     <!-- Show message if the method is not approved -->
-                                    <p>{{ method.title }} (Pending Approval)</p>
+                                    <p class="text-muted">{{ method.title }} (Pending Approval)</p>
                                 {% endif %}
                             </button>
                         </h5> 
@@ -50,7 +50,7 @@
                                 <p><a href="{% url 'method_page' method.slug %}" class="method-link">
                                     {{ method.summary }} | click here to visit this method</a></p>
                                 {% else %}
-                                    <p class="text-muted h6">This method is awaiting approval.</p>
+                                    <p class="text-muted h6"> {{ method.summary }}</p>
                                 {% endif %} 
                             </div>
                         </div>
@@ -96,14 +96,15 @@
             <h4 class="card-text">
                 You liked {{ liked_methods.count }} methods
             </h4>
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLikedMethods" aria-expanded="false" aria-controls="collapseLikedMethods">
+            <!-- set aria-expanded="true" to show the dropdown-->
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#likedMethodsAccordion" aria-expanded="true" aria-controls="likedMethodsAccordion">
                 see methods you liked
             </button>
             
-            <!-- Accordion for Liked methods -->
-            <div id="collapseLikedMethods" class="accordion-collapse collapse show" aria-labelledby="headingLikedMethods" data-bs-parent="#likedMethodsAccordion">
-                <div class="accordion-body">
-                    {% if liked_methods %}
+            <!-- Accordion content for Liked methods -->
+            <div id="likedMethodsAccordion" class="collapse show mt-3"> <!-- add 'show' to class to show the dropdown-->
+                {% if liked_methods %}
+                    <div class="accordion-body"></div>
                         {% for method in liked_methods %}
                         <p class="border-bottom"><a href="{% url 'method_page' method.slug %}">{{ method.title }}</a> | {{ method.author }}</p>
                         {% endfor %}

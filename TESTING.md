@@ -41,17 +41,51 @@ These are additional tests to ensure the overall quality, performance, security,
 
 **User Stories for Site Admin**
 
- **User Story** | **Requirement met (y/n)** |  **Image**|
---------------- |---------------------------|-----------|
-| ... | y ||
+**No.** | **User Story** | **Requirement met (y/n)** |  **Image**|
+| ------|--------------- |---------------------------|-----------|
+| #11 | As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #2  | As a Site User I can read the methods in an structured way so that it's easy to go through them. | y |<img src="README.images/README_Userstory_2.PNG" alt="show image for User story" width="500">>||
+| #5  | As a Site User I can register an account so that I can comment on a method | y |<img src="README.images/README_Userstory_5.PNG" alt="show image for User story" width="500">||
+| #14 | As a Site User I can view methods so that I get motivated to share my methods as well | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #16 | As a Site User I can see images and a good color contrast so that I like to stay on the website form a visual perspective | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #6  | As a Site User I want to get a notification once I change something so that I get feedback of my actions | y |<img src="README.images/README_Userstory_6a.PNG" alt="show image for User story" width="250"> <img src="README.images/README_Userstory_6b.PNG" alt="show image for User story" width="250">||
+| #1  | As a Site User I can see directly the purpose of the website so that get an orientation what I can do | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #8  | As a Site User I can filter methods on the main page so that I can optimize my search | y |<img src="README.images/README_Userstory_1.PNG" alt="show image for User story" width="500">||
+| #22 | As a Site User I can add methods so that I can share my own methods with the community. | y |<img src="README.images/README.Userstory_27.PNG" alt="show image for User story" width="500">||
+| #20 | As a Site User I can see information about the creator of website so that I can contact him and get an idea of the person behind the project. | y |<img src="" alt="show image for User story" width="500">||
+| #31 | As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site' | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #39 | As a Site User I don't want that the site creates errors. | y |||
+| #41 | As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful. | y |<img src="README.images/README_Userstory_41a.PNG" alt="show image for User story" width="250"> <img src="README.images/README_Userstory_41b.PNG" alt="show image for User story" width="250">||
+| #40 | As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview | y |<img src="README.images/README_Userstory_40.PNG" alt="show image for User story" width="500">||
+| #28 | As a Site User I can identify the website in my browser via an symbol so that I find the open website faster | y |<img src="README.images/README_Userstory_28.PNG" alt="show image for User story" width="500">||
+| #18 | As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site | y |<img src="README.images/README_Userstory_18.PNG" alt="show image for User story" width="500">||
+| #30 | As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text | y |<img src="README.images/README_Userstory_30a.PNG" alt="show image for User story" width="300"> <img src="README.images/README_Userstory_30b.PNG" alt="show image for User story" width="300">||
+| #38 | As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster | y |<img src="README.images/README_Userstory_38a.PNG" alt="show image for User story" width="250"> <img src="README.images/README_Userstory_38b.PNG" alt="show image for User story" width="250">||
+| #34 | As a Site User I can see clearly if I liked a method already, before I click on the Like-button' so that 'I don't click twice. | y |<img src="README.images/README_Userstory_34.PNG" alt="show image for User story" width="200">||
+| #36 | As a Site User (handycaped) I can use arial-current/label attributes so that I can follow the content on the website properly. | y |||
+| #21 | As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops. | y |<img src="README.images/README_Userstory_21.PNG" alt="show image for User story" width="500">||
+| #27 | As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily | y |<img src="README.images/README.Userstory_27.PNG" alt="show image for User story" width="500">|
+| #35 | As a (logged-in) Site User I can create a method easily and well structured so that I don't see too long input fields, etc | y |<img src="README.images/README.Userstory_27.PNG" alt="show image for User story" width="500">||
+| #15 | As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods | y |<img src="README.images/README_Userstory_15.PNG" alt="show image for User story" width="500">||
+| #4  | As a (logged-in) Site User I can modify or delete my comment on a method so that I can be involved in the conversation | y |<img src="README.images/README_Userstory_4.PNG" alt="show image for User story" width="500">||
 
 
-**User Stories for Site User**
+**User Stories for Admin User**
 
- **User Story** | **Requirement met (y/n)** |  **Image**|
---------------- |---------------------------|-----------|
-| MVP: Providing first methods #11 | y ||
-
+**No.** | **User Story** | **Requirement met (y/n)** |  **Image**|
+| ------|--------------- |---------------------------|-----------|
+| #29 | Do readme documentation | y ||
+| #9  | As a Site Admin I can create, read, update and delete methods so that I can manage my content | y |<img src="README.images/README_Userstory_9.PNG" alt="show image for User story" width="500">|
+| #10 | As a Site Admin I can approve comments so that I can manage and control the content on the website | y |<img src="README.images/README_Userstory_10.PNG" alt="show image for User story" width="500">|
+| #45 | As a Site Admin I can create, update and delete the text content of the about.html site | y |<img src="README.images/README_Userstory_45.PNG" alt="show image for User story" width="500">|
+| #46 | As a Site Admin I can create, update and delete Site Users | y |<img src="README.images/README_Userstory_46.PNG" alt="show image for User story" width="500">|
+| #33 | As a Site Admin I can use a filter function for comments in the admin panel so that I can manage the comments efficient | y |<img src="README.images/README_Userstory_33.PNG" alt="show image for User story" width="500">|
+| #12 | As a Site Admin I can approve methods from other Site Users so that I have control of the content | y |<img src="README.images/README_Userstory_12.PNG" alt="show image for User story" width="500">|
+| #47 | As a Site Admin I can approve comments from other Site Users so that I have control of the content | y |<img src="README.images/README_Userstory_47.PNG" alt="show image for User story" width="500">|
+| #43 | As a 'Site Admin' I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient. | y |<img src="README.images/README_Userstory_43.PNG" alt="show image for User story" width="500">||
+| #42 | As a 'Site Admin' I want to make sure that the Users don't crash the website by adding to much content | y ||
+| #37 | As a User I can use a working website so that I don't receive error messages or are harmed to use certain functionalities of the website | y ||
+| #   |  | y ||
 
 
 ## Automated testing
