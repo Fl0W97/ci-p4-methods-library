@@ -13,7 +13,11 @@
                 <p class="method-subtitle fst-italic">{{ method.author }} | {{ method.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+              {% if method.featured_image %}
+                <img src="{{ method.featured_image.url }}" class="scale" alt="Featured image for {{ method.title }}">
+              {% else %}
+                <img src="{%static 'images/default.jpg' %}" class="scale" alt="Placeholder image">
+              {% endif %}
             </div>
         </div>
     </div>
@@ -22,7 +26,7 @@
 <div class="container">
     <div class="row m-0 light-bg">
         <div class="col-md-8 card mb-4  mt-3 left">
-            <div class="card-body">
+            <div class="card-body method-link">
                 <!-- The method content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <h4 class="card-text"> Purpose</h4>
@@ -45,14 +49,17 @@
                             <!-- Like button, only visible to users who haven't liked -->
                             <form method="POST" action="{% url 'method_page' slug=method.slug %}">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-like" 
+                                aria-label="Like this method">
                                     Like
                                 </button>
                             </form>
                         {% endif %}
                     {% else %}
                         
-                        <p><a href="{% url 'account_login' %}">Log in</a> to like this method.</p>
+                        <p><a href="{% url 'account_login' %}"
+                          aria-label="Log in to like this method">
+                          Log in</a> to like this method.</p>
                     {% endif %}
                     <!-- end Like button code -->
                 </div>
@@ -62,11 +69,11 @@
           <div class="card-body">
             <h4 class="card-text">Preparation</h4>
             <p class="card-text pb-2">
-                Preparation time: {{ method.prep_time| safe }}
+              {{ method.prep_time| safe }}
             </p>
             <h4 class="card-text">Material</h4>
             <p class="card-text pb-2">
-              Material: {{ method.material| safe }}
+              {{ method.material| safe }}
             </p>
             <h4 class="card-text"> Duration</h4>
             <p class="card-text pb-2">
@@ -113,9 +120,11 @@
             {% endif %}
              {% if user.is_authenticated and comment.author == user %}
             <button class="btn btn-delete"
+            aria-label="Delete this comment"
             comment_id="{{ comment.id }}">Delete</button>
             <button class="btn btn-edit"
-              comment_id="{{ comment.id }}">Edit</button>
+            aria-label="Edit this comment"
+            comment_id="{{ comment.id }}">Edit</button>
             {% endif %}
           </div>
           <!-- Our for loop ends here -->
@@ -128,7 +137,8 @@
           {% if user.is_authenticated %}
           <h3>Leave a comment:</h3>
           <p>Posting as: {{ user.username }}</p>
-          <form id="commentForm" method="post"
+          <form id="commentForm" method="post" 
+            aria-labelledby="leave-comment-form"
             style="margin-top: 1.3em;">
             {{ comment_form | crispy }}
             {% csrf_token %}
@@ -136,7 +146,8 @@
               class="btn btn-signup btn-lg">Submit</button>
           </form>
           {% else %}
-          <p><a href="{% url 'account_login' %}">Log in</a> to leave a comment.</p>
+          <p><a href="{% url 'account_login' %}" aria-label="Log in to leave a comment">
+            Log in</a> to leave a comment.</p>
           {% endif %}
         </div>
       </div>
@@ -160,9 +171,11 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal">Close</button>
+          data-bs-dismiss="modal" aria-label="Close modal">
+          Close</button>
         <a id="deleteConfirm" href="#" class="btn
-          btn-danger">Delete</a>
+          btn-danger" aria-label="Confirm delete of comment">
+          Delete</a>
       </div>
     </div>
   </div>
@@ -171,7 +184,7 @@
 {% endblock content %}
 
 {% block comment_btn %}
-<script src="{% static 'js/comments.js' %}"></script>
+<script src="{% static 'js/comments.js' %}" aria-label="Comments interaction scripts"></script>
 {% endblock %}
 
 {% block method_btn %}

@@ -88,6 +88,8 @@ Sign-out
 
 ## User Stories, Project scope
 see in GItHub project [Methods library](https://github.com/Fl0W97/ci-p4-methods-library/issues)
+see user story testing in [TESTING.md](TESTING.md)
+
 
 ### Site Users (MVP)
 
@@ -152,7 +154,11 @@ body #F9FAFC
 
 .main-bg background-color: #F9FAFC
 
-
+beown: #502419
+white #F9FAFC
+red: #F7A1A1
+blue: #5BC0EB
+green: #7EA172
 
 ### User feedback/ guidance / CRUD
 There are various notifications which representing feedback for the user after CRUD activity. Besides log-in and sign-out, which is already shown in the above chapter, there are notifications for dealing with methods, comments and like buttons. The standard function message.add_message() is used and mostly combined with an if-clause. In the following a few examples are shared:
@@ -206,9 +212,6 @@ Database to store likes. Based on that the numbers of likes are displayed. Furth
 <img src="README.images/README_ERD_like_code.PNG" alt="shows ERD like code">
 
 
-
-
-
 ### Decisions during development
 
 1) Dealling with generic ViewList also for filtering etc. (reusability)
@@ -223,12 +226,45 @@ So, for now, keeping it within the same app (view_methods). It keeps things simp
 
 
 
+TemplateView doesn't have a POST and GET function. THerefore, a message input field hasn't been integrated. It's more complex. THerefore, it's on the list for next enhancements (see user stories).
+
+Delete and edit methods is complex. After MVP planned (see user stories)
+
 
 
 #### Accessability
 I confirm that the selected colors and fonts are easy to read and accessible by using Lighthouse in devtools (Chrome).
 
 <img src="README.images/GoogleLighthouse.PNG" alt="image shows GoogleLighthouse analysis"> 
+
+#### ARIA (Accessible Rich Internet Applications)
+
+ARIA Labels:
+
+    Added aria-label to buttons like "Toggle methods details", "Toggle comments details", and "Toggle liked methods details" for better accessibility.
+    Added specific aria-label to links, such as the method link and liked method link, to clearly describe the action for screen reader users (e.g., "Visit method page for liked method: {{ method.title }}").
+
+Accordion Components:
+
+    Each accordion button now has aria-expanded to indicate whether the section is expanded or collapsed, and aria-controls to associate the button with the content it controls.
+    The accordion items have appropriate aria-live="polite" to ensure that changes (like expanding sections) are announced by screen readers.
+
+Images:
+
+    I’ve updated the alt text for the image in the masthead to be more descriptive (alt="A placeholder image for user content").
+
+ARIA Roles and Regions:
+
+    I’ve added role="region" for each section (methods, comments, and liked methods) to indicate that these are distinct, thematic regions of the page.
+    Each section is also assigned an aria-labelledby attribute pointing to a relevant heading (e.g., aria-labelledby="methodSection").
+
+Live Regions:
+
+    Used aria-live="polite" for sections that dynamically change (e.g., when an accordion expands or collapses), ensuring that screen readers notify users about new content.
+
+Empty State:
+
+    If no methods or comments are available, it announces “No methods found” or “No comments found” to provide meaningful feedback to the user.
 
 
 ## Tools & Technologies used
@@ -262,8 +298,9 @@ The main functions are generated with Python. However, to set up the whole proje
     Render: A platform used to render and display the project’s README file.
     GitHub: A platform that hosts the website’s source code and facilitates project management through features like the Kanban board.
     Chrome DevTools: The developer tools in Google Chrome used to debug and inspect the website’s frontend.
+    Firefox DevTools: The developer tools in Firefox used to debug and inspect the website’s frontend.
     Font Awesome: A library used to incorporate scalable vector icons into the website.
-    Coolors: A tool used to generate a color palette for the website’s design.
+    [Coolors](https://coolors.co/): A tool used to generate a color palette for the website’s design.
     W3C Validator: A tool used to validate the HTML5 code to ensure it follows best practices and standards.
     W3C CSS Validator: A tool used to validate the CSS code, ensuring it conforms to web standards.
     JSHint: A tool used to check JavaScript code for potential errors or problems.
@@ -275,150 +312,79 @@ The main functions are generated with Python. However, to set up the whole proje
 
 ### Installed packages requirements.txt ###
 
-asgiref==3.8.1: A utility library for Python that provides asynchronous server gateway interface (ASGI) support for Django and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.
+    asgiref==3.8.1: 
+    A utility library for Python that provides asynchronous server gateway interface (ASGI) support for Django
+     and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.
 
-crispy-bootstrap5==0.7: A Django package that integrates the Bootstrap 5 framework with Django Crispy Forms, making it easier to render Bootstrap-styled forms with a clean and responsive layout.
+    crispy-bootstrap5==0.7: 
+    A Django package that integrates the Bootstrap 5 framework with Django Crispy Forms,
+     making it easier to render Bootstrap-styled forms with a clean and responsive layout.
 
-dj-database-url==0.5.0: A library that simplifies the database connection setup in Django by parsing the DATABASE_URL environment variable and configuring the database settings accordingly, commonly used for cloud deployment.
+    dj-database-url==0.5.0: 
+    A library that simplifies the database connection setup in Django by parsing the DATABASE_URL environment
+     variable and configuring the database settings accordingly, commonly used for cloud deployment.
 
-Django==4.2.7: The web framework used for building the website's backend, offering a powerful, flexible, and secure platform for web application development, including routing, database management, and templating.
+    Django==4.2.7: 
+    The web framework used for building the website's backend, offering a powerful, flexible, and secure platform
+     for web application development, including routing, database management, and templating.
 
-django-allauth==0.57.2: A Django package for handling authentication, registration, and account management. It supports login via social accounts (e.g., Google, Facebook) and traditional email/password-based login.
+    django-allauth==0.57.2:
+     A Django package for handling authentication, registration, and account management. It supports login via
+      social accounts (e.g., Google, Facebook) and traditional email/password-based login.
 
-django-crispy-forms==2.3: A Django library that provides better control over the rendering of forms by allowing you to use a simpler, cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.
+    django-crispy-forms==2.3:
+     A Django library that provides better control over the rendering of forms by allowing you to use a simpler,
+      cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.
 
-django-summernote==0.8.20.0: A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text editing. It's used to enhance text areas for content creation by users.
+    django-summernote==0.8.20.0:
+     A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text
+     editing. It's used to enhance text areas for content creation by users.
 
-gunicorn==20.1.0: A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production environments. It's known for its speed and ability to handle multiple requests concurrently.
+    gunicorn==20.1.0:
+     A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production
+     environments. It's known for its speed and ability to handle multiple requests concurrently.
 
-oauthlib==3.2.2: A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for handling secure access to protected resources via third-party authentication services.
+    oauthlib==3.2.2:
+     A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for
+     handling secure access to protected resources via third-party authentication services.
 
-psycopg2==2.9.10: A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for interacting with the relational database in the backend of the website.
+    psycopg2==2.9.10:
+     A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for
+      interacting with the relational database in the backend of the website.
 
-PyJWT==2.9.0: A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting information and managing user authentication in web applications.
+    PyJWT==2.9.0:
+     A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting
+     information and managing user authentication in web applications.
 
-python3-openid==3.2.0: A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across multiple applications. It's integrated into django-allauth for user authentication via third-party providers.
+    python3-openid==3.2.0:
+     A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across
+     multiple applications. It's integrated into django-allauth for user authentication via third-party providers.
 
-requests-oauthlib==2.0.0: An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API requests. It's used for handling authentication in API calls that require OAuth.
+    requests-oauthlib==2.0.0:
+     An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API
+     requests. It's used for handling authentication in API calls that require OAuth.
 
-sqlparse==0.5.1: A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging and optimizing database queries within Django projects.
+    sqlparse==0.5.1:
+     A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging
+     and optimizing database queries within Django projects.
 
-whitenoise==6.5.0: A static file management library for Django, used to serve static files in a production environment. It simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.
+    whitenoise==6.5.0:
+     A static file management library for Django, used to serve static files in a production environment. It 
+     simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.
 
 
 ## Deployment
-The site was deployed to a Heroku page using a GitHub repository for data storage.
-
-    Heroku page: https://dashboard.heroku.com/apps/methods-library/deploy/github
-
-    GitHub repository: https://github.com/Fl0W97/ci-p4-methods-library
-
-### GitHub
-
-The steps to set up your repository in GitHub are as follows:
-
-- In the GitHub repository, navigate to the Settings tab
-- From the source section drop-down menu, select the Main Branch, then click "Save"
-- The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-
-<details>
-    <summary>Cloning repository</summary>
-
-1. Visit the GitHub repository.
-2. Find the Code button situated above the file list and give it a click.
-3. Choose your preferred cloning method — whether it's HTTPS, SSH, or GitHub and hit the copy button to copy the URL to your clipboard.
-4. Launch Git Bash or Terminal.
-5. Navigate to the directory where you want the cloned directory to reside.
-6. In your IDE Terminal, input the following command to clone the repository:
- git clone https://github.com/Code-Institute-Org/p3-template 
-7. Press Enter to create your local clone.
-
-</details>
-
-### settings.py
-The settings.py file is already included in Djangp orject. However, to set up this project further adjustements has to be done:
+For detailed deployment information, see the content related to deployment in [DEPLOYMENT.md](DEPLOYMENT.md).
 
 
-#### Secret Key
-To ensure that the secret.key is not provided to heroku or the git storage an env.py file is created to store the sensitive data.
-The keys will be passed via os.environ.setdefault() function. There are two keys, which both has to be provided to heroku. First, the postgreSQL key which is generated via Code Institute and the secret_key which also mentioned in settings.py.
-
-<img src="README.images/README_settings_secret_key.PNG" alt="image shows secret key documentation in settings.py"> 
-
-#### Allowed Hosts
-Make sure to document your own host name as well as the heroku host name. In addition you can add further hosts if needed in the same list.
-<img src="README.images/README_settings.py_allowed_hosts.PNG" alt="image shows allowed hosts documentation in settings.py"> 
-
-#### CRSF_TRUSTED_ORIGINS
-CSRF_TRUSTED_ORIGINS setting is used to specify a list of trusted domains or origins for Cross-Site Request Forgery (CSRF) protection. When you include CSRF_TRUSTED_ORIGINS in your settings.py file, you are telling Django which domains or URLs are trusted when submitting CSRF tokens, specifically for cross-origin requests (e.g., when your frontend and backend are served from different domains).
-
-<img src="README.images/README_settings.py_CSRF_TRUSTED.PNG" alt="image shows csrf trusted documentation in settings.py"> 
-
-#### Middleware
-In Django, middleware is a framework of hooks that allows you to process requests globally before they reach the view (request processing) and after they leave the view (response processing). Middleware components are processed in the order they are listed in the MIDDLEWARE setting in your settings.py file.
-
-Middleware is essentially a layer that sits between the request and the response, providing a way to process and modify requests before they reach the view, and modify responses before they are returned to the client.
-<img src="README.images/README_settings.py_middleware.PNG" alt="image shows middleware list documentation in settings.py">
-
-#### Templates
-In Django, templates are a framework used via Bootstrap to simplify the handling of multiple site wihtin one project. There is one base.html which defines the header and footer of the webiste. The main section is mostly empty and filled with various custom template input. The relevant Bootstrap tags which aer used for the combination of base.html and i.e. index.html are {% block content %}, {% endblock content %} and in index.html {% extends "base.html" %}, {% block content %}, {% endblock %}. To enale this functionality the following content has to be added to the settings.
-<img src="README.images/README_settings.py_templates.PNG" alt="image shows template documentation in settings.py">
-
-#### Databases
-In this project two databases are used.More information is shared in the subchapter databases. Here it is documented how both databases are added to the project in the settings.
-<img src="README.images/README_settings.py_databases.PNG" alt="image shows database documentation in settings.py">
-
-
-#### Forms (CrispyForms)
-'Crispy Forms' is a package provided by Django. It offers a range of edit possibilites in a from for the creator. See below how it is included in the settings.
-<img src="README.images/README_settings.py_crispyForms.PNG" alt="image shows crispyForm documentation in settings.py">
-
-
-### Configure Heroku 
-The steps to configure Heroku are as follows:
-
-Log in to your account, or set up a new one
-Create a new app on Heroku
-
-<img src="README.images/README_heroku_create_new_app.PNG" alt="image shows infos about heroku set up"> 
-
-There are two keys, which both has to be provided to heroku. First, the postgreSQL key which is generated via Code Institute and the secret_key
-
-
-#### Connect to GitHub
-Next, you can configure deploys with Github. If you prefer to deploy without using Github, you can read Heroku's deployment ([documentation](https://devcenter.heroku.com/categories/deployment)). 
-
-In the Deploy tab, select the option to Connect this app to GitHub
-
-<img src="README.images/README_heroku_connect_to_github1.PNG" alt="image shows infos about heroku set up" width="600px">
-
-Select the branch you want to deploy your app from
-
-<img src="README.images/README_heroku_manually_deployment.PNG" alt="image shows infos about heroku set up" width="600px">
-
-
-#### Add Discord credentials
-Before your app can go online, you'll have to configure your Heroku environment with your Discord bot's credentials:
-Add your bot’s TOKEN, GUILD_ID, CLIENT_ID, and any other credentials your bot might need. More details on credentials for Baker bot can be found in the tutorial.
-
-<img src="README.images/README_heroku_credentials.PNG" alt="image shows infos about heroku set up" width="600px">
-
-
-#### Add a buildpack
-Next, add a Heroku buildpack to your app. Click add a buildpack to your app and configure it for NodeJS.
-
-<img src="README.images/README_heroku_add_builpack.PNG" alt="image shows infos about heroku set up" width="600px">
-
-
-### Configure database
-see Code Institute documentation for more details.
-/// Instruction coming ///
-
+## Testing
+For detailed testing information, see the content related to testing in [TESTING.md](TESTING.md).
 
 
 ## Improvements and ideas for subsequent projects
 
 There are still open User Stories in the Backlog which can be added to the project for further improvments. There are ideas to provide more possibilites for the method managment for the Site Users. Not just creating, but editing. In addition, the Site User might have an additional area where he can storage methods he finds well to and reuse them for his workshops.
+
 
 ## Credits
 

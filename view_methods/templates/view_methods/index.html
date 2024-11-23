@@ -7,17 +7,17 @@
     <div class="row pb-2">
         <h2>Welcome to TeamCrafted,</h2>
         <p>...where creativity, collaboration, and the right methodologies
-           come together to build great teams. <a href="{% url 'about' %}">Find here more about our mission</a>.</p>
+           come together to build great teams. <a href="{% url 'about' %}" aria-label="Learn more about our mission">Find here more about our mission</a>.</p>
         <p>Below you find a constantly growing collection of methods to support you in working with teams.</p>
     </div>
         <!-- Filter Form: Dropdown menu for selecting a purpose -->
     <div class="row gradient-bg p-3">
-        <form method="get" class="border-bottom-2 pb-3">
+        <form method="get" class="border-bottom-2 pb-3" aria-labelledby="filter-form">
             <div class="row g-3">
             <!-- Purpose Filter -->
                 <div class="col-12 col-md-4">
                     <label for="purpose" class="form-label">Filter by Purpose:</label>
-                    <select name="purpose" id="purpose" class="form-select border-right-2">
+                    <select name="purpose" id="purpose" class="form-select border-right-2" aria-label="Filter by Purpose">
                         <option value="">-- Select a Purpose --</option>
                         <option value="idea generation" {% if request.GET.purpose == 'idea generation' %}selected{% endif %}>Idea Generation</option>
                         <option value="team forming, development" {% if request.GET.purpose == 'team forming, development' %}selected{% endif %}>Team Forming, Development</option>
@@ -32,7 +32,7 @@
                 <!-- Duration Filter -->
                 <div class="col-12 col-md-4">
                     <label for="duration" class="form-label">Filter by Duration:</label>
-                    <select name="duration" id="duration" class="form-select border-right-2">
+                    <select name="duration" id="duration" class="form-select border-right-2" aria-label="Filter by Duration">
                         <option value="">-- Select a Duration --</option>
                         <option value="up to 10mins" {% if request.GET.duration == 'up to 10mins' %}selected{% endif %}>up to 10mins</option>
                         <option value="up to 20mins" {% if request.GET.duration == 'up to 20mins' %}selected{% endif %}>up to 20mins</option>
@@ -45,7 +45,7 @@
                 <!-- Location Filter -->
                 <div class="col-12 col-md-4">
                     <label for="location" class="form-label">Filter by Location:</label>
-                    <select name="location" id="location" class="form-select border-right-2">
+                    <select name="location" id="location" class="form-select border-right-2" aria-label="Filter by Location">
                         <option value="">-- Select a Location --</option>
                         <option value="indoor" {% if request.GET.location == 'indoor' %}selected{% endif %}>Indoor</option>
                         <option value="outdoor" {% if request.GET.location == 'outdoor' %}selected{% endif %}>Outdoor</option>
@@ -56,8 +56,8 @@
 
             <!-- Action Buttons -->
             <div class="d-flex justify-content-between align-items-center pt-3">
-                <button type="submit" class="btn btn-primary">Apply Filter</button>
-                <a href="{% url 'home' %}" class="btn btn-primary">Clear Filters</a> <!-- Link to clear all filters -->
+                <button type="submit" class="btn btn-primary" aria-label="Apply filters based on selected options">Apply Filter</button>
+                <a href="{% url 'home' %}" class="btn btn-primary" aria-label="Clear all selected filters">Clear Filters</a> <!-- Link to clear all filters -->
             </div>
         </form>
     </div>
@@ -69,15 +69,15 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body light-bg border ">
-                                <div class="image-container index_images">
+                                <div class="image-container">
                                     <!-- add cloudinary images when a image is provided-->
-                                    <a href="{% url 'method_page' method.slug %}" class="method-link">
+                                    <a href="{% url 'method_page' method.slug %}" class="method-link" aria-label="Go to the detailed method page for {{ method.title }}">
                                         <h2 class="card-title">{{ method.title }}</h2></a>
                                     {% if "placeholder" in method.featured_image.url %}
-                                    <a href="{% url 'method_page' method.slug %}" class="method-link"><img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    <a href="{% url 'method_page' method.slug %}" class="method-link index-images" aria-label="View image for {{ method.title }}"><img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                       alt="placeholder image"></a>
                                     {% else %}
-                                    <a href="{% url 'method_page' method.slug %}" class="method-link"><img class="card-img-top" src=" {{ method.featured_image.url }}"
+                                    <a href="{% url 'method_page' method.slug %}" class="method-link index-images" aria-label="View image for {{ method.title }}"><img class="card-img-top" src=" {{ method.featured_image.url }}"
                                       alt="{{ method.title }}"></a>
                                     {% endif %}
                                     <!-- end cloudinary_CI snipped-->
@@ -85,8 +85,8 @@
                                         <p class="author"> {{ method.like_count }} Likes</p>
                                     </div>
                                 </div>
-                                <a href="{% url 'method_page' method.slug %}" class="method-link">
-                                    <p>{{ method.summary }}</p>
+                                <a href="{% url 'method_page' method.slug %}" class="method-link" aria-label="Read more about {{ method.title }}">
+                                    <p>{{ method.summary | safe }}</p>
                                     <p><strong>Author: {{ method.author }}</strong></p>
                                 </a>
                                 <p class="card-text text-muted h6">{{ method.created_on}}
@@ -106,13 +106,13 @@
         </div>
     </div>
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
+    <nav aria-label="Page navigation" aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="method-link">&laquo; BACK</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="method-link" aria-label="Go to the previous page">&laquo; BACK</a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="method-link"> NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="method-link" aria-label="Go to the next page"> NEXT &raquo;</a></li>
             {% endif %}
         </ul>
     </nav>

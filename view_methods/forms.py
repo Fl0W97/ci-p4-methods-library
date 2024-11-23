@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from django import forms
 from django_summernote.widgets import SummernoteWidget
 from django.core.exceptions import ValidationError
+from urllib.parse import urlparse
 
 
 class CommentForm(forms.ModelForm):
@@ -44,12 +45,16 @@ class MethodForm(forms.ModelForm):
             # Remove the image by setting it to None (null in the database)
             return None
 
-        # If no image is uploaded, return the field value (which is None)
+        # If no image is uploaded, just return None (allow empty value)
         if not featured_image:
             return None
 
-    # If an image is uploaded, validate it
-        # Check if it's a valid file object
+        # If the image is uploaded as a URL (Cloudinary might return a URL as a string)
+        if isinstance(featured_image, str):  # Cloudinary returns URLs as strings
+            # It's already a valid image URL, so we just return it as is
+            return featured_image
+
+        # # If it's a file object (meaning the user uploaded a file)
         if hasattr(featured_image, 'size'):
             max_size = 3 * 1024 * 1024  # 3MB limit
             if featured_image.size > max_size:

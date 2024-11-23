@@ -30,7 +30,6 @@ choices = PURPOSE_CHOICES = (
 )
 
 
-# Create your models here.
 class Method(models.Model):
     title = models.CharField(
         max_length=150, unique=True, blank=False
@@ -55,7 +54,9 @@ class Method(models.Model):
         max_length=4000, blank=False
     )
     featured_image = CloudinaryField(
-        'image', blank=True, null=True, default='placeholder'
+        'image', blank=True, null=True, default='placeholder',
+        help_text="Recommended image size: 700x280px."
+                  "Maximum file size: 3MB."
     )
     material = models.TextField(
         max_length=255, blank=False

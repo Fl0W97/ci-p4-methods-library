@@ -45,9 +45,9 @@
 
     <header>
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white" aria-label="Main navigation">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Team<span
+                <a class="navbar-brand" href="{% url 'home' %}" aria-label="Go to Home page"><span class="brand">Team<span
                             class="blue-o">Crafted</span></span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,28 +57,28 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                                href="{% url 'home' %}">Home</a>
+                                href="{% url 'home' %}" aria-label="Navigate to Home page">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path|slice:':6' == '/about' %}active{% endif %}" href="{% url 'about' %}">About</a>
+                            <a class="nav-link {% if request.path|slice:':6' == '/about' %}active{% endif %}" href="{% url 'about' %}" aria-label="Navigate to About page">About</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path|slice:':7' == '/create' %}active{% endif %}" aria-current="page" href="{% url 'method_creation' %}">Add a Method</a>
+                            <a class="nav-link {% if request.path|slice:':7' == '/create' %}active{% endif %}" aria-current="page" href="{% url 'method_creation' %}" aria-label="Go to Add a Method page">Add a Method</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path|slice:':19' == '/private-collection' %}active{% endif %}" aria-current="page" href="{% url 'private_collection' %}">Your private Collection</a>
+                            <a class="nav-link {% if request.path|slice:':19' == '/private-collection' %}active{% endif %}" aria-current="page" href="{% url 'private_collection' %}" aria-label="Go to Your private Collection">Your private Collection</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path|slice:'17' == '/accounts/logout/' %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link {% if request.path|slice:'17' == '/accounts/logout/' %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}" aria-label="Logout from the account">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.path|slice:':17' == '/accounts/signup/' %}active{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}">Register</a>
+                                href="{% url 'account_signup' %}" aria-label="Register for an account">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path|slice:':16' == '/accounts/login/' %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link {% if request.path|slice:':16' == '/accounts/login/' %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}" aria-label="Login to the account">Login</a>
                         </li>
                         {% endif %}
 
@@ -96,10 +96,10 @@
             <div class="text-center">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible
-                    fade show bg-secondary text-white rounded-lg" id="msg" role="alert">
+                    fade show text-white rounded-lg" id="msg" role="alert" aria-live="polite" aria-atomic="true">
                     {{ message | safe }}
                     <button type="button" class="btn-close"
-                    data-bs-dismiss="alert" aria-label="Close"></button>
+                    data-bs-dismiss="alert" aria-label="Close" aria-hidden="true"></button>
                 </div>
                 {% endfor %}
             </div>

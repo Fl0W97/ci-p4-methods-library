@@ -271,4 +271,5 @@ class AboutPageView(generic.TemplateView):
         # Fetch the 'About' object
         about = About.objects.first()
         context['about'] = about
+
         return context
