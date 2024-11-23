@@ -227,6 +227,8 @@ So, for now, keeping it within the same app (view_methods). It keeps things simp
 
 
 TemplateView doesn't have a POST and GET function. THerefore, a message input field hasn't been integrated. It's more complex. THerefore, it's on the list for next enhancements (see user stories).
+https://docs.djangoproject.com/en/5.1/ref/class-based-views/generic-display/#templateview
+https://docs.djangoproject.com/en/5.1/ref/contrib/messages/
 
 Delete and edit methods is complex. After MVP planned (see user stories)
 

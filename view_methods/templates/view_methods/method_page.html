@@ -69,15 +69,23 @@
           <div class="card-body">
             <h4 class="card-text">Preparation</h4>
             <p class="card-text pb-2">
-              {{ method.prep_time| safe }}
+              {{ method.prep_time | safe }}
             </p>
             <h4 class="card-text">Material</h4>
             <p class="card-text pb-2">
-              {{ method.material| safe }}
+              {{ method.material | safe }}
             </p>
-            <h4 class="card-text"> Duration</h4>
+            <h4 class="card-text">Duration</h4>
             <p class="card-text pb-2">
-              {{ method.duration| safe }}
+              {{ method.duration | safe }}
+            </p>
+            <h4 class="card-text">Location</h4>
+            <p class="card-text pb-2">
+              {{ method.location | safe }}
+            </p>
+            <h4 class="card-text">Group size</h4>
+            <p class="card-text pb-2">
+              {{ method.group_size_min | safe }} - {{ method.group_size_max | safe }}
             </p>
           </div>
         </div>
