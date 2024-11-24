@@ -234,15 +234,33 @@ No errors were returned
 </details>
 
 
-### Validations in the code to aviod errors and bad UX
+### Validation Functions
+In a Django project, validations are typically added in forms.py and models.py. In forms.py, custom validation can be applied by defining methods like clean_fieldname or overriding the clean() method for form-level validation. In models.py, validations are usually added using field options like validators or by overriding the model's clean() method to ensure data integrity before saving to the database. Both approaches help enforce business logic and ensure valid data.
 
-views.py
-    # validation
-    def clean(self):
-        cleaned_data = super().clean()
-        group_size_min = cleaned_data.get('group_size_min')
-        group_size_max = cleaned_data.get('group_size_max')
 
+### Image validation
+The MethodForm class includes custom validation logic for the featured_image field. The clean_featured_image method is a custom validator that handles the validation of the featured_image field in the MethodForm. It checks for the image size and handles various scenarios:
+
+If the user checks the delete checkbox (delete_featured_image), the image is removed by setting the value of featured_image to None. This ensures that no image is retained in the database if the user wishes to delete it. If no image is uploaded, the method returns None, which allows the field to remain empty. If the uploaded image is a URL (for example, returned by an external service like Cloudinary), the method simply returns the URL string as-is without further processing. If the image is uploaded as a file object, the method checks whether the size exceeds the 3MB limit. If the file size is greater than the limit, a ValidationError is raised, informing the user that the image size must be under 3MB. If the uploaded file is not a valid image (i.e., it doesn't have a size attribute), the method raises a ValidationError indicating that the uploaded file is not a valid image.
+
+<img src="README.images/FEATURES_def_clean_featured_image().PNG" alt="shows relevant code" width="700">
+
+
+#### Input field validation
+Several input field validators have been implemented to ensure data integrity and consistency within the database.
+
+- No Blank Input Validator: Required fields, such as title and description, are set with blank=False to prevent empty submissions, ensuring critical data is always provided
+- Length Limit Validator: The max_length attribute restricts input lengths for fields like descriptions or titles. Custom validators enforce additional length restrictions as needed
+- Choice Field Validator: Fields with predefined values, such as status, use the choices option to restrict input to valid options, preventing data entry errors.
+- Group Size Validator: For fields like group size, custom validation ensures the input falls within a specified range, using MinValueValidator and MaxValueValidator
+- Cloudinary Image Validator: A custom validator checks that images uploaded to Cloudinary are in acceptable formats (JPG, JPEG, PNG) and under a 3MB size limit
+
+These validators are applied across the project to ensure that data entered is valid, reducing errors and maintaining consistency. They are defined in models.py to enforce rules during data entry.
+
+For instance 
+<img src="README.imagREADME.images/TESTING_validation_slug_entry.PNG" alt="shows relevant code" width="700">
+<img src="README.images/TESTING_validation_title_entry.PNG" alt="shows relevant code" width="700">
+<img src="README.images/TESTING_validation_group_size.PNG" alt="shows relevant code" width="700">
 
 ## Lighthouse Reports
 

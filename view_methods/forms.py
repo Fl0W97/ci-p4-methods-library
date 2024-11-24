@@ -20,7 +20,7 @@ class MethodForm(forms.ModelForm):
         fields = (
             'title', 'purpose', 'summary', 'instructions', 'material',
             'prep_time', 'duration', 'featured_image',
-            'group_size_min', 'group_size_max', 'location',
+            'group_size_min', 'group_size_max', 'location', 'remote',
         )
 
     # validation for group size
@@ -77,27 +77,6 @@ class MethodForm(forms.ModelForm):
         if commit:
             instance.save()
         return instance
-
-
-"""
-    # Add custom validation for image size
-    def clean_featured_image(self):
-        # Get the image file from cleaned data
-        featured_image = self.cleaned_data.get('featured_image')
-
-        if featured_image:
-
-            # Ensure the uploaded file is not a string
-            # This may happen if no image is provided
-            if isinstance(featured_image, str):
-                return featured_image  # Return the image URL or string as is
-            # Check image size (3MB size limit)
-            max_size = 2 * 1024 * 1024  # 2MB size limit
-            if featured_image.size > max_size:
-                raise ValidationError('The file size must be less than 2MB.')
-
-        return featured_image
-"""
 
 
 class AboutForm(forms.ModelForm):

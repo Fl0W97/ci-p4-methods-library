@@ -6,15 +6,11 @@ Welcome to my fourth project, 'method library'. This website supports team coach
 
 
 ## Website overview/ features
-### Landing page, index.html
-<img src="README.images/README_landing_page.PNG" alt="shows landing page" width="700">
-<img src="README.images/README_landing_page_use_filter.PNG" alt="shows landing page" width="700">
 
-Here a first look at the landing page. There is a navigation element on top, a filter area and below all methods are shown which have been shared within the community.
-The user gets a first overview of the activities on the webiste and he can directly start to filter throug hthe list of methods to find an idea he can use for his next workshop. Once he selects on method, he is guided to the subpage of the relevant method.
+### General tempalte including navigation and footer
 
 
-### Navigation
+#### Navigation
 <img src="README.images/README_nav_not_logged_in.PNG" alt="shows navigation in logged out mode" width="700">
 <img src="README.images/README_nav_logged_in.PNG" alt="shows navigation in logged in mode" width="700">
 
@@ -22,6 +18,20 @@ The navigation displayes different elements based on the log-in status.
 If the user is logged out he sees the elements Home, About, Register and Login. In addition, here recevies the hint that he is logged out "".
 If the user is logged in he sees Home, About, Add a Mehtod, Your private Collection and Logout. In addition, here recevies the hint that he is logged in "".
 
+In addition, User messages are displayed below the navigation to give feedback to the user once he made an acivity on the page.
+<img src="README.images/README_landing_page_message.PNG" alt="shows user message box" width="700">
+
+#### Footer
+The footer shows links to 
+
+<img src="README.images/README_nav_logged_in.PNG" alt="shows navigation in logged in mode" width="700">
+
+### Landing page, index.html
+<img src="README.images/README_landing_page.PNG" alt="shows landing page" width="700">
+<img src="README.images/README_landing_page_use_filter.PNG" alt="shows landing page" width="700">
+
+Here a first look at the landing page. There is a navigation element on top, a filter area and below all methods are shown which have been shared within the community.
+The user gets a first overview of the activities on the webiste and he can directly start to filter throug hthe list of methods to find an idea he can use for his next workshop. Once he selects on method, he is guided to the subpage of the relevant method.
 
 ### About page, about.html
 Shows what the webiste is about and introduces the creator of the website.
@@ -31,6 +41,7 @@ Shows what the webiste is about and introduces the creator of the website.
 
 ### Detailed method view, method_page.html
 Displays instruction and further information which can be useful for integrating this method in a workshop. In addition, there is a comment section and the possibility to add a comment.
+
 <img src="README.images/README_detailed_method_page.PNG" alt="shows detailed method page" width="700">
 
 
@@ -58,68 +69,91 @@ Sign-out
 
 
 ### Add a Method, method_creation.html
+Displays a form where the logged-in Site User can enter and submit a new method to share it with the community.
+
 <img src="README.images/README_add_a_Method_page.PNG" alt="shows add method page" width="700">
 
 
 ### Your private Collection, private_collection.html
+Displays instruction and further information which can be useful for integrating this method in a workshop. In addition, there is a comment section and the possibility to add a comment.
+
 <img src="README.images/README_private collection_page.PNG" alt="shows private collection page" width="700">
-
-
 
 
 ### Feature overview:
 
-| No. | Feature | Description  | code |
-| --- | ------- |------------- | ---- |
-| 1 | Filter function | purpose, duration, location ... however, the filter options are hard coded, has to be added as asoon as a new purpose is implemented by the admin | |
-| 2 | View functions | various view function are used within the project generic ListView and TempalteView (class based) and further function-based ones. To see and sort the methods on the index.html, on private_collection.html, method_page.html (add examples)||
-| 3 | Authentification | User log in area to provide rights to create, update, comment and collect methods. Using allauth package ||
-| 4 | Add comments | CRUD for Comments | |
-| 5 | add Methods | Part of CRUD for Methods using using CrispyForms, adding summernote feature for a better editing||
-| 6 | admin panel customization | filtering, view adjustment (examples), adding summernote, adding info texts when entering values i.e. about, methods ||
-| 7 | From for about me content | Can be added easily by admin. Restriction is made by define queryset.filter.first() so taht only the first about page entry is shown. In addition, there is a hint in the admin panel, that just the first entry is displayed on the website by using fieldsets in class AboutAdmin (admin.py). |
-| 8 | Super user functionalities | ... |
-| 9 | like function | The logged-in User is able to like a method. Furthermore, there the like model is used to count the likes. The total number of likes is displayed and on the landing page it is sorted - the method with the highest number of likes is shown on the top. ||
-| 10 | Automatically slug transfer | By adding a ne method the user don't have to include content in the slug input filed (it might be deleted soon) ||
+#### Features which are visible for the Site User:
+| No. | Feature | Description  |
+| --- | ------- |------------- |
+| 1 | Mehtod library | When opening the landing page, the Site User has direct access to a broad range of different methods shared with the community. There are images, a summary, and information about the author and the number of likes to help the user select a relevant method. |
+| 2 | Filter function | On the landing page, there is a filter function that helps the user search for method types. Based on experience, three filtering options are provided: purpose, duration, and location. This allows Scrum Masters and Team Coaches to quickly find a suitable collection of options. |
+| 3 | Method details | By clicking on a displayed method on the landing page, the user is forwarded to the method’s detailed page. There, the user finds detailed instructions and additional information relevant for including the method in a workshop, such as duration, group size, and preparation time. The Site User can also see a comment section below the method. |
+| 4 | Authentication | Authentication logic is in place, including sign-up, log-in, and log-out functions, along with comments and guidance for Site Users and Admins. |
+| 5 | Like function | The logged-in Site User can like a method. A like model is used to count the likes. The total number of likes for each method is displayed, and on the landing page, methods are sorted by the number of likes—those with the highest number of likes appear at the top. |
+| 6 | Manage comments | On the method page, a logged-in Site User can manage comments. They can write, edit, or delete their own comments. Additionally, the user is informed about the status of their comment (it may still be in approval, meaning it’s only visible to the admin and the specific user). | 
+| 7 | Add Methods | If the user is logged in, they can create their own method and share it with the community on the "Add a Method" page, which is only displayed for logged-in users. |
+| 8 | Private Collection | If the user is logged in, they can view their activities, such as methods they’ve created, comments they’ve written, or methods they’ve liked. This feature is useful for keeping an overview after interacting with the community and for using liked methods in workshops. |
 
 
+#### Features which are not visible for the Site User:
+| No. | Feature | Description  |
+| --- | ------- |------------- |
+| 9 | Django Admin panel | Using the Django admin feature, the Admin can manage the website’s content via CRUD operations. For example, they can add, delete, edit, or approve new methods and comments, and manage users. |
+| 11 | Custom Admin Panel | Based on the Django standard, additional features have been added to improve the Admin UX, such as filtering options for methods and comments, a Summernote form feature for specific type fields, and additional info texts for entering values. |
+| 10 | About Us form | Through the Admin panel, the content of the about.html page can easily be adjusted without coding knowledge, as the content is provided via a form. An additional database has been set up for managing the site content by the Admin. |
+| 12 | 	Slug Generation | When adding a new method, the user does not need to fill out the slug input field. Although it is not part of the form presented to the Site User, it is mandatory to link each method with a unique URL. The slug field is automatically populated and can be viewed in the admin panel. |
+| 13 | Add Images (Image validation) | For the Site User and the Admin it's possible to add images to each method. The images are stored by a third-party tool Cloudinary. Image handling involves validation and composite checks to minimize risks associated with uploading files from users. |
 
+see more details about the feature development in [FEATURE.md](FEATURE.md)
 
 
 ## User Stories, Project scope
 see in GItHub project [Methods library](https://github.com/Fl0W97/ci-p4-methods-library/issues)
-see user story testing in [TESTING.md](TESTING.md)
 
-
-### Site Users (MVP)
-
-- As a Site User I can *see directly the purpose of the website * so that get an orientation what I can do
-- As a Site User I can view all methods so that I can choose one, get motivated to share comments and use the methods in my workshops
-- As a Site User I can comment on a method so that I can interact with the community
-- As a Site User I can read the methods in an structured way so that *it's easy to go through them.
-- As an early Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods
-- As a Site User I can register an account so that I can comment on a method
-- As a Site User I want to get a notification once I change something so that I get feedback of my actions
-- As a Site User I can modify or delete my comment on a method so that * I can be involved in the conversation*
-
-### Site Admin (MVP)
-
-- As a Site Admin I can create, read, update and delete methods so that I can manage my content
-- As a Site Admin I can approve comments so that I can manage and control the content on the website
 
 ### Site Users
 
-- As a Site User I can view the different methods with images and teaser so that I get an idea what I can see on the detail site
-- As a Site User I can see images and a good color contrast so that I like to sty on the website form a visual perspective
-- As a Site User I can get a notification once I change something so that I receive feedback of my actions
-- As a Site User I can filter methods on the main page so that I can optimize my search
-- As a Site User I want to get a notification once I change something so that I get feedback of my actions
-- As a Site User I can create, update and delete my own methods so that *I can share my methods and adjust those with the community*
+As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods
+As a Site User I can read the methods in an structured way so that it's easy to go through them.
+As a Site User I can register an account so that I can comment on a method
+As a Site User I can view methods so that I get motivated to share my methods as well
+As a Site User I can see images and a good color contrast so that I like to stay on the website form a visual perspective
+As a Site User I want to get a notification once I change something so that I get feedback of my actions
+As a Site User I can see directly the purpose of the website so that get an orientation what I can do
+As a Site User I can filter methods on the main page so that I can optimize my search
+As a Site User I can add methods so that I can share my own methods with the community.
+As a Site User I can see information about the creator of website so that I can contact him and get an idea of the person behind the project.
+As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site
+As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful.
+As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview
+As a Site User I can identify the website in my browser via an symbol so that I find the open website faster
+As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site
+As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text
+As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster
+As a Site User I can see clearly if I liked a method already, before I click on the Like-button so that I don't click twice.
+As a Site User (handycaped) I can use arial-current/label attributes so that I can follow the content on the website properly.
+
+As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops.
+As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily
+As a (logged-in) Site User I can create a method easily and well structured so that I don't see too long input fields, etc
+As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods
+As a (logged-in) Site User I can modify or delete my comment on a method so that I can be involved in the conversation
 
 ### Site Admin
+As a Site Admin I can create, read, update and delete methods so that I can manage my content
+As a Site Admin I can approve comments so that I can manage and control the content on the website
+As a Site Admin I can create, update and delete the text content of the about.html site
+As a Site Admin I can create, update and delete Site Users
+As a Site Admin I can use a filter function for comments in the admin panel so that I can manage the comments efficient
+As a Site Admin I can approve methods from other Site Users so that I have control of the content
+As a Site Admin I can approve comments from other Site Users so that I have control of the content
+As a Site Admin I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient.
+As a Site Admin I want to make sure that the Users don't crash the website by adding to much content
+As a Site Admin I can use a working website so that I don't receive error messages or are harmed to use certain functionalities of the website
 
-- As *Site Admin* I can *approve new methods from Site Users* so that *I can have control of the content on the website*
-- summernote, filter comments and methods, show comment text or method title... in admin panel view
+
+see user story testing in [TESTING.md](TESTING.md)
+
 
 ## UX Design
 
@@ -154,10 +188,9 @@ body #F9FAFC
 
 .main-bg background-color: #F9FAFC
 
-beown: #502419
-white #F9FAFC
-red: #F7A1A1
-blue: #5BC0EB
+
+<img src="README.images/Color_schema.png" alt="shows color schema">
+
 green: #7EA172
 
 ### User feedback/ guidance / CRUD
@@ -177,7 +210,7 @@ GitHub Project Management was used to manage the project.
 
 
 ## Databases
-PostgreSQL is used for production and Sqlite3 is used for .
+PostgreSQL is used for production and Sqlite3 is used for.
 
 ### ERD Entity Relationshop Diagram overview
 <img src="README.images/README_ERD_overview.PNG" alt="shows ERD_overview_">
@@ -427,13 +460,39 @@ https://docs.djangoproject.com/en/5.1/topics/class-based-views/, https://docs.py
 
 | No | Description  | Source | URL |
 | -- | ------------ | ------ | --- |
-| 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ |
+| 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ | i.e. javascript log-in function, button javasscript (comment.js)
 | like button | 
 | Summernote adjustment in forms | https://summernote.org/deep-dive/
 | Fieldsets | https://docs.djangoproject.com/en/5.1/ref/contrib/admin/
 
 
+FROm Code Institute tutorial
+class Comment | class Comment(models.Model):
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name="comments"
+    )
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="comments_author"
+    )
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.author}"
+
+
 using view, model and template code from Code Institute -- project "Therefore I Blog"
+
+
+
 
 
 ### Template

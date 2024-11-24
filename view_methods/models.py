@@ -7,7 +7,7 @@ STATUS = (
 )
 LOCATION_CHOICES = (
     ('indoor', "Indoor"), ('outdoor', "Outdoor"),
-    ('indoor/outdoor', "Indoor/Outdoor")
+    ('indoor/outdoor', "Indoor/Outdoor"),
 )
 PREPTIME_CHOICES = (
     ('up to 5mins', "up to 5mins"), ('up to 10mins', "up to 10mins"),
@@ -79,7 +79,7 @@ class Method(models.Model):
         default=3  # Maximum group size
     )
     location = models.CharField(
-        # Restrict location to indoor/outdoor
+        # Restrict location to indoor/outdoor/remote
         choices=LOCATION_CHOICES, default='indoor'
     )
     created_on = models.DateTimeField(
@@ -91,6 +91,11 @@ class Method(models.Model):
     status = models.IntegerField(
         # Restrict status to draft/published
         choices=STATUS, default=0
+    )
+    remote = models.BooleanField(
+        default=False,
+        help_text="Check if the method can be also"
+                  "used for a remote session"
     )
 
     class Meta:
