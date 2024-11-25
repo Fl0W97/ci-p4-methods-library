@@ -174,9 +174,9 @@ p {
 }
 
 .btn-like {
-    color: #1b79f7;
+    color: white;
     border: none;
-    background: transparent;
+    background: #1b79f7;
 }
 
 .btn-delete {
@@ -186,8 +186,8 @@ p {
 
 .btn-like:hover,
 .btn-like:active {
-    color: #065ccd;
-    background: transparent;
+    color: black;
+    background: #1b79f7;
     border: none;
 }
 

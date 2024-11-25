@@ -176,7 +176,7 @@ Custom Templates, methods_library/view_methods/templates
  
 ### Stylesheed 
 
-Within style.css standard Bootstrap utility classes are defined.
+In style.css the relevant css code is stored. In addition a few standard Bootstrap utility classes are has been used.
 
 The color schema should be light with dark accents. Encauraging to share and inspire.
 
@@ -328,84 +328,84 @@ The main functions are generated with Python. However, to set up the whole proje
 
 ### Other tools ###
 
-    Git: The version control system that tracks changes in the code and enables collaboration among developers.
-    Pip3: The Python package manager used to install and manage project dependencies.
-    Render: A platform used to render and display the project’s README file.
-    GitHub: A platform that hosts the website’s source code and facilitates project management through features like the Kanban board.
-    Chrome DevTools: The developer tools in Google Chrome used to debug and inspect the website’s frontend.
-    Firefox DevTools: The developer tools in Firefox used to debug and inspect the website’s frontend.
-    Font Awesome: A library used to incorporate scalable vector icons into the website.
-    [Coolors](https://coolors.co/): A tool used to generate a color palette for the website’s design.
-    W3C Validator: A tool used to validate the HTML5 code to ensure it follows best practices and standards.
-    W3C CSS Validator: A tool used to validate the CSS code, ensuring it conforms to web standards.
-    JSHint: A tool used to check JavaScript code for potential errors or problems.
-    PEP8: A tool used to check the Python code against the PEP8 coding standards for readability and consistency.
-    Miro: A tool used to create visual diagrams, such as the Entity-Relationship Diagram for the project.
-    Heroku: A cloud platform used to deploy and host the website in a production environment.
-    Gitpod: A cloud-based IDE used for local development and coding.
+[Git](https://git-scm.com/): The version control system that tracks changes in the code and enables collaboration among developers.
+[Gitpod](https://www.gitpod.io/): A cloud-based IDE used for local development and coding.
+[Pip3](https://pypi.org/): The Python package manager used to install and manage project dependencies.
+[GitHub](https://github.com/): A platform that hosts the website’s source code and facilitates project management through features like the Kanban board.
+[Chrome DevTools](https://developer.chrome.com/docs/devtools): The developer tools in Google Chrome used to debug and inspect the website’s frontend.
+[Firefox DevTools](https://firefox-source-docs.mozilla.org/devtools-user/): The developer tools in Firefox used to debug and inspect the website’s frontend.
+[Font Awesome](https://fontawesome.com/): A library used to incorporate scalable vector icons into the website.
+[Coolors](https://coolors.co/): A tool used to generate a color palette for the website’s design.
+[W3C Validator](https://validator.w3.org/): A tool used to validate the HTML5 code to ensure it follows best practices and standards.
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/): A tool used to validate the CSS code, ensuring it conforms to web standards.
+[JSHint](https://jshint.com/): A tool used to check JavaScript code for potential errors or problems.
+[PEP8](https://pep8ci.herokuapp.com/): A tool used to check the Python code against the PEP8 coding standards for readability and consistency.
+[Miro](https://miro.com): A tool used to create visual diagrams, such as the Entity-Relationship Diagram for the project.
+[Heroku](https://www.heroku.com): A cloud platform used to deploy and host the website in a production environment.
+
 
 
 ### Installed packages requirements.txt ###
 
-    asgiref==3.8.1: 
-    A utility library for Python that provides asynchronous server gateway interface (ASGI) support for Django
-     and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.
+asgiref==3.8.1: 
+A utility library for Python that provides asynchronous server gateway interface (ASGI) support for Django
+    and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.
 
-    crispy-bootstrap5==0.7: 
-    A Django package that integrates the Bootstrap 5 framework with Django Crispy Forms,
-     making it easier to render Bootstrap-styled forms with a clean and responsive layout.
+crispy-bootstrap5==0.7: 
+A Django package that integrates the Bootstrap 5 framework with Django Crispy Forms,
+    making it easier to render Bootstrap-styled forms with a clean and responsive layout.
 
-    dj-database-url==0.5.0: 
-    A library that simplifies the database connection setup in Django by parsing the DATABASE_URL environment
-     variable and configuring the database settings accordingly, commonly used for cloud deployment.
+dj-database-url==0.5.0: 
+A library that simplifies the database connection setup in Django by parsing the DATABASE_URL environment
+    variable and configuring the database settings accordingly, commonly used for cloud deployment.
 
-    Django==4.2.7: 
-    The web framework used for building the website's backend, offering a powerful, flexible, and secure platform
-     for web application development, including routing, database management, and templating.
+Django==4.2.7: 
+The web framework used for building the website's backend, offering a powerful, flexible, and secure platform
+    for web application development, including routing, database management, and templating.
 
-    django-allauth==0.57.2:
-     A Django package for handling authentication, registration, and account management. It supports login via
-      social accounts (e.g., Google, Facebook) and traditional email/password-based login.
+django-allauth==0.57.2:
+    A Django package for handling authentication, registration, and account management. It supports login via
+    social accounts (e.g., Google, Facebook) and traditional email/password-based login.
 
-    django-crispy-forms==2.3:
-     A Django library that provides better control over the rendering of forms by allowing you to use a simpler,
-      cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.
+django-crispy-forms==2.3:
+    A Django library that provides better control over the rendering of forms by allowing you to use a simpler,
+    cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.
 
-    django-summernote==0.8.20.0:
-     A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text
-     editing. It's used to enhance text areas for content creation by users.
+django-summernote==0.8.20.0:
+    A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text
+    editing. It's used to enhance text areas for content creation by users.
 
-    gunicorn==20.1.0:
-     A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production
-     environments. It's known for its speed and ability to handle multiple requests concurrently.
+gunicorn==20.1.0:
+    A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production
+    environments. It's known for its speed and ability to handle multiple requests concurrently.
 
-    oauthlib==3.2.2:
-     A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for
-     handling secure access to protected resources via third-party authentication services.
+oauthlib==3.2.2:
+    A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for
+    handling secure access to protected resources via third-party authentication services.
 
-    psycopg2==2.9.10:
-     A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for
-      interacting with the relational database in the backend of the website.
+psycopg2==2.9.10:
+    A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for
+    interacting with the relational database in the backend of the website.
 
-    PyJWT==2.9.0:
-     A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting
-     information and managing user authentication in web applications.
+PyJWT==2.9.0:
+    A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting
+    information and managing user authentication in web applications.
 
-    python3-openid==3.2.0:
-     A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across
-     multiple applications. It's integrated into django-allauth for user authentication via third-party providers.
+python3-openid==3.2.0:
+    A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across
+    multiple applications. It's integrated into django-allauth for user authentication via third-party providers.
 
-    requests-oauthlib==2.0.0:
-     An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API
-     requests. It's used for handling authentication in API calls that require OAuth.
+requests-oauthlib==2.0.0:
+    An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API
+    requests. It's used for handling authentication in API calls that require OAuth.
 
-    sqlparse==0.5.1:
-     A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging
-     and optimizing database queries within Django projects.
+sqlparse==0.5.1:
+    A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging
+    and optimizing database queries within Django projects.
 
-    whitenoise==6.5.0:
-     A static file management library for Django, used to serve static files in a production environment. It 
-     simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.
+whitenoise==6.5.0:
+    A static file management library for Django, used to serve static files in a production environment. It 
+    simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.
 
 
 ## Deployment
@@ -425,142 +425,125 @@ For the admin, it would make senes to provide more forms for tex t content on th
 
 ## Credits
 
-GitHub for giving the idea of the project's design.
-Django for the framework and detailed documentation about code snippets nad logic.
-Bootstrap for the framework and detailed documentation about code snippets and logic.
-Postgresql: for providing a free database (via Code Institute).
-Font awesome: for the free access to icons.
-googlefonts: for providing free fonts.
-Favicon Generator: for providing a free platform to generate favicons.
-Coolors: for providing a free platform to generate your own palette.
-Code Institute: Providing tutorials especially the walkthrough Project4 'I Think Therefore I Blog', Tutors such as Tom, Thomas, Sean and Holly
-Youtube: for access to a huge community of developers who facing similar challenges like me
+[GitHub](https://github.com): for giving the idea of the project's design.
+[Django](https://www.djangoproject.com/): for the framework and detailed documentation about code snippets nad logic.
+[Bootstrap](https://getbootstrap.com/): for the framework and detailed documentation about code snippets and logic.
+[Postgresql](https://www.postgresql.org/): for providing a free database (via Code Institute).
+[Font-Awesome](https://fontawesome.com/): for the free access to icons.
+[Google_Fonts](https://fonts.google.com/): for providing free fonts.
+[Favicon_Generator](https://favicon.io/): for providing a free platform to generate favicons.
+[Coolors](https://coolors.co/): for providing a free platform to generate your own palette.
+[Code_Institute](https://codeinstitute.net) - Tutors such as Tom, Thomas, Sean and Holly: Providing tutorials especially the walkthrough Project4 'I Think Therefore I Blog'
+[Code_Institute](https://codeinstitute.net) - Mentor Juliia Konovalova: Providing guidance and tips for my project and sharing insights of her own project
+[Youtube](https://www.youtube.com/): for access to a huge community of developers who facing similar challenges like me
 [SessionLab](https://www.sessionlab.com/): for access to various free Methods to fill the database and insiration for functionalities
-Stackoverflow: for access to a huge community of developers who facing similar challenges like me
-
+[Pipdecks](https://pipdecks.com/pages/workshop-tactics?srsltid=AfmBOoru9ew7v6kb_40ssn9qbAzAw4b2Xb1cvAZ0Et_v20UOupe7csJ0)
+[Stackoverflow](https://stackoverflow.com/): for access to a huge community of developers who facing similar challenges like me
 
 
 ### Content
 
-Description of Heroku deployment is resused from github project
-https://github.com/discord/heroku-sample-app/blob/main/README.md
+**Content about methods:**
+[SessionLab](https://www.sessionlab.com/library)
+Methods: Stinky Fish, 4-2-1-all, Brainwriting, Silent writing, Active Listening, Letter to Myself, The Six Hats, The Arrow, Walking questions, Bad Ideas, Check-in/CHeck-out
 
 
-Code Institute Ideas and documentation of The walkthrough Project4 was reused and adjusted.
-https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/courseware/713441aba05441dfb3a7cf04f3268b3f/824fccecd0fe4e44871eeabcbf69d830/
-
-Content about methods:
-Stinky Fish, 4-2-1-all, Brainwriting, Silent writing, Active Listening, Letter to Myself, The Six Hats, The Arrow, Walking questions, Bad Ideas, Check-in/CHeck-out
+[Pipdecks](https://pipdecks.com/pages/workshop-tactics?srsltid=AfmBOoru9ew7v6kb_40ssn9qbAzAw4b2Xb1cvAZ0Et_v20UOupe7csJ0)
+Methods: Roles and Responsibilities, Skills Market, Five Whys
 
 
+**Images**
+All image, the deufault as well as the ones for songle methods has been provided by freepik.com. 
+For instance https://www.freepik.com/free-vector/illustration-light-bulb-ideas_2922257.htm?sign-up=google#fromView=search&page=1&position=36&uuid=75e381f2-8406-4d32-9975-0eba4ddf834f
 
-filters:
+According to the licence aggreement for free content Freepik.com is mentioned in the footer. 
+
+
+### Code
+
+
+**Filters:**
 https://stackoverflow.com/questions/34739680/how-to-add-filters-to-a-query-dynamically-in-django
 https://www.youtube.com/watch?app=desktop&v=FTUxl5ZCMb8
 https://www.youtube.com/watch?v=T862gjtlFvs
 
-Like-button: 
+**Like-button:**
+https://docs.djangoproject.com/en/5.1/topics/db/queries/#field-lookups
 https://stackoverflow.com/questions/73683387/how-to-add-like-button-to-each-blog-post-in-the-same-page-with-django
 https://stackoverflow.com/questions/15407985/django-like-button?rq=3
 https://www.youtube.com/watch?v=ZUiTiUj-tZw
 https://www.youtube.com/watch?v=AZwc9hDBi04
 
+Summernote adjustment in forms
+https://summernote.org/deep-dive/ 
 
-Hint for Admin panel
-fieldsets
-how to use filedsets https://docs.djangoproject.com/en/5.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets
+
+**Django documentation**
+
+Admin panel
+fieldsets https://docs.djangoproject.com/en/5.1/ref/contrib/admin/, https://docs.djangoproject.com/en/5.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin
 use help_text: https://docs.djangoproject.com/en/5.1/ref/models/fields/#help-text
 
-HInt for super() function and used in about and edit method views
+
+Hint for function super()
 https://docs.djangoproject.com/en/5.1/topics/class-based-views/, https://docs.python.org/3/library/functions.html#super
+https://docs.python.org/3/library/functions.html#super
 
-### Images
+Meta Model
+https://docs.djangoproject.com/en/5.1/ref/models/options/
 
+TempalteView
+https://docs.djangoproject.com/en/5.1/topics/class-based-views/
 
+https://docs.djangoproject.com/en/5.1/ref/class-based-views/generic-display/#templateview
 
-### Code
-
-| No | Description, feature  | Source | URL |
-| -- | ------------ | ------ | --- |
-| 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ | 
-| 2 | Summernote adjustment in forms | https://summernote.org/deep-dive/
-| 3 | Fieldsets | https://docs.djangoproject.com/en/5.1/ref/contrib/admin/
-| 4 | like button | tackoverflow, YouTube | https://stackoverflow.com/questions/73683387/how-to-add-like-button-to-each-blog-post-in-the-same-page-with-django, https://www.youtube.com/watch?v=ZUiTiUj-tZw, https://www.youtube.com/watch?v=AZwc9hDBi04 
+https://docs.djangoproject.com/en/5.1/ref/class-based-views/mixins-simple/
 
 
-Reused code with slight adjustments:
-i.e. javascript log-in function, button javasscript (comment.js)
-
-    const editButtons = document.getElementsByClassName("btn-edit");
-    const commentText = document.getElementById("id_body");
-    const commentForm = document.getElementById("commentForm");
-    const submitButton = document.getElementById("submitButton");
-
-    const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-    const deleteButtons = document.getElementsByClassName("btn-delete");
-    const deleteConfirm = document.getElementById("deleteConfirm");
-
-    /**
-    * Initializes deletion functionality for the provided delete buttons.
-    * 
-    * For each button in the `deleteButtons` collection:
-    * - Retrieves the associated comment's ID upon click.
-    * - Updates the `deleteConfirm` link's href to point to the 
-    * deletion endpoint for the specific comment.
-    * - Displays a confirmation modal (`deleteModal`) to prompt 
-    * the user for confirmation before deletion.
-    */
-
-    for (let button of editButtons) {
-    button.addEventListener("click", (e) => {
-        let commentId = e.target.getAttribute("comment_id");
-        let commentContent = document.getElementById(`comment${commentId}`).innerText;
-        commentText.value = commentContent;
-        submitButton.innerText = "Update";
-        commentForm.setAttribute("action", `edit_comment/${commentId}`);
-    });
-    }
+**Authentification**
+https://docs.djangoproject.com/en/5.1/topics/auth/default/
 
 
-    for (let button of deleteButtons) {
-        button.addEventListener("click", (e) => {
-        let commentId = e.target.getAttribute("comment_id");
-        deleteConfirm.href = `delete_comment/${commentId}`;
-        deleteModal.show();
-        });
-    }
+**Bootstrap documentation**
+https://getbootstrap.com/docs/5.2/components/accordion/
 
 
+**ARIA** 
+https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/
 
 
+**Reused code from Code Institute:**
 
-    class CommentForm(forms.ModelForm):
-        class Meta:
-            model = Comment
-            fields = ('body',)
+Code Institute: Chapter 'I Think Therefore I Blog - Code it yourself - Challenge: Create the About app'
+
+    class About(models.Model):
+        title = models.CharField(max_length=200)
+        updated_on = models.DateTimeField(auto_now=True)
+        content = models.TextField()
+
+        def __str__(self):
+            return self.title
 
 
-    class Comment(models.Model):
-        method = models.ForeignKey(
-            Method, on_delete=models.CASCADE, related_name="comments"
-        )
-        author = models.ForeignKey(
-            User, on_delete=models.CASCADE, related_name="commenter"
+My code:
+
+    # model for about page
+    class About(models.Model):
+        title = models.CharField(
+            max_length=200, default="About Us"
         )
         body = models.TextField(
-            max_length=500
-        )
-        approved = models.BooleanField(
-            default=False
-        )
-        created_on = models.DateTimeField(
-            auto_now_add=True
-        )
+            help_text="Only the first about entry in the admin panel"
+            " is displayed on the website.")
+
+        def __str__(self):
+            return self.title  # Show the title in the admin panel
 
 
-From Code Institute tutorial
 
-    class Comment | class Comment(models.Model):
+Original code of Institute tutorial: [https://learn.codeinstitute.net] 'I Think Therefore I Blog Models - part 2 - Challenge: Add methods to the Comment model'
+
+    class Comment(models.Model):
         post = models.ForeignKey(
             Post,
             on_delete=models.CASCADE,
@@ -582,13 +565,186 @@ From Code Institute tutorial
             return f"Comment {self.body} by {self.author}"
 
 
-using view, model and template code from Code Institute -- project "Therefore I Blog"
+My code
+
+    class Comment(models.Model):
+        method = models.ForeignKey(
+            Method, on_delete=models.CASCADE, related_name="comments"
+        )
+        author = models.ForeignKey(
+            User, on_delete=models.CASCADE, related_name="commenter"
+        )
+        body = models.TextField(
+            max_length=500
+        )
+        approved = models.BooleanField(
+            default=False
+        )
+        created_on = models.DateTimeField(
+            auto_now_add=True
+        )
+    
+        class Meta:
+            ordering = ["-created_on"]
+
+        def __str__(self):
+            return (
+                f" By {self.author} | {self.body} | Created on {self.created_on}"
+            )
+
+From Code Institute tutorial: [https://learn.codeinstitute.net] 'I Think Therefore I Blog - Views Part 3 - Editing and deleting records'
+
+    <!-- Delete confirmation modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1"
+    aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title"
+            id="deleteModalLabel">Delete comment?</h5>
+            <button type="button" class="btn-close"
+            data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Are you sure you want to delete your comment?
+            This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+            data-bs-dismiss="modal">Close</button>
+            <a id="deleteConfirm" href="#" class="btn
+            btn-danger">Delete</a>
+        </div>
+        </div>
+    </div>
+    </div>
 
 
 
+My code
+
+    <!-- Delete confirmation modal - comment -->
+    <div class="modal fade" id="deleteModal" tabindex="-1"
+    aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title"
+            id="deleteModalLabel">Delete comment?</h5>
+            <button type="button" class="btn-close"
+            data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Are you sure you want to delete your comment?
+            This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+            data-bs-dismiss="modal" aria-label="Close modal">
+            Close</button>
+            <a id="deleteConfirm" href="#" class="btn
+            btn-danger" aria-label="Confirm delete of comment">
+            Delete</a>
+        </div>
+        </div>
+    </div>
+    </div>
 
 
-### Template
+Original code of Institute tutorial in Chapter 'I Think Therefore I Blog Views - Part 3 - Editing and deleting records' (JavaScript):
 
-Python Essential Template from Code Institute
+    const editButtons = document.getElementsByClassName("btn-edit");
+    const commentText = document.getElementById("id_body");
+    const commentForm = document.getElementById("commentForm");
+    const submitButton = document.getElementById("submitButton");
+
+    const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+    const deleteButtons = document.getElementsByClassName("btn-delete");
+    const deleteConfirm = document.getElementById("deleteConfirm");
+
+    /**
+    * Initializes edit functionality for the provided edit buttons.
+    * 
+    * For each button in the `editButtons` collection:
+    * - Retrieves the associated comment's ID upon click.
+    * - Fetches the content of the corresponding comment.
+    * - Populates the `commentText` input/textarea with the comment's content for editing.
+    * - Updates the submit button's text to "Update".
+    * - Sets the form's action attribute to the `edit_comment/{commentId}` endpoint.
+    */
+    for (let button of editButtons) {
+    button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        let commentContent = document.getElementById(`comment${commentId}`).innerText;
+        commentText.value = commentContent;
+        submitButton.innerText = "Update";
+        commentForm.setAttribute("action", `edit_comment/${commentId}`);
+    });
+    }
+
+    /**
+    * Initializes deletion functionality for the provided delete buttons.
+    * 
+    * For each button in the `deleteButtons` collection:
+    * - Retrieves the associated comment's ID upon click.
+    * - Updates the `deleteConfirm` link's href to point to the 
+    * deletion endpoint for the specific comment.
+    * - Displays a confirmation modal (`deleteModal`) to prompt 
+    * the user for confirmation before deletion.
+    */
+    for (let button of deleteButtons) {
+    button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        deleteConfirm.href = `delete_comment/${commentId}`;
+        deleteModal.show();
+    });
+    }
+
+
+My code
+
+    // Get all elements that are needed for the following functions
+    const editButtons = document.getElementsByClassName("btn-edit");
+    const commentText = document.getElementById("id_body");
+    const commentForm = document.getElementById("commentForm");
+    const submitButton = document.getElementById("submitButton");
+
+    const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+    const deleteButtons = document.getElementsByClassName("btn-delete");
+    const deleteConfirm = document.getElementById("deleteConfirm");
+
+
+    for (let button of editButtons) {
+    button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        let commentContent = document.getElementById(`comment${commentId}`).innerText;
+        // Set the value of the comment text area to the current content so the user can edit it
+        commentText.value = commentContent;
+        // Change the submit button's text to "Update" to indicate that this is an edit operation
+        submitButton.innerText = "Update";
+        // Update the form's action URL to point to the URL for editing the specific comment
+        commentForm.setAttribute("action", `edit_comment/${commentId}`);
+    });
+    }
+
+
+    for (let button of deleteButtons) {
+        button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        // Set the href of the delete confirmation button to the URL for deleting the specific comment
+        deleteConfirm.href = `delete_comment/${commentId}`;
+        // Show the modal where the user can confirm their deletion choice
+        deleteModal.show();
+        });
+    }
+
+### Templates
+
+**Python Essential Template from Code Institute**
 https://github.com/Code-Institute-Org/p3-template
+
+**Description of Heroku deployment**
+is resused from github project https://github.com/discord/heroku-sample-app/blob/main/README.md
+
+**Template from Code Institute**
+base.html reused, provided within project I Think Therefore I Blog Views
