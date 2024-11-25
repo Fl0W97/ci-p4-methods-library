@@ -29,7 +29,7 @@ choices = PURPOSE_CHOICES = (
     ('facilitating effective planning', "Facilitating Effective Planning")
 )
 
-
+# Method model
 class Method(models.Model):
     title = models.CharField(
         max_length=150, unique=True, blank=False
@@ -62,11 +62,13 @@ class Method(models.Model):
         max_length=255, blank=False
     )
     prep_time = models.CharField(
-        max_length=100, choices=PREPTIME_CHOICES,
+        max_length=100,
+        choices=PREPTIME_CHOICES, # Restrict Prep time
         help_text="Enter preparation time"
     )
     duration = models.CharField(
-        max_length=100, choices=DURATION_CHOICES,
+        max_length=100,
+        choices=DURATION_CHOICES, # Restrict duraction
         help_text="Enter duration of the excercise"
     )
     alt_atr = models.CharField(
@@ -95,7 +97,7 @@ class Method(models.Model):
     remote = models.BooleanField(
         default=False,
         help_text="Check if the method can be also"
-                  "used for a remote session"
+                  " used for a remote session"
     )
 
     class Meta:
@@ -104,7 +106,7 @@ class Method(models.Model):
     def __str__(self):
         return f" title {self.title} | written by {self.author}"
 
-
+# Comment model
 class Comment(models.Model):
     method = models.ForeignKey(
         Method, on_delete=models.CASCADE, related_name="comments"
@@ -130,8 +132,11 @@ class Comment(models.Model):
             f" By {self.author} | {self.body} | Created on {self.created_on}"
         )
 
+# The main part of the model class Comment was resued from Code Institute tutorial:
+# https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/
+# courseware/713441aba05441dfb3a7cf04f3268b3f/7e1df7fc4abf430d9c860759d4ccaa08/?child=first
 
-# new input for like button
+# model for like button
 class Like(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE
@@ -156,7 +161,7 @@ class Like(models.Model):
         return cls.objects.filter(method=method).count()
 
 
-# Content for about page
+# model for about page
 class About(models.Model):
     title = models.CharField(
         max_length=200, default="About Us"

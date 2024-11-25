@@ -418,10 +418,27 @@ For detailed testing information, see the content related to testing in [TESTING
 
 ## Improvements and ideas for subsequent projects
 
-There are still open User Stories in the Backlog which can be added to the project for further improvments. There are ideas to provide more possibilites for the method managment for the Site Users. Not just creating, but editing. In addition, the Site User might have an additional area where he can storage methods he finds well to and reuse them for his workshops.
+There are still open User Stories in the Backlog which can be added to the project for further improvments. There are ideas to provide more possibilites for the method managment for the Site Users. Not just creating, but editing in the private collection area. In addition, the Site User might have access to an additional area where he can use ssimple games or tools for games i.e. a shuffle function, random function for numbers or cards etc.
+
+For the admin, it would make senes to provide more forms for tex t content on the webiste. I.e. the welcome text. 
 
 
 ## Credits
+
+GitHub for giving the idea of the project's design.
+Django for the framework and detailed documentation about code snippets nad logic.
+Bootstrap for the framework and detailed documentation about code snippets and logic.
+Postgresql: for providing a free database (via Code Institute).
+Font awesome: for the free access to icons.
+googlefonts: for providing free fonts.
+Favicon Generator: for providing a free platform to generate favicons.
+Coolors: for providing a free platform to generate your own palette.
+Code Institute: Providing tutorials especially the walkthrough Project4 'I Think Therefore I Blog', Tutors such as Tom, Thomas, Sean and Holly
+Youtube: for access to a huge community of developers who facing similar challenges like me
+[SessionLab](https://www.sessionlab.com/): for access to various free Methods to fill the database and insiration for functionalities
+Stackoverflow: for access to a huge community of developers who facing similar challenges like me
+
+
 
 ### Content
 
@@ -429,10 +446,11 @@ Description of Heroku deployment is resused from github project
 https://github.com/discord/heroku-sample-app/blob/main/README.md
 
 
-Ideas and documentation of The walkthrough Project4 was reused and adjusted.
+Code Institute Ideas and documentation of The walkthrough Project4 was reused and adjusted.
+https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/courseware/713441aba05441dfb3a7cf04f3268b3f/824fccecd0fe4e44871eeabcbf69d830/
 
-https://www.sessionlab.com/ - Insiration for functionalities and content for methods
-
+Content about methods:
+Stinky Fish, 4-2-1-all, Brainwriting, Silent writing, Active Listening, Letter to Myself, The Six Hats, The Arrow, Walking questions, Bad Ideas, Check-in/CHeck-out
 
 
 
@@ -456,37 +474,112 @@ use help_text: https://docs.djangoproject.com/en/5.1/ref/models/fields/#help-tex
 HInt for super() function and used in about and edit method views
 https://docs.djangoproject.com/en/5.1/topics/class-based-views/, https://docs.python.org/3/library/functions.html#super
 
+### Images
+
+
+
 ### Code
 
-| No | Description  | Source | URL |
+| No | Description, feature  | Source | URL |
 | -- | ------------ | ------ | --- |
-| 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ | i.e. javascript log-in function, button javasscript (comment.js)
-| like button | 
-| Summernote adjustment in forms | https://summernote.org/deep-dive/
-| Fieldsets | https://docs.djangoproject.com/en/5.1/ref/contrib/admin/
+| 1 | Python Specific core concepts | Code institute | i.e. https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/f780287e5c3f4e939cd0adb8de45c12a/8d9c1efb1864472bb682a0c233898a17/ | 
+| 2 | Summernote adjustment in forms | https://summernote.org/deep-dive/
+| 3 | Fieldsets | https://docs.djangoproject.com/en/5.1/ref/contrib/admin/
+| 4 | like button | tackoverflow, YouTube | https://stackoverflow.com/questions/73683387/how-to-add-like-button-to-each-blog-post-in-the-same-page-with-django, https://www.youtube.com/watch?v=ZUiTiUj-tZw, https://www.youtube.com/watch?v=AZwc9hDBi04 
 
 
-FROm Code Institute tutorial
-class Comment | class Comment(models.Model):
-    post = models.ForeignKey(
-        Post,
-        on_delete=models.CASCADE,
-        related_name="comments"
-    )
-    author = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name="comments_author"
-    )
-    body = models.TextField()
-    approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
+Reused code with slight adjustments:
+i.e. javascript log-in function, button javasscript (comment.js)
 
-    class Meta:
-        ordering = ["created_on"]
+    const editButtons = document.getElementsByClassName("btn-edit");
+    const commentText = document.getElementById("id_body");
+    const commentForm = document.getElementById("commentForm");
+    const submitButton = document.getElementById("submitButton");
 
-    def __str__(self):
-        return f"Comment {self.body} by {self.author}"
+    const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+    const deleteButtons = document.getElementsByClassName("btn-delete");
+    const deleteConfirm = document.getElementById("deleteConfirm");
+
+    /**
+    * Initializes deletion functionality for the provided delete buttons.
+    * 
+    * For each button in the `deleteButtons` collection:
+    * - Retrieves the associated comment's ID upon click.
+    * - Updates the `deleteConfirm` link's href to point to the 
+    * deletion endpoint for the specific comment.
+    * - Displays a confirmation modal (`deleteModal`) to prompt 
+    * the user for confirmation before deletion.
+    */
+
+    for (let button of editButtons) {
+    button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        let commentContent = document.getElementById(`comment${commentId}`).innerText;
+        commentText.value = commentContent;
+        submitButton.innerText = "Update";
+        commentForm.setAttribute("action", `edit_comment/${commentId}`);
+    });
+    }
+
+
+    for (let button of deleteButtons) {
+        button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        deleteConfirm.href = `delete_comment/${commentId}`;
+        deleteModal.show();
+        });
+    }
+
+
+
+
+
+    class CommentForm(forms.ModelForm):
+        class Meta:
+            model = Comment
+            fields = ('body',)
+
+
+    class Comment(models.Model):
+        method = models.ForeignKey(
+            Method, on_delete=models.CASCADE, related_name="comments"
+        )
+        author = models.ForeignKey(
+            User, on_delete=models.CASCADE, related_name="commenter"
+        )
+        body = models.TextField(
+            max_length=500
+        )
+        approved = models.BooleanField(
+            default=False
+        )
+        created_on = models.DateTimeField(
+            auto_now_add=True
+        )
+
+
+From Code Institute tutorial
+
+    class Comment | class Comment(models.Model):
+        post = models.ForeignKey(
+            Post,
+            on_delete=models.CASCADE,
+            related_name="comments"
+        )
+        author = models.ForeignKey(
+            User,
+            on_delete=models.CASCADE,
+            related_name="comments_author"
+        )
+        body = models.TextField()
+        approved = models.BooleanField(default=False)
+        created_on = models.DateTimeField(auto_now_add=True)
+
+        class Meta:
+            ordering = ["created_on"]
+
+        def __str__(self):
+            return f"Comment {self.body} by {self.author}"
 
 
 using view, model and template code from Code Institute -- project "Therefore I Blog"
