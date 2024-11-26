@@ -68,20 +68,22 @@
         <div class="col-md-4 card mb-4  mt-3 left">
           <div class="card-body">
             <h4 class="card-text">Preparation</h4>
-            <p class="card-text pb-2 border-bottom">
+            <p class="card-text pb-2">
               {{ method.prep_time | safe }}
             </p>
-            <h4 class="card-text">Material</h4>
-            <p class="card-text pb-2 border-bottom">
-              {{ method.material | safe }}
-            </p>
             <h4 class="card-text">Duration</h4>
-            <p class="card-text pb-2 border-bottom">
+            <p class="card-text pb-2">
               {{ method.duration | safe }}
             </p>
+            <h4 class="card-text">Material</h4>
+            <p class="card-text pb-2">
+              {{ method.material | safe }}
+            </p>
             <h4 class="card-text">Location</h4>
-            <p class="card-text pb-2 border-bottom">
+            <p class="card-text">
               {{ method.location | safe }}
+            </p>
+            <p class="card-text pb-2">
               <input type="checkbox" disabled {% if method.remote %}checked{% endif %} />
               {% if method.remote %}
                 Remote possible

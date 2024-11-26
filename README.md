@@ -176,7 +176,7 @@ Custom Templates, methods_library/view_methods/templates
  
 ### Stylesheed 
 
-In style.css the relevant css code is stored. In addition a few standard Bootstrap utility classes are has been used.
+In style.css the relevant css code is stored. In addition, a standard Bootstrap utility classes has been used.
 
 The color schema should be light with dark accents. Encauraging to share and inspire.
 
@@ -192,6 +192,28 @@ body #F9FAFC
 <img src="README.images/Color_schema.png" alt="shows color schema">
 
 green: #7EA172
+
+
+### Typography
+The primary font used in the application is Roboto. Throughout my learning experience, I found Lato to be simple and highly readable, which enhances the overall user experience. Additionally, this font complements the color scheme seamlessly.
+
+<img src="README.images/README_font_style_roboto.PNG" alt="shows typography preview">
+
+
+### Wireframes
+
+#### Mobile
+
+<img src="README.images/wireframe_mobile.PNG" alt="shows mobile wireframe">
+
+#### Desktop
+
+<img src="README.images/wireframe_desktop.PNG" alt="shows desktop wireframe">
+
+#### Tablet
+
+<img src="README.images/wireframe_tablet.PNG" alt="shows tablet wireframe">
+
 
 ### User feedback/ guidance / CRUD
 There are various notifications which representing feedback for the user after CRUD activity. Besides log-in and sign-out, which is already shown in the above chapter, there are notifications for dealing with methods, comments and like buttons. The standard function message.add_message() is used and mostly combined with an if-clause. In the following a few examples are shared:
@@ -342,6 +364,7 @@ The main functions are generated with Python. However, to set up the whole proje
 [PEP8](https://pep8ci.herokuapp.com/): A tool used to check the Python code against the PEP8 coding standards for readability and consistency.
 [Miro](https://miro.com): A tool used to create visual diagrams, such as the Entity-Relationship Diagram for the project.
 [Heroku](https://www.heroku.com): A cloud platform used to deploy and host the website in a production environment.
+[Tinypng](https://tinypng.com/): Used for reducing image size
 
 
 

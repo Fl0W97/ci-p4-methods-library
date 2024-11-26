@@ -61,7 +61,7 @@ p {
     min-width: 30%;
     left: -2px;
     background-color: #e4a5aa;
-    border: 1px soild #f6acac;
+    border: 1px solid #f6acac;
     /* #188181; */
 }
 
@@ -83,7 +83,7 @@ p {
     display: inline-block;
     height: 20vh;
     width: 100%;
-    background: linear-gradient(135deg, #5BC0EB, #F7A1A1); /* Gradient background, if not needed jsut delete the whole line*/
+    background: linear-gradient(135deg, #5BC0EB, #F7A1A1); /* Gradient background */
 }
 
 .masthead-text {
@@ -97,13 +97,13 @@ p {
     height: 100%;
 }
 
-/* Adjust height for large screens (≥992px) */
+/* Adjust height for large screens (≥992px)
 @media (min-width: 992px) {
     .masthead-image {
-        height: 200px; /* Set the fixed height (adjust this to your desired size) */
+        height: 200px; /* Set the fixed height (adjust this to your desired size)
     }
 }
-
+ */
 /* Adjust height for mid-size screens (<768px) */
 @media (max-width: 768px) {
     .index-images {
@@ -202,7 +202,7 @@ p {
 /* Custom style for alert-success */
 .success {
     background-color: #28a745;
-    border-color: #28a745;
+    border-color: 1px solid white;
     color: white;
 }
 
