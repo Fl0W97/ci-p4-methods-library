@@ -1,0 +1,183 @@
+body {
+    background-color: #FAFAFA; /* Very Light Gray for overall background */
+    color: #333333; /* Dark Gray for text */
+    font-family: 'Roboto', sans-serif;
+}
+
+.brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #007BFF; /* Bright Blue for the brand name to stand out */
+}
+
+.red-o {
+    color: #E84610; /* Coral Red */
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.light-bg {
+    background-color: #ffffff; /* Pure White for some sections */
+}
+
+.dark-bg {
+    background-color: #333333; /* Dark Gray for contrast in footers or dark sections */
+}
+
+.main-bg {
+    background-color: #F7A1A1; /* Soft Coral as the main background color */
+}
+
+.card {
+    border: none;
+    background-color: #fff; /* White for cards */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for card separation */
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Hover effect to make cards feel interactive */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Round corners for images */
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    min-width: 30%;
+    background-color: #5BC0EB; /* Light Blue */
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for the overlay */
+}
+
+.scale {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Round corners for images */
+}
+
+.author {
+    color: #333333; /* Dark text color for author */
+    margin: 4px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.masthead {
+    margin-top: 10px;
+    position: relative;
+    height: 40vh; /* Increased height for the masthead */
+    background: linear-gradient(135deg, #5BC0EB, #F7A1A1); /* Gradient background */
+    color: white;
+    padding: 40px 0; /* Padding to give space inside the masthead */
+}
+
+.masthead-text {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    font-size: 2.2rem; /* Larger text size for title */
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background: #445261; /* Darker Blue for skewed background */
+    transform: skew(15deg);
+    z-index: 100;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #5BC0EB; /* Light Blue for links */
+}
+
+.post-link:hover,
+.page-link {
+    color: #E84610; /* Soft Coral for hover state */
+}
+
+.post-title {
+    margin-top: 10%;
+    margin-left: 5%;
+    font-size: 1.8rem; /* Larger font size for titles */
+    font-weight: 700;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: #777777; /* Light Gray for subtitles */
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #007BFF; /* Bright Blue for action buttons */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px; /* Round buttons */
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #5BC0EB; /* Light Blue for hover state */
+}
+
+.link {
+    color: #5BC0EB; /* Light Blue for regular links */
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #333333; /* Dark Gray for hover links */
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610; /* Coral Red for delete button */
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610; /* Coral Red for like button hover */
+    background: transparent;
+    border: none;
+}
+
+.faded {
+    color: #B0B0B0; /* Light gray for faded text */
+}
+
+.approval {
+    color: #E84610; /* Soft Coral for approval text */
+}

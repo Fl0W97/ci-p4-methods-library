@@ -38,7 +38,7 @@
                             aria-label="Toggle method details for {{ method.title }}">
                                 {% if method.status == 1 %}
                                 <!-- Display link if the method is approved (published) -->
-                                    <p class="text-dark fs-5">{{ method.title }} <span class="text-muted mx-2">|</span></p><p class="text-muted">
+                                    <p class="text-dark fs-5">{{ method.title }} <span class="text-muted mx-2"></span></p><p class="text-muted fs-6">
                                         {{ method.created_on}}</p>
                                 {% else %}
                                     <!-- Show message if the method is not approved -->

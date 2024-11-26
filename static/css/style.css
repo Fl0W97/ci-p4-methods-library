@@ -1,18 +1,24 @@
 body {
-    background-color: #FAFAFA; /* Very Light Gray for overall background */
-    color: #333333; /* Dark Gray for text */
-    font-family: 'Roboto', sans-serif;
+    background-color: #F9FAFC;
+}
+
+p {
+    color: #502419;
 }
 
 .brand {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.6rem;
+    font-family: Lato, sans-serif;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #007BFF; /* Bright Blue for the brand name to stand out */
+    color: #4A4A4F;
 }
 
 .red-o {
-    color: #E84610; /* Coral Red */
+    color: #f7a6a6;
+}
+
+.blue-o {
+    color: #79bfe2;
 }
 
 .thin {
@@ -20,80 +26,96 @@ body {
 }
 
 .light-bg {
-    background-color: #ffffff; /* Pure White for some sections */
+    background-color: #fff;
 }
 
 .dark-bg {
-    background-color: #333333; /* Dark Gray for contrast in footers or dark sections */
+    background-color: #445261;
 }
 
 .main-bg {
-    background-color: #F7A1A1; /* Soft Coral as the main background color */
+    background-color: #F9FAFC;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #5BC0EB, #F7A1A1);
 }
 
 .card {
     border: none;
-    background-color: #fff; /* White for cards */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for card separation */
-    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+    background-color: transparent;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Hover effect to make cards feel interactive */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+.index-images {
+    max-height: 330px;
 }
 
 .image-container {
     position: relative;
-    overflow: hidden;
-    border-radius: 10px; /* Round corners for images */
+
 }
 
 .image-flash {
     position: absolute;
     bottom: 5%;
-    left: 5%;
     min-width: 30%;
-    background-color: #5BC0EB; /* Light Blue */
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 5px; /* Rounded corners for the overlay */
+    left: -2px;
+    background-color: #e4a5aa;
+    border: 1px solid #f6acac;
+    /* #188181; */
 }
 
 .scale {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Round corners for images */
 }
 
 .author {
-    color: #333333; /* Dark text color for author */
+    color: white;
     margin: 4px;
     text-transform: uppercase;
-    font-size: 0.9rem;
 }
 
 .masthead {
     margin-top: 10px;
+    overflow: hidden;
     position: relative;
-    height: 40vh; /* Increased height for the masthead */
+    display: inline-block;
+    height: 20vh;
+    width: 100%;
     background: linear-gradient(135deg, #5BC0EB, #F7A1A1); /* Gradient background */
-    color: white;
-    padding: 40px 0; /* Padding to give space inside the masthead */
 }
 
 .masthead-text {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    font-size: 2.2rem; /* Larger text size for title */
-    font-weight: 700;
-    color: #ffffff;
+    color: white;
+    position: relative;
 }
 
 .masthead-image {
     position: relative;
     overflow: hidden;
+    height: 100%;
+}
+
+/* Adjust height for large screens (≥992px)
+@media (min-width: 992px) {
+    .masthead-image {
+        height: 200px; /* Set the fixed height (adjust this to your desired size)
+    }
+}
+ */
+/* Adjust height for mid-size screens (<768px) */
+@media (max-width: 768px) {
+    .index-images {
+        max-height: 260px;
+    }
+}
+
+.masthead-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the box while maintaining its aspect ratio */
+    object-position: center center; /* This centers the image inside the box */
 }
 
 .masthead-image:after {
@@ -103,81 +125,111 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261; /* Darker Blue for skewed background */
     transform: skew(15deg);
     z-index: 100;
 }
 
-.post-link {
+.method-link {
     text-decoration: none;
-    color: #5BC0EB; /* Light Blue for links */
+    color: #445261;
 }
 
-.post-link:hover,
+.method-link:hover,
 .page-link {
-    color: #E84610; /* Soft Coral for hover state */
+    color: #502419
 }
 
-.post-title {
+.method-title {
     margin-top: 10%;
     margin-left: 5%;
-    font-size: 1.8rem; /* Larger font size for titles */
-    font-weight: 700;
 }
 
-.post-subtitle {
+.method-subtitle {
     margin-left: 5%;
-    color: #777777; /* Light Gray for subtitles */
+    color: #fff;
+    font-style: italic;
 }
 
 .btn-signup,
 .btn-edit {
-    background-color: #007BFF; /* Bright Blue for action buttons */
+    background-color: #5BC0EB;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 30px; /* Round buttons */
-    text-transform: uppercase;
-    font-weight: 600;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #5BC0EB; /* Light Blue for hover state */
+    background-color: #fff;
+    color: #23BBBB;
 }
 
 .link {
-    color: #5BC0EB; /* Light Blue for regular links */
+    color: #23BBBB;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #333333; /* Dark Gray for hover links */
+    color: #445261;
     text-decoration: underline;
 }
 
 .btn-like {
-    color: #E84610;
+    color: white;
     border: none;
-    background: transparent;
+    background: #1b79f7;
 }
 
 .btn-delete {
     color: #fff;
-    background: #E84610; /* Coral Red for delete button */
+    background: #E84610;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610; /* Coral Red for like button hover */
-    background: transparent;
+    color: black;
+    background: #1b79f7;
     border: none;
 }
 
 .faded {
-    color: #B0B0B0; /* Light gray for faded text */
+    color: rgb(172, 175, 175);
 }
 
 .approval {
-    color: #E84610; /* Soft Coral for approval text */
+    color: rgb(222, 146, 168);
+}
+
+/* Custom style for alert-success */
+.success {
+    background-color: #28a745;
+    border-color: 1px solid white;
+    color: white;
+}
+
+/* Customize close button */
+.success .btn-close {
+    color: white;
+}
+
+.alert-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: black;
+}
+
+/* Customize close button */
+.alert-warning .btn-close {
+    color: black;
+}
+
+/* Custom style for alert-danger (error messages) */
+.alert-danger {
+    background-color: #E84610;
+    border-color: #E84610;
+    color: white;
+}
+
+/* Customize close button */
+.alert-danger .btn-close {
+    color: white;
 }

@@ -13,10 +13,10 @@
                 <p class="method-subtitle fst-italic">{{ method.author }} | {{ method.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-              {% if method.featured_image %}
-                <img src="{{ method.featured_image.url }}" class="scale" alt="Featured image for {{ method.title }}">
-              {% else %}
+              {% if "placeholder" in method.featured_image.url %}
                 <img src="{%static 'images/default.jpg' %}" class="scale" alt="Placeholder image">
+              {% else %}
+                <img src="{ method.featured_image.url }" class="scale" alt="Featured image for {{ method.title }}">
               {% endif %}
             </div>
         </div>
@@ -44,7 +44,7 @@
                         <!-- Check if the user has already liked the method -->
                         {% if user_liked_method %}
                             <!-- Show text if user has already liked -->
-                            <p>You liked this method.</p>
+                            <p class="text-muted">You liked this method.</p>
                         {% else %}
                             <!-- Like button, only visible to users who haven't liked -->
                             <form method="POST" action="{% url 'method_page' slug=method.slug %}">
@@ -68,23 +68,29 @@
         <div class="col-md-4 card mb-4  mt-3 left">
           <div class="card-body">
             <h4 class="card-text">Preparation</h4>
-            <p class="card-text pb-2">
+            <p class="card-text pb-2 border-bottom">
               {{ method.prep_time | safe }}
             </p>
             <h4 class="card-text">Material</h4>
-            <p class="card-text pb-2">
+            <p class="card-text pb-2 border-bottom">
               {{ method.material | safe }}
             </p>
             <h4 class="card-text">Duration</h4>
-            <p class="card-text pb-2">
+            <p class="card-text pb-2 border-bottom">
               {{ method.duration | safe }}
             </p>
             <h4 class="card-text">Location</h4>
-            <p class="card-text pb-2">
+            <p class="card-text pb-2 border-bottom">
               {{ method.location | safe }}
+              <input type="checkbox" disabled {% if method.remote %}checked{% endif %} />
+              {% if method.remote %}
+                Remote possible
+              {% else %}
+                Remote not possible
+              {% endif %}
             </p>
             <h4 class="card-text">Group size</h4>
-            <p class="card-text pb-2">
+            <p class="card-text pb-2 border-bottom" >
               {{ method.group_size_min | safe }} - {{ method.group_size_max | safe }}
             </p>
           </div>

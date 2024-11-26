@@ -31,10 +31,10 @@ These are additional tests to ensure the overall quality, performance, security,
 
 | **Test Area** | **Objective** | **Test Steps**| **Test Cases** | **Test Completed** | **Comments** |
 |---------------|-------------- |---------------|----------------|--------------------|--------------|
-| **1. Cross-browser Testing** | Ensure the website works correctly across different web browsers.                                                | 1. Open the website in Chrome. <br> 2. Open the website in Firefox. <br> 3. Open the website in Edge. <br> 4. Open the website in Safari. <br> 5. Test basic functionality (navigation, login, forms) in each browser. | - **Browser Compatibility**: Ensure that features are functional across Chrome, Firefox, Edge, and Safari. <br> - **CSS and Layout**: Verify the website layout and styles appear correctly in all browsers. <br> - **JavaScript**: Ensure JavaScript runs properly across all browsers. <br> - **Responsive Layout**: Test that the website is responsive and adapts to different screen sizes in each browser. |[ ]||
+| **1. Cross-browser Testing** | Ensure the website works correctly across different web browsers.                                                | 1. Open the website in Chrome. <br> 2. Open the website in Firefox. <br> 3. Open the website in Edge. <br> 4. Open the website in Safari. <br> 5. Test basic functionality (navigation, login, forms) in each browser. | - **Browser Compatibility**: Ensure that features are functional across Chrome, Firefox, Edge, and Safari. <br> - **CSS and Layout**: Verify the website layout and styles appear correctly in all browsers. <br> - **JavaScript**: Ensure JavaScript runs properly across all browsers. <br> - **Responsive Layout**: Test that the website is responsive and adapts to different screen sizes in each browser. |[ y ]||
 | **2. Mobile Testing**        | Ensure that the website is fully responsive and works on different mobile devices.                               | 1. Open the website on a mobile device (or simulate using browser dev tools). <br> 2. Test website navigation. <br> 3. Test form submissions and interactive elements (login, comment forms, etc.) on mobile. <br> 4. Test responsiveness on different screen sizes. | - **Mobile Compatibility**: Ensure the website is usable on mobile browsers (Chrome, Safari, Firefox). <br> - **Touch Interaction**: Test touch interactions, such as tapping and swiping. <br> - **Mobile Layout**: Verify proper layout on small screens and large mobile devices. <br> - **Performance on Mobile**: Ensure the website loads quickly and interacts without delay on mobile devices. |[ ]||
-| **3. Performance Testing**   | Ensure the website performs optimally under various conditions, especially with large datasets.                  | 1. Load the website with a large number of methods and comments. <br> 2. Test the "Next" button, pagination, and filtering with large data sets. <br> 3. Measure page load time and response times for actions (e.g., adding comments). | - **Load Time**: Test how long it takes for the website to load and interact with large amounts of data. <br> - **Smooth Navigation**: Ensure pagination and filtering work smoothly without delays. <br> - **Stress Testing**: Test how the website behaves with large user actions (e.g., adding multiple comments, methods). <br> - **Page Load Time**: Ensure that each page loads in less than 3 seconds under normal conditions. |[ ]||
-| **4. Security Testing**      | Ensure that user data is securely handled and sensitive information is protected.                                | 1. Test the login and registration process for vulnerabilities (e.g., SQL injection, XSS). <br> 2. Test encrypted communication (HTTPS). <br> 3. Test password recovery and reset flow. <br> 4. Check if sensitive user data is securely stored (passwords, emails). | - **Login Security**: Ensure passwords are stored securely using encryption (e.g., bcrypt). <br> - **SSL Encryption**: Verify that SSL is enabled and the website uses HTTPS. <br> - **Session Management**: Ensure that user sessions are managed securely and session data is cleared upon logout. <br> - **Sensitive Data Protection**: Test that sensitive user information (e.g., passwords) is not exposed in logs, URLs, or front-end code. |[ ]||
+| **3. Performance Testing**   | Ensure the website performs optimally under various conditions, especially with large datasets.                  | 1. Load the website with a large number of methods and comments. <br> 2. Test the "Next" button, pagination, and filtering with large data sets. <br> 3. Measure page load time and response times for actions (e.g., adding comments). | - **Load Time**: Test how long it takes for the website to load and interact with large amounts of data. <br> - **Smooth Navigation**: Ensure pagination and filtering work smoothly without delays. <br> - **Stress Testing**: Test how the website behaves with large user actions (e.g., adding multiple comments, methods). <br> - **Page Load Time**: Ensure that each page loads in less than 3 seconds under normal conditions. |[  ]||
+| **4. Security Testing**      | Ensure that user data is securely handled and sensitive information is protected.                                | 1. Test the login and registration process | - **Login Security**: Ensure passwords are double checked and the validation works. <br> - **SSL Encryption**: Verify that SSL is enabled and the website uses HTTPS. <br> - **Session Management**: Ensure that user sessions are managed securely and session data is cleared upon logout. <br> - **Sensitive Data Protection**: Test that sensitive user information (e.g., passwords) is not exposed in logs, URLs, or front-end code. |[ y ]||
 
 
 ## Testing User Stories
@@ -111,37 +111,26 @@ Testing new app "collection"
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
-| django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | Error during database migration. According to the error message the migration file 003 contains an error. However, after adjsuting the file the some error occured.| <img src="README.images/README_bug_error_message_syntax error_none.PNG" alt="shows error message"> | Old migration files has been saved outside the project and deleted in the project. New command "python3 manage.py migrate" has been done. A new migration file exists and is working. |
+| django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | Error during database migration. According to the error message the migration file 003 contains an error. However, after adjusting the file the some error occured.| <img src="README.images/bug_error_message_syntax error_none.PNG" alt="shows error message" widht="250"> <img src="README.images/bug_backuo_migration003.PNG" alt="shows error message" widht="250"> | Old migration files has been saved outside the project and deleted in the project. New command "python3 manage.py migrate" has been done. A new migration file exists and is working. |
 | django.db.utils.OperationalError: near "None": syntax error | The error occured during testing. The local database db.sqlite had an inconsistency. The migration file "view_methods.0003_alter_method_alt_atr_alter_method_duration_and_more" had a failre related to NONE. After seveal tries to fix the issue I decided to focus on the rest of the project. | ...| I saved all migration files and removed them from the project. Then I run pyhton3 manage.py makemigrations and python3 manage.py migrate.|
-| Uncaught Type Error: this._element is undefined | Customization summernote for admin panel | <img src="README.images/README_bug_js_summernote_customization_code.PNG" alt="shows error message in console"> | function was deleted |
-
-**Error message in terminal**
-
-**Suggestion for fixation. However, implementation was not successful**
+| Uncaught Type Error: this._element is undefined | Customization summernote for admin panel | <img src="README.images/bug_js_summernote_customization_code.PNG" alt="shows error message in console"> | function was deleted |
+| NameError: name 'request' is not defined | The error occurs because the request I am trying to access request.method outside of a method where request is not available. The request object is passed to views only during HTTP request processing, so trying to reference it outside of a method like get_context_data causes this error. To fix this, you should move the POST request handling inside the appropriate post method of the class-based view. In Django, TemplateView doesn't have a post method by default. | <img src=README.images/bug_NameError_name_requet_is_not_defined.PNG" alt="image shows Error message"> | TempalteView is still used for AboutPageView method in views.py, but the edit and delete functionality is removed. |
 
 
 ## Bugs (fixed)
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
-| Wrong column order is displayed | Ater adjusting the mehtod_page.html the position of the div has been wrong and overlapping.| <img src="README.images/..." alt="image shows Error message"> | adding the correct Bootstrap utility class to the relevant divs (class="col-md-8" and class="col-md-4" so that column range 12/12 is valid) |
+| Rendering issue of mehtod cards on landing page | TypeField for method.summary hasn't been rendered correctly deu to usage of summernote. | <img src="README.images/bug_rendering_problem_safe.PNG" alt="show screenshot of bug on website" width="250"> <img src="README.images/bug_rendering_problem_safe2.PNG" alt="show screenshot of bug fix on website" width="250"> | Including of "safe"-function for method.summary fixed the issue. |
+| method cards overlapp filter section| The divs of the method cards are not aligned with the structure. There are more columns than the total grid (12 columns)inside a .row, the elements overlaps because Bootstrap can't correctly allocate space for each column. Issue come up twice, also related to another div. | <img src="README.images/bug_filter_method overlay.PNG" alt="show screenshot of bug on website" width="500">| The missing bootstrap utility class "card-type" has been added and the correct number of grid columns has been adjusted. |
+| The image in the masterhead section is dislocated | It seems dislocated. There has been a breakpoint adjustment to a fixed 200px height. In a responisve set up this is not a good idea since the masterhead's height can change. |  <img src="README.images/bug_image_size_masterhead_method_page.PNG" alt="show screenshot of bug on website" width="500"> | The fixed height has to be removed. The image is more flexible, however, when zooming out 250% it still can be (depending on the screen size) that there is again space between bottom of masterhead and image. But that's sufficient. If the image size would always be depending on the masterhead size the ratio would be a problem and the iamge would look strange. Here the best compomise currently is made (keeping in mind a responsive and flexible setup) |
+| Like button is not visible | The Like button is not visible, only the blue text color. | <img src="README.images/bug_like_button_no_button.PNG" alt="show screenshot of bug on website" width="500"> | Background-color and text color has been mixed up. It is corrected: color = white, background-color = blue .|
+| Validation_error during image upload|| <img src="" alt="show screenshot of bug on website" width="500"> ||
+| Phone view on private_collection | The | <img src="README.images/bug_phone_view_strange_I.PNG" alt="show screenshot of bug on website" width="500"> | The symbol "|" has been removed. in private_collection.html . |
+|  | Summernote form is not responsive. The right end is cutted by the browser, the user has to scroll to the right. Bad UX| <img src="README.images/bug_summernote_form_not_responsive.PNG" alt="show screenshot of bug on website" width="500"> ||
 | "File not existing" and old css code is displayed in production | There was no error message, however, the requested result was not displayed. After adding the new images, new code I missed to run "python manage.py collectstatic" | ... | run "python manage.py collectstatic" |
-| Couldn't find host |------------- | <img src="README.images/..." alt="image shows Error message"> | Add my host adress to settings.py allowed hosts.|
-| Server 505, ... | failrue in views.py ... | <img src="README.images/..." alt="image shows Error message"> | -----------|
-| indetation ... | failrue in views.py ... | <img src="README.images/..." alt="image shows Error message"> | -----------|
-
-| NameError: name 'request' is not defined | The error you're seeing (NameError: name 'request' is not defined) occurs because I am trying to access request.method outside of a method where request is not available. The request object is passed to views only during HTTP request processing, so trying to reference it outside of a method like get_context_data causes this error. To fix this, you should move the POST request handling inside the appropriate post method of the class-based view. In Django, TemplateView doesn't have a post method by default, but you can override it.
-
-
-| ValidationError | The error you're encountering, "The uploaded file is not a valid image.", seems to be related to the clean_featured_image validation method in your form. clean_featured_image method attempts to validate the image file and checks its size. However, the error arises when the field is left empty, but the validation still expects an image. The reason for this is likely due to how the file input field behaves when no file is uploaded. Even though null=True in the model allows for a missing image, the form might still be sending an empty file object, which doesn't pass the validation as a "valid image." We need to handle the case where Cloudinary might return a URL string, and in this case, we simply accept the string as a valid input. We don't need to process it further.
-
-With these changes, your form will now handle the following cases:
-
-    User uploads an image: The image will be validated and stored.
-    User doesn't upload an image: The field will be empty (None).
-    Cloudinary URL is returned: The URL will be treated as a valid image and returned as is.
-
-Additionally, if no image is uploaded (i.e., the featured_image field is empty or null), we should just return None.
+| DisallowedHost at /create | Invalid HTTP_Host header | <img src="README.images/bug_DisallowedHost.PNG" alt="show Error message" width="500">| Add the correct host address to settings.py allowed hosts.|
+| IndentationError: unexpected indent | failrue in views.py at function def method_create(request):  |  <img src="README.images/but_IndentationError_unexpected ident1.PNG" alt="shows failure in code" width="250">  <img src="README.images/but_IndentationError_unexpected ident2.PNG" alt="shows Error message" width="250">| Correct indentation by pushing the marked code area to the right |
 
 
 ## Validator Testing
@@ -213,14 +202,27 @@ No errors were returned
 
 </details>
 
-<img src="README.images/HTML_validation.PNG" alt="image shows preview of validator results" width="500px">
-
 
 ### [CSS validator](https://jigsaw.w3.org/css-validator/)
 No errors were returned
 
 <details>
     <summary>see details about CSS validator</summary>
+
+#### base.hmtl + index.html
+<img src="" alt="shows result of HTML validation" width="650">
+
+#### base.hmtl + about.html
+<img src="" alt="shows result of HTML validation" width="650">
+
+#### base.hmtl + method_creation.html
+<img src="" alt="shows result of HTML validation" width="650">
+
+#### base.hmtl + method_page.html
+<img src="" alt="shows result of HTML validation" width="650">
+
+#### base.hmtl + private_collection.html
+<img src="" alt="shows result of HTML validation" width="650">
 
 </details>
 
@@ -270,5 +272,9 @@ For instance
 <img src="README.images/TESTING_validation_group_size.PNG" alt="shows relevant code" width="700">
 
 ## Lighthouse Reports
+LightHouse is a web performance testing tool used to assess a website's performance. The report is generated through Google Chrome.
+
+<img src="" alt="shows Lighthouse report generated by GoogleChrome" width="700">
 
 ## Responisvness
+The responsiveness was manually tested using Chrome's devtools throughout the entire development process.
