@@ -24,21 +24,21 @@
           <h3>Add here a new method:</h3>
           <p class="text-muted">Posting as: {{ user.username }}</p>
           <form id="methodForm" method="post" enctype="multipart/form-data"
-            style="margin-top: 1.3em;" aria-labelledby="methodForm">
+            style="margin-top: 1.3em;">
             {{ method_form | crispy }}
             {% csrf_token %}
 
             <!-- Submit button -->
             <button id="submitButton" type="submit"
-              class="btn btn-signup btn-lg" aria-label="Submit your method">Submit</button>
+              class="btn btn-signup btn-lg">Submit</button>
 
             <!-- Reset button -->
             <button type="button" class="btn btn-secondary"
-             onclick="resetForm()" aria-label="Reset the form">Reset</button>
+             onclick="resetForm()">Reset</button>
 
             <!-- Remove image button -->
             <button type="button" class="btn btn-secondary"
-            onclick="removeImageForm()" aria-label="Remove the selected image">Remove image</button>
+            onclick="removeImageForm()">Remove image</button>
           </form>
           {% else %}
           <p>Log in to create a method</p>
