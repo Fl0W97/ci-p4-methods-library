@@ -27,9 +27,6 @@ The steps to set up your repository in GitHub are as follows:
 
 </details>
 
-### settings.py
-The settings.py file is already included in Djangp orject. However, to set up this project further adjustements has to be done:
-
 
 #### Secret Key
 To ensure that the secret.key is not provided to heroku or the git storage an env.py file is created to store the sensitive data.
@@ -76,7 +73,6 @@ Create a new app on Heroku
 
 There are two keys, which both has to be provided to heroku. First, the postgreSQL key which is generated via Code Institute and the secret_key
 
-
 #### Connect to GitHub
 Next, you can configure deploys with Github. If you prefer to deploy without using Github, you can read Heroku's deployment ([documentation](https://devcenter.heroku.com/categories/deployment)). 
 
@@ -102,6 +98,11 @@ Next, add a Heroku buildpack to your app. Click add a buildpack to your app and 
 <img src="README.images/README_heroku_add_builpack.PNG" alt="image shows infos about heroku set up" width="600px">
 
 
-### Configure database
-see Code Institute documentation for more details.
-/// Instruction coming ///
+#### Add Config Vars
+
+In your app go on "Settings" tab, and open "Reveal Config Vars", add the following config vars:
+
+    ALLOWED_HOSTS = your heroku domain name.
+    CLOUDINARY_URL = the api key you got when created your cloudinary account.
+    DATABASE_URL = the url of your heroku postgres database.
+    SECRET_KEY = a secret key for your app.

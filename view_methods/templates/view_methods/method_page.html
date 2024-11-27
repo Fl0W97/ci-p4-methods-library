@@ -16,7 +16,7 @@
               {% if "placeholder" in method.featured_image.url %}
                 <img src="{%static 'images/default.jpg' %}" class="scale" alt="Placeholder image">
               {% else %}
-                <img src="{ method.featured_image.url }" class="scale" alt="Featured image for {{ method.title }}">
+                <img src="{{ method.featured_image.url }}" class="scale" alt="Featured image for {{ method.title }}">
               {% endif %}
             </div>
         </div>
