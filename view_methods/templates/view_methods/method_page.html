@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 
 <div class="masthead">
-    <div class="container">
+    <div class="container height_control ">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Method title goes in these h1 tags -->
@@ -25,15 +25,16 @@
 
 <div class="container">
     <div class="row m-0 light-bg">
+      <h2>Methodology description</h2>
         <div class="col-md-8 card mb-4  mt-3 left">
             <div class="card-body method-link">
                 <!-- The method content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <h4 class="card-text"> Purpose</h4>
+                <h3 class="card-text"> Purpose</h3>
                 <p class="card-text">
                     {{ method.purpose | safe }}
                 </p>
-                <h4 class="card-text">Instructions</h4>
+                <h3 class="card-text">Instructions</h3>
                 <p class="card-text pb-2">
                     {{ method.instructions| safe }}
                 </p>
@@ -67,38 +68,41 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 left">
           <div class="card-body">
-            <h4 class="card-text">Preparation</h4>
+            <h3 class="card-text">Preparation</h3>
             <p class="card-text pb-2">
               {{ method.prep_time | safe }}
             </p>
-            <h4 class="card-text">Duration</h4>
+            <h3 class="card-text">Duration</h3>
             <p class="card-text pb-2">
               {{ method.duration | safe }}
             </p>
-            <h4 class="card-text">Material</h4>
+            <h3 class="card-text">Material</h3>
             <p class="card-text pb-2">
               {{ method.material | safe }}
             </p>
-            <h4 class="card-text">Location</h4>
+            <h3 class="card-text">Group size</h3>
+            <p class="card-text pb-2">
+              {{ method.group_size_min | safe }} - {{ method.group_size_max | safe }}
+            </p>
+            <h3 class="card-text">Location</h3>
             <p class="card-text">
               {{ method.location | safe }}
             </p>
-            <p class="card-text pb-2">
-              <input type="checkbox" disabled {% if method.remote %}checked{% endif %} />
-              {% if method.remote %}
-                Remote possible
-              {% else %}
-                Remote not possible
-              {% endif %}
-            </p>
-            <h4 class="card-text">Group size</h4>
-            <p class="card-text pb-2 border-bottom" >
-              {{ method.group_size_min | safe }} - {{ method.group_size_max | safe }}
+            <p class="card-text pb-2 border-bottom">
+              <span class="badge {% if method.remote %}bg-success{% else %}bg-danger{% endif %}">
+                {% if method.remote %}
+                  Suitable for remote session
+                {% else %}
+                  Not suitable for remote session
+                {% endif %}
+              </span>
             </p>
           </div>
         </div>
     </div>
-      <!-- Displaying count of comments -->
+
+    <!-- Displaying count of comments -->
+    <!-- reused code by Code Institute, check credit section README.d-->
     <div class="row">
       <div class="col-12">
         <strong class="text-secondary">
@@ -110,9 +114,10 @@
       </div>
     </div>
     <!-- Displaying Comments -->
+    <!-- reused code by Code Institute, check credit section README.d-->
     <div class="row">
       <div class="col-md-7 card mb-4 mt-3">
-        <h3>Comments:</h3>
+        <h2>Comments:</h2>
         <div class="card-body">
           <!-- We want a for loop inside the empty control tags
             to iterate through each comment in comments -->
@@ -151,7 +156,7 @@
       <div class="col-md-5 card mb-4 mt-3">
         <div class="card-body">
           {% if user.is_authenticated %}
-          <h3>Leave a comment:</h3>
+          <h2>Leave a comment:</h2>
           <p>Posting as: {{ user.username }}</p>
           <form id="commentForm" method="post" 
             aria-labelledby="leave-comment-form"
@@ -171,6 +176,7 @@
 </div>
 
 <!-- Delete confirmation modal - comment -->
+<!-- reused code by Code Institute, check credit section README.d-->
 <div class="modal fade" id="deleteModal" tabindex="-1"
   aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">

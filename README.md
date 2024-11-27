@@ -2,7 +2,7 @@
 
 Welcome to my fourth project, 'method library'. This website supports team coaches and scrum masters to plan trainings to find new inspriation for methods and energizer (small little games) to keep the workshop member motivated. The wording "method" is used for methodology used in the context of training and coaching. The focus is on the method library since there are currently just basic functinallities deployed such as methods idea stored in a data base, comment function and a log in area to create and collect its own content.
 
-<img src="README.images/AmIresponsive.PNG" alt="image shows responisveness by presenting preview on different devices" width="700">
+<img src="readme.images/amiresponsive.PNG" alt="image shows responisveness by presenting preview on different devices" width="700">
 
 
 ## Website overview/ features
@@ -11,24 +11,24 @@ Welcome to my fourth project, 'method library'. This website supports team coach
 
 
 #### Navigation
-<img src="README.images/README_nav_not_logged_in.PNG" alt="shows navigation in logged out mode" width="700">
-<img src="README.images/README_nav_logged_in.PNG" alt="shows navigation in logged in mode" width="700">
+<img src="readme.images/readme_nav_not_logged_in.PNG" alt="shows navigation in logged out mode" width="700">
+<img src="readme.images/readme_nav_logged_in.PNG" alt="shows navigation in logged in mode" width="700">
 
 The navigation displayes different elements based on the log-in status.
 If the user is logged out he sees the elements Home, About, Register and Login. In addition, here recevies the hint that he is logged out "".
 If the user is logged in he sees Home, About, Add a Mehtod, Your private Collection and Logout. In addition, here recevies the hint that he is logged in "".
 
 In addition, User messages are displayed below the navigation to give feedback to the user once he made an acivity on the page.
-<img src="README.images/README_landing_page_message.PNG" alt="shows user message box" width="700">
+<img src="readme.images/readme_landing_page_message.PNG" alt="shows user message box" width="700">
 
 #### Footer
 The footer shows links to 
 
-<img src="README.images/README_nav_logged_in.PNG" alt="shows navigation in logged in mode" width="700">
+<img src="readme.images/readme_nav_logged_in.PNG" alt="shows navigation in logged in mode" width="700">
 
 ### Landing page, index.html
-<img src="README.images/README_landing_page.PNG" alt="shows landing page" width="700">
-<img src="README.images/README_landing_page_use_filter.PNG" alt="shows landing page" width="700">
+<img src="readme.images/readme_landing_page.PNG" alt="shows landing page" width="700">
+<img src="readme.images/readme_landing_page_use_filter.PNG" alt="shows landing page" width="700">
 
 Here a first look at the landing page. There is a navigation element on top, a filter area and below all methods are shown which have been shared within the community.
 The user gets a first overview of the activities on the webiste and he can directly start to filter throug hthe list of methods to find an idea he can use for his next workshop. Once he selects on method, he is guided to the subpage of the relevant method.
@@ -36,48 +36,48 @@ The user gets a first overview of the activities on the webiste and he can direc
 ### About page, about.html
 Shows what the webiste is about and introduces the creator of the website.
 
-<img src="README.images/README_about_page.PNG" alt="shows about page" width="700">
+<img src="readme.images/readme_about_page.PNG" alt="shows about page" width="700">
 
 
 ### Detailed method view, method_page.html
 Displays instruction and further information which can be useful for integrating this method in a workshop. In addition, there is a comment section and the possibility to add a comment.
 
-<img src="README.images/README_detailed_method_page.PNG" alt="shows detailed method page" width="700">
+<img src="readme.images/readme_detailed_method_page.PNG" alt="shows detailed method page" width="700">
 
 
 ### Log-in / Log-out process, (add . html sites)
 
 Register
 
-<img src="README.images/README_register_process.PNG" alt="shows register process" width="700">
+<img src="readme.images/readme_register_process.PNG" alt="shows register process" width="700">
 
-<img src="README.images/README_register_process2.PNG" alt="shows register process" width="700">
+<img src="readme.images/readme_register_process2.PNG" alt="shows register process" width="700">
 
 Log-in
 
-<img src="README.images/README_log_in_process.PNG" alt="shows log-in process" width="700">
+<img src="readme.images/readme_log_in_process.PNG" alt="shows log-in process" width="700">
 
-<img src="README.images/README_log_in_process2.PNG" alt="shows log-in process" width="700">
+<img src="readme.images/readme_log_in_process2.PNG" alt="shows log-in process" width="700">
 
 
 
 Sign-out
 
-<img src="README.images/README_sign_out_process.PNG" alt="shows sign-out process" width="700">
+<img src="readme.images/readme_sign_out_process.PNG" alt="shows sign-out process" width="700">
 
-<img src="README.images/README_sign_out_process2.PNG" alt="shows sign-out process" width="700">
+<img src="readme.images/readme_sign_out_process2.PNG" alt="shows sign-out process" width="700">
 
 
 ### Add a Method, method_creation.html
 Displays a form where the logged-in Site User can enter and submit a new method to share it with the community.
 
-<img src="README.images/README_add_a_Method_page.PNG" alt="shows add method page" width="700">
+<img src="readme.images/readme_add_a_Method_page.PNG" alt="shows add method page" width="700">
 
 
 ### Your private Collection, private_collection.html
-Displays instruction and further information which can be useful for integrating this method in a workshop. In addition, there is a comment section and the possibility to add a comment.
+Displays all the content that has been created by the reelvant Site User. He/she can see instructions and comments that has been created and in addition, in the third section all liked methods from other Site Users are listed. Those can be sued to find a certain method an integrate it a workshop.
 
-<img src="README.images/README_private collection_page.PNG" alt="shows private collection page" width="700">
+<img src="readme.images/readme_private collection_page.PNG" alt="shows private collection page" width="700">
 
 
 ### Feature overview:
@@ -108,48 +108,54 @@ see more details about the feature development in [FEATURE.md](FEATURE.md)
 
 
 ## User Stories, Project scope
-see in GItHub project [Methods library](https://github.com/Fl0W97/ci-p4-methods-library/issues)
+
+The project scope is defined as MVP. The main functionaliteis for adding commetns and methods and browsering thorugh the different methods was set up.
+The User Stories has been defined and all relevant ones for MVP 1 has been closed. In the column 'MVP2' there are defined User Stories for further imporvements and extentions after the project4 submission.
+
+<img src="readme.images/agile_method_kanban_board.PNG" alt="shows kanban board" width="800">
+
+See in GItHub project [Methods library](https://github.com/Fl0W97/ci-p4-methods-library/issues).
 
 
 ### Site Users
 
-As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods
-As a Site User I can read the methods in an structured way so that it's easy to go through them.
-As a Site User I can register an account so that I can comment on a method
-As a Site User I can view methods so that I get motivated to share my methods as well
-As a Site User I can see images and a good color contrast so that I like to stay on the website form a visual perspective
-As a Site User I want to get a notification once I change something so that I get feedback of my actions
-As a Site User I can see directly the purpose of the website so that get an orientation what I can do
-As a Site User I can filter methods on the main page so that I can optimize my search
-As a Site User I can add methods so that I can share my own methods with the community.
-As a Site User I can see information about the creator of website so that I can contact him and get an idea of the person behind the project.
-As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site
-As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful.
-As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview
-As a Site User I can identify the website in my browser via an symbol so that I find the open website faster
-As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site
-As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text
-As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster
-As a Site User I can see clearly if I liked a method already, before I click on the Like-button so that I don't click twice.
-As a Site User (handycaped) I can use arial-current/label attributes so that I can follow the content on the website properly.
+- As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods
+- As a Site User I can read the methods in an structured way so that it's easy to go through them.
+- As a Site User I can register an account so that I can comment on a method
+- As a Site User I can view methods so that I get motivated to share my methods as well
+- As a Site User I can see images and a good color contrast so that I like to stay on the website form a visual perspective
+- As a Site User I want to get a notification once I change something so that I get feedback of my actions
+- As a Site User I can see directly the purpose of the website so that get an orientation what I can do
+- As a Site User I can filter methods on the main page so that I can optimize my search
+- As a Site User I can add methods so that I can share my own methods with the community.
+- As a Site User I can see information about the creator of website so that I can contact him and get an idea of the person behind the project.
+- As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site
+- As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful.
+- As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview
+- As a Site User I can identify the website in my browser via an symbol so that I find the open website faster
+- As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site
+- As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text
+- As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster
+- As a Site User I can see clearly if I liked a method already, before I click on the Like-button so that I don't click twice.
+- As a Site User (handycaped) I can use arial-current/label attributes so that I can follow the content on the website properly.
 
-As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops.
-As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily
-As a (logged-in) Site User I can create a method easily and well structured so that I don't see too long input fields, etc
-As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods
-As a (logged-in) Site User I can modify or delete my comment on a method so that I can be involved in the conversation
+- As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops.
+- As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily
+- As a (logged-in) Site User I can create a method easily and well structured so that I don't see too long input fields, etc
+- As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods
+- As a (logged-in) Site User I can modify or delete my comment on a method so that I can be involved in the conversation
 
 ### Site Admin
-As a Site Admin I can create, read, update and delete methods so that I can manage my content
-As a Site Admin I can approve comments so that I can manage and control the content on the website
-As a Site Admin I can create, update and delete the text content of the about.html site
-As a Site Admin I can create, update and delete Site Users
-As a Site Admin I can use a filter function for comments in the admin panel so that I can manage the comments efficient
-As a Site Admin I can approve methods from other Site Users so that I have control of the content
-As a Site Admin I can approve comments from other Site Users so that I have control of the content
-As a Site Admin I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient.
-As a Site Admin I want to make sure that the Users don't crash the website by adding to much content
-As a Site Admin I can use a working website so that I don't receive error messages or are harmed to use certain functionalities of the website
+- As a Site Admin I can create, read, update and delete methods so that I can manage my content
+- As a Site Admin I can approve comments so that I can manage and control the content on the website
+- As a Site Admin I can create, update and delete the text content of the about.html site
+- As a Site Admin I can create, update and delete Site Users
+- As a Site Admin I can use a filter function for comments in the admin panel so that I can manage the comments efficient
+- As a Site Admin I can approve methods from other Site Users so that I have control of the content
+- As a Site Admin I can approve comments from other Site Users so that I have control of the content
+- As a Site Admin I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient.
+- As a Site Admin I want to make sure that the Users don't crash the website by adding to much content
+- As a Site Admin I can use a working website so that I don't receive error messages or are harmed to use certain functionalities of the website
 
 
 see user story testing in [TESTING.md](TESTING.md)
@@ -157,30 +163,15 @@ see user story testing in [TESTING.md](TESTING.md)
 
 ## UX Design
 
-For this project Bootsrap is used. Reusage of many Bootstrap utility classes such as "row", "md-3", "bg-primary" ... 
-
-General tempaltes, methods_library/templates
-  base.html (methods_library/templates) to defined Header and Footer
-  register.html (methods_library/templates/account) to provide content and function for login process
-  login.html (methods_library/templates/account) to provide content and function for login process
-  signout.html (methods_library/templates/account) to provide content and function for login process
-
-
-Custom Templates, methods_library/view_methods/templates
-  index.html
-  about.html
-  method_creation.html
-  method_page_html
-  private_collection.html
+The design provides a smooth and intuitive experience, allowing users to focus on the content without distraction, offering an enjoyable and efficient browsing experience. For this project Bootsrap is used and utility classes such as "row", "md-3", "bg-primary" ... .
 
  
 ### Stylesheed 
 
-In style.css the relevant css code is stored. In addition, a standard Bootstrap utility classes has been used.
+All css-stylings are defined in the style.css file.The most present colors are defined in the color schema below. Additionally mentioned here some standrad bootstrap color utility classes:
 
-The color schema should be light with dark accents. Encauraging to share and inspire.
 
-body #F9FAFC
+<img src="readme.images/color_schema.png" alt="shows color schema">
 
 .light-bg background-color: #fff
 
@@ -189,82 +180,79 @@ body #F9FAFC
 .main-bg background-color: #F9FAFC
 
 
-<img src="README.images/Color_schema.png" alt="shows color schema">
-
-green: #7EA172
-
-
 ### Typography
 The primary font used in the application is Roboto. Throughout my learning experience, I found Lato to be simple and highly readable, which enhances the overall user experience. Additionally, this font complements the color scheme seamlessly.
 
-<img src="README.images/README_font_style_roboto.PNG" alt="shows typography preview">
+<img src="readme.images/readme_font_style_roboto.PNG" alt="shows typography preview">
 
 
 ### Wireframes
 
 #### Mobile
 
-<img src="README.images/wireframe_mobile.PNG" alt="shows mobile wireframe">
+<img src="readme.images/wireframe_mobile.PNG" alt="shows mobile wireframe">
 
 #### Desktop
 
-<img src="README.images/wireframe_desktop.PNG" alt="shows desktop wireframe">
+<img src="readme.images/wireframe_desktop.PNG" alt="shows desktop wireframe">
 
 #### Tablet
 
-<img src="README.images/wireframe_tablet.PNG" alt="shows tablet wireframe">
+<img src="readme.images/wireframe_tablet.PNG" alt="shows tablet wireframe">
 
 
 ### User feedback/ guidance / CRUD
 There are various notifications which representing feedback for the user after CRUD activity. Besides log-in and sign-out, which is already shown in the above chapter, there are notifications for dealing with methods, comments and like buttons. The standard function message.add_message() is used and mostly combined with an if-clause. In the following a few examples are shared:
 
-<img src="README.images/README_feedback_comment.PNG" alt="shows feedback comment">
-<img src="README.images/README_feedback_comment_edit.PNG" alt="shows feedback comment">
-<img src="README.images/README_feedback_comment_delete.PNG" alt="shows feedback comment">
-<img src="README.images/README_feedback_method.PNG" alt="shows feedback comment">
-<img src="README.images/README_feedback_like.PNG" alt="shows feedback comment">
+<img src="readme.images/readme_feedback_comment.PNG" alt="shows feedback comment">
+<img src="readme.images/readme_feedback_comment_edit.PNG" alt="shows feedback comment">
+<img src="readme.images/readme_feedback_comment_delete.PNG" alt="shows feedback comment">
+<img src="readme.images/readme_feedback_method.PNG" alt="shows feedback comment">
+<img src="readme.images/readme_feedback_like.PNG" alt="shows feedback comment">
 
 ## Agile Metholodgy 
 GitHub Project Management was used to manage the project.
 
-<img src="README.images/README_.PNG" alt="shows GitHub kanban board">
-<img src="README.images/README_.PNG" alt="shows GitHub kanban board">
+<img src="readme.images/readme_.PNG" alt="shows GitHub kanban board">
+<img src="readme.images/readme_.PNG" alt="shows GitHub kanban board">
 
 
 ## Databases
-PostgreSQL is used for production and Sqlite3 is used for.
+PostgreSQL is used for production and Sqlite3 is used for testing.
+
+**Important Hint:**  The current Sqlite3 database has been deleted to avoid expressing sensitive data. Date files names: db.sqlite3 and db_backup.json .
 
 ### ERD Entity Relationshop Diagram overview
-<img src="README.images/README_ERD_overview.PNG" alt="shows ERD_overview_">
+<img src="readme.images/readme_ERD_overview.PNG" alt="shows ERD_overview_">
 
 
 #### ERD_table_method
 Main database to store and manage methods. Can be created by Admin and logged-in users.
 Admin has to approve the new method before it is displayed on the website. Edit or delete functionality is only given to Admin.
 
-<img src="README.images/README_ERD_method.PNG" alt="shows ERD_method">
-<img src="README.images/README_ERD_method_code.PNG" alt="shows ERD method code">
+<img src="readme.images/readme_ERD_method.PNG" alt="shows ERD_method">
+<img src="readme.images/readme_ERD_method_code.PNG" alt="shows ERD method code">
 
 
 #### ERD_table_comments
 Database to store and manage comments. Can be created by Admin and logged-in users
 Admin has to approve the new comment before it is displayed on the website. Edit or delete functionality is only given to Admin and authorized users.
 
-<img src="README.images/README_ERD_comments.PNG" alt="shows ERD_comments">
-<img src="README.images/README_ERD_comments_code.PNG" alt="shows ERD comments code>
+<img src="readme.images/readme_ERD_comments.PNG" alt="shows ERD_comments">
+<img src="readme.images/readme_ERD_comments_code.PNG" alt="shows ERD comments code>
 
 #### ERD_table_about
 Database to store and manage content for the about page. Can be adjsuted only by Admin.
 The form helps the Admin to adjsut the content without ajdusting the code so that the admin don't need coding skills to make adjustments.
 
-<img src="README.images/README_ERD_about.PNG" alt="shows ERD_about">
-<img src="README.images/README_ERD_about_code.PNG" alt="shows ERD about code">
+<img src="readme.images/readme_ERD_about.PNG" alt="shows ERD_about">
+<img src="readme.images/readme_ERD_about_code.PNG" alt="shows ERD about code">
 
 #### ERD_table_like
 Database to store likes. Based on that the numbers of likes are displayed. Furthermore, the ListView on the landing page sorts the methods based on the number of likes. The more likes a method gets the more on top the method is displayed.
 
-<img src="README.images/README_ERD_like.PNG" alt="shows ERD_like">
-<img src="README.images/README_ERD_like_code.PNG" alt="shows ERD like code">
+<img src="readme.images/readme_ERD_like.PNG" alt="shows ERD_like">
+<img src="readme.images/readme_ERD_like_code.PNG" alt="shows ERD like code">
 
 
 ### Decisions during development
@@ -292,7 +280,7 @@ Delete and edit methods is complex. After MVP planned (see user stories)
 #### Accessability
 I confirm that the selected colors and fonts are easy to read and accessible by using Lighthouse in devtools (Chrome).
 
-<img src="README.images/GoogleLighthouse.PNG" alt="image shows GoogleLighthouse analysis"> 
+<img src="readme.images/GoogleLighthouse.PNG" alt="image shows GoogleLighthouse analysis"> 
 
 #### ARIA (Accessible Rich Internet Applications)
 
@@ -331,40 +319,40 @@ The main functions are generated with Python. However, to set up the whole proje
 
 ### Languages ###
 
-    Python 3.8.5: The primary programming language used for developing the backend of the website.
-    JavaScript (JS): The main language used for implementing dynamic and interactive features on the website.
-    HTML: The markup language employed to structure the content on the website.
-    CSS: The stylesheet language used to design and layout the visual appearance of the website.
+- Python 3.8.5: The primary programming language used for developing the backend of the website.
+- JavaScript (JS): The main language used for implementing dynamic and interactive features on the website.
+- HTML: The markup language employed to structure the content on the website.
+- CSS: The stylesheet language used to design and layout the visual appearance of the website.
 
 ### Frameworks and libraries ###
 
-    Django: A Python framework that handles the backend logic and functionalities of the website.
-    jQuery: Utilized to manage click events and facilitate AJAX requests for smoother user interactions.
-    jQuery UI: Used to implement various interactive elements such as sliders, dialogs, and date pickers.
-    Bootstrap: A framework used to build responsive, mobile-first web pages quickly, ensuring a consistent design across devices.
+- Django: A Python framework that handles the backend logic and functionalities of the website.
+- jQuery: Utilized to manage click events and facilitate AJAX requests for smoother user interactions.
+- jQuery UI: Used to implement various interactive elements such as sliders, dialogs, and date pickers.
+- Bootstrap: A framework used to build responsive, mobile-first web pages quickly, ensuring a consistent design across devices.
 
 ### Databases ###
 
-    SQLite: The lightweight database used during development and testing phases.
-    PostgreSQL: The production-grade relational database used to store all website data.
+- SQLite: The lightweight database used during development and testing phases.
+- PostgreSQL: The production-grade relational database used to store all website data.
 
 ### Other tools ###
 
-[Git](https://git-scm.com/): The version control system that tracks changes in the code and enables collaboration among developers.
-[Gitpod](https://www.gitpod.io/): A cloud-based IDE used for local development and coding.
-[Pip3](https://pypi.org/): The Python package manager used to install and manage project dependencies.
-[GitHub](https://github.com/): A platform that hosts the website’s source code and facilitates project management through features like the Kanban board.
-[Chrome DevTools](https://developer.chrome.com/docs/devtools): The developer tools in Google Chrome used to debug and inspect the website’s frontend.
-[Firefox DevTools](https://firefox-source-docs.mozilla.org/devtools-user/): The developer tools in Firefox used to debug and inspect the website’s frontend.
-[Font Awesome](https://fontawesome.com/): A library used to incorporate scalable vector icons into the website.
-[Coolors](https://coolors.co/): A tool used to generate a color palette for the website’s design.
-[W3C Validator](https://validator.w3.org/): A tool used to validate the HTML5 code to ensure it follows best practices and standards.
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/): A tool used to validate the CSS code, ensuring it conforms to web standards.
-[JSHint](https://jshint.com/): A tool used to check JavaScript code for potential errors or problems.
-[PEP8](https://pep8ci.herokuapp.com/): A tool used to check the Python code against the PEP8 coding standards for readability and consistency.
-[Miro](https://miro.com): A tool used to create visual diagrams, such as the Entity-Relationship Diagram for the project.
-[Heroku](https://www.heroku.com): A cloud platform used to deploy and host the website in a production environment.
-[Tinypng](https://tinypng.com/): Used for reducing image size
+- [Git](https://git-scm.com/): The version control system that tracks changes in the code and enables collaboration among developers.
+- [Gitpod](https://www.gitpod.io/): A cloud-based IDE used for local development and coding.
+- [Pip3](https://pypi.org/): The Python package manager used to install and manage project dependencies.
+- [GitHub](https://github.com/): A platform that hosts the website’s source code and facilitates project management through features like the Kanban board.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools): The developer tools in Google Chrome used to debug and inspect the website’s frontend.
+- [Firefox DevTools](https://firefox-source-docs.mozilla.org/devtools-user/): The developer tools in Firefox used to debug and inspect the website’s frontend.
+- [Font Awesome](https://fontawesome.com/): A library used to incorporate scalable vector icons into the website.
+- [Coolors](https://coolors.co/): A tool used to generate a color palette for the website’s design.
+- [W3C Validator](https://validator.w3.org/): A tool used to validate the HTML5 code to ensure it follows best practices and standards.
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/): A tool used to validate the CSS code, ensuring it conforms to web standards.
+- [JSHint](https://jshint.com/): A tool used to check JavaScript code for potential errors or problems.
+- [PEP8](https://pep8ci.herokuapp.com/): A tool used to check the Python code against the PEP8 coding standards for readability and consistency.
+- [Miro](https://miro.com): A tool used to create visual diagrams, such as the Entity-Relationship Diagram for the project.
+- [Heroku](https://www.heroku.com): A cloud platform used to deploy and host the website in a production environment.
+- [Tinypng](https://tinypng.com/): Used for reducing image size
 
 
 
@@ -372,63 +360,63 @@ The main functions are generated with Python. However, to set up the whole proje
 
 asgiref==3.8.1: 
 A utility library for Python that provides asynchronous server gateway interface (ASGI) support for Django
-    and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.
+and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.
 
 crispy-bootstrap5==0.7: 
 A Django package that integrates the Bootstrap 5 framework with Django Crispy Forms,
-    making it easier to render Bootstrap-styled forms with a clean and responsive layout.
+making it easier to render Bootstrap-styled forms with a clean and responsive layout.
 
 dj-database-url==0.5.0: 
 A library that simplifies the database connection setup in Django by parsing the DATABASE_URL environment
-    variable and configuring the database settings accordingly, commonly used for cloud deployment.
+variable and configuring the database settings accordingly, commonly used for cloud deployment.
 
 Django==4.2.7: 
 The web framework used for building the website's backend, offering a powerful, flexible, and secure platform
-    for web application development, including routing, database management, and templating.
+for web application development, including routing, database management, and templating.
 
 django-allauth==0.57.2:
-    A Django package for handling authentication, registration, and account management. It supports login via
-    social accounts (e.g., Google, Facebook) and traditional email/password-based login.
+A Django package for handling authentication, registration, and account management. It supports login via
+social accounts (e.g., Google, Facebook) and traditional email/password-based login.
 
 django-crispy-forms==2.3:
-    A Django library that provides better control over the rendering of forms by allowing you to use a simpler,
-    cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.
+A Django library that provides better control over the rendering of forms by allowing you to use a simpler,
+cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.
 
 django-summernote==0.8.20.0:
-    A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text
-    editing. It's used to enhance text areas for content creation by users.
+A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text
+editing. It's used to enhance text areas for content creation by users.
 
 gunicorn==20.1.0:
-    A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production
-    environments. It's known for its speed and ability to handle multiple requests concurrently.
+A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production
+environments. It's known for its speed and ability to handle multiple requests concurrently.
 
 oauthlib==3.2.2:
-    A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for
-    handling secure access to protected resources via third-party authentication services.
+A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for
+handling secure access to protected resources via third-party authentication services.
 
 psycopg2==2.9.10:
-    A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for
-    interacting with the relational database in the backend of the website.
+A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for
+interacting with the relational database in the backend of the website.
 
 PyJWT==2.9.0:
-    A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting
-    information and managing user authentication in web applications.
+A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting
+information and managing user authentication in web applications.
 
 python3-openid==3.2.0:
-    A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across
-    multiple applications. It's integrated into django-allauth for user authentication via third-party providers.
+A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across
+multiple applications. It's integrated into django-allauth for user authentication via third-party providers.
 
 requests-oauthlib==2.0.0:
-    An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API
-    requests. It's used for handling authentication in API calls that require OAuth.
+An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API
+requests. It's used for handling authentication in API calls that require OAuth.
 
 sqlparse==0.5.1:
-    A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging
-    and optimizing database queries within Django projects.
+A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging
+and optimizing database queries within Django projects.
 
 whitenoise==6.5.0:
-    A static file management library for Django, used to serve static files in a production environment. It 
-    simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.
+A static file management library for Django, used to serve static files in a production environment. It 
+simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.
 
 
 ## Deployment
@@ -767,7 +755,7 @@ My code
 https://github.com/Code-Institute-Org/p3-template
 
 **Description of Heroku deployment**
-is resused from github project https://github.com/discord/heroku-sample-app/blob/main/README.md
+is resused from github project https://github.com/discord/heroku-sample-app/blob/main/readme.md
 
 **Template from Code Institute**
 base.html reused, provided within project I Think Therefore I Blog Views

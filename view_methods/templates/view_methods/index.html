@@ -5,7 +5,7 @@
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row pb-2">
-        <h2>Welcome to TeamCrafted,</h2>
+        <h1 class="fs-4">Welcome to TeamCrafted,</h1>
         <p>...where creativity, collaboration, and the right methodologies
            come together to build great teams. <a href="{% url 'about' %}" aria-label="Learn more about our mission">Find here more about our mission</a>.</p>
         <p>Below you find a constantly growing collection of methods to support you in working with teams.</p>
@@ -72,7 +72,7 @@
                                 <div class="image-container">
                                     <!-- add cloudinary images when a image is provided-->
                                     <a href="{% url 'method_page' method.slug %}" class="method-link" aria-label="Go to the detailed method page for {{ method.title }}">
-                                        <h2 class="card-title">{{ method.title }}</h2></a>
+                                        <h2 class="card-title fs-4">{{ method.title }}</h2></a>
                                     {% if "placeholder" in method.featured_image.url %}
                                     <a href="{% url 'method_page' method.slug %}" class="method-link index-images" aria-label="View image for {{ method.title }}"><img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                       alt="placeholder image"></a>

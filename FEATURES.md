@@ -5,7 +5,7 @@ For this function, Django’s built-in generic class-based view is used, which s
 
 There are two ordering rules in place. First, by using the class Meta option, 'ordering = ["-created_on"]', the methods are ordered by their creation date, with the most recently created method appearing at the top. This is defined in the Method class (models.Method). Additionally, the methods on the landing page are sorted by the number of likes, so the most liked methods are displayed first. This behavior is defined in the MethodList view, which inherits from generic.ListView (as seen in views.py). Furthermore, pagination is implemented in the view, and a queryset is used to apply filters (which will be explained in a separate section as a custom feature). 
 
-<img src="README.images/FEATURES_MethodList(genericView).PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_methodlist(genericview).PNG" alt="shows relevant code" width="700">
 
 
 ## 2 | Filter function
@@ -48,7 +48,7 @@ Next, the function  retrieves all comments related to the method, orders them by
 In summary, the method_page function facilitates the display of method details, handles the liking process, and manages user comments while ensuring the displayed data is always up-to-date.
 
 
-<img src="README.images/FEATURES_method_page().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_method_page().PNG" alt="shows relevant code" width="700">
 
 
 ## 4 | Authentication
@@ -75,24 +75,24 @@ If these conditions are met, a new Like object is created and saved to the datab
 
 After a like is registered, the like count for the method is updated by re-fetching the method object and recalculating the like_count. This ensures that the displayed like count reflects the most up-to-date data. The method_page view then renders the method's details, including the total like count and the status of whether the user has already liked the method. The like status is passed to the template to conditionally display the like button.
 
-<img src="README.images/FEATURES_method_page().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_method_page().PNG" alt="shows relevant code" width="700">
 
 
 #### 6 | Manage comments
 The first step is to retrieve the method based on the slug provided in the URL. Comments associated with the method are then fetched and ordered by their creation date. The number of approved comments is also counted. If the user is authenticated, they can submit a comment on the method. A comment form (CommentForm) is instantiated, which binds the user input to the relevant model. The form is rendered in the template to allow the user to type and submit their comment. This form is passed into the context to be used in the template (method_page.html) for rendering the form fields.
 
 Display Comments
-<img src="README.images/FEATURES_method_page().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_method_page().PNG" alt="shows relevant code" width="700">
 
  When the user submits a comment, the request method is checked for "POST". If the form data is valid, a new comment object is created but not yet saved to the database until further processing (commit=False). The author and method fields are set before saving the comment. Once the comment has been successfully submitted (or if no new comment is submitted), the method page is re-rendered. The comments (both approved and unapproved) are passed into the context and displayed in the template. The total count of approved comments is also included.
  
 There are separated function for edit and delete comments.
 
 Edit Comments
-<img src="README.images/FEATURES_comment_edit().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_comment_edit().PNG" alt="shows relevant code" width="700">
 
 Delete Comments
-<img src="README.images/FEATURES_comment_delete().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_comment_delete().PNG" alt="shows relevant code" width="700">
 
 
 Only comments marked as approved will be publicly visible. The Admin manages the approval process through the Django Admin interface. This means that once a comment is submitted, it is stored in the database with an initial approved=False state, and only comments that are approved will be included in the count of comment_count and displayed in the comment section of the method page.
@@ -109,7 +109,7 @@ If the request is a GET request (indicating the page is being loaded for the fir
 
 The method_create function renders the template method_creation.html with the form object (method_form) passed to it, so the user can either view the blank form or the previously submitted form data (if any).
 
-<img src="README.images/FEATURES_method_create().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_method_create().PNG" alt="shows relevant code" width="700">
 
 
 #### 8 | Private Collection
@@ -128,7 +128,7 @@ The methods that the currently logged-in user has liked are fetched using the Me
 The get_context_data method returns a context dictionary that contains the following keys: method_list, comment_list, liked_methods
 This context is passed to the template private_collection.html for rendering.
 
-<img src="README.images/FEATURES_PrivateCollectionView().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_privatecollectionview().PNG" alt="shows relevant code" width="700">
 
 
 #### 9 | Django Admin panel
@@ -147,13 +147,13 @@ The admin.py file has been customized to enhance the Django Admin interface by u
 The Summernote WYSIWYG editor is integrated into all three models—Method, Comment, and About—to provide an intuitive rich text editing experience for fields such as summary, instructions, and body. However, the summernote feature is not provided to User and Admin equally, i.e. in contrast to the User the Admin can use summernote editor for comments or for the input field method.summary. 
 The list_display attribute is used to customize the columns displayed in the admin list views, making it easier for administrators to manage and review content. Additionally, the search and filtering functionalities are configured to allow administrators to search and filter content based on important fields like author, status, and whether a comment has been approved. For the Method model, the slug field is automatically prepopulated from the title, ensuring consistent and SEO-friendly URL formatting across the platform.
 
-<img src="README.images/FEATURES_admin.PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_admin.PNG" alt="shows relevant code" width="700">
 
 
 #### 11 About Us form
 The AboutPageView class is a TemplateView that serves the "About" page on the website. It is configured to render the template about.html. The get_context_data method is used to gather the necessary data for the template. First, it calls the parent class's get_context_data method to retrieve the default context. Then, it fetches the first About object from the database using About.objects.first() and adds it to the context under the key about. This object is then available for display in the about.html template. This setup allows for dynamic content rendering on the About page, where the content is stored in the database and can be easily managed through the Django admin interface.
 
-<img src="README.images/FEATURES_AboutPageView().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_aboutpageview().PNG" alt="shows relevant code" width="700">
 
 
 #### 12 | Slug Generation
@@ -161,7 +161,7 @@ The save method of the MethodForm class is customized to automatically generate 
 
 Unique Slugs: The current implementation handles slug uniqueness not in the function, but in the Method.Model.
 
-<img src="README.images/FEATURES_slug_generation.PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_slug_generation.PNG" alt="shows relevant code" width="700">
 
 
 #### 13 | Add Images (Image validation)

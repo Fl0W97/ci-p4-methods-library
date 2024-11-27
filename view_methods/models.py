@@ -106,7 +106,8 @@ class Method(models.Model):
     def __str__(self):
         return f" title {self.title} | written by {self.author}"
 
-# Comment model
+""" Comment model / Reused code from Code Institute
+    see README.md credit section reused code """
 class Comment(models.Model):
     method = models.ForeignKey(
         Method, on_delete=models.CASCADE, related_name="comments"
@@ -132,9 +133,8 @@ class Comment(models.Model):
             f" By {self.author} | {self.body} | Created on {self.created_on}"
         )
 
-# The main part of the model class Comment was resued from Code Institute tutorial:
-# https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+4/
-# courseware/713441aba05441dfb3a7cf04f3268b3f/7e1df7fc4abf430d9c860759d4ccaa08/?child=first
+""" Comment model / Reused code from Code Institute
+    see README.md credit section reused code """
 
 # model for like button
 class Like(models.Model):
@@ -161,7 +161,8 @@ class Like(models.Model):
         return cls.objects.filter(method=method).count()
 
 
-# model for about page
+""" model for about page / Reused code from Code Institute
+    see README.md credit section reused code """
 class About(models.Model):
     title = models.CharField(
         max_length=200, default="About Us"

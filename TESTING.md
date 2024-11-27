@@ -43,31 +43,31 @@ These are additional tests to ensure the overall quality, performance, security,
 
 **No.** | **User Story** | **Requirement met (y/n)** |  **Image**|
 | ------|--------------- |---------------------------|-----------|
-| #11 | As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #2  | As a Site User I can read the methods in an structured way so that it's easy to go through them. | y |<img src="README.images/README_Userstory_2.PNG" alt="show image for User story" width="500">>||
-| #5  | As a Site User I can register an account so that I can comment on a method | y |<img src="README.images/README_Userstory_5.PNG" alt="show image for User story" width="500">||
-| #14 | As a Site User I can view methods so that I get motivated to share my methods as well | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #16 | As a Site User I can see images and a good color contrast so that I like to stay on the website form a visual perspective | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #6  | As a Site User I want to get a notification once I change something so that I get feedback of my actions | y |<img src="README.images/README_Userstory_6a.PNG" alt="show image for User story" width="250"> <img src="README.images/README_Userstory_6b.PNG" alt="show image for User story" width="250">||
-| #1  | As a Site User I can see directly the purpose of the website so that get an orientation what I can do | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #8  | As a Site User I can filter methods on the main page so that I can optimize my search | y |<img src="README.images/README_Userstory_1.PNG" alt="show image for User story" width="500">||
-| #22 | As a Site User I can add methods so that I can share my own methods with the community. | y |<img src="README.images/README.Userstory_27.PNG" alt="show image for User story" width="500">||
+| #11 | As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #2  | As a Site User I can read the methods in an structured way so that it's easy to go through them. | y |<img src="readme.images/readme_Userstory_2.PNG" alt="show image for User story" width="500">>||
+| #5  | As a Site User I can register an account so that I can comment on a method | y |<img src="readme.images/readme_Userstory_5.PNG" alt="show image for User story" width="500">||
+| #14 | As a Site User I can view methods so that I get motivated to share my methods as well | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #16 | As a Site User I can see images and a good color contrast so that I like to stay on the website form a visual perspective | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #6  | As a Site User I want to get a notification once I change something so that I get feedback of my actions | y |<img src="readme.images/readme_Userstory_6a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_Userstory_6b.PNG" alt="show image for User story" width="250">||
+| #1  | As a Site User I can see directly the purpose of the website so that get an orientation what I can do | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #8  | As a Site User I can filter methods on the main page so that I can optimize my search | y |<img src="readme.images/readme_Userstory_1.PNG" alt="show image for User story" width="500">||
+| #22 | As a Site User I can add methods so that I can share my own methods with the community. | y |<img src="readme.images/readme.Userstory_27.PNG" alt="show image for User story" width="500">||
 | #20 | As a Site User I can see information about the creator of website so that I can contact him and get an idea of the person behind the project. | y |<img src="" alt="show image for User story" width="500">||
-| #31 | As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site' | y |<img src="README.images/README.Userstory_16.PNG" alt="show image for User story" width="500">||
+| #31 | As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site' | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
 | #39 | As a Site User I don't want that the site creates errors. | y |||
-| #41 | As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful. | y |<img src="README.images/README_Userstory_41a.PNG" alt="show image for User story" width="250"> <img src="README.images/README_Userstory_41b.PNG" alt="show image for User story" width="250">||
-| #40 | As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview | y |<img src="README.images/README_Userstory_40.PNG" alt="show image for User story" width="500">||
-| #28 | As a Site User I can identify the website in my browser via an symbol so that I find the open website faster | y |<img src="README.images/README_Userstory_28.PNG" alt="show image for User story" width="500">||
-| #18 | As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site | y |<img src="README.images/README_Userstory_18.PNG" alt="show image for User story" width="500">||
-| #30 | As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text | y |<img src="README.images/README_Userstory_30a.PNG" alt="show image for User story" width="300"> <img src="README.images/README_Userstory_30b.PNG" alt="show image for User story" width="300">||
-| #38 | As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster | y |<img src="README.images/README_Userstory_38a.PNG" alt="show image for User story" width="250"> <img src="README.images/README_Userstory_38b.PNG" alt="show image for User story" width="250">||
-| #34 | As a Site User I can see clearly if I liked a method already, before I click on the Like-button' so that 'I don't click twice. | y |<img src="README.images/README_Userstory_34.PNG" alt="show image for User story" width="200">||
+| #41 | As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful. | y |<img src="readme.images/readme_Userstory_41a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_Userstory_41b.PNG" alt="show image for User story" width="250">||
+| #40 | As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview | y |<img src="readme.images/readme_Userstory_40.PNG" alt="show image for User story" width="500">||
+| #28 | As a Site User I can identify the website in my browser via an symbol so that I find the open website faster | y |<img src="readme.images/readme_Userstory_28.PNG" alt="show image for User story" width="500">||
+| #18 | As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site | y |<img src="readme.images/readme_Userstory_18.PNG" alt="show image for User story" width="500">||
+| #30 | As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text | y |<img src="readme.images/readme_Userstory_30a.PNG" alt="show image for User story" width="300"> <img src="readme.images/readme_Userstory_30b.PNG" alt="show image for User story" width="300">||
+| #38 | As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster | y |<img src="readme.images/readme_Userstory_38a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_Userstory_38b.PNG" alt="show image for User story" width="250">||
+| #34 | As a Site User I can see clearly if I liked a method already, before I click on the Like-button' so that 'I don't click twice. | y |<img src="readme.images/readme_Userstory_34.PNG" alt="show image for User story" width="200">||
 | #36 | As a Site User (handycaped) I can use arial-current/label attributes so that I can follow the content on the website properly. | y |||
-| #21 | As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops. | y |<img src="README.images/README_Userstory_21.PNG" alt="show image for User story" width="500">||
-| #27 | As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily | y |<img src="README.images/README.Userstory_27.PNG" alt="show image for User story" width="500">|
-| #35 | As a (logged-in) Site User I can create a method easily and well structured so that I don't see too long input fields, etc | y |<img src="README.images/README.Userstory_27.PNG" alt="show image for User story" width="500">||
-| #15 | As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods | y |<img src="README.images/README_Userstory_15.PNG" alt="show image for User story" width="500">||
-| #4  | As a (logged-in) Site User I can modify or delete my comment on a method so that I can be involved in the conversation | y |<img src="README.images/README_Userstory_4.PNG" alt="show image for User story" width="500">||
+| #21 | As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops. | y |<img src="readme.images/readme_Userstory_21.PNG" alt="show image for User story" width="500">||
+| #27 | As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily | y |<img src="readme.images/readme.Userstory_27.PNG" alt="show image for User story" width="500">|
+| #35 | As a (logged-in) Site User I can create a method easily and well structured so that I don't see too long input fields, etc | y |<img src="readme.images/readme.Userstory_27.PNG" alt="show image for User story" width="500">||
+| #15 | As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods | y |<img src="readme.images/readme_Userstory_15.PNG" alt="show image for User story" width="500">||
+| #4  | As a (logged-in) Site User I can modify or delete my comment on a method so that I can be involved in the conversation | y |<img src="readme.images/readme_Userstory_4.PNG" alt="show image for User story" width="500">||
 
 
 **User Stories for Admin User**
@@ -75,62 +75,52 @@ These are additional tests to ensure the overall quality, performance, security,
 **No.** | **User Story** | **Requirement met (y/n)** |  **Image**|
 | ------|--------------- |---------------------------|-----------|
 | #29 | Do readme documentation | y ||
-| #9  | As a Site Admin I can create, read, update and delete methods so that I can manage my content | y |<img src="README.images/README_Userstory_9.PNG" alt="show image for User story" width="500">|
-| #10 | As a Site Admin I can approve comments so that I can manage and control the content on the website | y |<img src="README.images/README_Userstory_10.PNG" alt="show image for User story" width="500">|
-| #45 | As a Site Admin I can create, update and delete the text content of the about.html site | y |<img src="README.images/README_Userstory_45.PNG" alt="show image for User story" width="500">|
-| #46 | As a Site Admin I can create, update and delete Site Users | y |<img src="README.images/README_Userstory_46.PNG" alt="show image for User story" width="500">|
-| #33 | As a Site Admin I can use a filter function for comments in the admin panel so that I can manage the comments efficient | y |<img src="README.images/README_Userstory_33.PNG" alt="show image for User story" width="500">|
-| #12 | As a Site Admin I can approve methods from other Site Users so that I have control of the content | y |<img src="README.images/README_Userstory_12.PNG" alt="show image for User story" width="500">|
-| #47 | As a Site Admin I can approve comments from other Site Users so that I have control of the content | y |<img src="README.images/README_Userstory_47.PNG" alt="show image for User story" width="500">|
-| #43 | As a 'Site Admin' I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient. | y |<img src="README.images/README_Userstory_43.PNG" alt="show image for User story" width="500">||
+| #9  | As a Site Admin I can create, read, update and delete methods so that I can manage my content | y |<img src="readme.images/readme_Userstory_9.PNG" alt="show image for User story" width="500">|
+| #10 | As a Site Admin I can approve comments so that I can manage and control the content on the website | y |<img src="readme.images/readme_Userstory_10.PNG" alt="show image for User story" width="500">|
+| #45 | As a Site Admin I can create, update and delete the text content of the about.html site | y |<img src="readme.images/readme_Userstory_45.PNG" alt="show image for User story" width="500">|
+| #46 | As a Site Admin I can create, update and delete Site Users | y |<img src="readme.images/readme_Userstory_46.PNG" alt="show image for User story" width="500">|
+| #33 | As a Site Admin I can use a filter function for comments in the admin panel so that I can manage the comments efficient | y |<img src="readme.images/readme_Userstory_33.PNG" alt="show image for User story" width="500">|
+| #12 | As a Site Admin I can approve methods from other Site Users so that I have control of the content | y |<img src="readme.images/readme_Userstory_12.PNG" alt="show image for User story" width="500">|
+| #47 | As a Site Admin I can approve comments from other Site Users so that I have control of the content | y |<img src="readme.images/readme_Userstory_47.PNG" alt="show image for User story" width="500">|
+| #43 | As a 'Site Admin' I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient. | y |<img src="readme.images/readme_Userstory_43.PNG" alt="show image for User story" width="500">||
 | #42 | As a 'Site Admin' I want to make sure that the Users don't crash the website by adding to much content | y ||
 | #37 | As a User I can use a working website so that I don't receive error messages or are harmed to use certain functionalities of the website | y ||
-| #   |  | y ||
 
 
 ## Automated testing
 
 | **test file** | **Objective** | **Test Code (image)** | **Test Completed** | **Comments** |
 |---------------|-------------- |-------------|--------------------|--------------|
-| view_methods/test_views.py | Tests if the method page correctly displays a method and its comments. | <img src="README.images/README_testing_TestMethodView.PNG" alt="shows TestMethodView"> |[ ]||
-| view_methods/test_views.py | Tests filtering by purpose, duration, and location for the MethodList view. | <img src="README.images/README_testing_TestMethodFiltering.PNG" alt="shows TestMethodFiltering"> |[ ]||
-| view_methods/test_forms.py | Tests adding a new comment with valid and invalid input | <img src="README.images/README_testing_TestCommentForm.PNG" alt="shows TestCommentForm"> |[ ]||
-
-
-/// further IDEAS for automated tests ///
-Test_views.py
-CommentCreateTest: Tests creating a new comment on the method page.
-CommentEditTest: Tests editing a comment and ensuring only the author can edit it.
-CommentDeleteTest: Tests deleting a comment and ensuring only the author can delete it.
-Testing Like counter
-Testing new app "collection"
-/// IDEAS for testing ///
+| view_methods/test_views.py | Tests if the method page correctly displays a method and its comments. | <img src="readme.images/readme_testing_test_method_view.PNG" alt="shows TestMethodView"> |[ ]||
+| view_methods/test_views.py | Tests filtering by purpose, duration, and location for the MethodList view. | <img src="readme.images/readme_testing_test_method_filtering_views.PNG" alt="shows TestMethodFiltering"> |[ ]||
+| view_methods/test_forms.py | Tests adding a new comment with valid and invalid input | <img src="readme.images/readme_testing_test_comment_form.PNG" alt="shows TestCommentForm"> |[ ]||
 
 
 ## Bugs (not fixed)
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
-| django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | Error during database migration. According to the error message the migration file 003 contains an error. However, after adjusting the file the some error occured.| <img src="README.images/bug_error_message_syntax error_none.PNG" alt="shows error message" widht="250"> <img src="README.images/bug_backuo_migration003.PNG" alt="shows error message" widht="250"> | Old migration files has been saved outside the project and deleted in the project. New command "python3 manage.py migrate" has been done. A new migration file exists and is working. |
-| django.db.utils.OperationalError: near "None": syntax error | The error occured during testing. The local database db.sqlite had an inconsistency. The migration file "view_methods.0003_alter_method_alt_atr_alter_method_duration_and_more" had a failre related to NONE. After seveal tries to fix the issue I decided to focus on the rest of the project. | ...| I saved all migration files and removed them from the project. Then I run pyhton3 manage.py makemigrations and python3 manage.py migrate.|
-| Uncaught Type Error: this._element is undefined | Customization summernote for admin panel | <img src="README.images/bug_js_summernote_customization_code.PNG" alt="shows error message in console"> | function was deleted |
-| NameError: name 'request' is not defined | The error occurs because the request I am trying to access request.method outside of a method where request is not available. The request object is passed to views only during HTTP request processing, so trying to reference it outside of a method like get_context_data causes this error. To fix this, you should move the POST request handling inside the appropriate post method of the class-based view. In Django, TemplateView doesn't have a post method by default. | <img src=README.images/bug_NameError_name_requet_is_not_defined.PNG" alt="image shows Error message"> | TempalteView is still used for AboutPageView method in views.py, but the edit and delete functionality is removed. |
+| django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | Error during database migration. According to the error message the migration file 003 contains an error. However, after adjusting the file the some error occured.| <img src="readme.images/bug_error_message_syntax error_none.PNG" alt="shows error message" widht="250"> <img src="readme.images/bug_backuo_migration003.PNG" alt="shows error message" widht="250"> | Old migration files has been saved outside the project and deleted in the project. New command "python3 manage.py migrate" has been done. A new migration file exists and is working. |
+| django.db.utils.OperationalError: near "None": syntax error | The error occured during testing. The local database db.sqlite had an inconsistency. The migration file "view_methods.0003_alter_method_alt_atr_alter_method_duration_and_more" had a failre related to NONE. After several tries to fix the issue I decided to focus on the rest of the project. | ...| I saved all migration files and removed them from the project. Then I run pyhton3 manage.py makemigrations and python3 manage.py migrate.|
+| Uncaught Type Error: this._element is undefined | Customization summernote for admin panel | <img src="readme.images/bug_js_summernote_customization_code.PNG" alt="shows error message in console"> | function was deleted |
+| NameError: name 'request' is not defined | The error occurs because the request I am trying to access request.method outside of a method where request is not available. The request object is passed to views only during HTTP request processing, so trying to reference it outside of a method like get_context_data causes this error. To fix this, you should move the POST request handling inside the appropriate post method of the class-based view. In Django, TemplateView doesn't have a post method by default. | <img src=readme.images/bug_NameError_name_requet_is_not_defined.PNG" alt="image shows Error message"> | TempalteView is still used for AboutPageView method in views.py, but the edit and delete functionality is removed. |
+| Image overlay | Method_page line 6-7: By default, a div will expand based on its content - so does the div wit hthe image. It will not automatically adapt its height to the parent unless instructed to do so via CSS, which is why you're seeing the overlap. Setting height: 100% on an additional element such as .container.height_control should ensure it inherits the parent's height. However then the image appears very small, I prefer keeping the overlap. Since it's a responsive site the image is cutted on different heights. | <img src="readme.images/bug_image_overlap_masthead.PNG" alt="shows bug on website" width="250"> | none, compromise execpted. |
 
 
 ## Bugs (fixed)
 
 | Bug | Description  | images (optional) | Correction |
 | --- |------------- | ----------------- | -----------|
-| Rendering issue of mehtod cards on landing page | TypeField for method.summary hasn't been rendered correctly deu to usage of summernote. | <img src="README.images/bug_rendering_problem_safe.PNG" alt="show screenshot of bug on website" width="250"> <img src="README.images/bug_rendering_problem_safe2.PNG" alt="show screenshot of bug fix on website" width="250"> | Including of "safe"-function for method.summary fixed the issue. |
-| method cards overlapp filter section| The divs of the method cards are not aligned with the structure. There are more columns than the total grid (12 columns)inside a .row, the elements overlaps because Bootstrap can't correctly allocate space for each column. Issue come up twice, also related to another div. | <img src="README.images/bug_filter_method overlay.PNG" alt="show screenshot of bug on website" width="500">| The missing bootstrap utility class "card-type" has been added and the correct number of grid columns has been adjusted. |
-| The image in the masterhead section is dislocated | It seems dislocated. There has been a breakpoint adjustment to a fixed 200px height. In a responisve set up this is not a good idea since the masterhead's height can change. |  <img src="README.images/bug_image_size_masterhead_method_page.PNG" alt="show screenshot of bug on website" width="500"> | The fixed height has to be removed. The image is more flexible, however, when zooming out 250% it still can be (depending on the screen size) that there is again space between bottom of masterhead and image. But that's sufficient. If the image size would always be depending on the masterhead size the ratio would be a problem and the iamge would look strange. Here the best compomise currently is made (keeping in mind a responsive and flexible setup) |
-| Like button is not visible | The Like button is not visible, only the blue text color. | <img src="README.images/bug_like_button_no_button.PNG" alt="show screenshot of bug on website" width="500"> | Background-color and text color has been mixed up. It is corrected: color = white, background-color = blue .|
+| Rendering issue of mehtod cards on landing page | TypeField for method.summary hasn't been rendered correctly deu to usage of summernote. | <img src="readme.images/bug_rendering_problem_safe.PNG" alt="show screenshot of bug on website" width="250"> <img src="readme.images/bug_rendering_problem_safe2.PNG" alt="show screenshot of bug fix on website" width="250"> | Including of "safe"-function for method.summary fixed the issue. |
+| method cards overlapp filter section| The divs of the method cards are not aligned with the structure. There are more columns than the total grid (12 columns)inside a .row, the elements overlaps because Bootstrap can't correctly allocate space for each column. Issue come up twice, also related to another div. | <img src="readme.images/bug_filter_method overlay.PNG" alt="show screenshot of bug on website" width="500">| The missing bootstrap utility class "card-type" has been added and the correct number of grid columns has been adjusted. |
+| The image in the masterhead section is dislocated | It seems dislocated. There has been a breakpoint adjustment to a fixed 200px height. In a responisve set up this is not a good idea since the masterhead's height can change. |  <img src="readme.images/bug_image_size_masterhead_method_page.PNG" alt="show screenshot of bug on website" width="500"> | The fixed height has to be removed. The image is more flexible, however, when zooming out 250% it still can be (depending on the screen size) that there is again space between bottom of masterhead and image. But that's sufficient. If the image size would always be depending on the masterhead size the ratio would be a problem and the iamge would look strange. Here the best compomise currently is made (keeping in mind a responsive and flexible setup) |
+| Like button is not visible | The Like button is not visible, only the blue text color. | <img src="readme.images/bug_like_button_no_button.PNG" alt="show screenshot of bug on website" width="500"> | Background-color and text color has been mixed up. It is corrected: color = white, background-color = blue .|
 | Validation_error during image upload|| <img src="" alt="show screenshot of bug on website" width="500"> ||
-| Phone view on private_collection | The | <img src="README.images/bug_phone_view_strange_I.PNG" alt="show screenshot of bug on website" width="500"> | The symbol "|" has been removed. in private_collection.html . |
-|  | Summernote form is not responsive. The right end is cutted by the browser, the user has to scroll to the right. Bad UX| <img src="README.images/bug_summernote_form_not_responsive.PNG" alt="show screenshot of bug on website" width="500"> ||
+| Phone view on private_collection | The | <img src="readme.images/bug_phone_view_strange_I.PNG" alt="show screenshot of bug on website" width="500"> | The symbol "|" has been removed. in private_collection.html . |
+| None responsive input form | Summernote form on site 'add a method' is not responsive. The right end is cutted by the browser, the user has to scroll to the right. Bad UX| <img src="readme.images/bug_summernote_form_not_responsive.PNG" alt="show screenshot of bug on website" width="500"> ||
 | "File not existing" and old css code is displayed in production | There was no error message, however, the requested result was not displayed. After adding the new images, new code I missed to run "python manage.py collectstatic" | ... | run "python manage.py collectstatic" |
-| DisallowedHost at /create | Invalid HTTP_Host header | <img src="README.images/bug_DisallowedHost.PNG" alt="show Error message" width="500">| Add the correct host address to settings.py allowed hosts.|
-| IndentationError: unexpected indent | failrue in views.py at function def method_create(request):  |  <img src="README.images/but_IndentationError_unexpected ident1.PNG" alt="shows failure in code" width="250">  <img src="README.images/but_IndentationError_unexpected ident2.PNG" alt="shows Error message" width="250">| Correct indentation by pushing the marked code area to the right |
+| DisallowedHost at /create | Invalid HTTP_Host header | <img src="readme.images/bug_DisallowedHost.PNG" alt="show Error message" width="500">| Add the correct host address to settings.py allowed hosts.|
+| IndentationError: unexpected indent | failrue in views.py at function def method_create(request):  |  <img src="readme.images/but_IndentationError_unexpected ident1.PNG" alt="shows failure in code" width="250">  <img src="readme.images/but_IndentationError_unexpected ident2.PNG" alt="shows Error message" width="250">| Correct indentation by pushing the marked code area to the right |
 
 
 ## Validator Testing
@@ -144,34 +134,34 @@ No errors were returned.
 
 #### methods_library/settings.py
 
-<img src="README.images/CI_python_validator_methods_library_settings.PNG" alt="shows result of validation of methods_library/settings.py" width="650">
+<img src="readme.images/testing_python_validator_methods_library_settings.PNG" alt="shows result of validation of methods_library/settings.py" width="650">
 
 #### methods_library/urls.py
 
-<img src="README.images/CI_python_validator_methods_library_url.PNG" alt="shows result of validation of methods_library/url.py" width="650">
+<img src="readme.images/testing_python_validator_methods_library_url.PNG" alt="shows result of validation of methods_library/url.py" width="650">
 
 
 #### view_methods/admin.py
 
-<img src="README.images/CI_python_validator_view_methods_admin.PNG" alt="shows result of validation of view_methods/admin.py" width="650">
+<img src="readme.images/testing_python_validator_view_methods_admin.PNG" alt="shows result of validation of view_methods/admin.py" width="650">
 
 #### view_methods/forms.py
-<img src="README.images/CI_python_validator_view_forms.PNG" alt="shows result of validation of view_methods/forms.py" width="650">
+<img src="readme.images/testing_python_validator_view_forms.PNG" alt="shows result of validation of view_methods/forms.py" width="650">
 
 #### view_methods/models.py
-<img src="README.images/CI_python_validator_view_models.PNG" alt="shows result of validation of view_methods/models.py" width="650">
+<img src="readme.images/testing_python_validator_view_models.PNG" alt="shows result of validation of view_methods/models.py" width="650">
 
 #### view_methods/test_forms.py
-<img src="README.images/CI_python_validator_view_test_forms.PNG" alt="shows result of validation of view_methods/test_form.py" width="650">
+<img src="readme.images/testing_python_validator_view_test_forms.PNG" alt="shows result of validation of view_methods/test_form.py" width="650">
 
 #### view_methods/test_views.py
-<img src="README.images/CI_python_validator_view_test_views.PNG" alt="shows result of validation of view_methods/test_views.py" width="650">
+<img src="readme.images/testing_python_validator_view_test_views.PNG" alt="shows result of validation of view_methods/test_views.py" width="650">
 
 #### view_methods/urls.py
-<img src="README.images/CI_python_validator_view_methods_urls.PNG" alt="shows result of validation of view_methods/urls.py" width="650">
+<img src="readme.images/testing_python_validator_view_methods_urls.PNG" alt="shows result of validation of view_methods/urls.py" width="650">
 
 #### view_methods/views.py
-<img src="README.images/CI_python_validator_view_methods_views.PNG" alt="shows result of validation of view_methods/views.py" width="650">
+<img src="readme.images/testing_python_validator_view_methods_views.PNG" alt="shows result of validation of view_methods/views.py" width="650">
 
 </details>
 
@@ -186,13 +176,13 @@ No errors were returned.
 No errors were returned
 
 #### base.hmtl + index.html
-<img src="README.images/w3_html_validator_index.PNG" alt="shows result of HTML validation" width="650">
+<img src="readme.images/w3_html_validator_index.PNG" alt="shows result of HTML validation" width="650">
 
 #### base.hmtl + about.html
-<img src="README.images/w3_html_validator_about.PNG" alt="shows result of HTML validation" width="650">
+<img src="readme.images/w3_html_validator_about.PNG" alt="shows result of HTML validation" width="650">
 
 #### base.hmtl + method_creation.html
-<img src="README.images/w3_html_validator_method_creation.PNG" alt="shows result of HTML validation" width="650">
+<img src="readme.images/w3_html_validator_method_creation.PNG" alt="shows result of HTML validation" width="650">
 
 #### base.hmtl + method_page.html
 <img src="view_methods/templates/view_methods/method_page.html" alt="shows result of HTML validation" width="650">
@@ -235,10 +225,10 @@ No errors were returned
     <summary>see details about JS validator</summary>
 
 #### buttons_method_form.js
-<img src="README.images/jshint_validator_buttons_method_form.PNG" alt="image shows preview of validator results" width="500px">
+<img src="readme.images/testing_jshint_validator_buttons_method_form.PNG" alt="image shows preview of validator results" width="500px">
 
 #### comments.js
-<img src="README.images/jshint_validator_comments.PNG" alt="image shows preview of validator results" width="500px">
+<img src="readme.images/testing_jshint_validator_comments.PNG" alt="image shows preview of validator results" width="500px">
 
 </details>
 
@@ -252,7 +242,7 @@ The MethodForm class includes custom validation logic for the featured_image fie
 
 If the user checks the delete checkbox (delete_featured_image), the image is removed by setting the value of featured_image to None. This ensures that no image is retained in the database if the user wishes to delete it. If no image is uploaded, the method returns None, which allows the field to remain empty. If the uploaded image is a URL (for example, returned by an external service like Cloudinary), the method simply returns the URL string as-is without further processing. If the image is uploaded as a file object, the method checks whether the size exceeds the 3MB limit. If the file size is greater than the limit, a ValidationError is raised, informing the user that the image size must be under 3MB. If the uploaded file is not a valid image (i.e., it doesn't have a size attribute), the method raises a ValidationError indicating that the uploaded file is not a valid image.
 
-<img src="README.images/FEATURES_def_clean_featured_image().PNG" alt="shows relevant code" width="700">
+<img src="readme.images/features_def_clean_featured_image().PNG" alt="shows relevant code" width="700">
 
 
 #### Input field validation
@@ -267,14 +257,33 @@ Several input field validators have been implemented to ensure data integrity an
 These validators are applied across the project to ensure that data entered is valid, reducing errors and maintaining consistency. They are defined in models.py to enforce rules during data entry.
 
 For instance 
-<img src="README.imagREADME.images/TESTING_validation_slug_entry.PNG" alt="shows relevant code" width="700">
-<img src="README.images/TESTING_validation_title_entry.PNG" alt="shows relevant code" width="700">
-<img src="README.images/TESTING_validation_group_size.PNG" alt="shows relevant code" width="700">
+<img src="readme.imagreadme.images/testing_validation_slug_entry.PNG" alt="shows relevant code" width="700">
+<img src="readme.images/testing_validation_title_entry.PNG" alt="shows relevant code" width="700">
+<img src="readme.images/testing_validation_group_size.PNG" alt="shows relevant code" width="700">
 
 ## Lighthouse Reports
 LightHouse is a web performance testing tool used to assess a website's performance. The report is generated through Google Chrome.
 
-<img src="" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+<details>
+    <summary>see LightHouse reprot for each site</summary>
+
+#### Index.html
+<img src="readme.images/Lighthouse_report_index.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+
+#### Method_page.html
+<img src="readme.images/Lighthouse_report.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+
+#### About.html
+<img src="readme.images/Lighthouse_report_about.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+
+#### private_collection.html
+<img src="readme.images/Lighthouse_collection.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+
+#### Method_page.html
+<img src="readme.images/Lighthouse_create.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+
+</details>
+
 
 ## Responisvness
 The responsiveness was manually tested using Chrome's devtools throughout the entire development process.

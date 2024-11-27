@@ -5,7 +5,8 @@ from django_summernote.widgets import SummernoteWidget
 from django.core.exceptions import ValidationError
 from urllib.parse import urlparse
 
-
+""" class AboutForm / Reused code from Code Institute
+    see README.md credit section reused code """
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -79,6 +80,8 @@ class MethodForm(forms.ModelForm):
         return instance
 
 
+""" form for about page / Reused code from Code Institute
+    see README.md credit section reused code """
 class AboutForm(forms.ModelForm):
     class Meta:
         model = About

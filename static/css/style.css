@@ -76,6 +76,10 @@ p {
     text-transform: uppercase;
 }
 
+.container.height_control {
+    height: 100%;
+}
+
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -202,7 +206,7 @@ p {
 /* Custom style for alert-success */
 .success {
     background-color: #28a745;
-    border-color: 1px solid white;
+    border: 1px solid white;
     color: white;
 }
 
