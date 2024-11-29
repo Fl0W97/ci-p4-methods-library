@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Not Found 404</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+
+    <body class="body">
+        <header class="container row">
+            <h1>404 Error - Page Not Found</h1>
+        </header>
+        <main>
+            <!-- Section 404 -->
+            <section class="404">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <article class="col-md-5 card mb-4 mt-3">
+                            <div class="card-body image-container">
+                                <img class="index-image" src="{%static 'images/404.jpg' %}"  alt="404 error image">
+                                <p>The page you're trying to access may have been moved, deleted, or no longer exists</p>
+                                <p><a href="{% url 'home' %}" aria-label="Go to homepage">Return to the homepage here</a></p>
+                                <p>If you have any urgent inquiries, please contact us at <strong>contact@teamcraft.com</strong></p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer mt-auto py-3 gradient-bg">
+            <div class="container text-center">
+                <!-- Centered "Designed by stories / Freepik" -->
+                <p class="m-0 text-white" style="font-size: 14px;">
+                    Designed by stories / <a href="http://www.freepik.com" target="_blank" class="text-white">Freepik</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

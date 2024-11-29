@@ -15,29 +15,11 @@ Based on experience and research of similar platforms, these filter parameters h
 
 Filter parameters:
 
-For 'Purpose':
-
-    Idea Generation
-    Team Forming, Development
-    Task Structuring, Prioritization
-    Conflict Resolution
-    Continuous Improvement, Retrospectives
-    Alignment of Vision and Goals
-    Facilitating Effective Planning
-
-For 'Duration':
-
-    Up to 10 minutes
-    Up to 20 minutes
-    Up to 30 minutes
-    Up to 60 minutes
-    More than 60 minutes
-
-For 'Location':
-
-    Indoor
-    Outdoor
-    Indoor/Outdoor
+| Filter parameter | options |
+| ------ | ---------- |
+| Purpose | Idea Generation; Team Forming, Development; Task Structuring, Prioritization; Conflict Resolution; Continuous Improvement, Retrospectives; Alignment of Vision and Goals; Facilitating Effective Planning |
+| Duration | Up to 10 minutes; Up to 20 minutes; Up to 30 minutes; Up to 60 minutes; More than 60 minutes |
+| Location | Indoor; Outdoor; Indoor/Outdoor |
 
 
 ## 3 | Method details
@@ -57,15 +39,15 @@ Standard functionalities of a Django project are used. Including user registrati
 To manage models through the Django admin interface, each model was registered in admin.py. Django provides built-in views for user login and logout, which are used for basic authentication. These views were connected to URLs to handle user login and logout processes. A custom user registration view was implemented using Django's UserCreationForm to allow users to sign up for the site. Certain views in the project required the user to be logged in. To protect these views, the login_required decorator was used, ensuring that only authenticated users can access them.
 
 
-#### 5 | Like Function
+## 5 | Like Function
 The "Like" functionality is integrated into the method_page view, where authenticated users can like a method, and the like count is dynamically updated.
 
 The Like feature allows users to interact with individual methods by expressing approval. Each method can have multiple likes, and the number of likes is displayed alongside the method's details. Additionally, users can like a method only once. The key components of this functionality include:
 
-    Like Model: A model to track which user liked which method.
-    Like Button: A mechanism for users to like a method, which triggers the creation of a new Like entry in the database.
-    Like Count: A dynamic counter that updates the number of likes for each method.
-    User Interaction: Only authenticated users can like methods, and a user can like a method only once.
+- Like Model: A model to track which user liked which method.
+- Like Button: A mechanism for users to like a method, which triggers the creation of a new Like entry in the database.
+- Like Count: A dynamic counter that updates the number of likes for each method.
+- User Interaction: Only authenticated users can like methods, and a user can like a method only once.
 
 To track how many likes a method has, the method is annotated with a like_count field. This field uses the Count function from Django’s ORM to count the number of related Like objects. The like_count will be used to display the total number of likes for the method on the page. 
 
@@ -78,13 +60,13 @@ After a like is registered, the like count for the method is updated by re-fetch
 <img src="readme.images/features_method_page().PNG" alt="shows relevant code" width="700">
 
 
-#### 6 | Manage comments
+## 6 | Manage comments
 The first step is to retrieve the method based on the slug provided in the URL. Comments associated with the method are then fetched and ordered by their creation date. The number of approved comments is also counted. If the user is authenticated, they can submit a comment on the method. A comment form (CommentForm) is instantiated, which binds the user input to the relevant model. The form is rendered in the template to allow the user to type and submit their comment. This form is passed into the context to be used in the template (method_page.html) for rendering the form fields.
 
 Display Comments
 <img src="readme.images/features_method_page().PNG" alt="shows relevant code" width="700">
 
- When the user submits a comment, the request method is checked for "POST". If the form data is valid, a new comment object is created but not yet saved to the database until further processing (commit=False). The author and method fields are set before saving the comment. Once the comment has been successfully submitted (or if no new comment is submitted), the method page is re-rendered. The comments (both approved and unapproved) are passed into the context and displayed in the template. The total count of approved comments is also included.
+When the user submits a comment, the request method is checked for "POST". If the form data is valid, a new comment object is created but not yet saved to the database until further processing (commit=False). The author and method fields are set before saving the comment. Once the comment has been successfully submitted (or if no new comment is submitted), the method page is re-rendered. The comments (both approved and unapproved) are passed into the context and displayed in the template. The total count of approved comments is also included.
  
 There are separated function for edit and delete comments.
 
@@ -98,7 +80,7 @@ Delete Comments
 Only comments marked as approved will be publicly visible. The Admin manages the approval process through the Django Admin interface. This means that once a comment is submitted, it is stored in the database with an initial approved=False state, and only comments that are approved will be included in the count of comment_count and displayed in the comment section of the method page.
 
 
-#### 7 | Add Methods
+## 7 | Add Methods
 The function first checks if the user is authenticated (request.user.is_authenticated). If the user is not authenticated, an error message is displayed informing the user that they must be logged in to create a method. The user is then redirected to the homepage using HttpResponseRedirect(reverse('home')) if they are not logged in.
 
 If the user is authenticated and a POST request is made (indicating form submission), the MethodForm is instantiated with the data and files (request.POST and request.FILES). If the form is valid (method_form.is_valid()), the method data is saved. However, before saving, the method’s author field is linked to the current logged-in user (method.author = request.user). The method is then saved to the database with method.save().
@@ -112,7 +94,7 @@ The method_create function renders the template method_creation.html with the fo
 <img src="readme.images/features_method_create().PNG" alt="shows relevant code" width="700">
 
 
-#### 8 | Private Collection
+## 8 | Private Collection
 The Private Collection feature allows authenticated users to view their personal content on the platform, including: Methods they have created, comments they have written, methods they have liked.
 
 This content is displayed in the private collection page (private_collection.html). The page is rendered using a TemplateView instead of a ListView, as it doesn't require a list of objects to be rendered but rather aggregates different content based on the logged-in user.
@@ -131,11 +113,11 @@ This context is passed to the template private_collection.html for rendering.
 <img src="readme.images/features_privatecollectionview().PNG" alt="shows relevant code" width="700">
 
 
-#### 9 | Django Admin panel
+## 9 | Django Admin panel
 To set up the Django admin panel, first, Django by running pip install django has been installed. Next, new Django project with the command django-admin startproject 'method_library' is defined. Enter the project directory. A Django app within the project is created by using python manage.py startapp appname. To manage models in the admin panel, those are registered in the admin.py file by importing the models and registering them accordingly. After that, a superuser is created by running python manage.py createsuperuser, which will allow to log in as an admin. Finally, start the server with python manage.py runserver and access the admin panel at http://127.0.0.1:8000/admin/ using the superuser credentials.
 
 
-#### 10 | Custom Admin panel
+## 10 | Custom Admin panel
 The admin.py file has been customized to enhance the Django Admin interface by using custom configurations for models. These customizations improve the user experience for admins when managing the content and streamline the workflow for reviewing and updating entries.
 
 - list_display: Specifies the fields to display in the list view of methods (title, slug, status, and purpose).
@@ -150,13 +132,13 @@ The list_display attribute is used to customize the columns displayed in the adm
 <img src="readme.images/features_admin.PNG" alt="shows relevant code" width="700">
 
 
-#### 11 About Us form
+## 11 About Us form
 The AboutPageView class is a TemplateView that serves the "About" page on the website. It is configured to render the template about.html. The get_context_data method is used to gather the necessary data for the template. First, it calls the parent class's get_context_data method to retrieve the default context. Then, it fetches the first About object from the database using About.objects.first() and adds it to the context under the key about. This object is then available for display in the about.html template. This setup allows for dynamic content rendering on the About page, where the content is stored in the database and can be easily managed through the Django admin interface.
 
 <img src="readme.images/features_aboutpageview().PNG" alt="shows relevant code" width="700">
 
 
-#### 12 | Slug Generation
+## 12 | Slug Generation
 The save method of the MethodForm class is customized to automatically generate a slug field when saving a Method instance. If the slug field is empty when the form is submitted, the method generates a new slug by slugifying the title of the method using Django's slugify function. This ensures that the slug is a URL-safe, lowercase version of the title with spaces replaced by hyphens. After ensuring the slug is generated, the instance is saved to the database, either with or without committing the changes, based on the commit flag. The method returns the Method instance after saving, ensuring that the object is properly stored with a valid slug.
 
 Unique Slugs: The current implementation handles slug uniqueness not in the function, but in the Method.Model.
@@ -164,5 +146,5 @@ Unique Slugs: The current implementation handles slug uniqueness not in the func
 <img src="readme.images/features_slug_generation.PNG" alt="shows relevant code" width="700">
 
 
-#### 13 | Add Images (Image validation)
+## 13 | Add Images (Image validation)
 For adding images to the methods the standrad image upload functionality for Django projects is used. An image field in the model where the image will be stored is defined as 'featured_image' in models.py. In the project's settings (settings.py) the media root and URL to handle media files is specified. Django needs to be configured to serve media files and in urls.py, a configuration is included. The form's enctype attribute must be set to multipart/form-data for image file uploads to work.

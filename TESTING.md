@@ -14,8 +14,8 @@ This testing plan outlines the steps and tests to ensure that critical features 
 
 | **Test Area** | **Objective** | **Test Steps** | **Test Cases** | **Test Completed** | **Comments** |
 |---------------|---------------|----------------|----------------|--------------------|--------------|
-| **1. Log-in Functionality**     | Ensure that users can log in successfully with valid credentials and receive appropriate error messages for invalid credentials. | 1. Navigate to the login page. <br> 2. Enter a valid username/email and password. <br> 3. Click the "Sign In" button. <br> 4. Verify successful login and redirection to homepage. <br> 5. Logout and verify proper logout behavior. | - **Valid Credentials**: Ensure the system logs the user in successfully. <br> - **Invalid Credentials**: Verify that an error message appears for incorrect credentials. <br> - **Session Management**: Verify that the user remains logged in until they log out manually.|[y ]||                                                          
-| **2. Sign-up (Registration)**   | Ensure that users can successfully sign up and create an account.                                      | 1. Navigate to the register page. <br> 2. Fill in required fields (name, password). <br> 3. Click "Sign Up"  button. <br> 4. Verify registration and redirection. <br> 5. Check for confirmation email. | - **Valid Registration**: Verify successful registration. <br> - **Email Format Validation**: Enter invalid email and ensure an error message appears. <br> - **Password Requirements**: Test for validation (e.g., too short password). <br> - **Duplicate Email**: Test registration with an already existing email. <br> - **Successful Registration**: Ensure proper redirection after registration.|[ y]||
+| **1. Log-in Functionality**     | Ensure that users can log in successfully with valid credentials and receive appropriate error messages for invalid credentials. | 1. Navigate to the login page. <br> 2. Enter a valid username/email and password. <br> 3. Click the "Sign In" button. <br> 4. Verify successful login and redirection to homepage. <br> 5. Logout and verify proper logout behavior. | - **Valid Credentials**: Ensure the system logs the user in successfully. <br> - **Invalid Credentials**: Verify that an error message appears for incorrect credentials. <br> - **Session Management**: Verify that the user remains logged in until they log out manually.|[ y ]||                                                          
+| **2. Sign-up (Registration)**   | Ensure that users can successfully sign up and create an account.                                      | 1. Navigate to the register page. <br> 2. Fill in required fields (name, password). <br> 3. Click "Sign Up"  button. <br> 4. Verify registration and redirection. <br> 5. Check for confirmation email. | - **Valid Registration**: Verify successful registration. <br> - **Email Format Validation**: Enter invalid email and ensure an error message appears. <br> - **Password Requirements**: Test for validation (e.g., too short password). <br> - **Duplicate Email**: Test registration with an already existing email. <br> - **Successful Registration**: Ensure proper redirection after registration.|[ y ]||
 | **3. Log-out Functionality**    | Ensure that users can log out of their accounts successfully.                                          | 1. After logging in, click "Log Out". <br> 2. Verify logout success and redirection. <br> 3. Ensure session data is cleared.                                                               | - **Log-out**: Ensure the user is logged out correctly. <br> - **Session Expiry**: Verify the user cannot access protected pages after logging out.|[ y ]||
 | **4. Navigation Functionality** | Ensure that the website navigation is intuitive and functional.                                        | 1. Open the homepage. <br> 2. Click on various menu items or links. <br> 3. Verify correct redirection. <br> 4. Verify active menu item highlight. <br> 5. Test all internal and external links. | - **Responsive Navigation**: Test navigation across different screen sizes. <br> - **Menu Items**: Ensure the menu items lead to correct pages. <br> - **Footer Links**: Verify that footer links work and redirect correctly.|[ y ]||
 | **5. Landing Page & Method Filters** | Ensure users can interact with filters, view content, and navigate to method pages.                     | 1. Enter the landing page. <br> 2. Apply various filters (by category, popularity, etc.). <br> 3. Use "Next" button to load more results. <br> 4. Select a method to view full content. <br> 5. Verify redirection to method page. | - **Filters**: Verify that filters apply correctly. <br> - **Pagination**: Test the "Next" button and ensure new methods load correctly. <br> - **Method Details**: Ensure clicking on a method title redirects to the correct method page. <br> - **Empty Filter Results**: Check for appropriate messaging when no results are found after applying filters.|[ y ]||
@@ -33,56 +33,59 @@ These are additional tests to ensure the overall quality, performance, security,
 |---------------|-------------- |---------------|----------------|--------------------|--------------|
 | **1. Cross-browser Testing** | Ensure the website works correctly across different web browsers.                                                | 1. Open the website in Chrome. <br> 2. Open the website in Firefox. <br> 3. Open the website in Edge. <br> 4. Open the website in Safari. <br> 5. Test basic functionality (navigation, login, forms) in each browser. | - **Browser Compatibility**: Ensure that features are functional across Chrome, Firefox, Edge, and Safari. <br> - **CSS and Layout**: Verify the website layout and styles appear correctly in all browsers. <br> - **JavaScript**: Ensure JavaScript runs properly across all browsers. <br> - **Responsive Layout**: Test that the website is responsive and adapts to different screen sizes in each browser. |[ y ]||
 | **2. Mobile Testing**        | Ensure that the website is fully responsive and works on different mobile devices.                               | 1. Open the website on a mobile device (or simulate using browser dev tools). <br> 2. Test website navigation. <br> 3. Test form submissions and interactive elements (login, comment forms, etc.) on mobile. <br> 4. Test responsiveness on different screen sizes. | - **Mobile Compatibility**: Ensure the website is usable on mobile browsers (Chrome, Safari, Firefox). <br> - **Touch Interaction**: Test touch interactions, such as tapping and swiping. <br> - **Mobile Layout**: Verify proper layout on small screens and large mobile devices. <br> - **Performance on Mobile**: Ensure the website loads quickly and interacts without delay on mobile devices. |[ ]||
-| **3. Performance Testing**   | Ensure the website performs optimally under various conditions, especially with large datasets.                  | 1. Load the website with a large number of methods and comments. <br> 2. Test the "Next" button, pagination, and filtering with large data sets. <br> 3. Measure page load time and response times for actions (e.g., adding comments). | - **Load Time**: Test how long it takes for the website to load and interact with large amounts of data. <br> - **Smooth Navigation**: Ensure pagination and filtering work smoothly without delays. <br> - **Stress Testing**: Test how the website behaves with large user actions (e.g., adding multiple comments, methods). <br> - **Page Load Time**: Ensure that each page loads in less than 3 seconds under normal conditions. |[  ]||
+| **3. Performance Testing**   | Ensure the website performs optimally under various conditions, especially with large datasets.                  | 1. Load the website with a large number of methods and comments. <br> 2. Test the "Next" button, pagination, and filtering with large data sets. <br> 3. Measure page load time and response times for actions (e.g., adding comments). | - **Load Time**: Test how long it takes for the website to load and interact with large amounts of data. <br> - **Smooth Navigation**: Ensure pagination and filtering work smoothly without delays. <br> - **Stress Testing**: Test how the website behaves with large user actions (e.g., adding multiple comments, methods). <br> |[ y ]| The accordion section on private_collection.html works but by adding a lot commetns or methods the overview is challenging since its a very big list. Here there is opportunity for improvements when the first MVP is successful. |
 | **4. Security Testing**      | Ensure that user data is securely handled and sensitive information is protected.                                | 1. Test the login and registration process | - **Login Security**: Ensure passwords are double checked and the validation works. <br> - **SSL Encryption**: Verify that SSL is enabled and the website uses HTTPS. <br> - **Session Management**: Ensure that user sessions are managed securely and session data is cleared upon logout. <br> - **Sensitive Data Protection**: Test that sensitive user information (e.g., passwords) is not exposed in logs, URLs, or front-end code. |[ y ]||
 
 
 ## Testing User Stories
 
-**User Stories for Site Admin**
+**User Stories for Site User**
 
 **No.** | **User Story** | **Requirement met (y/n)** |  **Image**|
 | ------|--------------- |---------------------------|-----------|
-| #11 | As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #2  | As a Site User I can read the methods in an structured way so that it's easy to go through them. | y |<img src="readme.images/readme_Userstory_2.PNG" alt="show image for User story" width="500">>||
-| #5  | As a Site User I can register an account so that I can comment on a method | y |<img src="readme.images/readme_Userstory_5.PNG" alt="show image for User story" width="500">||
-| #14 | As a Site User I can view methods so that I get motivated to share my methods as well | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #16 | As a Site User I can see images and a good color contrast so that I like to stay on the website form a visual perspective | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #6  | As a Site User I want to get a notification once I change something so that I get feedback of my actions | y |<img src="readme.images/readme_Userstory_6a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_Userstory_6b.PNG" alt="show image for User story" width="250">||
-| #1  | As a Site User I can see directly the purpose of the website so that get an orientation what I can do | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #8  | As a Site User I can filter methods on the main page so that I can optimize my search | y |<img src="readme.images/readme_Userstory_1.PNG" alt="show image for User story" width="500">||
-| #22 | As a Site User I can add methods so that I can share my own methods with the community. | y |<img src="readme.images/readme.Userstory_27.PNG" alt="show image for User story" width="500">||
-| #20 | As a Site User I can see information about the creator of website so that I can contact him and get an idea of the person behind the project. | y |<img src="" alt="show image for User story" width="500">||
-| #31 | As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site' | y |<img src="readme.images/readme.Userstory_16.PNG" alt="show image for User story" width="500">||
-| #39 | As a Site User I don't want that the site creates errors. | y |||
-| #41 | As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful. | y |<img src="readme.images/readme_Userstory_41a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_Userstory_41b.PNG" alt="show image for User story" width="250">||
+| #11 | As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods | y |<img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
+| #2  | As a Site User I can read the methods in an structured way so that it's easy to go through them. | y |<img src="readme.images/readme_userstory_2.PNG" alt="show image for User story" width="500">>||
+| #5  | As a Site User I can register an account so that I can comment on a method | y |<img src="readme.images/readme_register_process.PNG" alt="show image for User story" width="500">||
+| #14 | As a Site User I can view methods so that I get motivated to share my methods as well | y |<img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
+| #16 | As a Site User I can see images and a good color contrast so that I like to stay on the website form a visual perspective | y |<img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
+| #6  | As a Site User I want to get a notification once I change something so that I get feedback of my actions | y |<img src="readme.images/readme_sign_out_process2.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_log_in_process2.PNG" alt="show image for User story" width="250">||
+| #1  | As a Site User I can see directly the purpose of the website so that get an orientation what I can do | y |<img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
+| #8  | As a Site User I can filter methods on the main page so that I can optimize my search | y |<img src="readme.images/readme_userstory_1.PNG" alt="show image for User story" width="500">||
+| #22 | As a Site User I can add methods so that I can share my own methods with the community. | y |<img src="readme.images/readme_add_a_method_page.PNG" alt="show image for User story" width="500">||
+| #20 | As a Site User I can see information about the creator of the website and/or the misson so that I get an idea of the person(s) behind the project and/or the team. | y |<img src="readme.images/readme_about_page.PNG" alt="show image for User story" width="500">||
+| #31 | As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site' | y |<img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
+| #41 | As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful. | y |<img src="readme.images/readme_userstory_41a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_userstory_41b.PNG" alt="show image for User story" width="250">||
 | #40 | As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview | y |<img src="readme.images/readme_Userstory_40.PNG" alt="show image for User story" width="500">||
 | #28 | As a Site User I can identify the website in my browser via an symbol so that I find the open website faster | y |<img src="readme.images/readme_Userstory_28.PNG" alt="show image for User story" width="500">||
 | #18 | As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site | y |<img src="readme.images/readme_Userstory_18.PNG" alt="show image for User story" width="500">||
-| #30 | As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text | y |<img src="readme.images/readme_Userstory_30a.PNG" alt="show image for User story" width="300"> <img src="readme.images/readme_Userstory_30b.PNG" alt="show image for User story" width="300">||
-| #38 | As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster | y |<img src="readme.images/readme_Userstory_38a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_Userstory_38b.PNG" alt="show image for User story" width="250">||
+| #30 | As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text | y |<img src="readme.images/readme_userstory_30a.PNG" alt="show image for User story" width="300"> <img src="readme.images/readme_userstory_30b.PNG" alt="show image for User story" width="300">||
+| #38 | As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster | y |<img src="readme.images/readme_userstory_38a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_Userstory_38b.PNG" alt="show image for User story" width="250">||
 | #34 | As a Site User I can see clearly if I liked a method already, before I click on the Like-button' so that 'I don't click twice. | y |<img src="readme.images/readme_Userstory_34.PNG" alt="show image for User story" width="200">||
 | #36 | As a Site User (handycaped) I can use arial-current/label attributes so that I can follow the content on the website properly. | y |||
-| #21 | As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops. | y |<img src="readme.images/readme_Userstory_21.PNG" alt="show image for User story" width="500">||
-| #27 | As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily | y |<img src="readme.images/readme.Userstory_27.PNG" alt="show image for User story" width="500">|
-| #35 | As a (logged-in) Site User I can create a method easily and well structured so that I don't see too long input fields, etc | y |<img src="readme.images/readme.Userstory_27.PNG" alt="show image for User story" width="500">||
-| #15 | As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods | y |<img src="readme.images/readme_Userstory_15.PNG" alt="show image for User story" width="500">||
-| #4  | As a (logged-in) Site User I can modify or delete my comment on a method so that I can be involved in the conversation | y |<img src="readme.images/readme_Userstory_4.PNG" alt="show image for User story" width="500">||
+| #16 | As a Site User I can see images and a good color contrast so that I read and see all relevant elements | y | <img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
+| #47 | As a Site User I see a well structured navigation and highlighted sections' so that I have a good overview where I am' | y |<img src="readme.images/readme_nav_logged_in.PNG" alt="show image for User story" width="500">||
+| #48 | As a Site User I can see a well designed website with structure, good organized elements and not to much elements so that I like to stay on the website and coming back | y | <img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
+| #49 | As a Site User I can see all my created content well structured on one site so that I have a good overview about what I provided to the comunity | y | <img src="readme.images/readme_private collection_page.PNG" alt="show image for User story" width="500">||
+
+| #21 | As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops. | y |<img src="readme.images/readme_userstory_21.PNG" alt="show image for User story" width="500">||
+| #27 | As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily | y |<img src="readme.images/readme_userstory_27.PNG" alt="show image for User story" width="500">|
+| #15 | As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods | y |<img src="readme.images/readme_userstory_15.PNG" alt="show image for User story" width="500">||
+| #4  | As a (logged-in) Site User I can modify or delete my comment on a method so that I can be involved in the conversation | y |<img src="readme.images/readme_userstory_4.PNG" alt="show image for User story" width="500">||
 
 
-**User Stories for Admin User**
+**User Stories for Admin Admin**
 
 **No.** | **User Story** | **Requirement met (y/n)** |  **Image**|
 | ------|--------------- |---------------------------|-----------|
 | #29 | Do readme documentation | y ||
-| #9  | As a Site Admin I can create, read, update and delete methods so that I can manage my content | y |<img src="readme.images/readme_Userstory_9.PNG" alt="show image for User story" width="500">|
-| #10 | As a Site Admin I can approve comments so that I can manage and control the content on the website | y |<img src="readme.images/readme_Userstory_10.PNG" alt="show image for User story" width="500">|
-| #45 | As a Site Admin I can create, update and delete the text content of the about.html site | y |<img src="readme.images/readme_Userstory_45.PNG" alt="show image for User story" width="500">|
-| #46 | As a Site Admin I can create, update and delete Site Users | y |<img src="readme.images/readme_Userstory_46.PNG" alt="show image for User story" width="500">|
-| #33 | As a Site Admin I can use a filter function for comments in the admin panel so that I can manage the comments efficient | y |<img src="readme.images/readme_Userstory_33.PNG" alt="show image for User story" width="500">|
-| #12 | As a Site Admin I can approve methods from other Site Users so that I have control of the content | y |<img src="readme.images/readme_Userstory_12.PNG" alt="show image for User story" width="500">|
-| #47 | As a Site Admin I can approve comments from other Site Users so that I have control of the content | y |<img src="readme.images/readme_Userstory_47.PNG" alt="show image for User story" width="500">|
-| #43 | As a 'Site Admin' I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient. | y |<img src="readme.images/readme_Userstory_43.PNG" alt="show image for User story" width="500">||
+| #9  | As a Site Admin I can create, read, update and delete methods so that I can manage my content | y |<img src="readme.images/readme_userstory_9.PNG" alt="show image for User story" width="500">|
+| #10 | As a Site Admin I can approve comments so that I can manage and control the content on the website | y |<img src="readme.images/readme_userstory_10.PNG" alt="show image for User story" width="500">|
+| #45 | As a Site Admin I can create, update and delete the text content of the about.html site | y |<img src="readme.images/readme_userstory_45.PNG" alt="show image for User story" width="500">|
+| #46 | As a Site Admin I can create, update and delete Site Users | y |<img src="readme.images/readme_userstory_46.PNG" alt="show image for User story" width="500">|
+| #33 | As a Site Admin I can use a filter function for comments in the admin panel so that I can manage the comments efficient | y |<img src="readme.images/readme_userstory_33.PNG" alt="show image for User story" width="500">|
+| #12 | As a Site Admin I can approve methods from other Site Users so that I have control of the content | y |<img src="readme.images/readme_userstory_12.PNG" alt="show image for User story" width="500">|
+| #47 | As a Site Admin I can approve comments from other Site Users so that I have control of the content | y |<img src="readme.images/readme_userstory_47.PNG" alt="show image for User story" width="500">|
+| #43 | As a 'Site Admin' I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient. | y |<img src="readme.images/readme_userstory_43.PNG" alt="show image for User story" width="500">||
 | #42 | As a 'Site Admin' I want to make sure that the Users don't crash the website by adding to much content | y ||
 | #37 | As a User I can use a working website so that I don't receive error messages or are harmed to use certain functionalities of the website | y ||
 
@@ -119,8 +122,8 @@ These are additional tests to ensure the overall quality, performance, security,
 | Phone view on private_collection | The | <img src="readme.images/bug_phone_view_strange_I.PNG" alt="show screenshot of bug on website" width="500"> | The symbol "|" has been removed. in private_collection.html . |
 | None responsive input form | Summernote form on site 'add a method' is not responsive. The right end is cutted by the browser, the user has to scroll to the right. Bad UX| <img src="readme.images/bug_summernote_form_not_responsive.PNG" alt="show screenshot of bug on website" width="500"> ||
 | "File not existing" and old css code is displayed in production | There was no error message, however, the requested result was not displayed. After adding the new images, new code I missed to run "python manage.py collectstatic" | ... | run "python manage.py collectstatic" |
-| DisallowedHost at /create | Invalid HTTP_Host header | <img src="readme.images/bug_DisallowedHost.PNG" alt="show Error message" width="500">| Add the correct host address to settings.py allowed hosts.|
-| IndentationError: unexpected indent | failrue in views.py at function def method_create(request):  |  <img src="readme.images/but_IndentationError_unexpected ident1.PNG" alt="shows failure in code" width="250">  <img src="readme.images/but_IndentationError_unexpected ident2.PNG" alt="shows Error message" width="250">| Correct indentation by pushing the marked code area to the right |
+| DisallowedHost at /create | Invalid HTTP_Host header | <img src="readme.images/bug_disallowedhost.PNG" alt="show Error message" width="500">| Add the correct host address to settings.py allowed hosts.|
+| IndentationError: unexpected indent | failrue in views.py at function def method_create(request):  |  <img src="readme.images/but_indentation_error_unexpected ident1.PNG" alt="shows failure in code" width="250">  <img src="readme.images/but_indentation_error_unexpected ident2.PNG" alt="shows Error message" width="250">| Correct indentation by pushing the marked code area to the right |
 
 
 ## Validator Testing
@@ -200,19 +203,7 @@ No errors were returned
     <summary>see details about CSS validator</summary>
 
 #### base.hmtl + index.html
-<img src="" alt="shows result of HTML validation" width="650">
-
-#### base.hmtl + about.html
-<img src="" alt="shows result of HTML validation" width="650">
-
-#### base.hmtl + method_creation.html
-<img src="" alt="shows result of HTML validation" width="650">
-
-#### base.hmtl + method_page.html
-<img src="" alt="shows result of HTML validation" width="650">
-
-#### base.hmtl + private_collection.html
-<img src="" alt="shows result of HTML validation" width="650">
+<img src="readme.images/w3c_css_validator_result.PNG" alt="shows result of HTML validation" width="650">
 
 </details>
 
@@ -287,3 +278,36 @@ LightHouse is a web performance testing tool used to assess a website's performa
 
 ## Responisvness
 The responsiveness was manually tested using Chrome's devtools throughout the entire development process.
+
+<img src="readme.images/testing_validation_responsiveness.PNG" alt="shows usage of DevTool by GoogleChrome" width="700">
+
+<img src="readme.images/readme_am_i_responsive.PNG" alt="shows usage of DevTool by GoogleChrome" width="700">
+
+
+## Accessability
+I confirm that the selected colors and fonts are easy to read and accessible by using Lighthouse in devtools (Chrome).
+
+<img src="readme.images/GoogleLighthouse.PNG" alt="image shows GoogleLighthouse analysis"> 
+
+
+### ARIA (Accessible Rich Internet Applications)
+
+**ARIA Labels:**
+Added aria-label to buttons like "Toggle methods details", "Toggle comments details", and "Toggle liked methods details" for better accessibility.
+Added specific aria-label to links, such as the method link and liked method link, to clearly describe the action for screen reader users (e.g., "Visit method page for liked method: {{ method.title }}").
+
+**Accordion Components:**
+Each accordion button now has aria-expanded to indicate whether the section is expanded or collapsed, and aria-controls to associate the button with the content it controls.
+The accordion items have appropriate aria-live="polite" to ensure that changes (like expanding sections) are announced by screen readers.
+
+**Images:**
+I’ve updated the alt text for the image in the masthead to be more descriptive (alt="A placeholder image for user content").
+
+**ARIA Roles and Regions:**
+I’ve added role="region" for each section (methods, comments, and liked methods) to indicate that these are distinct, thematic regions of the page. Each section is also assigned an aria-labelledby attribute pointing to a relevant heading (e.g., aria-labelledby="methodSection").
+
+**Live Regions:**
+Used aria-live="polite" for sections that dynamically change (e.g., when an accordion expands or collapses), ensuring that screen readers notify users about new content.
+
+**Empty State:**
+If no methods or comments are available, it announces “No methods found” or “No comments found” to provide meaningful feedback to the user.

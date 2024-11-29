@@ -133,9 +133,6 @@ class Comment(models.Model):
             f" By {self.author} | {self.body} | Created on {self.created_on}"
         )
 
-""" Comment model / Reused code from Code Institute
-    see README.md credit section reused code """
-
 # model for like button
 class Like(models.Model):
     user = models.ForeignKey(

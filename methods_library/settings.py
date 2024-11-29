@@ -17,7 +17,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-fl0w97-cip4methodslibra-36pag9fwswb.ws.codeinstitute-ide.net',
-    '.herokuapp.com'
+    '.herokuapp.com',
 ]
 
 # Application definition

@@ -50,6 +50,11 @@ p {
     max-height: 330px;
 }
 
+.image-404 {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
 .image-container {
     position: relative;
 
@@ -61,7 +66,7 @@ p {
     min-width: 30%;
     left: -2px;
     background-color: #e4a5aa;
-    border: 1px solid #f6acac;
+    border-color: #f6acac;
     /* #188181; */
 }
 
@@ -101,13 +106,6 @@ p {
     height: 100%;
 }
 
-/* Adjust height for large screens (≥992px)
-@media (min-width: 992px) {
-    .masthead-image {
-        height: 200px; /* Set the fixed height (adjust this to your desired size)
-    }
-}
- */
 /* Adjust height for mid-size screens (<768px) */
 @media (max-width: 768px) {
     .index-images {
@@ -206,7 +204,7 @@ p {
 /* Custom style for alert-success */
 .success {
     background-color: #28a745;
-    border: 1px solid white;
+    border-color: #28a745;
     color: white;
 }
 

@@ -1,4 +1,5 @@
-// Get all elements that are needed for the following functions
+/* Get all elements that are needed for the following functions
+Reused code from Code Institut see README.md credit */
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
