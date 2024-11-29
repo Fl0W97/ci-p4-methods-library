@@ -118,7 +118,7 @@ The project scope is defined as an MVP. The main functionalities for adding comm
 <img src="readme.images/agile_method_kanban_board.PNG" alt="shows kanban board" width="800">
 
 See in GItHub project [Methods library](https://github.com/Fl0W97/ci-p4-methods-library/issues).
-See rough project time schedule [SCHEDUE.md](SCHEDULE.md).
+See rough project time schedule [SCHEDULE.md](SCHEDULE.md).
 
 
 ### Site Users
@@ -246,11 +246,13 @@ The database stores and manages comments. Comments can be created by both Admins
 <img src="readme.images/readme_erd_comments.PNG" alt="shows ERD_comments">
 <img src="readme.images/readme_erd_comments_code.PNG" alt="shows ERD comments code>
 
+
 #### ERD_table_about
-The database stores and manages content for the About page. This content can only be adjusted by the Admin. The form allows the Admin to update the content without modifying the code, so no coding skills are required for making adjustments.
+The database stores and manages content for the About page. This content can only be adjusted by the Admin. The form allows the Admin to update the content without modifying the code, therefore no coding skills are required for making adjustments.
 
 <img src="readme.images/readme_erd_about.PNG" alt="shows ERD_about">
 <img src="readme.images/readme_erd_about_code.PNG" alt="shows ERD about code">
+
 
 #### ERD_table_like
 The database stores likes and tracks the number of likes for each method. Based on this, the number of likes is displayed, and the ListView on the landing page sorts methods by the number of likes. The more likes a method receives, the higher it is displayed on the page.
@@ -279,7 +281,7 @@ As I was using TemplateView for rendering views, I encountered a limitation: Tem
 There are still open User Stories in the 'MVP2' column of the Backlog that can be added for further improvements. Ideas include expanding method management for Site Users, such as allowing them to edit methods within their private collection. However, this would require additional implementation effort, as users would need access to multiple input forms, and it would likely make sense to have this functionality on a separate subpage. Additonally, the method craetion page could be enhanced by reorganizing and resizing the individual input forms.
 
 <details>
-    <summary>suggestion for implementing in method_creation.html</summary>
+    <summary>suggestion for implementing in method_creation.html. Further adjustment in views.py and forms.py has to be done.</summary>
 
     <!-- First Row: Title and Purpose -->
         <div class="row">
@@ -367,10 +369,10 @@ There are still open User Stories in the 'MVP2' column of the Backlog that can b
 
 </details>
 
-For the Site User:
+**For the Site User:**
 In addition, the Site User may have access to an additional area where he can use simple games or tools, such as a shuffle function, random number generator or card randomizer. These functions he can use during workshops with their teams.
 
-For the Admin:
+**For the Admin:**
 For the admin, it would make senes to provide more forms for text content on the webiste, such as a welcome text, or adding addition counters and filters in the admin panel.
 
 
@@ -420,36 +422,21 @@ The main functions are generated with Python. However, to set up the whole proje
 
 | Package name | Description |
 | -------------| ------------|
-| asgiref==3.8.1 | A utility library for Python that provides asynchronous server gateway interface (ASGI) support for Django
-and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.|
-| crispy-bootstrap5==0.7 | A Django package that integrates the Bootstrap 5 framework with Django Crispy Forms,
-making it easier to render Bootstrap-styled forms with a clean and responsive layout.|
-| dj-database-url==0.5.0 | A library that simplifies the database connection setup in Django by parsing the DATABASE_URL environment
-variable and configuring the database settings accordingly, commonly used for cloud deployment.|
-| Django==4.2.7 | The web framework used for building the website's backend, offering a powerful, flexible, and secure platform
-for web application development, including routing, database management, and templating.|
-| django-allauth==0.57.2 | A Django package for handling authentication, registration, and account management. It supports login via
-social accounts (e.g., Google, Facebook) and traditional email/password-based login.|
-| django-crispy-forms==2.3 | A Django library that provides better control over the rendering of forms by allowing you to use a simpler,
-cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.|
-| django-summernote==0.8.20.0 | A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text
-editing. It's used to enhance text areas for content creation by users.|
-| gunicorn==20.1.0 | A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production
-environments. It's known for its speed and ability to handle multiple requests concurrently.|
-| oauthlib==3.2.2 | A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for
-handling secure access to protected resources via third-party authentication services.|
-| psycopg2==2.9.10 | A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for
-interacting with the relational database in the backend of the website.|
-| PyJWT==2.9.0 | A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting
-information and managing user authentication in web applications.|
-| python3-openid==3.2.0 | A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across
-multiple applications. It's integrated into django-allauth for user authentication via third-party providers.|
-| requests-oauthlib==2.0.0 | An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API
-requests. It's used for handling authentication in API calls that require OAuth.|
-| sqlparse==0.5.1 | A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging
-and optimizing database queries within Django projects.|
-| whitenoise==6.5.0 | A static file management library for Django, used to serve static files in a production environment. It 
-simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.|
+| asgiref==3.8.1 | A utility library for Python that provides asynchronous server gateway interface (ASGI) support for Django and other Python web frameworks, facilitating asynchronous communication and handling multiple connections.|
+| crispy-bootstrap5==0.7 | A Django package that integrates the Bootstrap 5 framework with Django Crispy Forms, making it easier to render Bootstrap-styled forms with a clean and responsive layout.|
+| dj-database-url==0.5.0 | A library that simplifies the database connection setup in Django by parsing the DATABASE_URL environment variable and configuring the database settings accordingly, commonly used for cloud deployment.|
+| Django==4.2.7 | The web framework used for building the website's backend, offering a powerful, flexible, and secure platform for web application development, including routing, database management, and templating.|
+| django-allauth==0.57.2 | A Django package for handling authentication, registration, and account management. It supports login via social accounts (e.g., Google, Facebook) and traditional email/password-based login.|
+| django-crispy-forms==2.3 | A Django library that provides better control over the rendering of forms by allowing you to use a simpler, cleaner syntax to integrate forms with popular CSS frameworks such as Bootstrap.|
+| django-summernote==0.8.20.0 | A Django app that integrates the Summernote WYSIWYG (What You See Is What You Get) editor for rich-text editing. It's used to enhance text areas for content creation by users.|
+| gunicorn==20.1.0 | A Python-based WSGI (Web Server Gateway Interface) server that serves the Django application in production environments. It's known for its speed and ability to handle multiple requests concurrently.|
+| oauthlib==3.2.2 | A library used for implementing OAuth 1.0 and OAuth 2.0 authentication protocols. It's a key dependency for handling secure access to protected resources via third-party authentication services.|
+| psycopg2==2.9.10 | A PostgreSQL adapter for Python, enabling Django to communicate with PostgreSQL databases. It's used for interacting with the relational database in the backend of the website.|
+| PyJWT==2.9.0 | A Python library used to generate and verify JSON Web Tokens (JWT), commonly used for securely transmitting information and managing user authentication in web applications.|
+| python3-openid==3.2.0 | A library that supports the OpenID authentication protocol, used for facilitating single sign-on (SSO) across multiple applications. It's integrated into django-allauth for user authentication via third-party providers.|
+| requests-oauthlib==2.0.0 | An extension to the requests library, allowing easy integration with OAuth 1.0 and 2.0 protocols for API requests. It's used for handling authentication in API calls that require OAuth.|
+| sqlparse==0.5.1 | A non-validating SQL parser for Python used to parse, format, and manipulate SQL queries, helpful in debugging and optimizing database queries within Django projects.|
+| whitenoise==6.5.0 | A static file management library for Django, used to serve static files in a production environment. It simplifies the handling of static content (like images, CSS, and JS) and integrates easily with cloud platforms.|
 
 
 ## Deployment
@@ -511,25 +498,25 @@ https://stackoverflow.com/questions/15407985/django-like-button?rq=3
 https://www.youtube.com/watch?v=ZUiTiUj-tZw
 https://www.youtube.com/watch?v=AZwc9hDBi04
 
-Summernote adjustment in forms
+**Summernote adjustment in forms**
 https://summernote.org/deep-dive/ 
 
 
 **Django documentation**
 
-Admin panel
+**Admin panel**
 fieldsets https://docs.djangoproject.com/en/5.1/ref/contrib/admin/, https://docs.djangoproject.com/en/5.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin
 use help_text: https://docs.djangoproject.com/en/5.1/ref/models/fields/#help-text
 
 
-Hint for function super()
+**Hints for function super()**
 https://docs.djangoproject.com/en/5.1/topics/class-based-views/, https://docs.python.org/3/library/functions.html#super
 https://docs.python.org/3/library/functions.html#super
 
-Meta Model
+**Meta Model**
 https://docs.djangoproject.com/en/5.1/ref/models/options/
 
-TempalteView
+**TempalteView**
 https://docs.djangoproject.com/en/5.1/topics/class-based-views/
 
 https://docs.djangoproject.com/en/5.1/ref/class-based-views/generic-display/#templateview
@@ -550,7 +537,6 @@ https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/
 
 
 **Reused code from Code Institute:**
-
 Original code from tutorial: [Code Institute][https://learn.codeinstitute.net]. 
 Mostly slightly adjusted, sometimes entire code reused 
 
@@ -724,13 +710,33 @@ Mostly slightly adjusted, sometimes entire code reused
 
 </details>
 
+
+<details>
+    <summary>Chapter 'I Think Therefore I Blog - Testing times - Testing forms'</summary>
+
+    class TestCommentForm(TestCase):
+
+        def test_form_is_valid(self):
+            comment_form = CommentForm({'body': 'This is a great method'})
+
+            self.assertTrue(comment_form.is_valid(), msg="Form is invalid")
+
+        def test_form_is_invalid(self):
+            comment_form = CommentForm({'body': ''})
+            self.assertFalse(comment_form.is_valid(), msg="Form is valid")
+
+</details>
+
+
 ### Templates
 
 **Python Essential Template from Code Institute**
 https://github.com/Code-Institute-Org/p3-template
 
 **Description of Heroku deployment**
-is resused from github project https://github.com/discord/heroku-sample-app/blob/main/readme.md
+is partly resused from github project
+https://github.com/discord/heroku-sample-app/blob/main/readme.md
+https://github.com/IuliiaKonovalova/e-commerce/blob/main/ecommerce_project/urls.py
 
 **Template from Code Institute**
 base.html reused, provided within project I Think Therefore I Blog Views

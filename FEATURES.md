@@ -1,4 +1,4 @@
-# Feature overview:
+# Feature Details:
 
 ## 1 | Method library
 For this function, Django’s built-in generic class-based view is used, which simplifies common tasks like rendering lists, creating objects, and updating models. The relevant class is called Method(models.Model), where the corresponding model fields (or TypeFields) are listed. For more details, refer to the models.py file. 
@@ -61,24 +61,29 @@ After a like is registered, the like count for the method is updated by re-fetch
 
 
 ## 6 | Manage comments
-The first step is to retrieve the method based on the slug provided in the URL. Comments associated with the method are then fetched and ordered by their creation date. The number of approved comments is also counted. If the user is authenticated, they can submit a comment on the method. A comment form (CommentForm) is instantiated, which binds the user input to the relevant model. The form is rendered in the template to allow the user to type and submit their comment. This form is passed into the context to be used in the template (method_page.html) for rendering the form fields.
+The first step is to retrieve the method based on the slug provided in the URL. Comments associated with the method are then fetched and ordered by their creation date. The number of approved comments is also counted. If the user is authenticated, they can submit a comment on the method. A comment form (CommentForm) is implemented, which binds the user input to the relevant model. The form is rendered in the template to allow the user to type and submit their comment. This form is passed into the context to be used in the template (method_page.html) for rendering the form fields.
 
-Display Comments
+*Display Comments*
+
 <img src="readme.images/features_method_page().PNG" alt="shows relevant code" width="700">
 
 When the user submits a comment, the request method is checked for "POST". If the form data is valid, a new comment object is created but not yet saved to the database until further processing (commit=False). The author and method fields are set before saving the comment. Once the comment has been successfully submitted (or if no new comment is submitted), the method page is re-rendered. The comments (both approved and unapproved) are passed into the context and displayed in the template. The total count of approved comments is also included.
  
 There are separated function for edit and delete comments.
 
-Edit Comments
+*Edit Comments*
+
 <img src="readme.images/features_comment_edit().PNG" alt="shows relevant code" width="700">
 
-Delete Comments
+*Delete Comments*
+
 <img src="readme.images/features_comment_delete().PNG" alt="shows relevant code" width="700">
 
 
 Only comments marked as approved will be publicly visible. The Admin manages the approval process through the Django Admin interface. This means that once a comment is submitted, it is stored in the database with an initial approved=False state, and only comments that are approved will be included in the count of comment_count and displayed in the comment section of the method page.
 
+
+**Edit and delete Comment code has been resused from Code Institute tutorial, see Credit section of README.md**
 
 ## 7 | Add Methods
 The function first checks if the user is authenticated (request.user.is_authenticated). If the user is not authenticated, an error message is displayed informing the user that they must be logged in to create a method. The user is then redirected to the homepage using HttpResponseRedirect(reverse('home')) if they are not logged in.

@@ -1,7 +1,7 @@
 # Deployment overview
 The site was deployed to a Heroku page using a GitHub repository for data storage.
 
-[Heroku page](https://dashboard.heroku.com/apps/methods-library/deploy/github)
+[Heroku page](https://methods-library-96de033c2e49.herokuapp.com/)
 
 [GitHub repository](https://github.com/Fl0W97/ci-p4-methods-library)
 
@@ -260,6 +260,7 @@ CSRF_TRUSTED_ORIGINS setting is used to specify a list of trusted domains or ori
 In Django, middleware is a framework of hooks that allows you to process requests globally before they reach the view (request processing) and after they leave the view (response processing). Middleware components are processed in the order they are listed in the MIDDLEWARE setting in your settings.py file.
 
 Middleware is essentially a layer that sits between the request and the response, providing a way to process and modify requests before they reach the view, and modify responses before they are returned to the client.
+
 <img src="readme.images/readme_settings.py_middleware.PNG" alt="image shows middleware list documentation in settings.py">
 
 

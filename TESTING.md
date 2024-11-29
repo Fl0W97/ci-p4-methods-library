@@ -32,7 +32,7 @@ These are additional tests to ensure the overall quality, performance, security,
 | **Test Area** | **Objective** | **Test Steps**| **Test Cases** | **Test Completed** | **Comments** |
 |---------------|-------------- |---------------|----------------|--------------------|--------------|
 | **1. Cross-browser Testing** | Ensure the website works correctly across different web browsers.                                                | 1. Open the website in Chrome. <br> 2. Open the website in Firefox. <br> 3. Open the website in Edge. <br> 4. Open the website in Safari. <br> 5. Test basic functionality (navigation, login, forms) in each browser. | - **Browser Compatibility**: Ensure that features are functional across Chrome, Firefox, Edge, and Safari. <br> - **CSS and Layout**: Verify the website layout and styles appear correctly in all browsers. <br> - **JavaScript**: Ensure JavaScript runs properly across all browsers. <br> - **Responsive Layout**: Test that the website is responsive and adapts to different screen sizes in each browser. |[ y ]||
-| **2. Mobile Testing**        | Ensure that the website is fully responsive and works on different mobile devices.                               | 1. Open the website on a mobile device (or simulate using browser dev tools). <br> 2. Test website navigation. <br> 3. Test form submissions and interactive elements (login, comment forms, etc.) on mobile. <br> 4. Test responsiveness on different screen sizes. | - **Mobile Compatibility**: Ensure the website is usable on mobile browsers (Chrome, Safari, Firefox). <br> - **Touch Interaction**: Test touch interactions, such as tapping and swiping. <br> - **Mobile Layout**: Verify proper layout on small screens and large mobile devices. <br> - **Performance on Mobile**: Ensure the website loads quickly and interacts without delay on mobile devices. |[ ]||
+| **2. Mobile Testing**        | Ensure that the website is fully responsive and works on different mobile devices.                               | 1. Open the website on a mobile device (or simulate using browser dev tools). <br> 2. Test website navigation. <br> 3. Test form submissions and interactive elements (login, comment forms, etc.) on mobile. <br> 4. Test responsiveness on different screen sizes. | - **Mobile Compatibility**: Ensure the website is usable on mobile browsers (Chrome, Safari, Firefox). <br> - **Touch Interaction**: Test touch interactions, such as tapping and swiping. <br> - **Mobile Layout**: Verify proper layout on small screens and large mobile devices. <br> - **Performance on Mobile**: Ensure the website loads and interacts on mobile devices. |[ y ]||
 | **3. Performance Testing**   | Ensure the website performs optimally under various conditions, especially with large datasets.                  | 1. Load the website with a large number of methods and comments. <br> 2. Test the "Next" button, pagination, and filtering with large data sets. <br> 3. Measure page load time and response times for actions (e.g., adding comments). | - **Load Time**: Test how long it takes for the website to load and interact with large amounts of data. <br> - **Smooth Navigation**: Ensure pagination and filtering work smoothly without delays. <br> - **Stress Testing**: Test how the website behaves with large user actions (e.g., adding multiple comments, methods). <br> |[ y ]| The accordion section on private_collection.html works but by adding a lot commetns or methods the overview is challenging since its a very big list. Here there is opportunity for improvements when the first MVP is successful. |
 | **4. Security Testing**      | Ensure that user data is securely handled and sensitive information is protected.                                | 1. Test the login and registration process | - **Login Security**: Ensure passwords are double checked and the validation works. <br> - **SSL Encryption**: Verify that SSL is enabled and the website uses HTTPS. <br> - **Session Management**: Ensure that user sessions are managed securely and session data is cleared upon logout. <br> - **Sensitive Data Protection**: Test that sensitive user information (e.g., passwords) is not exposed in logs, URLs, or front-end code. |[ y ]||
 
@@ -55,18 +55,17 @@ These are additional tests to ensure the overall quality, performance, security,
 | #20 | As a Site User I can see information about the creator of the website and/or the misson so that I get an idea of the person(s) behind the project and/or the team. | y |<img src="readme.images/readme_about_page.PNG" alt="show image for User story" width="500">||
 | #31 | As a Site user I see the most liked methods on top' so that 'I see the best ones when I enter the site' | y |<img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
 | #41 | As a Site User I can see feedback when I clicked on the like button so that I am sure it was successful. | y |<img src="readme.images/readme_userstory_41a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_userstory_41b.PNG" alt="show image for User story" width="250">||
-| #40 | As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview | y |<img src="readme.images/readme_Userstory_40.PNG" alt="show image for User story" width="500">||
-| #28 | As a Site User I can identify the website in my browser via an symbol so that I find the open website faster | y |<img src="readme.images/readme_Userstory_28.PNG" alt="show image for User story" width="500">||
-| #18 | As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site | y |<img src="readme.images/readme_Userstory_18.PNG" alt="show image for User story" width="500">||
+| #40 | As a Site User I can go back after I clicked the next button so that I can go back to the first methods on the overview | y |<img src="readme.images/readme_userstory_40.PNG" alt="show image for User story" width="500">||
+| #28 | As a Site User I can identify the website in my browser via an symbol so that I find the open website faster | y |<img src="readme.images/readme_userstory_28.PNG" alt="show image for User story" width="500">||
+| #18 | As a Site User I can view the different methods with images and summary so that I get an idea what I can see on the detail site | y |<img src="readme.images/readme_userstory_18.PNG" alt="show image for User story" width="500">||
 | #30 | As a Site User I can define a unique title and I don't have to worry about the slug text is generated automatically so that I don't have to write a slug text | y |<img src="readme.images/readme_userstory_30a.PNG" alt="show image for User story" width="300"> <img src="readme.images/readme_userstory_30b.PNG" alt="show image for User story" width="300">||
-| #38 | As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster | y |<img src="readme.images/readme_userstory_38a.PNG" alt="show image for User story" width="250"> <img src="readme.images/readme_Userstory_38b.PNG" alt="show image for User story" width="250">||
-| #34 | As a Site User I can see clearly if I liked a method already, before I click on the Like-button' so that 'I don't click twice. | y |<img src="readme.images/readme_Userstory_34.PNG" alt="show image for User story" width="200">||
-| #36 | As a Site User (handycaped) I can use arial-current/label attributes so that I can follow the content on the website properly. | y |||
+| #38 | As a Site User I can see in the navigation which site is currently active so that I know where I am and find the relevant content faster | y |<img src="readme.images/readme_userstory_38a.PNG" alt="show image for User story" width="250">||
+| #34 | As a Site User I can see clearly if I liked a method already, before I click on the Like-button' so that 'I don't click twice. | y |<img src="readme.images/readme_userstory_34.PNG" alt="show image for User story" width="200">||
+| #36 | As a Site User (disabled) I can use arial-current/label attributes so that I can follow the content on the website properly. | y |||
 | #16 | As a Site User I can see images and a good color contrast so that I read and see all relevant elements | y | <img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
 | #47 | As a Site User I see a well structured navigation and highlighted sections' so that I have a good overview where I am' | y |<img src="readme.images/readme_nav_logged_in.PNG" alt="show image for User story" width="500">||
 | #48 | As a Site User I can see a well designed website with structure, good organized elements and not to much elements so that I like to stay on the website and coming back | y | <img src="readme.images/readme_landing_page.PNG" alt="show image for User story" width="500">||
 | #49 | As a Site User I can see all my created content well structured on one site so that I have a good overview about what I provided to the comunity | y | <img src="readme.images/readme_private collection_page.PNG" alt="show image for User story" width="500">||
-
 | #21 | As a (logged-in) Site User I can like and bookmark my own favorite methods so that I can collect them and use them for planning my workshops. | y |<img src="readme.images/readme_userstory_21.PNG" alt="show image for User story" width="500">||
 | #27 | As a (logged-in) Site User I can adjust the text-style in the submit form so that it's possible to structure and formatting my content easily | y |<img src="readme.images/readme_userstory_27.PNG" alt="show image for User story" width="500">|
 | #15 | As a (logged-in) Site User I can comment on a method so that I get motivated to share my methods | y |<img src="readme.images/readme_userstory_15.PNG" alt="show image for User story" width="500">||
@@ -86,18 +85,19 @@ These are additional tests to ensure the overall quality, performance, security,
 | #12 | As a Site Admin I can approve methods from other Site Users so that I have control of the content | y |<img src="readme.images/readme_userstory_12.PNG" alt="show image for User story" width="500">|
 | #47 | As a Site Admin I can approve comments from other Site Users so that I have control of the content | y |<img src="readme.images/readme_userstory_47.PNG" alt="show image for User story" width="500">|
 | #43 | As a 'Site Admin' I wan to restrict the uploaded image size of one image to 3MB so that my storage at cloudinary is sufficient. | y |<img src="readme.images/readme_userstory_43.PNG" alt="show image for User story" width="500">||
-| #42 | As a 'Site Admin' I want to make sure that the Users don't crash the website by adding to much content | y ||
-| #37 | As a User I can use a working website so that I don't receive error messages or are harmed to use certain functionalities of the website | y ||
+| #42 | As a 'Site Admin' I want to make sure that the Users don't crash the website by adding to much content | y | I added 30 test comments and 30 methods. It all worked fine. For the first MVP it is sufficient. |
+| #37 | As a User I can use a working website so that I don't receive error messages or are harmed to use certain functionalities of the website | y | no more error found which cause an error. |
 
 
 ## Automated testing
 
 | **test file** | **Objective** | **Test Code (image)** | **Test Completed** | **Comments** |
 |---------------|-------------- |-------------|--------------------|--------------|
-| view_methods/test_views.py | Tests if the method page correctly displays a method and its comments. | <img src="readme.images/readme_testing_test_method_view.PNG" alt="shows TestMethodView"> |[ ]||
-| view_methods/test_views.py | Tests filtering by purpose, duration, and location for the MethodList view. | <img src="readme.images/readme_testing_test_method_filtering_views.PNG" alt="shows TestMethodFiltering"> |[ ]||
-| view_methods/test_forms.py | Tests adding a new comment with valid and invalid input | <img src="readme.images/readme_testing_test_comment_form.PNG" alt="shows TestCommentForm"> |[ ]||
+| view_methods/test_views.py | Tests if the method page correctly displays a method and its comments. | <img src="readme.images/readme_testing_test_method_view.PNG" alt="shows TestMethodView"> |[ y ]||
+| view_methods/test_views.py | Tests filtering by purpose, duration, and location for the MethodList view. | <img src="readme.images/readme_testing_test_method_filtering_views.PNG" alt="shows TestMethodFiltering"> |[ y ]||
+| view_methods/test_forms.py | Tests adding a new comment with valid and invalid input | <img src="readme.images/readme_testing_test_comment_form.PNG" alt="shows TestCommentForm"> |[ y ]||
 
+**Important Hint:**  The current Sqlite3 database has been deleted to avoid expressing sensitive data. Date files names: db.sqlite3 and db_backup.json.
 
 ## Bugs (not fixed)
 
@@ -105,10 +105,10 @@ These are additional tests to ensure the overall quality, performance, security,
 | --- |------------- | ----------------- | -----------|
 | django.db.utils.DataError: invalid input syntax for type integer: "indoor, outdoor" | Error during database migration. According to the error message the migration file 003 contains an error. However, after adjusting the file the some error occured.| <img src="readme.images/bug_error_message_syntax error_none.PNG" alt="shows error message" widht="250"> <img src="readme.images/bug_backuo_migration003.PNG" alt="shows error message" widht="250"> | Old migration files has been saved outside the project and deleted in the project. New command "python3 manage.py migrate" has been done. A new migration file exists and is working. |
 | django.db.utils.OperationalError: near "None": syntax error | The error occured during testing. The local database db.sqlite had an inconsistency. The migration file "view_methods.0003_alter_method_alt_atr_alter_method_duration_and_more" had a failre related to NONE. After several tries to fix the issue I decided to focus on the rest of the project. | ...| I saved all migration files and removed them from the project. Then I run pyhton3 manage.py makemigrations and python3 manage.py migrate.|
-| Uncaught Type Error: this._element is undefined | Customization summernote for admin panel | <img src="readme.images/bug_js_summernote_customization_code.PNG" alt="shows error message in console"> | function was deleted |
-| NameError: name 'request' is not defined | The error occurs because the request I am trying to access request.method outside of a method where request is not available. The request object is passed to views only during HTTP request processing, so trying to reference it outside of a method like get_context_data causes this error. To fix this, you should move the POST request handling inside the appropriate post method of the class-based view. In Django, TemplateView doesn't have a post method by default. | <img src=readme.images/bug_NameError_name_requet_is_not_defined.PNG" alt="image shows Error message"> | TempalteView is still used for AboutPageView method in views.py, but the edit and delete functionality is removed. |
+| Uncaught Type Error: this._element is undefined | Customization summernote for admin panel. Bug fix was not possible, therefore the code was removed from the project. | <img src="readme.images/bug_js_summernote_customization_code.PNG" alt="shows error message in console"> | function was removed. |
+| NameError: name 'request' is not defined | The error occurs because the request I am trying to access request.method outside of a method where request is not available. The request object is passed to views only during HTTP request processing, so trying to reference it outside of a method like get_context_data causes this error. To fix this, you should move the POST request handling inside the appropriate post method of the class-based view. In Django, TemplateView doesn't have a post method by default. | <img src="readme.images/bug_nameerror_name_requet_is_not_defined.PNG" alt="image shows Error message"> | TempalteView is still used for AboutPageView method in views.py, but the edit and delete functionality is removed. |
 | Image overlay | Method_page line 6-7: By default, a div will expand based on its content - so does the div wit hthe image. It will not automatically adapt its height to the parent unless instructed to do so via CSS, which is why you're seeing the overlap. Setting height: 100% on an additional element such as .container.height_control should ensure it inherits the parent's height. However then the image appears very small, I prefer keeping the overlap. Since it's a responsive site the image is cutted on different heights. | <img src="readme.images/bug_image_overlap_masthead.PNG" alt="shows bug on website" width="250"> | none, compromise execpted. |
-
+| None responsive input form | Summernote form on site 'add a method' is not responsive. The right end is cutted by the browser, the user has to scroll to the right. Bad UX| <img src="readme.images/bug_summernote_form_not_responsive.PNG" alt="show screenshot of bug on website" width="500"> | A solution might be to separated the method form inout fieds and implement via Bootstrap utility classes responsive elements i.e. divs which contain the input form. |
 
 ## Bugs (fixed)
 
@@ -118,9 +118,7 @@ These are additional tests to ensure the overall quality, performance, security,
 | method cards overlapp filter section| The divs of the method cards are not aligned with the structure. There are more columns than the total grid (12 columns)inside a .row, the elements overlaps because Bootstrap can't correctly allocate space for each column. Issue come up twice, also related to another div. | <img src="readme.images/bug_filter_method overlay.PNG" alt="show screenshot of bug on website" width="500">| The missing bootstrap utility class "card-type" has been added and the correct number of grid columns has been adjusted. |
 | The image in the masterhead section is dislocated | It seems dislocated. There has been a breakpoint adjustment to a fixed 200px height. In a responisve set up this is not a good idea since the masterhead's height can change. |  <img src="readme.images/bug_image_size_masterhead_method_page.PNG" alt="show screenshot of bug on website" width="500"> | The fixed height has to be removed. The image is more flexible, however, when zooming out 250% it still can be (depending on the screen size) that there is again space between bottom of masterhead and image. But that's sufficient. If the image size would always be depending on the masterhead size the ratio would be a problem and the iamge would look strange. Here the best compomise currently is made (keeping in mind a responsive and flexible setup) |
 | Like button is not visible | The Like button is not visible, only the blue text color. | <img src="readme.images/bug_like_button_no_button.PNG" alt="show screenshot of bug on website" width="500"> | Background-color and text color has been mixed up. It is corrected: color = white, background-color = blue .|
-| Validation_error during image upload|| <img src="" alt="show screenshot of bug on website" width="500"> ||
-| Phone view on private_collection | The | <img src="readme.images/bug_phone_view_strange_I.PNG" alt="show screenshot of bug on website" width="500"> | The symbol "|" has been removed. in private_collection.html . |
-| None responsive input form | Summernote form on site 'add a method' is not responsive. The right end is cutted by the browser, the user has to scroll to the right. Bad UX| <img src="readme.images/bug_summernote_form_not_responsive.PNG" alt="show screenshot of bug on website" width="500"> ||
+| Phone view on site private_collection | The symbol "|" which separates method title and date can be irritation in the mobile view. | <img src="readme.images/bug_phone_view_strange_I.PNG" alt="show screenshot of bug on website" width="500"> | The symbol "|" has been removed. in private_collection.html . |
 | "File not existing" and old css code is displayed in production | There was no error message, however, the requested result was not displayed. After adding the new images, new code I missed to run "python manage.py collectstatic" | ... | run "python manage.py collectstatic" |
 | DisallowedHost at /create | Invalid HTTP_Host header | <img src="readme.images/bug_disallowedhost.PNG" alt="show Error message" width="500">| Add the correct host address to settings.py allowed hosts.|
 | IndentationError: unexpected indent | failrue in views.py at function def method_create(request):  |  <img src="readme.images/but_indentation_error_unexpected ident1.PNG" alt="shows failure in code" width="250">  <img src="readme.images/but_indentation_error_unexpected ident2.PNG" alt="shows Error message" width="250">| Correct indentation by pushing the marked code area to the right |
@@ -174,7 +172,6 @@ No errors were returned.
 
 <details>
     <summary>see details about HTML validator</summary>
-
 
 No errors were returned
 
@@ -245,33 +242,35 @@ Several input field validators have been implemented to ensure data integrity an
 - Group Size Validator: For fields like group size, custom validation ensures the input falls within a specified range, using MinValueValidator and MaxValueValidator
 - Cloudinary Image Validator: A custom validator checks that images uploaded to Cloudinary are in acceptable formats (JPG, JPEG, PNG) and under a 3MB size limit
 
-These validators are applied across the project to ensure that data entered is valid, reducing errors and maintaining consistency. They are defined in models.py to enforce rules during data entry.
+These validators are applied across the project to ensure that data entered is valid, reducing errors and maintaining consistency. They are defined in models.py to enforce rules during data entry:
 
-For instance 
-<img src="readme.imagreadme.images/testing_validation_slug_entry.PNG" alt="shows relevant code" width="700">
+<img src="readme.images/testing_validation_slug_entry.PNG" alt="shows relevant code" width="700">
+
 <img src="readme.images/testing_validation_title_entry.PNG" alt="shows relevant code" width="700">
+
 <img src="readme.images/testing_validation_group_size.PNG" alt="shows relevant code" width="700">
+
 
 ## Lighthouse Reports
 LightHouse is a web performance testing tool used to assess a website's performance. The report is generated through Google Chrome.
 
 <details>
-    <summary>see LightHouse reprot for each site</summary>
+    <summary>see LightHouse report for each site</summary>
 
 #### Index.html
-<img src="readme.images/Lighthouse_report_index.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+<img src="readme.images/testing_lighthouse_report_index.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
 
 #### Method_page.html
-<img src="readme.images/Lighthouse_report.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+<img src="readme.images/testing_lighthouse_report.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
 
 #### About.html
-<img src="readme.images/Lighthouse_report_about.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+<img src="readme.images/testing_lighthouse_report_about.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
 
 #### private_collection.html
-<img src="readme.images/Lighthouse_collection.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+<img src="readme.images/testing_lighthouse_collection.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
 
 #### Method_page.html
-<img src="readme.images/Lighthouse_create.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
+<img src="readme.images/testing_lighthouse_create.PNG" alt="shows Lighthouse report generated by GoogleChrome" width="700">
 
 </details>
 
@@ -285,9 +284,7 @@ The responsiveness was manually tested using Chrome's devtools throughout the en
 
 
 ## Accessability
-I confirm that the selected colors and fonts are easy to read and accessible by using Lighthouse in devtools (Chrome).
-
-<img src="readme.images/GoogleLighthouse.PNG" alt="image shows GoogleLighthouse analysis"> 
+I confirm that the selected colors and fonts are easy to read and accessible by using Lighthouse in devtools (Chrome), see chapter "Lighthouse reports".
 
 
 ### ARIA (Accessible Rich Internet Applications)

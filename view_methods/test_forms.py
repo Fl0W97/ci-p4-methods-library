@@ -2,7 +2,8 @@ from django.db import connection
 from django.test import TestCase
 from .forms import CommentForm
 
-
+""" Test comment form / Reused code from Code Institute
+    see README.md credit section reused code """
 class TestCommentForm(TestCase):
 
     def test_form_is_valid(self):
