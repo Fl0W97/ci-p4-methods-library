@@ -5,38 +5,38 @@ This document outlines a 30-day schedule for setting up a method library website
 ## Week 1: Project Planning and Setup
 
 ### Day 1: Project Planning
-- Define project scope and requirements. --> see scope in README2.md
-- Identify user roles: visitors, users, and admin. --> tbd 
-- Draft wireframes for the application layout. --> started with tool pencil (mobile, tablet and desktop view)
-- draw ERD for database --> done for methods, comments, user
+- Define project scope and requirements.
+- Identify user roles: visitors, users, and admin.
+- Draft wireframes for the application layout.
+- draw ERD for database
 
 ### Day 2: Environment Setup
-- Create a Gitpod workspace. --> done
-- Set up a PostgreSQL database in your preferred environment (e.g., Heroku). --> successfully tested in Heroku
-- Initialize a Django project and configure settings for PostgreSQL. --> done
+- Create a Gitpod workspace.
+- Set up a PostgreSQL database in your preferred environment (e.g., Heroku).
+- Initialize a Django project and configure settings for PostgreSQL.
 
 ### Day 3: Version Control
-- Set up Git for version control. --> done
-- Create a repository on GitHub or another platform. --> done
-- Commit initial project setup files. --> done
+- Set up Git for version control.
+- Create a repository on GitHub or another platform
+- Commit initial project setup files
 
 ### Day 4: Basic Django Configuration
 - Set up Django apps (e.g., methods, users).
 - Configure URLs and basic views.
-- Test Django installation by running the server. --> done
-- Create a Procfile for Heroku. --> done
+- Test Django installation by running the server.
+- Create a Procfile for Heroku.
 - Ensure all dependencies are listed in `requirements.txt`.
-- Create a Heroku app and link to GitHub repository. --> done
-- Set up PostgreSQL on Heroku. --> done
-- Initial Deployment --> done
+- Create a Heroku app and link to GitHub repository
+- Set up PostgreSQL on Heroku.
+- Initial Deployment
 
 ### Day 5: User Authentication
-- Implement user registration and login using Django's built-in authentication system. --> tbc
-- Create templates for login and registration pages. --> tbc
+- Implement user registration and login using Django's built-in authentication system.
+- Create templates for login and registration pages.
 
 ### Day 6: User Profile Management
-- Allow users to create and update profiles. --> tbc
-- Implement user authentication checks for accessing methods. --> tbc
+- Allow users to create and update profiles.
+- Implement user authentication checks for accessing methods.
 
 ### Day 7: Review and Refactor
 - Review code and structure.
@@ -46,27 +46,27 @@ This document outlines a 30-day schedule for setting up a method library website
 
 ### Day 8: Database Models
 - Define models for Methods (title, description, created_by, etc.).
-- Create migrations and apply them to PostgreSQL. --> python3 manage.py makemigrations, migrate 
+- Create migrations and apply them to PostgreSQL. --> python3 manage.py makemigrations, migrate
 
 ### Day 9: Method Creation
-- Implement functionality for users to create methods. --> tbc
+- Implement functionality for users to create methods.
 - Create a form for method submission and a corresponding view.
 
 ### Day 10: Method Listing
-- Develop a view to list all methods. --> (ListView)
-- Implement pagination and search functionality. --> tbc
+- Develop a view to list all methods.
+- Implement pagination and search functionality.
 
 ### Day 11: Method Detail View
 - Create a detail view for each method.
-- Include options for users to edit or delete their methods. --> tbc
+- Include options for users to edit or delete their methods.
 
 ### Day 12: Method Update Functionality
 - Implement editing functionality for methods.
 - Ensure only the method creator can edit.
 
 ### Day 13: Method Deletion Functionality
-- Implement deletion for methods. --> tbc
-- Create confirmation dialogs for deletions. --> tbc
+- Implement deletion for methods.
+- Create confirmation dialogs for deletions.
 
 ### Day 14: Admin Functionality
 - Create an admin interface for managing all methods.
@@ -91,7 +91,6 @@ This document outlines a 30-day schedule for setting up a method library website
 
 ### Day 19: User Experience Enhancements
 - Add notifications for successful actions (e.g., method created, updated).
-- Implement client-side validation for forms using JavaScript.
 
 ### Day 20: Testing User Flows
 - Test user flows from registration to method management.

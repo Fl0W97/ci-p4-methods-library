@@ -80,6 +80,11 @@ Displays all the content created by the relevant site user. They can see instruc
 <img src="readme.images/readme_private collection_page.PNG" alt="shows private collection page" width="700">
 
 
+### 404 and 500 pages
+Custom error pages has been added to ensure that the Site User is able to contact TeamCrafted.
+
+<img src="readme.images/readme_404_error_site.PNG" alt="shows private collection page" width="500">
+
 ### Feature overview:
 
 #### Features which are visible for the Site User:
@@ -108,16 +113,15 @@ see more details about the feature development in [FEATURES.md](FEATURES.md)
 
 
 ## User Stories, Project scope
-
 The project scope is defined as an MVP. The main functionalities for adding comments and methods, as well as browsing through the different methods, have been set up. The user stories have been defined, and all relevant ones for MVP 1 have been closed. In the column 'MVP2', there are user stories defined for further improvements and extensions after the project submission.
 
 <img src="readme.images/agile_method_kanban_board.PNG" alt="shows kanban board" width="800">
 
 See in GItHub project [Methods library](https://github.com/Fl0W97/ci-p4-methods-library/issues).
+See rough project time schedule [SCHEDUE.md](SCHEDULE.md).
 
 
 ### Site Users
-
 - As a Site User I can view existing methods on the site so that I am getting inspiration and are willing to share my methods
 - As a Site User I can read the methods in an structured way so that it's easy to go through them
 - As a Site User I can register an account so that I can comment on a method
@@ -409,6 +413,7 @@ The main functions are generated with Python. However, to set up the whole proje
 - [Miro](https://miro.com): A tool used to create visual diagrams, such as the Entity-Relationship Diagram for the project.
 - [Heroku](https://www.heroku.com): A cloud platform used to deploy and host the website in a production environment.
 - [Tinypng](https://tinypng.com/): Used for reducing image size
+- [Languagetool](https://languagetool.org/): Free grammar checker for checking my project documentation
 
 
 ### Installed packages requirements.txt ###
@@ -468,7 +473,7 @@ For detailed testing information, see the content related to testing in [TESTING
 - [Code_Institute](https://codeinstitute.net) - Mentor Juliia Konovalova: Providing guidance and tips for my project and sharing insights of her own project
 - [Youtube](https://www.youtube.com/): for access to a huge community of developers who facing similar challenges like me
 - [SessionLab](https://www.sessionlab.com/): for access to various free Methods to fill the database and insiration for functionalities
-- [Pipdecks](https://pipdecks.com/pages/workshop-tactics?srsltid=AfmBOoru9ew7v6kb_40ssn9qbAzAw4b2Xb1cvAZ0Et_v20UOupe7csJ0)
+- [Pipdecks](https://pipdecks.com): for access to various free Methods to fill the database and insiration for functionalities
 - [Stackoverflow](https://stackoverflow.com/): for access to a huge community of developers who facing similar challenges like me
 
 
