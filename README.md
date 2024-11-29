@@ -244,7 +244,7 @@ The main database is used to store and manage methods. Methods can be created by
 The database stores and manages comments. Comments can be created by both Admins and logged-in users. However, the Admin must approve any new comment before it is displayed on the website. The ability to edit or delete comments is restricted to Admins and authorized users only.
 
 <img src="readme.images/readme_erd_comments.PNG" alt="shows ERD_comments">
-<img src="readme.images/readme_erd_comments_code.PNG" alt="shows ERD comments code>
+<img src="readme.images/readme_erd_comments_code.PNG" alt="shows ERD comments code">
 
 
 #### ERD_table_about
