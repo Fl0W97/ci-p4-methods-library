@@ -1,109 +1,114 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-    <div class="container height_control ">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Method title goes in these h1 tags -->
-                <h1 class="method-title">{{ method.title }}</h1>
-                <!-- Method author goes before the | the method's created date goes after -->
-                <p class="method-subtitle fst-italic">{{ method.author }} | {{ method.created_on }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-              {% if "placeholder" in method.featured_image.url %}
-                <img src="{%static 'images/default.jpg' %}" class="scale" alt="Placeholder image">
-              {% else %}
-                <img src="{{ method.featured_image.url }}" class="scale" alt="Featured image for {{ method.title }}">
-              {% endif %}
-            </div>
-        </div>
+<!-- Section Masthead-->
+<section class="masthead">
+  <div class="container height_control">
+    <div class="row g-0">
+      <div class="col-md-6 masthead-text">
+        <h1 class="method-title">{{ method.title }}</h1>
+        <p class="method-subtitle fst-italic">{{ method.author }} | {{ method.created_on }}</p>
+      </div>
+      <div class="d-none d-md-block col-md-6 masthead-image">
+        {% if "placeholder" in method.featured_image.url %}
+        <img src="{%static 'images/default.jpg' %}" class="scale" alt="Placeholder image">
+        {% else %}
+        <img src="{{ method.featured_image.url }}" class="scale" alt="Featured image for {{ method.title }}">
+        {% endif %}
+      </div>
     </div>
-</div>
+  </div>
+</section>
 
-<div class="container">
+<!-- Section Methodology Description-->
+<section>
+  <div class="container">
     <div class="row m-0 light-bg">
       <h2>Methodology description</h2>
-        <div class="col-md-8 card mb-4  mt-3 left">
-            <div class="card-body method-link">
-                <!-- The method content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <h3 class="card-text"> Purpose</h3>
-                <p class="card-text">
-                    {{ method.purpose | safe }}
-                </p>
-                <h3 class="card-text">Instructions</h3>
-                <p class="card-text pb-2">
-                    {{ method.instructions| safe }}
-                </p>
-                <div class="card-body text-end border-top">
-                    <!-- Like button code -->
-                    <p>Total Likes: {{ method.like_count }}</p>
-                    {% if user.is_authenticated %} 
-                        <!-- Check if the user has already liked the method -->
-                        {% if user_liked_method %}
-                            <!-- Show text if user has already liked -->
-                            <p class="text-muted">You liked this method.</p>
-                        {% else %}
-                            <!-- Like button, only visible to users who haven't liked -->
-                            <form method="POST" action="{% url 'method_page' slug=method.slug %}">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-like" 
-                                aria-label="Like this method">
-                                    Like
-                                </button>
-                            </form>
-                        {% endif %}
-                    {% else %}
-                        
-                        <p><a href="{% url 'account_login' %}"
-                          aria-label="Log in to like this method">
-                          Log in</a> to like this method.</p>
-                    {% endif %}
-                    <!-- end Like button code -->
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 card mb-4  mt-3 left">
-          <div class="card-body">
-            <h3 class="card-text">Preparation</h3>
-            <p class="card-text pb-2">
-              {{ method.prep_time | safe }}
-            </p>
-            <h3 class="card-text">Duration</h3>
-            <p class="card-text pb-2">
-              {{ method.duration | safe }}
-            </p>
-            <h3 class="card-text">Material</h3>
-            <p class="card-text pb-2">
-              {{ method.material | safe }}
-            </p>
-            <h3 class="card-text">Group size</h3>
-            <p class="card-text pb-2">
-              {{ method.group_size_min | safe }} - {{ method.group_size_max | safe }}
-            </p>
-            <h3 class="card-text">Location</h3>
-            <p class="card-text">
-              {{ method.location | safe }}
-            </p>
-            <p class="card-text pb-2 border-bottom">
-              <span class="badge {% if method.remote %}bg-success{% else %}bg-danger{% endif %}">
-                {% if method.remote %}
-                  Suitable for remote session
-                {% else %}
-                  Not suitable for remote session
-                {% endif %}
-              </span>
-            </p>
+
+      <!-- content: Method Purpose, Instructions, and other details -->
+      <article class="col-md-8 card mb-4  mt-3 left">
+        <div class="card-body method-link">
+          <!-- Use the | safe filter inside the template tags -->
+          <h3 class="card-text"> Purpose</h3>
+          <p class="card-text">
+            {{ method.purpose | safe }}
+          </p>
+
+          <h3 class="card-text">Instructions</h3>
+          <p class="card-text pb-2">
+            {{ method.instructions| safe }}
+          </p>
+
+          <!-- Like button and Like count -->
+          <div class="card-body text-end border-top">
+            <p>Total Likes: {{ method.like_count }}</p>
+            {% if user.is_authenticated %}
+            {% if user_liked_method %}
+            <p class="text-muted">You liked this method.</p>
+            {% else %}
+            <form method="POST" action="{% url 'method_page' slug=method.slug %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-like" aria-label="Like this method">
+                Like
+              </button>
+            </form>
+            {% endif %}
+            {% else %}
+
+            <p><a href="{% url 'account_login' %}" aria-label="Log in to like this method">
+                Log in</a> to like this method.</p>
+            {% endif %}
+            <!-- end Like button code -->
           </div>
         </div>
+      </article>
+
+      <!-- Sidebar: Preparation, Duration, Material, Group Size, Location -->
+      <aside class="col-md-4 card mb-4  mt-3 left">
+        <div class="card-body">
+          <h3 class="card-text">Preparation</h3>
+          <p class="card-text pb-2">
+            {{ method.prep_time | safe }}
+          </p>
+
+          <h3 class="card-text">Duration</h3>
+          <p class="card-text pb-2">
+            {{ method.duration | safe }}
+          </p>
+
+          <h3 class="card-text">Material</h3>
+          <p class="card-text pb-2">
+            {{ method.material | safe }}
+          </p>
+
+          <h3 class="card-text">Group size</h3>
+          <p class="card-text pb-2">
+            {{ method.group_size_min | safe }} - {{ method.group_size_max | safe }}
+          </p>
+
+          <h3 class="card-text">Location</h3>
+          <p class="card-text">
+            {{ method.location | safe }}
+          </p>
+          <p class="card-text pb-2 border-bottom">
+            <span class="badge {% if method.remote %}bg-success{% else %}bg-danger{% endif %}">
+              {% if method.remote %}
+              Suitable for remote session
+              {% else %}
+              Not suitable for remote session
+              {% endif %}
+            </span>
+          </p>
+        </div>
+      </aside>
     </div>
 
     <!-- Displaying count of comments -->
-    <!-- reused code by Code Institute, check credit section README.d-->
-    <div class="row">
+    <!-- reused code by Code Institute, check credit section README.md-->
+    <section class="row">
       <div class="col-12">
         <strong class="text-secondary">
           <i class="far fa-comments"></i> {{ comment_count }}
@@ -112,19 +117,20 @@
       <div class="col-12">
         <hr>
       </div>
-    </div>
+    </section>
+
     <!-- Displaying Comments -->
-    <!-- reused code by Code Institute, check credit section README.d-->
-    <div class="row">
+    <!-- reused code by Code Institute, check credit section README.md-->
+    <section class="row">
       <div class="col-md-7 card mb-4 mt-3">
         <h2>Comments:</h2>
         <div class="card-body">
           <!-- We want a for loop inside the empty control tags
-            to iterate through each comment in comments -->
+              to iterate through each comment in comments -->
           {% for comment in comments %}
           <div class="p-2 comments
-            {% if not comment.approved and comment.author == user %}
-            faded{% elif not comment.approved %} d-none{% endif %}">
+              {% if not comment.approved and comment.author == user %}
+              faded{% elif not comment.approved %} d-none{% endif %}">
             <p class="font-weight-bold text-black-50">
               {{ comment.author }}
               <span class="font-weight-normal">
@@ -139,61 +145,53 @@
               This comment is awaiting approval
             </p>
             {% endif %}
-             {% if user.is_authenticated and comment.author == user %}
-            <button class="btn btn-delete"
-            aria-label="Delete this comment"
-            comment_id="{{ comment.id }}">Delete</button>
-            <button class="btn btn-edit"
-            aria-label="Edit this comment"
-            comment_id="{{ comment.id }}">Edit</button>
+            {% if user.is_authenticated and comment.author == user %}
+            <button class="btn btn-delete" aria-label="Delete this comment"
+              comment_id="{{ comment.id }}">Delete</button>
+            <button class="btn btn-edit" aria-label="Edit this comment" comment_id="{{ comment.id }}">Edit</button>
             {% endif %}
           </div>
           <!-- Our for loop ends here -->
           {% endfor %}
         </div>
       </div>
-      <!-- Creating New Comments -->
-      <div class="col-md-5 card mb-4 mt-3">
+
+      <!-- New Comment Form -->
+      <aside class="col-md-5 card mb-4 mt-3">
         <div class="card-body">
           {% if user.is_authenticated %}
           <h2>Leave a comment:</h2>
           <p>Posting as: {{ user.username }}</p>
-          <form id="commentForm" method="post" 
-            aria-labelledby="leave-comment-form"
-            style="margin-top: 1.3em;">
+          <form id="commentForm" method="post" aria-labelledby="leave-comment-form" style="margin-top: 1.3em;">
             {{ comment_form | crispy }}
             {% csrf_token %}
-            <button id="submitButton" type="submit"
-              class="btn btn-signup btn-lg">Submit</button>
+            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
           </form>
           {% else %}
           <p><a href="{% url 'account_login' %}" aria-label="Log in to leave a comment">
-            Log in</a> to leave a comment.</p>
+              Log in</a> to leave a comment.</p>
           {% endif %}
         </div>
-      </div>
-    </div>
-</div>
+      </aside>
+    </section>
+  </div>
+</section>
 
 <!-- Delete confirmation modal - comment -->
-<!-- reused code by Code Institute, check credit section README.d-->
-<div class="modal fade" id="deleteModal" tabindex="-1"
-  aria-labelledby="deleteModalLabel" aria-hidden="true">
+<!-- reused code by Code Institute, check credit section README.md-->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"
-          id="deleteModalLabel">Delete comment?</h5>
-        <button type="button" class="btn-close"
-          data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         Are you sure you want to delete your comment?
         This action cannot be undone.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal" aria-label="Close modal">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close modal">
           Close</button>
         <a id="deleteConfirm" href="#" class="btn
           btn-danger" aria-label="Confirm delete of comment">

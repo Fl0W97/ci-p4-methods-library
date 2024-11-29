@@ -1,130 +1,142 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 
-<div class="masthead">
+<!-- Section Masthead -->
+<section class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Method title goes in these h1 tags -->
-                <h1 class="method-title fs-4"> Hello {{ user.username }}, find here your content you shared with the community</h1>
+                <h1 class="method-title fs-4"> Hello {{ user.username }}, find here your content you shared with the
+                    community</h1>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                 <img src="{% static 'images/default.jpg' %}" class="img-fluid" alt="A placeholder image for user content">
+                <img src="{% static 'images/default.jpg' %}" class="img-fluid"
+                    alt="A placeholder image for user content">
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="container">
+<!-- Section User's Content -->
+<section class="container">
     <div class="row pb-5">
         <!-- Methods Accordion Section -->
-        <div class="col-md-12 card mb-4 mt-3 left" role="region" aria-labelledby="methodSection">
+        <article class="col-md-12 card mb-4 mt-3 left" role="region" aria-labelledby="methodSection">
             <h2 class="card-text fs-4">
                 You created {{ method_list.count }} methods
             </h2>
             <!-- Button to toggle methods accordion -->
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#methodsAccordion" 
-            aria-expanded="false" aria-controls="methodsAccordion" aria-label="Toggle methods details">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#methodsAccordion"
+                aria-expanded="false" aria-controls="methodsAccordion" aria-label="Toggle methods details">
                 see methods details
             </button>
 
-            <div id="methodsAccordion" class="collapse mt-3" aria-live="polite">    
+            <div id="methodsAccordion" class="collapse mt-3" aria-live="polite">
                 {% for method in method_list %}
-                    <div class="accordion-item">
-                        <h3 class="card-header fs-4" id="heading{{ forloop.counter }}">
-                            <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse" 
-                            data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}" 
+                <div class="accordion-item">
+                    <h3 class="card-header fs-4" id="heading{{ forloop.counter }}">
+                        <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false"
+                            aria-controls="collapse{{ forloop.counter }}"
                             aria-label="Toggle method details for {{ method.title }}">
-                                {% if method.status == 1 %}
-                                <!-- Display link if the method is approved (published) -->
-                                    <p class="text-dark fs-5">{{ method.title }} <span class="text-muted mx-2"></span></p><p class="text-muted fs-6">
-                                        {{ method.created_on}}</p>
-                                {% else %}
-                                    <!-- Show message if the method is not approved -->
-                                    <p class="text-muted">{{ method.title }} (Pending Approval)</p>
-                                {% endif %}
-                            </button>
-                        </h3> 
-                        
-                        <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.counter }}" 
-                        data-bs-parent="#methodsAccordion">
-                            <div class="accordion-body">
-                                {% if method.status == 1 %}
-                                <!-- Display link if the method is approved -->
-                                <p><a href="{% url 'method_page' method.slug %}" class="method-link" aria-label="Visit method page for {{ method.title }}">
+                            {% if method.status == 1 %}
+                            <!-- Display link if the method is approved (published) -->
+                            <p class="text-dark fs-5">{{ method.title }} <span class="text-muted mx-2"></span></p>
+                            <p class="text-muted fs-6">
+                                {{ method.created_on}}</p>
+                            {% else %}
+                            <!-- Show message if the method is not approved -->
+                            <p class="text-muted">{{ method.title }} (Pending Approval)</p>
+                            {% endif %}
+                        </button>
+                    </h3>
+
+                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse"
+                        aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#methodsAccordion">
+                        <div class="accordion-body">
+                            {% if method.status == 1 %}
+                            <!-- Display link if the method is approved -->
+                            <p><a href="{% url 'method_page' method.slug %}" class="method-link"
+                                    aria-label="Visit method page for {{ method.title }}">
                                     {{ method.summary | safe }} | click here to visit this method</a></p>
-                                {% else %}
-                                    <p class="text-muted h6"> {{ method.summary | safe }}</p>
-                                {% endif %} 
-                            </div>
+                            {% else %}
+                            <p class="text-muted h6"> {{ method.summary | safe }}</p>
+                            {% endif %}
                         </div>
                     </div>
+                </div>
                 {% empty %}
                 <!-- This is displayed if method_list is empty -->
                 <p>No methods found.</p>
                 {% endfor %}
-            </div>    
-        </div>
+            </div>
+        </article>
 
         <!-- Comments Accordion Section -->
-        <div class="col-md-8 card mb-4 mt-3 left" role="region" aria-labelledby="commentSection">
+        <article class="col-md-8 card mb-4 mt-3 left" role="region" aria-labelledby="commentSection">
             <h2 class="card-text fs-4">
                 You created {{ comment_list.count }} comments
             </h2>
             <!-- Button to toggle methods accordion -->
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#commentAccordion" aria-expanded="false" 
-            aria-controls="commentAccordion" aria-label="Toggle comments details">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#commentAccordion"
+                aria-expanded="false" aria-controls="commentAccordion" aria-label="Toggle comments details">
                 see comments details
             </button>
 
-            <div id="commentAccordion" class="collapse mt-3" aria-live="polite">    
+            <div id="commentAccordion" class="collapse mt-3" aria-live="polite">
                 {% for comment in comment_list %}
-                    <div class="accordion-body">
-                        {% if comment.status == 1 %}
-                        <!-- Display link if the comment is approved (published) -->
-                        <p class="card-text">Created on: {{ comment.created_on }} | Posted on {{ comment.method.title }}</p>
-                        <p>{{ comment.body }}</p>
-                        {% else %}
-                            <!-- Show message if comment is not approved -->
-                            <p class="card-text text-muted"> (Pending Approval) Created on: {{ comment.created_on }} | Posted on {{ comment.method.title }}</p>
-                            <p class="border-bottom">{{ comment.body }}</p> 
-                        {% endif %}
-                    </div>
+                <div class="accordion-body">
+                    {% if comment.status == 1 %}
+                    <!-- Display link if the comment is approved (published) -->
+                    <p class="card-text">Created on: {{ comment.created_on }} | Posted on {{ comment.method.title }}</p>
+                    <p>{{ comment.body }}</p>
+                    {% else %}
+                    <!-- Show message if comment is not approved -->
+                    <p class="card-text text-muted"> (Pending Approval) Created on: {{ comment.created_on }} | Posted on
+                        {{ comment.method.title }}</p>
+                    <p class="border-bottom">{{ comment.body }}</p>
+                    {% endif %}
+                </div>
                 {% empty %}
                 <!-- This is displayed if comment_list is empty -->
                 <p>No comments found.</p>
                 {% endfor %}
             </div>
-        </div>
+        </article>
 
         <!-- Liked Methods Accordion Section -->
-        <div class="col-md-4 card mb-4 mt-3 left">
+        <article class="col-md-4 card mb-4 mt-3 left">
             <h2 class="card-text fs-4" role="region" aria-labelledby="likedMethodsSection">
                 You liked {{ liked_methods.count }} methods
             </h2>
             <!-- set aria-expanded="true" to show the dropdown-->
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#likedMethodsAccordion" 
-            aria-expanded="true" aria-controls="likedMethodsAccordion" aria-label="Toggle liked methods details">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#likedMethodsAccordion" aria-expanded="true" aria-controls="likedMethodsAccordion"
+                aria-label="Toggle liked methods details">
                 see methods you liked
             </button>
-            
-            <!-- Accordion content for Liked methods -->
-            <div id="likedMethodsAccordion" class="collapse show mt-3"> <!-- add 'show' to class to show the dropdown-->
-                {% if liked_methods %}
-                    <div class="accordion-body"></div>
-                        {% for method in liked_methods %}
-                        <p class="border-bottom"><a href="{% url 'method_page' method.slug %}" aria-label="Visit method page for liked method: {{ method.title }}">{{ method.title }}</a> | {{ method.author }}</p>
-                        {% endfor %}
-                    {% else %}
-                        You haven't liked any methods yet.
-                    {% endif %}
 
-                </div>
+            <!-- Accordion content for Liked methods -->
+            <div id="likedMethodsAccordion" class="collapse show mt-3">
+                <!-- add 'show' to class to show the dropdown-->
+                {% if liked_methods %}
+                <div class="accordion-body"></div>
+                {% for method in liked_methods %}
+                <p class="border-bottom"><a href="{% url 'method_page' method.slug %}"
+                        aria-label="Visit method page for liked method: {{ method.title }}">{{ method.title }}</a> |
+                    {{ method.author }}</p>
+                {% endfor %}
+                {% else %}
+                You haven't liked any methods yet.
+                {% endif %}
+
             </div>
-        </div>
     </div>
-</div>
+    </article>
+    </div>
+</section>
 
 {% endblock content %}
 

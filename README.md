@@ -190,15 +190,15 @@ The primary font used in the application is Roboto. Throughout my learning exper
 
 #### Mobile
 
-<img src="readme.images/wireframe_mobile.PNG" alt="shows mobile wireframe">
+<img src="readme.images/wireframe_overview_mobile.PNG" alt="shows mobile wireframe">
 
 #### Desktop
 
-<img src="readme.images/wireframe_desktop.PNG" alt="shows desktop wireframe">
+<img src="readme.images/wireframe_method_page_desktop.PNG" alt="shows desktop wireframe">
 
 #### Tablet
 
-<img src="readme.images/wireframe_tablet.PNG" alt="shows tablet wireframe">
+<img src="readme.images/wireframe_method_page_tablet.PNG" alt="shows tablet wireframe">
 
 
 ### User feedback/ guidance / CRUD

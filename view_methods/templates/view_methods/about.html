@@ -1,50 +1,56 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
 {% block content %}
 
-<div class="masthead">
+<!-- Section Masthead-->
+<section class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text p-2">
-                <!-- Post title goes in these h1 tags -->
                 <h1 class="method-title" aria-label="Main title for About Us page">{{ about.title }}</h1>
                 <h2 class="fs-4">Sharing, learning, inspiring ...</h2>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image for About Us section" aria-label="Placeholder image representing the site">
+                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image for About Us section"
+                    aria-label="Placeholder image representing the site">
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="container">
-    <div class="row justify-content-center">
-      <!-- Creating New Method-->
-        <div class="col-md-10 card mb-4 mt-3">
-            <div class="card-body">
-                {{ about.body|safe }}
+<main>
+    <!-- Section About -->
+    <section class="about-us">
+        <div class="container">
+            <div class="row justify-content-center">
+                <article class="col-md-10 card mb-4 mt-3">
+                    <div class="card-body">
+                        {{ about.body|safe }}
+                    </div>
+                </article>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div class="container">
-    <div class="row justify-content-center">
-      <!-- Creating New Method-->
-        <div class="col-md-6 card mb-4 mt-3">
-            <div class="card-body">
-                <h2 class="fs-4" aria-label="Contact Us section heading">Contact us</h2>
-                <p>We value collaboration and shared knowledge. Whether you
-                    have a project, want to adjust a method, or need to brainstorm,
-                    We would love to connect. Just write an email to our support:</p>
-                <p class="fw-bold" aria-label="Support email address">contact@teamcraft.com</p>
+    <!-- Section Contact Us  -->
+    <section class="contact-us">
+        <div class="container">
+            <div class="row justify-content-center">
+                <article class="col-md-6 card mb-4 mt-3">
+                    <div class="card-body">
+                        <h2 class="fs-4" aria-label="Contact Us section heading">Contact us</h2>
+                        <p>We value collaboration and shared knowledge. Whether you
+                            have a project, want to adjust a method, or need to brainstorm,
+                            We would love to connect. Just write an email to our support:</p>
+                        <p class="fw-bold" aria-label="Support email address">contact@teamcraft.com</p>
+                    </div>
+                </article>
             </div>
         </div>
-    </div>
-</div>
-
+    </section>
+</main>
 
 {% endblock content %}
 

@@ -1,54 +1,54 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <h1 class="method-title"> Create your methode here</h1>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="Placeholder image for method creation">
-            </div>
-        </div>
+<!-- Section Masthead -->
+<section class="masthead">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-md-6 masthead-text">
+        <h1 class="method-title"> Create your methode here</h1>
+      </div>
+      <div class="d-none d-md-block col-md-6 masthead-image">
+        <img src="{% static 'images/default.jpg' %}" class="scale" alt="Placeholder image for method creation">
+      </div>
     </div>
-</div>
+  </div>
+</section>
 
- <div class="container">
+<!-- Section Method Creation Form -->
+<section>
+  <div class="container">
     <div class="row">
-      <div class="col-md-8 card mb-4 mt-3">
+      <article class="col-md-8 card mb-4 mt-3">
         <div class="card-body w-100">
           {% if user.is_authenticated %}
           <h2>Add here a new method:</h2>
           <p class="text-muted">Posting as: {{ user.username }}</p>
-          <form id="methodForm" method="post" enctype="multipart/form-data"
-            style="margin-top: 1.3em;">
+          <form id="methodForm" method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
             {{ method_form | crispy }}
             {% csrf_token %}
 
             <!-- Submit button -->
-            <button id="submitButton" type="submit"
-              class="btn btn-signup btn-lg">Submit</button>
+            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
 
             <!-- Reset button -->
-            <button type="button" class="btn btn-secondary"
-             onclick="resetForm()">Reset</button>
+            <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
 
             <!-- Remove image button -->
-            <button type="button" class="btn btn-secondary"
-            onclick="removeImageForm()">Remove image</button>
+            <button type="button" class="btn btn-secondary" onclick="removeImageForm()">Remove image</button>
           </form>
           {% else %}
           <p>Log in to create a method</p>
           {% endif %}
         </div>
-      </div>
+      </article>
     </div>
-</div>
+  </div>
+</section>
 
- <!-- Creating New Method
+<!-- Creating New Method
  <div class="container">
   <div class="row">
     <div class="col-md-10 card mb-4 mt-3">
@@ -59,7 +59,7 @@
           <form id="methodForm" method="post" style="margin-top: 1.3em;">
             {% csrf_token %} -->
 
-            <!-- First Row: Title and Purpose 
+<!-- First Row: Title and Purpose 
             <div class="row">
               <div class="col-md-6">
                 <div class="mb-3">
@@ -81,7 +81,7 @@
               </div>
             </div> -->
 
-            <!-- Second Row: Duration and Preparation Time 
+<!-- Second Row: Duration and Preparation Time 
             <div class="row">
               <div class="col-md-6">
                 <div class="mb-3">
@@ -97,7 +97,7 @@
               </div>
             </div> -->
 
-            <!-- Summary Field (Full-width)
+<!-- Summary Field (Full-width)
             <div class="row">
               <div class="col-md-12">
                 <div class="mb-3">
@@ -107,7 +107,7 @@
               </div>
             </div> -->
 
-            <!-- Instructions Field (Full-width) 
+<!-- Instructions Field (Full-width) 
             <div class="row">
               <div class="col-md-12">
                 <div class="mb-3">
@@ -117,7 +117,7 @@
               </div>
             </div> -->
 
-            <!-- Material Field (Full-width) 
+<!-- Material Field (Full-width) 
             <div class="row">
               <div class="col-md-6">
                 <div class="mb-3">
@@ -127,7 +127,7 @@
               </div>
             </div> -->
 
-            <!-- Group Size Fields 
+<!-- Group Size Fields 
             <div class="row">
               <div class="col-md-2">
                 <div class="mb-3">
@@ -143,7 +143,7 @@
               </div>
             </div> -->
 
-            <!-- Submit Button 
+<!-- Submit Button 
             <button id="submitButton" type="submit" class="btn btn-signup btn-lg mt-3">Submit</button>
           </form>
         {% else %}
