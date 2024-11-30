@@ -133,7 +133,7 @@
                             </div>
                             <a href="{% url 'method_page' method.slug %}" class="method-link"
                                 aria-label="Read more about {{ method.title }}">
-                                <p>{{ method.summary | safe }}</p>
+                                <p> {{ method.summary | safe }} </p>
                                 <p><strong>Author: {{ method.author }}</strong></p>
                             </a>
                             <p class="card-text text-muted h6">{{ method.created_on}}

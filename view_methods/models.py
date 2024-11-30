@@ -29,6 +29,7 @@ choices = PURPOSE_CHOICES = (
     ('facilitating effective planning', "Facilitating Effective Planning")
 )
 
+
 # Method model
 class Method(models.Model):
     title = models.CharField(
@@ -63,12 +64,12 @@ class Method(models.Model):
     )
     prep_time = models.CharField(
         max_length=100,
-        choices=PREPTIME_CHOICES, # Restrict Prep time
+        choices=PREPTIME_CHOICES,  # Restrict Prep time
         help_text="Enter preparation time"
     )
     duration = models.CharField(
         max_length=100,
-        choices=DURATION_CHOICES, # Restrict duraction
+        choices=DURATION_CHOICES,  # Restrict duraction
         help_text="Enter duration of the excercise"
     )
     alt_atr = models.CharField(
@@ -106,8 +107,11 @@ class Method(models.Model):
     def __str__(self):
         return f" title {self.title} | written by {self.author}"
 
+
 """ Comment model / Reused code from Code Institute
     see README.md credit section reused code """
+
+
 class Comment(models.Model):
     method = models.ForeignKey(
         Method, on_delete=models.CASCADE, related_name="comments"
@@ -132,6 +136,7 @@ class Comment(models.Model):
         return (
             f" By {self.author} | {self.body} | Created on {self.created_on}"
         )
+
 
 # model for like button
 class Like(models.Model):
@@ -160,6 +165,8 @@ class Like(models.Model):
 
 """ model for about page / Reused code from Code Institute
     see README.md credit section reused code """
+
+
 class About(models.Model):
     title = models.CharField(
         max_length=200, default="About Us"

@@ -88,13 +88,13 @@ Only comments marked as approved will be publicly visible. The Admin manages the
 ## 7 | Add Methods
 The function first checks if the user is authenticated (request.user.is_authenticated). If the user is not authenticated, an error message is displayed informing the user that they must be logged in to create a method. The user is then redirected to the homepage using HttpResponseRedirect(reverse('home')) if they are not logged in.
 
-If the user is authenticated and a POST request is made (indicating form submission), the MethodForm is instantiated with the data and files (request.POST and request.FILES). If the form is valid (method_form.is_valid()), the method data is saved. However, before saving, the method’s author field is linked to the current logged-in user (method.author = request.user). The method is then saved to the database with method.save().
+If the user is authenticated and a POST request is made (indicating form submission), the MethodForm is initiated with the data and files (request.POST and request.FILES). If the form is valid (method_form.is_valid()), the method data is saved. However, before saving, the method’s author field is linked to the current logged-in user (method.author = request.user). The method is then saved to the database with method.save().
 
 After a successful submission, a success message is displayed to inform the user that their method is pending approval. The user is then redirected to the homepage using HttpResponseRedirect(reverse('home')).
 
 If the request is a GET request (indicating the page is being loaded for the first time or after a redirect), an empty MethodForm is instantiated to allow the user to fill out the form.
 
-The method_create function renders the template method_creation.html with the form object (method_form) passed to it, so the user can either view the blank form or the previously submitted form data (if any).
+The method_create function renders the template method_creation.html with the form object (method_form) passed to it, so the user can either view the blank form or the previously submitted form data.
 
 <img src="readme.images/features_method_create().PNG" alt="shows relevant code" width="700">
 
@@ -152,4 +152,4 @@ Unique Slugs: The current implementation handles slug uniqueness not in the func
 
 
 ## 13 | Add Images (Image validation)
-For adding images to the methods the standrad image upload functionality for Django projects is used. An image field in the model where the image will be stored is defined as 'featured_image' in models.py. In the project's settings (settings.py) the media root and URL to handle media files is specified. Django needs to be configured to serve media files and in urls.py, a configuration is included. The form's enctype attribute must be set to multipart/form-data for image file uploads to work.
+For adding images to the methods the standard image upload functionality for Django projects is used. An image field in the model where the image will be stored is defined as 'featured_image' in models.py. In the project's settings (settings.py) the media root and URL to handle media files is specified. Django needs to be configured to serve media files and in urls.py, a configuration is included. The form's enctype attribute must be set to multipart/form-data for image file uploads to work.

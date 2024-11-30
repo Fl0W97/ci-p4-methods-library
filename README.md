@@ -113,7 +113,7 @@ see more details about the feature development in [FEATURES.md](FEATURES.md)
 
 
 ## User Stories, Project scope
-The project scope is defined as an MVP. The main functionalities for adding comments and methods, as well as browsing through the different methods, have been set up. The user stories have been defined, and all relevant ones for MVP 1 have been closed. In the column 'MVP2', there are user stories defined for further improvements and extensions after the project submission.
+The project scope is defined as an MVP. The main functionalities for adding comments and methods, as well as browsing through the different methods, have been set up. The "must-have"-User Stories have been labeld as MVP in the GitHub project right at the beginning. Further User Stories have been added along the (MVP) project. The user stories have been defined, and all relevant ones for MVP 1 have been closed. In the column 'MVP2', there are user stories defined for further improvements and extensions after the project submission.
 
 <img src="readme.images/agile_method_kanban_board.PNG" alt="shows kanban board" width="800">
 
@@ -478,13 +478,16 @@ Methods: Roles and Responsibilities, Skills Market, Five Whys
 
 
 **Images**
-All image, the deufault as well as the ones for songle methods has been provided by freepik.com. 
+All image, the deufault as well as the ones for single methods has been provided by freepik.com. 
 For instance https://www.freepik.com/free-vector/illustration-light-bulb-ideas_2922257.htm?sign-up=google#fromView=search&page=1&position=36&uuid=75e381f2-8406-4d32-9975-0eba4ddf834f
 
 According to the licence aggreement for free content Freepik.com is mentioned in the footer. 
 
 
 ### Code
+
+<details>
+    <summary>Sources (urls) for code inspiration that has been adapted within this project</summary>
 
 **Filters:**
 https://stackoverflow.com/questions/34739680/how-to-add-filters-to-a-query-dynamically-in-django
@@ -508,10 +511,13 @@ https://summernote.org/deep-dive/
 fieldsets https://docs.djangoproject.com/en/5.1/ref/contrib/admin/, https://docs.djangoproject.com/en/5.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin
 use help_text: https://docs.djangoproject.com/en/5.1/ref/models/fields/#help-text
 
-
-**Hints for function super()**
+**Hints for function clean super() / validation**
 https://docs.djangoproject.com/en/5.1/topics/class-based-views/, https://docs.python.org/3/library/functions.html#super
 https://docs.python.org/3/library/functions.html#super
+https://stackoverflow.com/questions/43040595/validationerror-in-clean-methods-in-django-forms-not-working
+https://stackoverflow.com/questions/71462801/why-file-extension-validator-is-not-working-properly-in-django
+https://docs.python.org/3/library/os.path.html#os.path.splitext
+https://stackoverflow.com/questions/43040595/validationerror-in-clean-methods-in-django-forms-not-working
 
 **Meta Model**
 https://docs.djangoproject.com/en/5.1/ref/models/options/
@@ -523,20 +529,20 @@ https://docs.djangoproject.com/en/5.1/ref/class-based-views/generic-display/#tem
 
 https://docs.djangoproject.com/en/5.1/ref/class-based-views/mixins-simple/
 
-
 **Authentification**
 https://docs.djangoproject.com/en/5.1/topics/auth/default/
-
 
 **Bootstrap documentation**
 https://getbootstrap.com/docs/5.2/components/accordion/
 
-
 **ARIA** 
 https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/
 
+
 **Error 404** 
 https://github.com/IuliiaKonovalova/e-commerce/blob/main/ecommerce_project/urls.py
+
+</details>
 
 **Reused code from Code Institute:**
 Original code from tutorial: [Code Institute][https://learn.codeinstitute.net]. 

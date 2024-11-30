@@ -14,7 +14,7 @@ class MethodAdmin(SummernoteModelAdmin):
 
 
 @admin.register(Comment)
-class CommentAdmin(SummernoteModelAdmin):
+class CommentAdmin(admin.ModelAdmin):
 
     list_display = ('author', 'body',)
     search_fields = ['author', 'body']

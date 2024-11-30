@@ -112,8 +112,11 @@ def method_page(request, slug):
         },
     )
 
+
 """ edit comment function / Reused code from Code Institute
     see README.md credit section reused code """
+
+
 # view to edit comments, method_page.html
 def comment_edit(request, slug, comment_id):
 
@@ -142,6 +145,8 @@ def comment_edit(request, slug, comment_id):
 
 """ delte comment function / Reused code from Code Institute
     see README.md credit section reused code """
+
+
 # view to delete comment, method_page.html
 def comment_delete(request, slug, comment_id):
 
@@ -199,8 +204,10 @@ def method_create(request):
     )
 
 
-    """ Displays users's content, private_collection.html
-        no ListView, it has to be a TemplateView """
+""" Displays users's content, private_collection.html
+    no ListView, it has to be a TemplateView """
+
+
 class PrivateCollectionView(generic.TemplateView):
     template_name = "view_methods/private_collection.html"
 
