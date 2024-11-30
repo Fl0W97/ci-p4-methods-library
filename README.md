@@ -535,6 +535,8 @@ https://getbootstrap.com/docs/5.2/components/accordion/
 **ARIA** 
 https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/
 
+**Error 404** 
+https://github.com/IuliiaKonovalova/e-commerce/blob/main/ecommerce_project/urls.py
 
 **Reused code from Code Institute:**
 Original code from tutorial: [Code Institute][https://learn.codeinstitute.net]. 
