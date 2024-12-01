@@ -281,6 +281,13 @@ In this project two databases are used.More information is shared in the subchap
 <img src="readme.images/readme_settings.py_crispyForms.PNG" alt="image shows crispyForm documentation in settings.py">
 
 ## Staticfiles
-Ensure static and media files are properly configured for both development and production environments. You can update the staticfiles folder by using the following command in the terminal:
+Ensure static and media files are properly configured for both development and production environments. 
+
+    STATIC_URL = 'static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+You can update the staticfiles folder by using the following command in the terminal:
 
     python3 manage.py collectstatic
